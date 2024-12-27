@@ -15,35 +15,38 @@ import os
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")  # Optional, improve performance in headless mode
+chrome_options.add_argument("--log-level=1") #suppress Tensorflow related messages
 
 Wards = {
-    '1':'Alta Vista',
-    '2':'Barrhaven East',
+    '1':'Orléans East-Cumberland',
+    '2':'Orléans West-Innes',
     '3':'Barrhaven West',
-    '4':'Bay',
-    '5':'Beacon Hill-Cyrville',
-    '6':'Capital',
-    '7':'College',
-    '8':'Gloucester-Southgate',
-    '9':'Kanata North',
-    '10':'Kanata South',
-    '11':'Kitchissippi',
-    '12':'Knoxdale-Merivale',
-    '13':'Orléans East-Cumberland',
-    '14':'Orléans South-Navan',
-    '15':'Orléans West-Innes',
-    '16':'Osgoode',
-    '17':'Rideau-Jock',
-    '18':'Rideau-Rockcliffe',
-    '19':'Rideau-Vanier',
-    '20':'Riverside South-Findlay Creek',
-    '21':'Somerset',
-    '22':'Stittsville',
-    '23':'West Carleton-March',
+    '4':'Kanata North',
+    '5':'West Carleton-March',
+    '6':'Stittsville',
+    '7':'Bay',
+    '8':'College',
+    '9':'Knoxdale-Merivale',
+    '10':'Gloucester-Southgate',
+    '11':'Beacon Hill-Cyrville',
+    '12':'Rideau-Vanier',
+    '13':'Rideau-Rockcliffe',
+    '14':'Somerset',
+    '15':'Kitchissippi',
+    '16':'River',
+    '17':'Capital',
+    '18':'Alta Vista',
+    '19':'Orléans South-Navan',
+    '19':'Orléans South-Navan',
+    '20':'Osgoode',
+    '21':'Rideau-Jock',
+    '22':'Riverside South-Findlay Creek',
+    '23':'Kanata South',
+    '24':'Barrhaven East'
 }
 
 # Select the Ward
-Ward = Wards['7']
+Ward = Wards['8']
 
 # Setup file paths
 input_csv_path = f"Addresses/Addresses_{Ward}.csv"
@@ -94,10 +97,12 @@ def wait_for_results(driver, timeout=15):
         print(f"Timeout or error while waiting for results: {e}")
         return False
 
-
+# Initialization
+print(Ward,": ",len(to_be_checked), " remaining")
 
 
 for address in to_be_checked[:]:
+    print("Batch size: ",len(output_data))
     driver = webdriver.Chrome(options=chrome_options)
     # open the url
     url = 'https://propertytaxes-taxesfoncieres.ottawa.ca/en?t=taxassessmentlookup'
@@ -161,22 +166,27 @@ for address in to_be_checked[:]:
                     #Find tables               
                     year1_assessment_table = driver.find_element(By.ID, "year1-assessment")  # Replace with actual table ID
                     year1_tax_table = driver.find_element(By.ID, "year1-tax-info")  # Replace with actual table ID
-                    year2_assessment_table = driver.find_element(By.ID, "year2-assessment")  # Replace with actual table ID
-                    year2_tax_table = driver.find_element(By.ID, "year2-tax-info")  # Replace with actual table ID
-
-                    # Extract data
-                    roll_number = tb.extract_roll_number(driver)
+                    year1_year = tb.extract_table_year(year1_tax_table)
+                    full_address, roll_number = tb.extract_address_informatin(driver)
                     current_assessment_data = tb.extract_table_data( year1_assessment_table)
                     current_tax_data = tb.extract_table_data(year1_tax_table)
-                    previous_assessment_data = tb.extract_table_data(year2_assessment_table)
-                    previous_tax_data = tb.extract_table_data(year2_tax_table)
 
-                    # Add tax table data to address data
+                    # append address_data
                     address_data["Roll Number"] = roll_number
-                    address_data.update({f"2024 - {k}": v for k, v in current_assessment_data.items()})
-                    address_data.update({f"2024 - {k}": v for k, v in current_tax_data.items()})
-                    address_data.update({f"2024 - {k}": v for k, v in previous_assessment_data.items()})
-                    address_data.update({f"2023 - {k}": v for k, v in previous_tax_data.items()})
+                    address_data.update({f"{year1_year} - {k}": v for k, v in current_assessment_data.items()})
+                    address_data.update({f"{year1_year} - {k}": v for k, v in current_tax_data.items()})
+                    try:
+                        #look for previous year tax data
+                        year2_assessment_table = driver.find_element(By.ID, "year2-assessment")  # Replace with actual table ID
+                        year2_tax_table = driver.find_element(By.ID, "year2-tax-info")  # Replace with actual table ID
+                        year2_year = tb.extract_table_year(year2_tax_table)
+                        previous_assessment_data = tb.extract_table_data(year2_assessment_table)
+                        previous_tax_data = tb.extract_table_data(year2_tax_table)
+                        address_data.update({f"{year2_year} - {k}": v for k, v in previous_assessment_data.items()})
+                        address_data.update({f"{year2_year} - {k}": v for k, v in previous_tax_data.items()})
+                        
+                    except:
+                        pass
 
                 elif driver.find_elements(By.ID, "assessment-search-result-message"):
                     # Invalid address: Extract error message
@@ -196,7 +206,7 @@ for address in to_be_checked[:]:
         driver.quit()
         #time.sleep(random.uniform(2, 5))
         # Periodically save progress
-        if len(output_data) >= 20: # batch size
+        if len(output_data) >= 5 or len(output_data) >= len(to_be_checked): # batch size
             with open(checkpoint_file, "w") as f:
                 json.dump(to_be_checked, f, indent=4, ensure_ascii=False)
             print(f"Progress saved. {len(to_be_checked)} addresses remaining.")
