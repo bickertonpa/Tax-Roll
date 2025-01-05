@@ -72,13 +72,30 @@ def initialize_driver():
     driver = webdriver.Chrome(options=chrome_options)
     return driver
 
-# Function to save data to JSON
 def save_to_json(data, path):
-    # Append each batch to the file as a new JSON object
-    with open(path, mode='a', encoding='utf-8') as file:
-        for record in data:
-            json.dump(record, file, indent=4, ensure_ascii=False)
-            file.write("\n")  # Write each record on a new line
+    """
+    Saves the given data as a properly formatted JSON array in the file.
+
+    Args:
+        data (list): List of dictionaries to save as JSON.
+        path (str): Path to the output JSON file.
+    """
+    # If the file already exists, read existing data and append new data
+    if os.path.exists(path):
+        with open(path, 'r', encoding='utf-8') as file:
+            try:
+                existing_data = json.load(file)  # Load existing JSON array
+            except json.JSONDecodeError:
+                existing_data = []  # If file is empty or invalid, start fresh
+    else:
+        existing_data = []
+
+    # Append new data to the existing data
+    existing_data.extend(data)
+
+    # Write the combined data back to the file
+    with open(path, 'w', encoding='utf-8') as file:
+        json.dump(existing_data, file, indent=4, ensure_ascii=False)
     print(f"Saved {len(data)} records to {path}.")
 
 # Function to wait for a page element
@@ -111,6 +128,19 @@ def wait_for_results(driver, timeout=15):
         print(f"Timeout or error while waiting for results: {e}")
         return False
 
+def save_batch_if_needed(batch, batch_size, output_path):
+    """
+    Saves the current batch to the JSON file if it reaches the batch size.
+
+    Args:
+        batch (list): The current batch of data to save.
+        batch_size (int): The number of items required to trigger a save.
+        output_path (str): Path to the JSON file.
+    """
+    if len(batch) >= batch_size:
+        save_to_json(batch, output_path)
+        batch.clear()  # Clear the batch after saving
+
 def convert_scientific_to_full_form_with_leading_zero(sci_str):
     """
     Convert a scientific notation string into full form with a leading zero as a string.
@@ -137,7 +167,7 @@ def convert_scientific_to_full_form_with_leading_zero(sci_str):
     except ValueError:
         return "Invalid input"
 
-def process_group(driver, group, to_be_checked, batch_size = 2):
+def process_group(driver, group, to_be_checked, batch_data, batch_size = 2):
     """
     Processes a group of addresses associated with a common `PARCEL_ASSESSMENT_ROLL_NUMBER`.
     If successful using the roll number, all related addresses are removed from `to_be_checked`.
@@ -154,7 +184,6 @@ def process_group(driver, group, to_be_checked, batch_size = 2):
     group_data = pd.DataFrame()
     primary_address = group[0]
     parcel_roll_number = '0' + str(primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))
-    batch_data = []
 
     if parcel_roll_number and not pd.isna(parcel_roll_number):
         try:
@@ -187,7 +216,8 @@ def process_group(driver, group, to_be_checked, batch_size = 2):
                     data.update({"PARCEL_ASSESSMENT_ROLL_NUMBER": parcel_roll_number})
                     print(f"Valid parcel: {data['EXTRACTED_ADDRESS_SUMMARY']} ({primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER')})")
                     batch_data.append(data)
-                    save_to_json(batch_data,output_csv_path)
+                    save_batch_if_needed(batch_data, batch_size, output_csv_path)
+
                 else:
                     pass
             else:
@@ -202,20 +232,16 @@ def process_group(driver, group, to_be_checked, batch_size = 2):
                     data = process_address(driver, address)
                     #group_data = pd.concat([group_data, pd.DataFrame([data])], ignore_index=True)
                     batch_data.append(data)
-
-                    # Save after every 'batch_size'
-                    if len(batch_data) >= batch_size:
-                        save_to_json(batch_data,output_csv_path)
-                        batch_data.clear()
+                    save_batch_if_needed(batch_data, batch_size, output_csv_path)
                 except:
                     print(f"Error processing address")
             if batch_data:
-                save_to_json(batch_data,output_csv_path)
-                batch_data.clear()
-    if len(batch_data) >= batch_size:
-        save_to_json(batch_data,output_csv_path)
-        batch_data.clear()
-    return group_data      
+                save_batch_if_needed(batch_data, batch_size, output_csv_path)
+
+    if batch_data:
+        save_batch_if_needed(batch_data, batch_size, output_csv_path)
+
+    #return group_data      
 
 def extract_tax_data(driver):
     """
@@ -346,20 +372,22 @@ def main_workflow(driver, addresses_df):
         driver (WebDriver): Selenium WebDriver instance.
         addresses_df (DataFrame): DataFrame containing addresses to check.
     """
-    #output_data = pd.DataFrame()
-
-    # Preprocess and group by `parcel_assessment_roll_number`
+        # Preprocess and group by `parcel_assessment_roll_number`
     grouped_addresses = group_addresses_by_parcel(addresses_df)
     to_be_checked = addresses_df.to_dict(orient='records')  # Convert to list of dicts
+    batch_data = []
 
     # Process each group
     for roll_number, group in grouped_addresses.items():
         if group and len(group) > 0:
             #sprint(f"Processing group with PARCEL_ASSESSMENT_ROLL_NUMBER: {roll_number}")
-            process_group(driver, group, to_be_checked)
+            process_group(driver, group, to_be_checked=[], batch_data=batch_data)
             #output_data = pd.concat([output_data, group_result], ignore_index=True)
             #output_data.to_json(output_csv_path, orient="records", force_ascii=False, indent=4)
-            
+        # Save remaining data in the batch
+    if batch_data:
+        save_to_json(batch_data, output_csv_path)
+        batch_data.clear()
 
     print("All addresses processed.")
 
