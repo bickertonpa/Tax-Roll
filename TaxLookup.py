@@ -52,7 +52,7 @@ checkpoint_file = f"Output/College_test_to_be_checked.json"
 
 # data frames
 addresses_df = pd.read_csv(input_address_path)
-output_data = pd.DataFrame()
+#output_data = pd.DataFrame()
 
 # Start for checkpoint
 if os.path.exists(checkpoint_file):
@@ -77,7 +77,7 @@ def save_to_json(data, path):
     # Append each batch to the file as a new JSON object
     with open(path, mode='a', encoding='utf-8') as file:
         for record in data:
-            json.dump(record, file, ensure_ascii=False)
+            json.dump(record, file, indent=4, ensure_ascii=False)
             file.write("\n")  # Write each record on a new line
     print(f"Saved {len(data)} records to {path}.")
 
@@ -137,7 +137,7 @@ def convert_scientific_to_full_form_with_leading_zero(sci_str):
     except ValueError:
         return "Invalid input"
 
-def process_group(driver, group, to_be_checked):
+def process_group(driver, group, to_be_checked, batch_size = 2):
     """
     Processes a group of addresses associated with a common `PARCEL_ASSESSMENT_ROLL_NUMBER`.
     If successful using the roll number, all related addresses are removed from `to_be_checked`.
@@ -151,9 +151,10 @@ def process_group(driver, group, to_be_checked):
         group_data: a data frame of all extracted information from either the PARCEL_ASSESSMENT_ROLL or contained addresses.
     """
     # Use the first address in the group for roll number search
+    group_data = pd.DataFrame()
     primary_address = group[0]
     parcel_roll_number = '0' + str(primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))
-    group_data = pd.DataFrame()
+    batch_data = []
 
     if parcel_roll_number and not pd.isna(parcel_roll_number):
         try:
@@ -185,8 +186,8 @@ def process_group(driver, group, to_be_checked):
                     data = extract_tax_data(driver)
                     data.update({"PARCEL_ASSESSMENT_ROLL_NUMBER": parcel_roll_number})
                     print(f"Valid parcel: {data['EXTRACTED_ADDRESS_SUMMARY']} ({primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER')})")
-                    group_data = pd.concat([group_data, pd.DataFrame([data])], ignore_index=True)
-                    #to_be_checked.remove(address)
+                    batch_data.append(data)
+                    save_to_json(batch_data,output_csv_path)
                 else:
                     pass
             else:
@@ -196,12 +197,24 @@ def process_group(driver, group, to_be_checked):
             # Failed attempt to search by parcel roll number. Attent to search by contained addresses
             print(f"Error processing {primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER')}")
             print(f"Attempting search of {len(group)} address(es) contained within parcel...")
-            for address in group:
+            for i, address in enumerate(group):
                 try:
                     data = process_address(driver, address)
-                    group_data = pd.concat([group_data, pd.DataFrame([data])], ignore_index=True)
+                    #group_data = pd.concat([group_data, pd.DataFrame([data])], ignore_index=True)
+                    batch_data.append(data)
+
+                    # Save after every 'batch_size'
+                    if len(batch_data) >= batch_size:
+                        save_to_json(batch_data,output_csv_path)
+                        batch_data.clear()
                 except:
-                    pass
+                    print(f"Error processing address")
+            if batch_data:
+                save_to_json(batch_data,output_csv_path)
+                batch_data.clear()
+    if len(batch_data) >= batch_size:
+        save_to_json(batch_data,output_csv_path)
+        batch_data.clear()
     return group_data      
 
 def extract_tax_data(driver):
@@ -333,7 +346,7 @@ def main_workflow(driver, addresses_df):
         driver (WebDriver): Selenium WebDriver instance.
         addresses_df (DataFrame): DataFrame containing addresses to check.
     """
-    output_data = pd.DataFrame()
+    #output_data = pd.DataFrame()
 
     # Preprocess and group by `parcel_assessment_roll_number`
     grouped_addresses = group_addresses_by_parcel(addresses_df)
@@ -343,9 +356,9 @@ def main_workflow(driver, addresses_df):
     for roll_number, group in grouped_addresses.items():
         if group and len(group) > 0:
             #sprint(f"Processing group with PARCEL_ASSESSMENT_ROLL_NUMBER: {roll_number}")
-            group_result = process_group(driver, group, to_be_checked)
-            output_data = pd.concat([output_data, group_result], ignore_index=True)
-            output_data.to_json(output_csv_path, orient="records", force_ascii=False, indent=4)
+            process_group(driver, group, to_be_checked)
+            #output_data = pd.concat([output_data, group_result], ignore_index=True)
+            #output_data.to_json(output_csv_path, orient="records", force_ascii=False, indent=4)
             
 
     print("All addresses processed.")
