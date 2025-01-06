@@ -72,14 +72,33 @@ def initialize_driver():
     driver = webdriver.Chrome(options=chrome_options)
     return driver
 
-def save_to_json(data, path):
+def save_to_json(data, path, to_be_checked, checkpoint_path):
     """
-    Saves the given data as a properly formatted JSON array in the file.
+    Saves the given data as a properly formatted JSON array in the file
+    and updates the checkpoint file with the remaining `to_be_checked` list.
 
     Args:
         data (list): List of dictionaries to save as JSON.
         path (str): Path to the output JSON file.
+        to_be_checked (list): List of addresses to remove processed ones from.
+        checkpoint_path (str): Path to save the updated checkpoint file.
     """
+    # Ensure processed_roll_numbers are strings with leading zeros
+    processed_roll_numbers = {
+        str(d["PARCEL_ASSESSMENT_ROLL_NUMBER"]).zfill(15)
+        for d in data
+        if "PARCEL_ASSESSMENT_ROLL_NUMBER" in d
+    }
+
+    # Debugging: Validate processed_roll_numbers
+    print(f"Processed roll numbers: {processed_roll_numbers}")
+
+    # Remove processed addresses from to_be_checked
+    to_be_checked[:] = [
+        address for address in to_be_checked
+        if '0'+ str(address.get("PARCEL_ASSESSMENT_ROLL_NUMBER", "")).zfill(15) not in processed_roll_numbers
+    ]
+
     # If the file already exists, read existing data and append new data
     if os.path.exists(path):
         with open(path, 'r', encoding='utf-8') as file:
@@ -93,19 +112,17 @@ def save_to_json(data, path):
     # Append new data to the existing data
     existing_data.extend(data)
 
-    # Write the combined data back to the file
+    # Write the combined data back to the output file
     with open(path, 'w', encoding='utf-8') as file:
         json.dump(existing_data, file, indent=4, ensure_ascii=False)
     print(f"Saved {len(data)} records to {path}.")
 
-# Function to wait for a page element
-def wait_for_element(driver, by, value, timeout=15):
-    try:
-        WebDriverWait(driver, timeout).until(EC.presence_of_element_located((by, value)))
-        return True
-    except Exception as e:
-        print(f"Timeout or error while waiting for element: {e}")
-        return False
+    # Save the updated to_be_checked list to the checkpoint file
+    with open(checkpoint_path, 'w', encoding='utf-8') as checkpoint_file:
+        json.dump(to_be_checked, checkpoint_file, indent=4, ensure_ascii=False)
+    print(f"Checkpoint saved with {len(to_be_checked)} remaining addresses to {checkpoint_path}.")
+
+
 
 def wait_for_results(driver, timeout=15):
     """
@@ -128,7 +145,7 @@ def wait_for_results(driver, timeout=15):
         print(f"Timeout or error while waiting for results: {e}")
         return False
 
-def save_batch_if_needed(batch, batch_size, output_path):
+def save_batch_if_needed(batch, to_be_checked, batch_size, output_path):
     """
     Saves the current batch to the JSON file if it reaches the batch size.
 
@@ -138,7 +155,7 @@ def save_batch_if_needed(batch, batch_size, output_path):
         output_path (str): Path to the JSON file.
     """
     if len(batch) >= batch_size:
-        save_to_json(batch, output_path)
+        save_to_json(batch, output_path, to_be_checked, checkpoint_file)
         batch.clear()  # Clear the batch after saving
 
 def convert_scientific_to_full_form_with_leading_zero(sci_str):
@@ -216,7 +233,7 @@ def process_group(driver, group, to_be_checked, batch_data, batch_size = 2):
                     data.update({"PARCEL_ASSESSMENT_ROLL_NUMBER": parcel_roll_number})
                     print(f"Valid parcel: {data['EXTRACTED_ADDRESS_SUMMARY']} ({primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER')})")
                     batch_data.append(data)
-                    save_batch_if_needed(batch_data, batch_size, output_csv_path)
+                    save_batch_if_needed(batch_data, to_be_checked, batch_size, output_csv_path)
 
                 else:
                     pass
@@ -232,14 +249,14 @@ def process_group(driver, group, to_be_checked, batch_data, batch_size = 2):
                     data = process_address(driver, address)
                     #group_data = pd.concat([group_data, pd.DataFrame([data])], ignore_index=True)
                     batch_data.append(data)
-                    save_batch_if_needed(batch_data, batch_size, output_csv_path)
+                    save_batch_if_needed(batch_data, to_be_checked, batch_size, output_csv_path)
                 except:
                     print(f"Error processing address")
             if batch_data:
-                save_batch_if_needed(batch_data, batch_size, output_csv_path)
+                save_batch_if_needed(batch_data, to_be_checked, batch_size, output_csv_path)
 
     if batch_data:
-        save_batch_if_needed(batch_data, batch_size, output_csv_path)
+        save_batch_if_needed(batch_data, to_be_checked, batch_size, output_csv_path)
 
     #return group_data      
 
@@ -381,12 +398,12 @@ def main_workflow(driver, addresses_df):
     for roll_number, group in grouped_addresses.items():
         if group and len(group) > 0:
             #sprint(f"Processing group with PARCEL_ASSESSMENT_ROLL_NUMBER: {roll_number}")
-            process_group(driver, group, to_be_checked=[], batch_data=batch_data)
+            process_group(driver, group, to_be_checked, batch_data)
             #output_data = pd.concat([output_data, group_result], ignore_index=True)
             #output_data.to_json(output_csv_path, orient="records", force_ascii=False, indent=4)
         # Save remaining data in the batch
     if batch_data:
-        save_to_json(batch_data, output_csv_path)
+        save_to_json(batch_data, output_csv_path,checkpoint_file)
         batch_data.clear()
 
     print("All addresses processed.")
