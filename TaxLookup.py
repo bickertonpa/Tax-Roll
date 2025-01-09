@@ -45,23 +45,31 @@ Wards = {
 Ward = Wards['24']
 
 # Setup file paths
-input_parcel_path = f"Addresses/College_test_address with related parcel.csv"
-input_address_path = f"Addresses/College_test_address with related parcel.csv"
-output_csv_path = f"Output/College_test.json"
-checkpoint_file = f"Output/College_test_to_be_checked.json"
+addresses_path = f"Addresses/Test_Holland and Parkdale.csv"
+output_path = f"Output/Holland_and_Parkdale.json"
+checkpoint_path = f"Output/Holland_and_Parkdale_to_be_checked.csv"
 
 # data frames
-addresses_df = pd.read_csv(input_address_path)
+addresses_df = pd.read_csv(addresses_path)
 #output_data = pd.DataFrame()
 
-# Start for checkpoint
-if os.path.exists(checkpoint_file):
-    with open(checkpoint_file,"r") as f:
-        to_be_checked = json.load(f)
+# Start from checkpoint
+if os.path.exists(checkpoint_path):
+    # Load the checkpoint file as a DataFrame
+    to_be_checked = pd.read_csv(checkpoint_path).to_dict(orient="records")
+    print(f"Loaded checkpoint with {len(to_be_checked)} addresses to process.")
 else:
-    with open(checkpoint_file, 'w') as f:
-        json.dump(addresses_df.to_dict(orient = "records"), f, indent=4, ensure_ascii=False)
-        to_be_checked = addresses_df.to_dict(orient = "records") #converts the dataframe to a list of dicts
+    # Load addresses_df from CSV
+    if os.path.exists(addresses_path):
+        addresses_df = pd.read_csv(addresses_path)
+        to_be_checked = addresses_df.to_dict(orient='records')  # Convert to list of dicts
+        print(f"Loaded addresses_df with {len(addresses_df)} records.")
+    else:
+        raise FileNotFoundError(f"No addresses file found at {addresses_path}. Please provide a valid file.")
+
+    # Initialize to_be_checked from addresses_df
+    #to_be_checked = addresses_df.copy()  # Start with all addresses if no checkpoint exists
+    print("No checkpoint found. Starting with all addresses.")
 
 # Initialize driver
 def initialize_driver():
@@ -72,7 +80,7 @@ def initialize_driver():
     driver = webdriver.Chrome(options=chrome_options)
     return driver
 
-def save_to_json(data, path, to_be_checked, checkpoint_path):
+def save_to_json(data, output_path, to_be_checked, checkpoint_path):
     """
     Saves the given data as a properly formatted JSON array in the file
     and updates the checkpoint file with the remaining `to_be_checked` list.
@@ -95,13 +103,14 @@ def save_to_json(data, path, to_be_checked, checkpoint_path):
 
     # Remove processed addresses from to_be_checked
     to_be_checked[:] = [
+        #address for address in to_be_checked
         address for address in to_be_checked
         if '0'+ str(address.get("PARCEL_ASSESSMENT_ROLL_NUMBER", "")).zfill(15) not in processed_roll_numbers
     ]
 
     # If the file already exists, read existing data and append new data
-    if os.path.exists(path):
-        with open(path, 'r', encoding='utf-8') as file:
+    if os.path.exists(output_path):
+        with open(output_path, 'r', encoding='utf-8') as file:
             try:
                 existing_data = json.load(file)  # Load existing JSON array
             except json.JSONDecodeError:
@@ -113,14 +122,19 @@ def save_to_json(data, path, to_be_checked, checkpoint_path):
     existing_data.extend(data)
 
     # Write the combined data back to the output file
-    with open(path, 'w', encoding='utf-8') as file:
+    with open(output_path, 'w', encoding='utf-8') as file:
         json.dump(existing_data, file, indent=4, ensure_ascii=False)
-    print(f"Saved {len(data)} records to {path}.")
+    print(f"Saved {len(data)} records to {output_path}.")
 
-    # Save the updated to_be_checked list to the checkpoint file
-    with open(checkpoint_path, 'w', encoding='utf-8') as checkpoint_file:
-        json.dump(to_be_checked, checkpoint_file, indent=4, ensure_ascii=False)
-    print(f"Checkpoint saved with {len(to_be_checked)} remaining addresses to {checkpoint_path}.")
+    # Save the updated to_be_checked list as a CSV file
+    to_be_checked_df = pd.DataFrame(to_be_checked)
+    to_be_checked_df.to_csv(checkpoint_path, index=False)
+    print(f"Checkpoint saved with {len(to_be_checked)} remaining addresses to {checkpoint_path}.")  
+
+"""     # Save the updated to_be_checked list to the checkpoint file
+    with open(checkpoint_path, 'w', encoding='utf-8') as checkpoint_path:
+        json.dump(to_be_checked, checkpoint_path, indent=4, ensure_ascii=False)
+    print(f"Checkpoint saved with {len(to_be_checked)} remaining addresses to {checkpoint_path}.") """
 
 
 
@@ -155,7 +169,7 @@ def save_batch_if_needed(batch, to_be_checked, batch_size, output_path):
         output_path (str): Path to the JSON file.
     """
     if len(batch) >= batch_size:
-        save_to_json(batch, output_path, to_be_checked, checkpoint_file)
+        save_to_json(batch, output_path, to_be_checked, checkpoint_path)
         batch.clear()  # Clear the batch after saving
 
 def convert_scientific_to_full_form_with_leading_zero(sci_str):
@@ -184,7 +198,7 @@ def convert_scientific_to_full_form_with_leading_zero(sci_str):
     except ValueError:
         return "Invalid input"
 
-def process_group(driver, group, to_be_checked, batch_data, batch_size = 2):
+def process_group(driver, group, to_be_checked, batch_data, batch_size = 25):
     """
     Processes a group of addresses associated with a common `PARCEL_ASSESSMENT_ROLL_NUMBER`.
     If successful using the roll number, all related addresses are removed from `to_be_checked`.
@@ -233,7 +247,7 @@ def process_group(driver, group, to_be_checked, batch_data, batch_size = 2):
                     data.update({"PARCEL_ASSESSMENT_ROLL_NUMBER": parcel_roll_number})
                     print(f"Valid parcel: {data['EXTRACTED_ADDRESS_SUMMARY']} ({primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER')})")
                     batch_data.append(data)
-                    save_batch_if_needed(batch_data, to_be_checked, batch_size, output_csv_path)
+                    save_batch_if_needed(batch_data, to_be_checked, batch_size, output_path)
 
                 else:
                     pass
@@ -249,14 +263,14 @@ def process_group(driver, group, to_be_checked, batch_data, batch_size = 2):
                     data = process_address(driver, address)
                     #group_data = pd.concat([group_data, pd.DataFrame([data])], ignore_index=True)
                     batch_data.append(data)
-                    save_batch_if_needed(batch_data, to_be_checked, batch_size, output_csv_path)
+                    save_batch_if_needed(batch_data, to_be_checked, batch_size, output_path)
                 except:
                     print(f"Error processing address")
             if batch_data:
-                save_batch_if_needed(batch_data, to_be_checked, batch_size, output_csv_path)
+                save_batch_if_needed(batch_data, to_be_checked, batch_size, output_path)
 
     if batch_data:
-        save_batch_if_needed(batch_data, to_be_checked, batch_size, output_csv_path)
+        save_batch_if_needed(batch_data, to_be_checked, batch_size, output_path)
 
     #return group_data      
 
@@ -305,6 +319,22 @@ def extract_tax_data(driver):
 
     return tax_data
 
+def normalize_road_name(road_name):
+    """
+    Removes the trailing period from directional abbreviations in road names.
+    Args:
+        road_name (str): The road name to normalize.
+    Returns:
+        str: The normalized road name.
+    """
+    if road_name and isinstance(road_name, str):
+        road_name = road_name.strip()  # Remove leading/trailing whitespace
+        # Remove the period if the road name ends with 'N.', 'S.', 'E.', 'W.'
+        if road_name.endswith(('N.', 'S.', 'E.', 'W.')):
+            road_name = road_name[:-1]  # Remove the trailing period
+    return road_name
+
+
 def process_address(driver, address):
     """
     Process an address by first attempting to search with ASSESSMENT_ROLL_NUMBER
@@ -334,7 +364,7 @@ def process_address(driver, address):
 
         # Address
         street_number = str(address['ADDRNUM'])
-        street_name = address['FULL_ROADN'] #includes DIRECTION
+        street_name = normalize_road_name(address['FULL_ROADNAME_EN']) #includes DIRECTION
         unit = str(address['UNIT']) if pd.notna(address['UNIT']) else ""
         qualifier = str(address['QUALIFIER']) if pd.notna(address['QUALIFIER']) else ""
 
@@ -361,27 +391,38 @@ def process_address(driver, address):
             try:
                 address_data.update({"street_number": street_number, "street_name": street_name, "unit": unit, "qualifier": qualifier, "PARCEL_ASSESSMENT_ROLL_NUMBER":'0'+ str(address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))})
                 address_data.update(extract_tax_data(driver))
-                print(f"Valid address: {address['FULL_ADDRE']}")
+                print(f"Valid address: {address['FULL_ADDRESS_EN']}")
             except:
-                pass
+                print(f"No return found for address: {address['FULL_ADDRESS_EN']}")
+                address_data.update({"street_number": street_number, "street_name": street_name, "unit": unit, "qualifier": qualifier})
+                error_message = driver.find_element(By.ID, "assessment-search-result-message").text
+                address_data.update({"error message":error_message})
         elif driver.find_element(By.ID, "assessment-search-result-message"):
             error_message = driver.find_element(By.ID, "assessment-search-result-message").text
-            print(f"No return found for address: {address['FULL_ADDRE']}")
+            print(f"No return found for address: {address['FULL_ADDRESS_EN']}")
         else:
             print("error wait_for_results()")
 
     except Exception as e:
-        print(f"Error processing address {address['FULL_ADDRE']}")
+        print(f"Error processing address {address['FULL_ADDRESS_EN']}")
     return address_data
 def group_addresses_by_parcel(df):
+
+    if isinstance(df, list):
+        df = pd.DataFrame(df)  # Convert list of dictionaries to DataFrame
+
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError("Input data must be a pandas DataFrame or a list of dictionaries.")
+
     grouped = df.groupby('PARCEL_ASSESSMENT_ROLL_NUMBER', dropna=False).apply(
         lambda x: x.to_dict(orient='records'),
         #include_groups=False  # Ensures the grouping column is excluded
     )
+
     print("Number of parcels: ", len(grouped))
     return grouped.to_dict()
 
-def main_workflow(driver, addresses_df):
+def main_workflow(driver, addresses_df, to_be_checked, checkpoint_path):
     """
     Main workflow to process all addresses.
 
@@ -390,20 +431,20 @@ def main_workflow(driver, addresses_df):
         addresses_df (DataFrame): DataFrame containing addresses to check.
     """
         # Preprocess and group by `parcel_assessment_roll_number`
-    grouped_addresses = group_addresses_by_parcel(addresses_df)
-    to_be_checked = addresses_df.to_dict(orient='records')  # Convert to list of dicts
+    grouped_addresses = group_addresses_by_parcel(to_be_checked)
+    #to_be_checked = addresses_df.to_dict(orient='records')  # Convert to list of dicts
     batch_data = []
 
     # Process each group
     for roll_number, group in grouped_addresses.items():
         if group and len(group) > 0:
             #sprint(f"Processing group with PARCEL_ASSESSMENT_ROLL_NUMBER: {roll_number}")
-            process_group(driver, group, to_be_checked, batch_data)
+            process_group(driver, group, to_be_checked, batch_data) 
             #output_data = pd.concat([output_data, group_result], ignore_index=True)
-            #output_data.to_json(output_csv_path, orient="records", force_ascii=False, indent=4)
+            #output_data.to_json(output_path, orient="records", force_ascii=False, indent=4)
         # Save remaining data in the batch
     if batch_data:
-        save_to_json(batch_data, output_csv_path,checkpoint_file)
+        save_to_json(batch_data, output_path,checkpoint_path)
         batch_data.clear()
 
     print("All addresses processed.")
@@ -413,5 +454,5 @@ if __name__ == "__main__":
     # Initialization
     print("Number of addresses remaining: ", len(to_be_checked))
     driver = initialize_driver()
-    main_workflow(driver,addresses_df)
+    main_workflow(driver,addresses_df, to_be_checked, checkpoint_path)
     print("Completed all addresses.")
