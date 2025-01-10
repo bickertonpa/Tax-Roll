@@ -48,6 +48,7 @@ Ward = Wards['24']
 addresses_path = f"Addresses/Test_Holland and Parkdale.csv"
 output_path = f"Output/Holland_and_Parkdale.json"
 checkpoint_path = f"Output/Holland_and_Parkdale_to_be_checked.csv"
+batch_size = 9
 
 # data frames
 addresses_df = pd.read_csv(addresses_path)
@@ -170,7 +171,11 @@ def save_batch_if_needed(batch, to_be_checked, batch_size, output_path):
     """
     if len(batch) >= batch_size:
         save_to_json(batch, output_path, to_be_checked, checkpoint_path)
-        batch.clear()  # Clear the batch after saving
+        batch.clear()  # Clear the batch after 
+    
+    if len(to_be_checked) == len(batch):
+        save_to_json(batch, output_path, to_be_checked, checkpoint_path)
+        batch.clear()  # Clear the batch after
 
 def convert_scientific_to_full_form_with_leading_zero(sci_str):
     """
@@ -198,7 +203,7 @@ def convert_scientific_to_full_form_with_leading_zero(sci_str):
     except ValueError:
         return "Invalid input"
 
-def process_group(driver, group, to_be_checked, batch_data, batch_size = 25):
+def process_group(driver, group, to_be_checked, batch_data, batch_size):
     """
     Processes a group of addresses associated with a common `PARCEL_ASSESSMENT_ROLL_NUMBER`.
     If successful using the roll number, all related addresses are removed from `to_be_checked`.
@@ -422,7 +427,7 @@ def group_addresses_by_parcel(df):
     print("Number of parcels: ", len(grouped))
     return grouped.to_dict()
 
-def main_workflow(driver, addresses_df, to_be_checked, checkpoint_path):
+def main_workflow(driver, to_be_checked, checkpoint_path, batch_size):
     """
     Main workflow to process all addresses.
 
@@ -439,7 +444,7 @@ def main_workflow(driver, addresses_df, to_be_checked, checkpoint_path):
     for roll_number, group in grouped_addresses.items():
         if group and len(group) > 0:
             #sprint(f"Processing group with PARCEL_ASSESSMENT_ROLL_NUMBER: {roll_number}")
-            process_group(driver, group, to_be_checked, batch_data) 
+            process_group(driver, group, to_be_checked, batch_data, batch_size) 
             #output_data = pd.concat([output_data, group_result], ignore_index=True)
             #output_data.to_json(output_path, orient="records", force_ascii=False, indent=4)
         # Save remaining data in the batch
@@ -454,5 +459,5 @@ if __name__ == "__main__":
     # Initialization
     print("Number of addresses remaining: ", len(to_be_checked))
     driver = initialize_driver()
-    main_workflow(driver,addresses_df, to_be_checked, checkpoint_path)
+    main_workflow(driver,to_be_checked, checkpoint_path, batch_size)
     print("Completed all addresses.")
