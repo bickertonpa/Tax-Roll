@@ -42,16 +42,16 @@ Wards = {
 }
 
 # Select the Ward
-Ward = Wards['24']
+Ward = Wards['17']
 
 # Setup file paths
-addresses_path = f"Addresses/Test_Holland and Parkdale.csv"
-output_path = f"Output/Holland_and_Parkdale.json"
-checkpoint_path = f"Output/Holland_and_Parkdale_to_be_checked.csv"
-batch_size = 9
+addresses_path = f"Addresses/with parcel/Addresses_{Ward}.csv"
+output_path = f"Output/{Ward}.json"
+checkpoint_path = f"Output/{Ward}_to_be_checked.csv"
+batch_size = 50
 
 # data frames
-addresses_df = pd.read_csv(addresses_path)
+# addresses_df = pd.read_csv(addresses_path)
 #output_data = pd.DataFrame()
 
 # Start from checkpoint
@@ -199,7 +199,7 @@ def convert_scientific_to_full_form_with_leading_zero(sci_str):
         # Remove any trailing zeros and the decimal point if not needed
         full_form = full_form.rstrip('0').rstrip('.') if '.' in full_form else full_form
         # Add a leading zero if necessary
-        return '0' + full_form
+        return str('0' + full_form)
     except ValueError:
         return "Invalid input"
 
@@ -219,7 +219,8 @@ def process_group(driver, group, to_be_checked, batch_data, batch_size):
     # Use the first address in the group for roll number search
     group_data = pd.DataFrame()
     primary_address = group[0]
-    parcel_roll_number = '0' + str(primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))
+    #parcel_roll_number = '0' + str(primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))
+    parcel_roll_number = convert_scientific_to_full_form_with_leading_zero(primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))
 
     if parcel_roll_number and not pd.isna(parcel_roll_number):
         try:
@@ -250,7 +251,7 @@ def process_group(driver, group, to_be_checked, batch_data, batch_size):
                 if extract_tax_data(driver):
                     data = extract_tax_data(driver)
                     data.update({"PARCEL_ASSESSMENT_ROLL_NUMBER": parcel_roll_number})
-                    print(f"Valid parcel: {data['EXTRACTED_ADDRESS_SUMMARY']} ({primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER')})")
+                    print(f"Valid parcel: {data['EXTRACTED_ADDRESS_SUMMARY']} ({parcel_roll_number})")
                     batch_data.append(data)
                     save_batch_if_needed(batch_data, to_be_checked, batch_size, output_path)
 
@@ -261,11 +262,11 @@ def process_group(driver, group, to_be_checked, batch_data, batch_size):
 
         except Exception as e:
             # Failed attempt to search by parcel roll number. Attent to search by contained addresses
-            print(f"Error processing {primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER')}")
+            print(f"Error processing {parcel_roll_number}")
             print(f"Attempting search of {len(group)} address(es) contained within parcel...")
             for i, address in enumerate(group):
                 try:
-                    data = process_address(driver, address)
+                    data = process_address(driver, address, parcel_roll_number)
                     #group_data = pd.concat([group_data, pd.DataFrame([data])], ignore_index=True)
                     batch_data.append(data)
                     save_batch_if_needed(batch_data, to_be_checked, batch_size, output_path)
@@ -340,7 +341,7 @@ def normalize_road_name(road_name):
     return road_name
 
 
-def process_address(driver, address):
+def process_address(driver, address, parcel_roll_number):
     """
     Process an address by first attempting to search with ASSESSMENT_ROLL_NUMBER
     and falling back to searching by address if the roll number search fails.
@@ -369,7 +370,7 @@ def process_address(driver, address):
 
         # Address
         street_number = str(address['ADDRNUM'])
-        street_name = normalize_road_name(address['FULL_ROADNAME_EN']) #includes DIRECTION
+        street_name = normalize_road_name(address['FULL_ROADN']) #includes DIRECTION
         unit = str(address['UNIT']) if pd.notna(address['UNIT']) else ""
         qualifier = str(address['QUALIFIER']) if pd.notna(address['QUALIFIER']) else ""
 
@@ -394,22 +395,22 @@ def process_address(driver, address):
         # Wait for results
         if wait_for_results(driver):
             try:
-                address_data.update({"street_number": street_number, "street_name": street_name, "unit": unit, "qualifier": qualifier, "PARCEL_ASSESSMENT_ROLL_NUMBER":'0'+ str(address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))})
+                address_data.update({"street_number": street_number, "street_name": street_name, "unit": unit, "qualifier": qualifier, "PARCEL_ASSESSMENT_ROLL_NUMBER":parcel_roll_number})
                 address_data.update(extract_tax_data(driver))
-                print(f"Valid address: {address['FULL_ADDRESS_EN']}")
+                print(f"Valid address: {address['FULL_ADDRE']}")
             except:
-                print(f"No return found for address: {address['FULL_ADDRESS_EN']}")
+                print(f"No return found for address: {address['FULL_ADDRE']}")
                 address_data.update({"street_number": street_number, "street_name": street_name, "unit": unit, "qualifier": qualifier})
                 error_message = driver.find_element(By.ID, "assessment-search-result-message").text
                 address_data.update({"error message":error_message})
         elif driver.find_element(By.ID, "assessment-search-result-message"):
             error_message = driver.find_element(By.ID, "assessment-search-result-message").text
-            print(f"No return found for address: {address['FULL_ADDRESS_EN']}")
+            print(f"No return found for address: {address['FULL_ADDRE']}")
         else:
             print("error wait_for_results()")
 
     except Exception as e:
-        print(f"Error processing address {address['FULL_ADDRESS_EN']}")
+        print(f"Error processing address {address['FULL_ADDRE']}")
     return address_data
 def group_addresses_by_parcel(df):
 
