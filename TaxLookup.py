@@ -42,13 +42,13 @@ Wards = {
 }
 
 # Select the Ward
-Ward = Wards['17']
+Ward = Wards['9']
 
 # Setup file paths
-addresses_path = f"Addresses/with parcel/Addresses_{Ward}.csv"
+addresses_path = f"Addresses/Addresses_{Ward}.csv"
 output_path = f"Output/{Ward}.json"
-checkpoint_path = f"Output/{Ward}_to_be_checked.csv"
-batch_size = 50
+checkpoint_path = f"Checkpoint/{Ward}_to_be_checked.csv"
+batch_size = 5
 
 # data frames
 # addresses_df = pd.read_csv(addresses_path)
@@ -57,12 +57,12 @@ batch_size = 50
 # Start from checkpoint
 if os.path.exists(checkpoint_path):
     # Load the checkpoint file as a DataFrame
-    to_be_checked = pd.read_csv(checkpoint_path).to_dict(orient="records")
+    to_be_checked = pd.read_csv(checkpoint_path, dtype={"PARCEL_ASSESSMENT_ROLL_NUMBER": str}).to_dict(orient="records")
     print(f"Loaded checkpoint with {len(to_be_checked)} addresses to process.")
 else:
     # Load addresses_df from CSV
     if os.path.exists(addresses_path):
-        addresses_df = pd.read_csv(addresses_path)
+        addresses_df = pd.read_csv(addresses_path, dtype={"PARCEL_ASSESSMENT_ROLL_NUMBER": str})
         to_be_checked = addresses_df.to_dict(orient='records')  # Convert to list of dicts
         print(f"Loaded addresses_df with {len(addresses_df)} records.")
     else:
@@ -220,7 +220,11 @@ def process_group(driver, group, to_be_checked, batch_data, batch_size):
     group_data = pd.DataFrame()
     primary_address = group[0]
     #parcel_roll_number = '0' + str(primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))
-    parcel_roll_number = convert_scientific_to_full_form_with_leading_zero(primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))
+    parcel_roll_number = primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER')
+    if parcel_roll_number == '0':
+        parcel_roll_number = '00000000000000000000' # to fail the process_group() but to continue process_address() for any parcel without a PARCEL_ASSESSMENT_ROLL_NUMBER
+    else:
+        parcel_roll_number = '0'+ str((primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))) #str to at least cover condition where PARCEL_ASSESSMENT_ROLL_NUMBER is NULL
 
     if parcel_roll_number and not pd.isna(parcel_roll_number):
         try:
@@ -262,7 +266,7 @@ def process_group(driver, group, to_be_checked, batch_data, batch_size):
 
         except Exception as e:
             # Failed attempt to search by parcel roll number. Attent to search by contained addresses
-            print(f"Error processing {parcel_roll_number}")
+            print(f"Error processing PARCEL_ASSESSMENT_NUMBER: {parcel_roll_number}")
             print(f"Attempting search of {len(group)} address(es) contained within parcel...")
             for i, address in enumerate(group):
                 try:
@@ -450,6 +454,7 @@ def main_workflow(driver, to_be_checked, checkpoint_path, batch_size):
             #output_data.to_json(output_path, orient="records", force_ascii=False, indent=4)
         # Save remaining data in the batch
     if batch_data:
+        print("here")
         save_to_json(batch_data, output_path,checkpoint_path)
         batch_data.clear()
 
