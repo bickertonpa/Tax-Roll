@@ -42,13 +42,14 @@ Wards = {
 }
 
 # Select the Ward
-Ward = Wards['9']
+Ward = Wards['1']
+
 
 # Setup file paths
 addresses_path = f"Addresses/Addresses_{Ward}.csv"
 output_path = f"Output/{Ward}.json"
 checkpoint_path = f"Checkpoint/{Ward}_to_be_checked.csv"
-batch_size = 5
+batch_size = 50
 
 # data frames
 # addresses_df = pd.read_csv(addresses_path)
@@ -221,8 +222,8 @@ def process_group(driver, group, to_be_checked, batch_data, batch_size):
     primary_address = group[0]
     #parcel_roll_number = '0' + str(primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))
     parcel_roll_number = primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER')
-    if parcel_roll_number == '0':
-        parcel_roll_number = '00000000000000000000' # to fail the process_group() but to continue process_address() for any parcel without a PARCEL_ASSESSMENT_ROLL_NUMBER
+    if parcel_roll_number == '0' or pd.isnull(parcel_roll_number): 
+        parcel_roll_number = '0614000000000000000' # Assign a dummy value to fail process_group() and continue with process_address() for any parcel without a PARCEL_ASSESSMENT_ROLL_NUMBER
     else:
         parcel_roll_number = '0'+ str((primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))) #str to at least cover condition where PARCEL_ASSESSMENT_ROLL_NUMBER is NULL
 
@@ -454,8 +455,8 @@ def main_workflow(driver, to_be_checked, checkpoint_path, batch_size):
             #output_data.to_json(output_path, orient="records", force_ascii=False, indent=4)
         # Save remaining data in the batch
     if batch_data:
-        print("here")
-        save_to_json(batch_data, output_path,checkpoint_path)
+        #save_to_json(batch_data, output_path,checkpoint_path)
+        save_to_json(batch_data, output_path, to_be_checked, checkpoint_path)
         batch_data.clear()
 
     print("All addresses processed.")

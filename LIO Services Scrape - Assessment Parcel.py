@@ -8,7 +8,7 @@ headers = {
     "User-Agent": "Mozilla/5.0",
     # Add other necessary headers here
 }
-token = "923_MS1mM6bQ9d-ReA9qld6QbfSx-gFMm6ps8de6UTrV6fKfTBCbf_Z0SHw4xbzQ"  # Replace with your token
+token = "923_MS1mM6bQ9d-ReA9qld6QbfSx-gFMm6ps8de6UTrV6fKfTBCbf_Z0SHw4xbzQ"  # Replace with your token. Use the Inspect tool when visiting the Agricultural Information Atlas (AgMaps)
 
 ##ward = ["Tiles/Alta Vista.csv","Alta Vista"]
 ##ward = ["Tiles/Barrhaven East.csv","Barrhaven East"]

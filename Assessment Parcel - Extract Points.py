@@ -40,7 +40,7 @@ for ward in wards:
     for index, row in df.iterrows():
         value = row['value']
         ODF_ID = row['attributes.OGF_ID']  # Adjust column name as per your CSV
-        ASSESSMENT_ROLL_NUMBER = row['attributes.ASSESSMENT_ROLL_NUMBER']
+        PARCEL_ASSESSMENT_ROLL_NUMBER = row['attributes.ASSESSMENT_ROLL_NUMBER']
         OBJECT_ID = row['attributes.OBJECTID']
         geometry_rings = json.loads(row['geometry.rings'])  # Adjust column name as per your CSV
         vertices  = []  # List to store vertices of the current polygon
