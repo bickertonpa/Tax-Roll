@@ -52,8 +52,7 @@ checkpoint_path = f"Checkpoint/{Ward}_to_be_checked.csv"
 batch_size = 50
 
 # data frames
-# addresses_df = pd.read_csv(addresses_path)
-#output_data = pd.DataFrame()
+print(f"Loading TaxLookup for {Ward}")
 
 # Start from checkpoint
 if os.path.exists(checkpoint_path):
