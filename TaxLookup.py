@@ -12,65 +12,81 @@ import table_extract as tb
 import json
 import os
 import re
+import sys
+from decimal import Decimal
 
 Wards = {
-    '1':'Orléans East-Cumberland',
-    '2':'Orléans West-Innes',
-    '3':'Barrhaven West',
-    '4':'Kanata North',
-    '5':'West Carleton-March',
-    '6':'Stittsville',
-    '7':'Bay',
-    '8':'College',
-    '9':'Knoxdale-Merivale',
-    '10':'Gloucester-Southgate',
-    '11':'Beacon Hill-Cyrville',
-    '12':'Rideau-Vanier',
-    '13':'Rideau-Rockcliffe',
-    '14':'Somerset',
-    '15':'Kitchissippi',
-    '16':'River',
-    '17':'Capital',
-    '18':'Alta Vista',
-    '19':'Orléans South-Navan',
-    '19':'Orléans South-Navan',
-    '20':'Osgoode',
-    '21':'Rideau-Jock',
-    '22':'Riverside South-Findlay Creek',
-    '23':'Kanata South',
-    '24':'Barrhaven East'
+    '0':'Test',
+    '1':'01 Orléans East-Cumberland',
+    '2':'02 Orléans West-Innes',
+    '3':'03 Barrhaven West',
+    '4':'04 Kanata North',
+    '5':'05 West Carleton-March', #to investigate. errors.
+    '6':'06 Stittsville',
+    '7':'07 Bay',
+    '8':'08 College',
+    '9':'09 Knoxdale-Merivale',
+    '10':'10 Gloucester-Southgate',
+    '11':'11 Beacon Hill-Cyrville',
+    '12':'12 Rideau-Vanier',
+    '13':'13 Rideau-Rockcliffe',
+    '14':'14 Somerset',
+    '15':'15 Kitchissippi',
+    '16':'16 River',
+    '17':'17 Capital',
+    '18':'18 Alta Vista',
+    '19':'19 Orléans South-Navan',
+    '20':'20 Osgoode',
+    '21':'21 Rideau-Jock',
+    '22':'22 Riverside South-Findlay Creek',
+    '23':'23 Kanata South',
+    '24':'24 Barrhaven East'
 }
 
 # Select the Ward
-Ward = Wards['1']
+
+ward_input = input("Please enter the ward number: ")
+
+Ward = Wards[f'{ward_input}']
+print(f"Scraping data for ward: {Ward}")
 
 
 # Setup file paths
-addresses_path = f"Addresses/Addresses_{Ward}.csv"
-output_path = f"Output/{Ward}.json"
+addresses_path = f"Addresses/Raw/Addresses_{Ward}.csv"
+processed_addresses_path = f"Addresses/Processed/Addresses_{Ward}.csv"
+output_path = f"Output/json/{Ward}.json"
 checkpoint_path = f"Checkpoint/{Ward}_to_be_checked.csv"
-batch_size = 50
+batch_size = 3
+
+# Process the addresses
+def preprocess_address_file(input_file, output_file):
+    """
+    Processes the address file and converts all PARCEL_ASSESSMENT_ROLL_NUMBER to full-form strings.
+    """
+    with open(input_file, 'r', encoding='utf-8') as infile, open(output_file, 'w', encoding='utf-8', newline='') as outfile:
+        reader = csv.DictReader(infile)
+        fieldnames = reader.fieldnames
+        
+        # Ensure PARCEL_ASSESSMENT_ROLL_NUMBER is in the headers
+        if 'PARCEL_ASSESSMENT_ROLL_NUMBER' not in fieldnames:
+            raise ValueError("The field 'PARCEL_ASSESSMENT_ROLL_NUMBER' is missing from the input file.")
+        
+        writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+        writer.writeheader()
+
+        for row in reader:
+            # Process the PARCEL_ASSESSMENT_ROLL_NUMBER field
+            row['PARCEL_ASSESSMENT_ROLL_NUMBER'] = convert_scientific_to_full_form_with_leading_zero(
+                row['PARCEL_ASSESSMENT_ROLL_NUMBER']
+            )
+            writer.writerow(row)
+
+    print(f"File processed successfully. Output saved to {output_file}")
 
 # data frames
 print(f"Loading TaxLookup for {Ward}")
 
-# Start from checkpoint
-if os.path.exists(checkpoint_path):
-    # Load the checkpoint file as a DataFrame
-    to_be_checked = pd.read_csv(checkpoint_path, dtype={"PARCEL_ASSESSMENT_ROLL_NUMBER": str}).to_dict(orient="records")
-    print(f"Loaded checkpoint with {len(to_be_checked)} addresses to process.")
-else:
-    # Load addresses_df from CSV
-    if os.path.exists(addresses_path):
-        addresses_df = pd.read_csv(addresses_path, dtype={"PARCEL_ASSESSMENT_ROLL_NUMBER": str})
-        to_be_checked = addresses_df.to_dict(orient='records')  # Convert to list of dicts
-        print(f"Loaded addresses_df with {len(addresses_df)} records.")
-    else:
-        raise FileNotFoundError(f"No addresses file found at {addresses_path}. Please provide a valid file.")
 
-    # Initialize to_be_checked from addresses_df
-    #to_be_checked = addresses_df.copy()  # Start with all addresses if no checkpoint exists
-    print("No checkpoint found. Starting with all addresses.")
 
 # Initialize driver
 def initialize_driver():
@@ -80,6 +96,8 @@ def initialize_driver():
     chrome_options.add_argument("--log-level=1") #suppress Tensorflow related messages
     driver = webdriver.Chrome(options=chrome_options)
     return driver
+
+
 
 def save_to_json(data, output_path, to_be_checked, checkpoint_path):
     """
@@ -106,7 +124,7 @@ def save_to_json(data, output_path, to_be_checked, checkpoint_path):
     to_be_checked[:] = [
         #address for address in to_be_checked
         address for address in to_be_checked
-        if '0'+ str(address.get("PARCEL_ASSESSMENT_ROLL_NUMBER", "")).zfill(15) not in processed_roll_numbers
+        if str(address.get("PARCEL_ASSESSMENT_ROLL_NUMBER")).zfill(15) not in processed_roll_numbers
     ]
 
     # If the file already exists, read existing data and append new data
@@ -193,15 +211,17 @@ def convert_scientific_to_full_form_with_leading_zero(sci_str):
         print(result)  # Output: '06141205650350000000'
 
     """
-    try:
-        # Convert the string to a float, then format it into full form
-        full_form = f"{float(sci_str):f}"
-        # Remove any trailing zeros and the decimal point if not needed
-        full_form = full_form.rstrip('0').rstrip('.') if '.' in full_form else full_form
-        # Add a leading zero if necessary
-        return str('0' + full_form)
-    except ValueError:
-        return "Invalid input"
+    # Convert the scientific notation string to a Decimal
+
+    if sci_str == '' or pd.isnull(sci_str): 
+        sci_str = '614000000000000000' # Assign a dummy value to fail process_group() and continue with process_address() for any parcel without a PARCEL_ASSESSMENT_ROLL_NUMBER
+
+    decimal_value = Decimal(sci_str)
+    # Convert to a plain string without scientific notation
+    full_form = '0' + format(decimal_value, 'f')
+    # Remove trailing zeros and the decimal point if unnecessary
+    full_form = full_form.rstrip('0').rstrip('.') if '.' in full_form else full_form
+    return full_form
 
 def process_group(driver, group, to_be_checked, batch_data, batch_size):
     """
@@ -221,11 +241,8 @@ def process_group(driver, group, to_be_checked, batch_data, batch_size):
     primary_address = group[0]
     #parcel_roll_number = '0' + str(primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))
     parcel_roll_number = primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER')
-    if parcel_roll_number == '0' or pd.isnull(parcel_roll_number): 
-        parcel_roll_number = '0614000000000000000' # Assign a dummy value to fail process_group() and continue with process_address() for any parcel without a PARCEL_ASSESSMENT_ROLL_NUMBER
-    else:
-        parcel_roll_number = '0'+ str((primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))) #str to at least cover condition where PARCEL_ASSESSMENT_ROLL_NUMBER is NULL
-
+    
+        
     if parcel_roll_number and not pd.isna(parcel_roll_number):
         try:
            
@@ -375,7 +392,7 @@ def process_address(driver, address, parcel_roll_number):
         # Address
         street_number = str(address['ADDRNUM'])
         street_name = normalize_road_name(address['FULL_ROADN']) #includes DIRECTION
-        unit = str(address['UNIT']) if pd.notna(address['UNIT']) else ""
+        unit = str(int(address['UNIT'])) if pd.notna(address['UNIT']) else ""
         qualifier = str(address['QUALIFIER']) if pd.notna(address['QUALIFIER']) else ""
 
         # Enter address details
@@ -459,6 +476,25 @@ def main_workflow(driver, to_be_checked, checkpoint_path, batch_size):
         batch_data.clear()
 
     print("All addresses processed.")
+
+# Start from checkpoint
+if os.path.exists(checkpoint_path):
+    # Load the checkpoint file as a DataFrame
+    to_be_checked = pd.read_csv(checkpoint_path, dtype={"PARCEL_ASSESSMENT_ROLL_NUMBER": str}).to_dict(orient="records")
+    print(f"Loaded checkpoint with {len(to_be_checked)} addresses to process.")
+else:
+    # Load addresses_df from CSV
+    if os.path.exists(addresses_path):
+        preprocess_address_file(addresses_path, processed_addresses_path)
+        addresses_df = pd.read_csv(processed_addresses_path, dtype={"PARCEL_ASSESSMENT_ROLL_NUMBER": str})
+        to_be_checked = addresses_df.to_dict(orient='records')  # Convert to list of dicts
+        print(f"Loaded addresses_df with {len(addresses_df)} records.")
+    else:
+        raise FileNotFoundError(f"No addresses file found at {addresses_path}. Please provide a valid file.")
+
+    # Initialize to_be_checked from addresses_df
+    #to_be_checked = addresses_df.copy()  # Start with all addresses if no checkpoint exists
+    print("No checkpoint found. Starting with all addresses.")
 
 # Run the scraper
 if __name__ == "__main__":
