@@ -17,3 +17,5 @@ Parcel 06143008163399400000 contains holes and streets and surrounds >50 address
 some parcel assessment roll numbers have disconnected multiple polygons. For example "6140417012160100000" has three disjointed polygons but only one is assigned the aggregate tax value of the 2 x addresses within. Each independent parcel has a differnt ODF_ID so I suspect that is where the error is.
 
 need to validate whether batch saving in the middle of process_address is working properly. It appears that all addresses associated with the processessed PARCEL_ASSESSEMENT_ROLL_NUMBER are removed from to_be_checked at the save_to_json() call, regardless if those addressesed have actually been processed.
+
+Not all TaxRoll.csv files have the same headres (e.g., no FARM or EXCESS LAND in Somerset). This impacts the AGGREGATE function in the QGIS Points to Parcel model.

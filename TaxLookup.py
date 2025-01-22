@@ -56,7 +56,7 @@ addresses_path = f"Addresses/Raw/Addresses_{Ward}.csv"
 processed_addresses_path = f"Addresses/Processed/Addresses_{Ward}.csv"
 output_path = f"Output/json/{Ward}.json"
 checkpoint_path = f"Checkpoint/{Ward}_to_be_checked.csv"
-batch_size = 3
+batch_size = 50
 
 # Process the addresses
 def preprocess_address_file(input_file, output_file):
