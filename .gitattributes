@@ -1,1 +1,6 @@
+# Track all .gpkg files with Git LFS
+*.gpkg filter=lfs diff=lfs merge=lfs -text
+
+# Track JSON and CSV files with Git LFS, if desired
 *.json filter=lfs diff=lfs merge=lfs -text
+*.csv filter=lfs diff=lfs merge=lfs -text
