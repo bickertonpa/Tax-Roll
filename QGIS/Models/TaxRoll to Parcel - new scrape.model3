@@ -18,8 +18,8 @@
       </Option>
       <Option type="QString" name="component_description" value="Aggregate"/>
       <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="1237"/>
-      <Option type="double" name="component_pos_y" value="421"/>
+      <Option type="double" name="component_pos_x" value="1256"/>
+      <Option type="double" name="component_pos_y" value="403"/>
       <Option type="double" name="component_width" value="200"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="native:aggregate_1"/>
@@ -1243,8 +1243,8 @@
       </Option>
       <Option type="QString" name="component_description" value="Aggregate Address List"/>
       <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="160"/>
-      <Option type="double" name="component_pos_y" value="567.5"/>
+      <Option type="double" name="component_pos_x" value="179"/>
+      <Option type="double" name="component_pos_y" value="550.5"/>
       <Option type="double" name="component_width" value="200"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="native:aggregate_2"/>
@@ -1483,7 +1483,7 @@
         </Option>
         <Option type="List" name="INPUT">
           <Option type="Map">
-            <Option type="QString" name="child_id" value="native:fieldcalculator_2"/>
+            <Option type="QString" name="child_id" value="native:joinattributestable_3"/>
             <Option type="QString" name="output_name" value="OUTPUT"/>
             <Option type="int" name="source" value="1"/>
           </Option>
@@ -1507,8 +1507,8 @@
       </Option>
       <Option type="QString" name="component_description" value="Extract By Parcel"/>
       <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="448"/>
-      <Option type="double" name="component_pos_y" value="351.5"/>
+      <Option type="double" name="component_pos_x" value="477"/>
+      <Option type="double" name="component_pos_y" value="344.5"/>
       <Option type="double" name="component_width" value="200"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="native:extractbyexpression_1"/>
@@ -1547,8 +1547,8 @@
       </Option>
       <Option type="QString" name="component_description" value="Extract By Address"/>
       <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="457"/>
-      <Option type="double" name="component_pos_y" value="243"/>
+      <Option type="double" name="component_pos_x" value="468"/>
+      <Option type="double" name="component_pos_y" value="224"/>
       <Option type="double" name="component_width" value="200"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="native:extractbyexpression_2"/>
@@ -1587,8 +1587,8 @@
       </Option>
       <Option type="QString" name="component_description" value="Remove addresses with parcel data"/>
       <Option type="double" name="component_height" value="42"/>
-      <Option type="double" name="component_pos_x" value="1143"/>
-      <Option type="double" name="component_pos_y" value="326"/>
+      <Option type="double" name="component_pos_x" value="1160"/>
+      <Option type="double" name="component_pos_y" value="309"/>
       <Option type="double" name="component_width" value="200"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="native:extractbylocation_1"/>
@@ -1605,7 +1605,7 @@
         </Option>
         <Option type="List" name="INTERSECT">
           <Option type="Map">
-            <Option type="QString" name="child_id" value="native:fieldcalculator_2"/>
+            <Option type="QString" name="child_id" value="native:joinattributestable_3"/>
             <Option type="QString" name="output_name" value="OUTPUT"/>
             <Option type="int" name="source" value="1"/>
           </Option>
@@ -1727,71 +1727,6 @@
         <Option type="List" name="INPUT">
           <Option type="Map">
             <Option type="QString" name="child_id" value="native:joinattributestable_4"/>
-            <Option type="QString" name="output_name" value="OUTPUT"/>
-            <Option type="int" name="source" value="1"/>
-          </Option>
-        </Option>
-      </Option>
-    </Option>
-    <Option type="Map" name="native:fieldcalculator_2">
-      <Option type="bool" name="active" value="true"/>
-      <Option name="alg_config"/>
-      <Option type="QString" name="alg_id" value="native:fieldcalculator"/>
-      <Option type="QString" name="color" value=""/>
-      <Option type="Map" name="comment">
-        <Option type="QString" name="color" value=""/>
-        <Option type="QString" name="component_description" value=""/>
-        <Option type="double" name="component_height" value="60"/>
-        <Option type="double" name="component_pos_x" value="2280"/>
-        <Option type="double" name="component_pos_y" value="759.5"/>
-        <Option type="double" name="component_width" value="100"/>
-        <Option type="bool" name="outputs_collapsed" value="true"/>
-        <Option type="bool" name="parameters_collapsed" value="true"/>
-      </Option>
-      <Option type="QString" name="component_description" value="area"/>
-      <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="949"/>
-      <Option type="double" name="component_pos_y" value="734.5"/>
-      <Option type="double" name="component_width" value="200"/>
-      <Option name="dependencies"/>
-      <Option type="QString" name="id" value="native:fieldcalculator_2"/>
-      <Option name="outputs"/>
-      <Option type="bool" name="outputs_collapsed" value="true"/>
-      <Option type="bool" name="parameters_collapsed" value="true"/>
-      <Option type="Map" name="params">
-        <Option type="List" name="FIELD_LENGTH">
-          <Option type="Map">
-            <Option type="int" name="source" value="2"/>
-            <Option type="int" name="static_value" value="0"/>
-          </Option>
-        </Option>
-        <Option type="List" name="FIELD_NAME">
-          <Option type="Map">
-            <Option type="int" name="source" value="2"/>
-            <Option type="QString" name="static_value" value="area"/>
-          </Option>
-        </Option>
-        <Option type="List" name="FIELD_PRECISION">
-          <Option type="Map">
-            <Option type="int" name="source" value="2"/>
-            <Option type="int" name="static_value" value="2"/>
-          </Option>
-        </Option>
-        <Option type="List" name="FIELD_TYPE">
-          <Option type="Map">
-            <Option type="int" name="source" value="2"/>
-            <Option type="int" name="static_value" value="0"/>
-          </Option>
-        </Option>
-        <Option type="List" name="FORMULA">
-          <Option type="Map">
-            <Option type="int" name="source" value="2"/>
-            <Option type="QString" name="static_value" value=" $area "/>
-          </Option>
-        </Option>
-        <Option type="List" name="INPUT">
-          <Option type="Map">
-            <Option type="QString" name="child_id" value="native:joinattributestable_3"/>
             <Option type="QString" name="output_name" value="OUTPUT"/>
             <Option type="int" name="source" value="1"/>
           </Option>
@@ -2019,6 +1954,70 @@
         </Option>
       </Option>
     </Option>
+    <Option type="Map" name="native:fieldcalculator_6">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="native:fieldcalculator"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="2726"/>
+        <Option type="double" name="component_pos_y" value="1055.5"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Parcel Area"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="331"/>
+      <Option type="double" name="component_pos_y" value="464.5"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option name="dependencies"/>
+      <Option type="QString" name="id" value="native:fieldcalculator_6"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="FIELD_LENGTH">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="int" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_NAME">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="PARAREA_M"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_PRECISION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="int" name="static_value" value="2"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FIELD_TYPE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="int" name="static_value" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="FORMULA">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value=" $area "/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="parcel"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
     <Option type="Map" name="native:joinattributestable_1">
       <Option type="bool" name="active" value="true"/>
       <Option name="alg_config"/>
@@ -2036,8 +2035,8 @@
       </Option>
       <Option type="QString" name="component_description" value="Join TaxRoll to Address Points"/>
       <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="844"/>
-      <Option type="double" name="component_pos_y" value="253"/>
+      <Option type="double" name="component_pos_x" value="848"/>
+      <Option type="double" name="component_pos_y" value="258"/>
       <Option type="double" name="component_width" value="200"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="native:joinattributestable_1"/>
@@ -2115,9 +2114,9 @@
         <Option type="bool" name="parameters_collapsed" value="true"/>
       </Option>
       <Option type="QString" name="component_description" value="Join Aggregated to Parcel"/>
-      <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="1336"/>
-      <Option type="double" name="component_pos_y" value="510"/>
+      <Option type="double" name="component_height" value="36"/>
+      <Option type="double" name="component_pos_x" value="1337"/>
+      <Option type="double" name="component_pos_y" value="503"/>
       <Option type="double" name="component_width" value="200"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="native:joinattributestable_2"/>
@@ -2153,8 +2152,9 @@
         </Option>
         <Option type="List" name="INPUT">
           <Option type="Map">
-            <Option type="QString" name="parameter_name" value="parcel"/>
-            <Option type="int" name="source" value="0"/>
+            <Option type="QString" name="child_id" value="native:fieldcalculator_6"/>
+            <Option type="QString" name="output_name" value="OUTPUT"/>
+            <Option type="int" name="source" value="1"/>
           </Option>
         </Option>
         <Option type="List" name="INPUT_2">
@@ -2173,7 +2173,7 @@
         <Option type="List" name="PREFIX">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="invalid" name="static_value"/>
+            <Option type="QString" name="static_value" value=""/>
           </Option>
         </Option>
       </Option>
@@ -2195,8 +2195,8 @@
       </Option>
       <Option type="QString" name="component_description" value="Join TaxRoll - Parcel to Parcel"/>
       <Option type="double" name="component_height" value="47"/>
-      <Option type="double" name="component_pos_x" value="783"/>
-      <Option type="double" name="component_pos_y" value="638.5"/>
+      <Option type="double" name="component_pos_x" value="818"/>
+      <Option type="double" name="component_pos_y" value="604.5"/>
       <Option type="double" name="component_width" value="200"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="native:joinattributestable_3"/>
@@ -2275,8 +2275,8 @@
       </Option>
       <Option type="QString" name="component_description" value="Join Aggregated Address List to Parcel"/>
       <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="340"/>
-      <Option type="double" name="component_pos_y" value="651"/>
+      <Option type="double" name="component_pos_x" value="394"/>
+      <Option type="double" name="component_pos_y" value="673"/>
       <Option type="double" name="component_width" value="200"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="native:joinattributestable_4"/>
@@ -2312,8 +2312,9 @@
         </Option>
         <Option type="List" name="INPUT">
           <Option type="Map">
-            <Option type="QString" name="parameter_name" value="parcel"/>
-            <Option type="int" name="source" value="0"/>
+            <Option type="QString" name="child_id" value="native:fieldcalculator_6"/>
+            <Option type="QString" name="output_name" value="OUTPUT"/>
+            <Option type="int" name="source" value="1"/>
           </Option>
         </Option>
         <Option type="List" name="INPUT_2">
@@ -2332,7 +2333,7 @@
         <Option type="List" name="PREFIX">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="invalid" name="static_value"/>
+            <Option type="QString" name="static_value" value=""/>
           </Option>
         </Option>
       </Option>
@@ -2354,8 +2355,8 @@
       </Option>
       <Option type="QString" name="component_description" value="Merge Parcel Layers"/>
       <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="1349"/>
-      <Option type="double" name="component_pos_y" value="601.5"/>
+      <Option type="double" name="component_pos_x" value="1360"/>
+      <Option type="double" name="component_pos_y" value="614.5"/>
       <Option type="double" name="component_width" value="200"/>
       <Option name="dependencies"/>
       <Option type="QString" name="id" value="native:mergevectorlayers_1"/>
@@ -2376,7 +2377,7 @@
             <Option type="int" name="source" value="1"/>
           </Option>
           <Option type="Map">
-            <Option type="QString" name="child_id" value="native:fieldcalculator_2"/>
+            <Option type="QString" name="child_id" value="native:joinattributestable_3"/>
             <Option type="QString" name="output_name" value="OUTPUT"/>
             <Option type="int" name="source" value="1"/>
           </Option>
@@ -2792,9 +2793,9 @@
         <Option type="bool" name="parameters_collapsed" value="true"/>
       </Option>
       <Option type="QString" name="component_description" value="parcel"/>
-      <Option type="double" name="component_height" value="30"/>
-      <Option type="double" name="component_pos_x" value="132"/>
-      <Option type="double" name="component_pos_y" value="439"/>
+      <Option type="double" name="component_height" value="40"/>
+      <Option type="double" name="component_pos_x" value="96"/>
+      <Option type="double" name="component_pos_y" value="403"/>
       <Option type="double" name="component_width" value="200"/>
       <Option type="QString" name="name" value="parcel"/>
       <Option type="bool" name="outputs_collapsed" value="true"/>
