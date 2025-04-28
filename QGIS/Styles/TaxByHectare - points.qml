@@ -1,361 +1,361 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis readOnly="0" autoRefreshTime="0" simplifyDrawingTol="1" minScale="100000000" styleCategories="AllStyleCategories" simplifyMaxScale="1" symbologyReferenceScale="-1" version="3.40.4-Bratislava" maxScale="0" autoRefreshMode="Disabled" simplifyDrawingHints="1" simplifyLocal="1" hasScaleBasedVisibilityFlag="0" simplifyAlgorithm="0" labelsEnabled="0">
+<qgis minScale="100000000" simplifyLocal="1" symbologyReferenceScale="-1" simplifyDrawingHints="1" simplifyAlgorithm="0" labelsEnabled="0" maxScale="0" readOnly="0" autoRefreshMode="Disabled" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" autoRefreshTime="0" version="3.40.4-Bratislava" styleCategories="AllStyleCategories">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
     <Private>0</Private>
   </flags>
-  <temporal durationUnit="min" fixedDuration="0" endExpression="" mode="0" accumulate="0" enabled="0" durationField="fid" limitMode="0" startExpression="" endField="" startField="">
+  <temporal mode="0" enabled="0" limitMode="0" accumulate="0" endField="" durationField="fid" fixedDuration="0" startExpression="" startField="" endExpression="" durationUnit="min">
     <fixedRange>
       <start></start>
       <end></end>
     </fixedRange>
   </temporal>
-  <elevation clamping="Terrain" type="IndividualFeatures" extrusionEnabled="0" extrusion="0" symbology="Line" binding="Centroid" respectLayerSymbol="1" zoffset="0" zscale="1" showMarkerSymbolInSurfacePlots="0">
+  <elevation extrusionEnabled="0" clamping="Terrain" respectLayerSymbol="1" zoffset="0" type="IndividualFeatures" extrusion="0" binding="Centroid" symbology="Line" showMarkerSymbolInSurfacePlots="0" zscale="1">
     <data-defined-properties>
       <Option type="Map">
-        <Option type="QString" value="" name="name"/>
+        <Option name="name" type="QString" value=""/>
         <Option name="properties"/>
-        <Option type="QString" value="collection" name="type"/>
+        <Option name="type" type="QString" value="collection"/>
       </Option>
     </data-defined-properties>
     <profileLineSymbol>
-      <symbol is_animated="0" type="line" frame_rate="10" force_rhr="0" name="" clip_to_extent="1" alpha="1">
+      <symbol alpha="1" name="" type="line" clip_to_extent="1" force_rhr="0" is_animated="0" frame_rate="10">
         <data_defined_properties>
           <Option type="Map">
-            <Option type="QString" value="" name="name"/>
+            <Option name="name" type="QString" value=""/>
             <Option name="properties"/>
-            <Option type="QString" value="collection" name="type"/>
+            <Option name="type" type="QString" value="collection"/>
           </Option>
         </data_defined_properties>
-        <layer class="SimpleLine" id="{724af681-182f-4f90-8bea-d3eea8013cc6}" locked="0" pass="0" enabled="1">
+        <layer pass="0" enabled="1" class="SimpleLine" id="{724af681-182f-4f90-8bea-d3eea8013cc6}" locked="0">
           <Option type="Map">
-            <Option type="QString" value="0" name="align_dash_pattern"/>
-            <Option type="QString" value="square" name="capstyle"/>
-            <Option type="QString" value="5;2" name="customdash"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="customdash_map_unit_scale"/>
-            <Option type="QString" value="MM" name="customdash_unit"/>
-            <Option type="QString" value="0" name="dash_pattern_offset"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="dash_pattern_offset_map_unit_scale"/>
-            <Option type="QString" value="MM" name="dash_pattern_offset_unit"/>
-            <Option type="QString" value="0" name="draw_inside_polygon"/>
-            <Option type="QString" value="bevel" name="joinstyle"/>
-            <Option type="QString" value="243,166,178,255,rgb:0.95294117647058818,0.65098039215686276,0.69803921568627447,1" name="line_color"/>
-            <Option type="QString" value="solid" name="line_style"/>
-            <Option type="QString" value="0.6" name="line_width"/>
-            <Option type="QString" value="MM" name="line_width_unit"/>
-            <Option type="QString" value="0" name="offset"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="offset_map_unit_scale"/>
-            <Option type="QString" value="MM" name="offset_unit"/>
-            <Option type="QString" value="0" name="ring_filter"/>
-            <Option type="QString" value="0" name="trim_distance_end"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="trim_distance_end_map_unit_scale"/>
-            <Option type="QString" value="MM" name="trim_distance_end_unit"/>
-            <Option type="QString" value="0" name="trim_distance_start"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="trim_distance_start_map_unit_scale"/>
-            <Option type="QString" value="MM" name="trim_distance_start_unit"/>
-            <Option type="QString" value="0" name="tweak_dash_pattern_on_corners"/>
-            <Option type="QString" value="0" name="use_custom_dash"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="width_map_unit_scale"/>
+            <Option name="align_dash_pattern" type="QString" value="0"/>
+            <Option name="capstyle" type="QString" value="square"/>
+            <Option name="customdash" type="QString" value="5;2"/>
+            <Option name="customdash_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="customdash_unit" type="QString" value="MM"/>
+            <Option name="dash_pattern_offset" type="QString" value="0"/>
+            <Option name="dash_pattern_offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="dash_pattern_offset_unit" type="QString" value="MM"/>
+            <Option name="draw_inside_polygon" type="QString" value="0"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="line_color" type="QString" value="243,166,178,255,rgb:0.95294117647058818,0.65098039215686276,0.69803921568627447,1"/>
+            <Option name="line_style" type="QString" value="solid"/>
+            <Option name="line_width" type="QString" value="0.6"/>
+            <Option name="line_width_unit" type="QString" value="MM"/>
+            <Option name="offset" type="QString" value="0"/>
+            <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="ring_filter" type="QString" value="0"/>
+            <Option name="trim_distance_end" type="QString" value="0"/>
+            <Option name="trim_distance_end_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="trim_distance_end_unit" type="QString" value="MM"/>
+            <Option name="trim_distance_start" type="QString" value="0"/>
+            <Option name="trim_distance_start_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="trim_distance_start_unit" type="QString" value="MM"/>
+            <Option name="tweak_dash_pattern_on_corners" type="QString" value="0"/>
+            <Option name="use_custom_dash" type="QString" value="0"/>
+            <Option name="width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
           </Option>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" value="" name="name"/>
+              <Option name="name" type="QString" value=""/>
               <Option name="properties"/>
-              <Option type="QString" value="collection" name="type"/>
+              <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
     </profileLineSymbol>
     <profileFillSymbol>
-      <symbol is_animated="0" type="fill" frame_rate="10" force_rhr="0" name="" clip_to_extent="1" alpha="1">
+      <symbol alpha="1" name="" type="fill" clip_to_extent="1" force_rhr="0" is_animated="0" frame_rate="10">
         <data_defined_properties>
           <Option type="Map">
-            <Option type="QString" value="" name="name"/>
+            <Option name="name" type="QString" value=""/>
             <Option name="properties"/>
-            <Option type="QString" value="collection" name="type"/>
+            <Option name="type" type="QString" value="collection"/>
           </Option>
         </data_defined_properties>
-        <layer class="SimpleFill" id="{2bfec214-fe6f-463e-ad15-6a7962ce8bca}" locked="0" pass="0" enabled="1">
+        <layer pass="0" enabled="1" class="SimpleFill" id="{2bfec214-fe6f-463e-ad15-6a7962ce8bca}" locked="0">
           <Option type="Map">
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="border_width_map_unit_scale"/>
-            <Option type="QString" value="243,166,178,255,rgb:0.95294117647058818,0.65098039215686276,0.69803921568627447,1" name="color"/>
-            <Option type="QString" value="bevel" name="joinstyle"/>
-            <Option type="QString" value="0,0" name="offset"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="offset_map_unit_scale"/>
-            <Option type="QString" value="MM" name="offset_unit"/>
-            <Option type="QString" value="174,119,127,255,rgb:0.68065918974593731,0.46497291523613338,0.49858854047455559,1" name="outline_color"/>
-            <Option type="QString" value="solid" name="outline_style"/>
-            <Option type="QString" value="0.2" name="outline_width"/>
-            <Option type="QString" value="MM" name="outline_width_unit"/>
-            <Option type="QString" value="solid" name="style"/>
+            <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="color" type="QString" value="243,166,178,255,rgb:0.95294117647058818,0.65098039215686276,0.69803921568627447,1"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="174,119,127,255,rgb:0.68065918974593731,0.46497291523613338,0.49858854047455559,1"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.2"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
           </Option>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" value="" name="name"/>
+              <Option name="name" type="QString" value=""/>
               <Option name="properties"/>
-              <Option type="QString" value="collection" name="type"/>
+              <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
     </profileFillSymbol>
     <profileMarkerSymbol>
-      <symbol is_animated="0" type="marker" frame_rate="10" force_rhr="0" name="" clip_to_extent="1" alpha="1">
+      <symbol alpha="1" name="" type="marker" clip_to_extent="1" force_rhr="0" is_animated="0" frame_rate="10">
         <data_defined_properties>
           <Option type="Map">
-            <Option type="QString" value="" name="name"/>
+            <Option name="name" type="QString" value=""/>
             <Option name="properties"/>
-            <Option type="QString" value="collection" name="type"/>
+            <Option name="type" type="QString" value="collection"/>
           </Option>
         </data_defined_properties>
-        <layer class="SimpleMarker" id="{819717c6-8609-40c7-ba35-173153bd522b}" locked="0" pass="0" enabled="1">
+        <layer pass="0" enabled="1" class="SimpleMarker" id="{819717c6-8609-40c7-ba35-173153bd522b}" locked="0">
           <Option type="Map">
-            <Option type="QString" value="0" name="angle"/>
-            <Option type="QString" value="square" name="cap_style"/>
-            <Option type="QString" value="243,166,178,255,rgb:0.95294117647058818,0.65098039215686276,0.69803921568627447,1" name="color"/>
-            <Option type="QString" value="1" name="horizontal_anchor_point"/>
-            <Option type="QString" value="bevel" name="joinstyle"/>
-            <Option type="QString" value="diamond" name="name"/>
-            <Option type="QString" value="0,0" name="offset"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="offset_map_unit_scale"/>
-            <Option type="QString" value="MM" name="offset_unit"/>
-            <Option type="QString" value="174,119,127,255,rgb:0.68065918974593731,0.46497291523613338,0.49858854047455559,1" name="outline_color"/>
-            <Option type="QString" value="solid" name="outline_style"/>
-            <Option type="QString" value="0.2" name="outline_width"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="outline_width_map_unit_scale"/>
-            <Option type="QString" value="MM" name="outline_width_unit"/>
-            <Option type="QString" value="diameter" name="scale_method"/>
-            <Option type="QString" value="3" name="size"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="size_map_unit_scale"/>
-            <Option type="QString" value="MM" name="size_unit"/>
-            <Option type="QString" value="1" name="vertical_anchor_point"/>
+            <Option name="angle" type="QString" value="0"/>
+            <Option name="cap_style" type="QString" value="square"/>
+            <Option name="color" type="QString" value="243,166,178,255,rgb:0.95294117647058818,0.65098039215686276,0.69803921568627447,1"/>
+            <Option name="horizontal_anchor_point" type="QString" value="1"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="name" type="QString" value="diamond"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="174,119,127,255,rgb:0.68065918974593731,0.46497291523613338,0.49858854047455559,1"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.2"/>
+            <Option name="outline_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="scale_method" type="QString" value="diameter"/>
+            <Option name="size" type="QString" value="3"/>
+            <Option name="size_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="size_unit" type="QString" value="MM"/>
+            <Option name="vertical_anchor_point" type="QString" value="1"/>
           </Option>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" value="" name="name"/>
+              <Option name="name" type="QString" value=""/>
               <Option name="properties"/>
-              <Option type="QString" value="collection" name="type"/>
+              <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
     </profileMarkerSymbol>
   </elevation>
-  <renderer-v2 type="graduatedSymbol" attr="2024  Revenue by Hectare" symbollevels="0" enableorderby="0" graduatedMethod="GraduatedColor" referencescale="-1" forceraster="0">
+  <renderer-v2 type="graduatedSymbol" graduatedMethod="GraduatedColor" forceraster="0" attr="2024 Municipal Tax by Hectare" enableorderby="0" referencescale="-1" symbollevels="0">
     <ranges>
-      <range uuid="{eb39b282-3077-4b37-ab4e-06401169b818}" label="6 - 68494" render="true" upper="68494.296377978636883" symbol="0" lower="5.826091106877248"/>
-      <range uuid="{385db7a4-7271-45cd-b102-aa644fc5a5ba}" label="68494 - 87129" render="true" upper="87128.984196612756932" symbol="1" lower="68494.296377978636883"/>
-      <range uuid="{2459ec08-1b8c-4c94-b672-864dce1f5e88}" label="87129 - 101143" render="true" upper="101143.341856760685914" symbol="2" lower="87128.984196612756932"/>
-      <range uuid="{72ce9160-58c7-446d-a53d-d913126b502f}" label="101143 - 146625" render="true" upper="146624.687170733173843" symbol="3" lower="101143.341856760685914"/>
-      <range uuid="{2769d0aa-ceb5-4aa5-9c3a-2c10e8ae7f81}" label="146625 - 1237724" render="true" upper="1237724.456924354424700" symbol="4" lower="146624.687170733173843"/>
+      <range render="true" upper="68494.296377978636883" lower="5.826091106877248" symbol="0" uuid="{eb39b282-3077-4b37-ab4e-06401169b818}" label="6 - 68494"/>
+      <range render="true" upper="87128.984196612756932" lower="68494.296377978636883" symbol="1" uuid="{385db7a4-7271-45cd-b102-aa644fc5a5ba}" label="68494 - 87129"/>
+      <range render="true" upper="101143.341856760685914" lower="87128.984196612756932" symbol="2" uuid="{2459ec08-1b8c-4c94-b672-864dce1f5e88}" label="87129 - 101143"/>
+      <range render="true" upper="146624.687170733173843" lower="101143.341856760685914" symbol="3" uuid="{72ce9160-58c7-446d-a53d-d913126b502f}" label="101143 - 146625"/>
+      <range render="true" upper="1237724.456924354424700" lower="146624.687170733173843" symbol="4" uuid="{2769d0aa-ceb5-4aa5-9c3a-2c10e8ae7f81}" label="146625 - 1237724"/>
     </ranges>
     <symbols>
-      <symbol is_animated="0" type="fill" frame_rate="10" force_rhr="0" name="0" clip_to_extent="1" alpha="1">
+      <symbol alpha="1" name="0" type="fill" clip_to_extent="1" force_rhr="0" is_animated="0" frame_rate="10">
         <data_defined_properties>
           <Option type="Map">
-            <Option type="QString" value="" name="name"/>
+            <Option name="name" type="QString" value=""/>
             <Option name="properties"/>
-            <Option type="QString" value="collection" name="type"/>
+            <Option name="type" type="QString" value="collection"/>
           </Option>
         </data_defined_properties>
-        <layer class="SimpleFill" id="{a72328ab-638b-4b58-ac8b-aa2fe92d7ae6}" locked="0" pass="0" enabled="1">
+        <layer pass="0" enabled="1" class="SimpleFill" id="{a72328ab-638b-4b58-ac8b-aa2fe92d7ae6}" locked="0">
           <Option type="Map">
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="border_width_map_unit_scale"/>
-            <Option type="QString" value="215,25,28,255,rgb:0.84313725490196079,0.09803921568627451,0.10980392156862745,1" name="color"/>
-            <Option type="QString" value="bevel" name="joinstyle"/>
-            <Option type="QString" value="0,0" name="offset"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="offset_map_unit_scale"/>
-            <Option type="QString" value="MM" name="offset_unit"/>
-            <Option type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1" name="outline_color"/>
-            <Option type="QString" value="solid" name="outline_style"/>
-            <Option type="QString" value="0.26" name="outline_width"/>
-            <Option type="QString" value="MM" name="outline_width_unit"/>
-            <Option type="QString" value="solid" name="style"/>
+            <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="color" type="QString" value="252,251,253,255,rgb:0.9882352941176471,0.98431372549019602,0.99215686274509807,1"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.26"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
           </Option>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" value="" name="name"/>
+              <Option name="name" type="QString" value=""/>
               <Option name="properties"/>
-              <Option type="QString" value="collection" name="type"/>
+              <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol is_animated="0" type="fill" frame_rate="10" force_rhr="0" name="1" clip_to_extent="1" alpha="1">
+      <symbol alpha="1" name="1" type="fill" clip_to_extent="1" force_rhr="0" is_animated="0" frame_rate="10">
         <data_defined_properties>
           <Option type="Map">
-            <Option type="QString" value="" name="name"/>
+            <Option name="name" type="QString" value=""/>
             <Option name="properties"/>
-            <Option type="QString" value="collection" name="type"/>
+            <Option name="type" type="QString" value="collection"/>
           </Option>
         </data_defined_properties>
-        <layer class="SimpleFill" id="{a72328ab-638b-4b58-ac8b-aa2fe92d7ae6}" locked="0" pass="0" enabled="1">
+        <layer pass="0" enabled="1" class="SimpleFill" id="{a72328ab-638b-4b58-ac8b-aa2fe92d7ae6}" locked="0">
           <Option type="Map">
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="border_width_map_unit_scale"/>
-            <Option type="QString" value="253,174,97,255,rgb:0.99215686274509807,0.68235294117647061,0.38039215686274508,1" name="color"/>
-            <Option type="QString" value="bevel" name="joinstyle"/>
-            <Option type="QString" value="0,0" name="offset"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="offset_map_unit_scale"/>
-            <Option type="QString" value="MM" name="offset_unit"/>
-            <Option type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1" name="outline_color"/>
-            <Option type="QString" value="solid" name="outline_style"/>
-            <Option type="QString" value="0.26" name="outline_width"/>
-            <Option type="QString" value="MM" name="outline_width_unit"/>
-            <Option type="QString" value="solid" name="style"/>
+            <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="color" type="QString" value="220,219,236,255,rgb:0.86123445487144279,0.86063935301747163,0.92458991378652633,1"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.26"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
           </Option>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" value="" name="name"/>
+              <Option name="name" type="QString" value=""/>
               <Option name="properties"/>
-              <Option type="QString" value="collection" name="type"/>
+              <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol is_animated="0" type="fill" frame_rate="10" force_rhr="0" name="2" clip_to_extent="1" alpha="1">
+      <symbol alpha="1" name="2" type="fill" clip_to_extent="1" force_rhr="0" is_animated="0" frame_rate="10">
         <data_defined_properties>
           <Option type="Map">
-            <Option type="QString" value="" name="name"/>
+            <Option name="name" type="QString" value=""/>
             <Option name="properties"/>
-            <Option type="QString" value="collection" name="type"/>
+            <Option name="type" type="QString" value="collection"/>
           </Option>
         </data_defined_properties>
-        <layer class="SimpleFill" id="{a72328ab-638b-4b58-ac8b-aa2fe92d7ae6}" locked="0" pass="0" enabled="1">
+        <layer pass="0" enabled="1" class="SimpleFill" id="{a72328ab-638b-4b58-ac8b-aa2fe92d7ae6}" locked="0">
           <Option type="Map">
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="border_width_map_unit_scale"/>
-            <Option type="QString" value="255,255,192,255,rgb:1,1,0.75294117647058822,1" name="color"/>
-            <Option type="QString" value="bevel" name="joinstyle"/>
-            <Option type="QString" value="0,0" name="offset"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="offset_map_unit_scale"/>
-            <Option type="QString" value="MM" name="offset_unit"/>
-            <Option type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1" name="outline_color"/>
-            <Option type="QString" value="solid" name="outline_style"/>
-            <Option type="QString" value="0.26" name="outline_width"/>
-            <Option type="QString" value="MM" name="outline_width_unit"/>
-            <Option type="QString" value="solid" name="style"/>
+            <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="color" type="QString" value="163,159,203,255,rgb:0.63770504310673681,0.62504005493247883,0.79638361181048289,1"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.26"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
           </Option>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" value="" name="name"/>
+              <Option name="name" type="QString" value=""/>
               <Option name="properties"/>
-              <Option type="QString" value="collection" name="type"/>
+              <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol is_animated="0" type="fill" frame_rate="10" force_rhr="0" name="3" clip_to_extent="1" alpha="1">
+      <symbol alpha="1" name="3" type="fill" clip_to_extent="1" force_rhr="0" is_animated="0" frame_rate="10">
         <data_defined_properties>
           <Option type="Map">
-            <Option type="QString" value="" name="name"/>
+            <Option name="name" type="QString" value=""/>
             <Option name="properties"/>
-            <Option type="QString" value="collection" name="type"/>
+            <Option name="type" type="QString" value="collection"/>
           </Option>
         </data_defined_properties>
-        <layer class="SimpleFill" id="{a72328ab-638b-4b58-ac8b-aa2fe92d7ae6}" locked="0" pass="0" enabled="1">
+        <layer pass="0" enabled="1" class="SimpleFill" id="{a72328ab-638b-4b58-ac8b-aa2fe92d7ae6}" locked="0">
           <Option type="Map">
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="border_width_map_unit_scale"/>
-            <Option type="QString" value="166,217,106,255,rgb:0.65098039215686276,0.85098039215686272,0.41568627450980394,1" name="color"/>
-            <Option type="QString" value="bevel" name="joinstyle"/>
-            <Option type="QString" value="0,0" name="offset"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="offset_map_unit_scale"/>
-            <Option type="QString" value="MM" name="offset_unit"/>
-            <Option type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1" name="outline_color"/>
-            <Option type="QString" value="solid" name="outline_style"/>
-            <Option type="QString" value="0.26" name="outline_width"/>
-            <Option type="QString" value="MM" name="outline_width_unit"/>
-            <Option type="QString" value="solid" name="style"/>
+            <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="color" type="QString" value="106,81,163,255,rgb:0.41568627450980394,0.31764705882352939,0.63921568627450975,1"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.26"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
           </Option>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" value="" name="name"/>
+              <Option name="name" type="QString" value=""/>
               <Option name="properties"/>
-              <Option type="QString" value="collection" name="type"/>
+              <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol is_animated="0" type="fill" frame_rate="10" force_rhr="0" name="4" clip_to_extent="1" alpha="1">
+      <symbol alpha="1" name="4" type="fill" clip_to_extent="1" force_rhr="0" is_animated="0" frame_rate="10">
         <data_defined_properties>
           <Option type="Map">
-            <Option type="QString" value="" name="name"/>
+            <Option name="name" type="QString" value=""/>
             <Option name="properties"/>
-            <Option type="QString" value="collection" name="type"/>
+            <Option name="type" type="QString" value="collection"/>
           </Option>
         </data_defined_properties>
-        <layer class="SimpleFill" id="{a72328ab-638b-4b58-ac8b-aa2fe92d7ae6}" locked="0" pass="0" enabled="1">
+        <layer pass="0" enabled="1" class="SimpleFill" id="{a72328ab-638b-4b58-ac8b-aa2fe92d7ae6}" locked="0">
           <Option type="Map">
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="border_width_map_unit_scale"/>
-            <Option type="QString" value="26,150,65,255,rgb:0.10196078431372549,0.58823529411764708,0.25490196078431371,1" name="color"/>
-            <Option type="QString" value="bevel" name="joinstyle"/>
-            <Option type="QString" value="0,0" name="offset"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="offset_map_unit_scale"/>
-            <Option type="QString" value="MM" name="offset_unit"/>
-            <Option type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1" name="outline_color"/>
-            <Option type="QString" value="solid" name="outline_style"/>
-            <Option type="QString" value="0.26" name="outline_width"/>
-            <Option type="QString" value="MM" name="outline_width_unit"/>
-            <Option type="QString" value="solid" name="style"/>
+            <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="color" type="QString" value="63,0,125,255,rgb:0.24705882352941178,0,0.49019607843137253,1"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.26"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
           </Option>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" value="" name="name"/>
+              <Option name="name" type="QString" value=""/>
               <Option name="properties"/>
-              <Option type="QString" value="collection" name="type"/>
+              <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
     </symbols>
     <source-symbol>
-      <symbol is_animated="0" type="fill" frame_rate="10" force_rhr="0" name="0" clip_to_extent="1" alpha="1">
+      <symbol alpha="1" name="0" type="fill" clip_to_extent="1" force_rhr="0" is_animated="0" frame_rate="10">
         <data_defined_properties>
           <Option type="Map">
-            <Option type="QString" value="" name="name"/>
+            <Option name="name" type="QString" value=""/>
             <Option name="properties"/>
-            <Option type="QString" value="collection" name="type"/>
+            <Option name="type" type="QString" value="collection"/>
           </Option>
         </data_defined_properties>
-        <layer class="SimpleFill" id="{a72328ab-638b-4b58-ac8b-aa2fe92d7ae6}" locked="0" pass="0" enabled="1">
+        <layer pass="0" enabled="1" class="SimpleFill" id="{a72328ab-638b-4b58-ac8b-aa2fe92d7ae6}" locked="0">
           <Option type="Map">
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="border_width_map_unit_scale"/>
-            <Option type="QString" value="114,155,111,255,rgb:0.44705882352941179,0.60784313725490191,0.43529411764705883,1" name="color"/>
-            <Option type="QString" value="bevel" name="joinstyle"/>
-            <Option type="QString" value="0,0" name="offset"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="offset_map_unit_scale"/>
-            <Option type="QString" value="MM" name="offset_unit"/>
-            <Option type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1" name="outline_color"/>
-            <Option type="QString" value="solid" name="outline_style"/>
-            <Option type="QString" value="0.26" name="outline_width"/>
-            <Option type="QString" value="MM" name="outline_width_unit"/>
-            <Option type="QString" value="solid" name="style"/>
+            <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="color" type="QString" value="114,155,111,255,rgb:0.44705882352941179,0.60784313725490191,0.43529411764705883,1"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.26"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
           </Option>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" value="" name="name"/>
+              <Option name="name" type="QString" value=""/>
               <Option name="properties"/>
-              <Option type="QString" value="collection" name="type"/>
+              <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
     </source-symbol>
-    <colorramp type="gradient" name="[source]">
+    <colorramp name="[source]" type="gradient">
       <Option type="Map">
-        <Option type="QString" value="215,25,28,255,rgb:0.84313725490196079,0.09803921568627451,0.10980392156862745,1" name="color1"/>
-        <Option type="QString" value="26,150,65,255,rgb:0.10196078431372549,0.58823529411764708,0.25490196078431371,1" name="color2"/>
-        <Option type="QString" value="ccw" name="direction"/>
-        <Option type="QString" value="0" name="discrete"/>
-        <Option type="QString" value="gradient" name="rampType"/>
-        <Option type="QString" value="rgb" name="spec"/>
-        <Option type="QString" value="0.25;253,174,97,255,rgb:0.99215686274509807,0.68235294117647061,0.38039215686274508,1;rgb;ccw:0.5;255,255,192,255,rgb:1,1,0.75294117647058822,1;rgb;ccw:0.75;166,217,106,255,rgb:0.65098039215686276,0.85098039215686272,0.41568627450980394,1;rgb;ccw" name="stops"/>
+        <Option name="color1" type="QString" value="252,251,253,255,rgb:0.9882352941176471,0.98431372549019602,0.99215686274509807,1"/>
+        <Option name="color2" type="QString" value="63,0,125,255,rgb:0.24705882352941178,0,0.49019607843137253,1"/>
+        <Option name="direction" type="QString" value="ccw"/>
+        <Option name="discrete" type="QString" value="0"/>
+        <Option name="rampType" type="QString" value="gradient"/>
+        <Option name="spec" type="QString" value="rgb"/>
+        <Option name="stops" type="QString" value="0.13;239,237,245,255,rgb:0.93725490196078431,0.92941176470588238,0.96078431372549022,1;rgb;ccw:0.26;218,218,235,255,rgb:0.85490196078431369,0.85490196078431369,0.92156862745098034,1;rgb;ccw:0.39;188,189,220,255,rgb:0.73725490196078436,0.74117647058823533,0.86274509803921573,1;rgb;ccw:0.52;158,154,200,255,rgb:0.61960784313725492,0.60392156862745094,0.78431372549019607,1;rgb;ccw:0.65;128,125,186,255,rgb:0.50196078431372548,0.49019607843137253,0.72941176470588232,1;rgb;ccw:0.75;106,81,163,255,rgb:0.41568627450980394,0.31764705882352939,0.63921568627450975,1;rgb;ccw:0.9;84,39,143,255,rgb:0.32941176470588235,0.15294117647058825,0.5607843137254902,1;rgb;ccw"/>
       </Option>
     </colorramp>
     <classificationMethod id="Quantile">
-      <symmetricMode symmetrypoint="0" astride="0" enabled="0"/>
-      <labelFormat labelprecision="0" format="%1 - %2" trimtrailingzeroes="1"/>
+      <symmetricMode enabled="0" astride="0" symmetrypoint="0"/>
+      <labelFormat trimtrailingzeroes="0" format="%1 - %2" labelprecision="0"/>
       <parameters>
         <Option/>
       </parameters>
@@ -365,42 +365,42 @@
     <sizescale/>
     <data-defined-properties>
       <Option type="Map">
-        <Option type="QString" value="" name="name"/>
+        <Option name="name" type="QString" value=""/>
         <Option name="properties"/>
-        <Option type="QString" value="collection" name="type"/>
+        <Option name="type" type="QString" value="collection"/>
       </Option>
     </data-defined-properties>
   </renderer-v2>
   <selection mode="Default">
     <selectionColor invalid="1"/>
     <selectionSymbol>
-      <symbol is_animated="0" type="fill" frame_rate="10" force_rhr="0" name="" clip_to_extent="1" alpha="1">
+      <symbol alpha="1" name="" type="fill" clip_to_extent="1" force_rhr="0" is_animated="0" frame_rate="10">
         <data_defined_properties>
           <Option type="Map">
-            <Option type="QString" value="" name="name"/>
+            <Option name="name" type="QString" value=""/>
             <Option name="properties"/>
-            <Option type="QString" value="collection" name="type"/>
+            <Option name="type" type="QString" value="collection"/>
           </Option>
         </data_defined_properties>
-        <layer class="SimpleFill" id="{4a055af5-d607-484a-803d-db368a31ee96}" locked="0" pass="0" enabled="1">
+        <layer pass="0" enabled="1" class="SimpleFill" id="{4a055af5-d607-484a-803d-db368a31ee96}" locked="0">
           <Option type="Map">
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="border_width_map_unit_scale"/>
-            <Option type="QString" value="0,0,255,255,rgb:0,0,1,1" name="color"/>
-            <Option type="QString" value="bevel" name="joinstyle"/>
-            <Option type="QString" value="0,0" name="offset"/>
-            <Option type="QString" value="3x:0,0,0,0,0,0" name="offset_map_unit_scale"/>
-            <Option type="QString" value="MM" name="offset_unit"/>
-            <Option type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1" name="outline_color"/>
-            <Option type="QString" value="solid" name="outline_style"/>
-            <Option type="QString" value="0.26" name="outline_width"/>
-            <Option type="QString" value="MM" name="outline_width_unit"/>
-            <Option type="QString" value="solid" name="style"/>
+            <Option name="border_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="color" type="QString" value="0,0,255,255,rgb:0,0,1,1"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.26"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
           </Option>
           <data_defined_properties>
             <Option type="Map">
-              <Option type="QString" value="" name="name"/>
+              <Option name="name" type="QString" value=""/>
               <Option name="properties"/>
-              <Option type="QString" value="collection" name="type"/>
+              <Option name="type" type="QString" value="collection"/>
             </Option>
           </data_defined_properties>
         </layer>
@@ -409,897 +409,792 @@
   </selection>
   <customproperties>
     <Option type="Map">
-      <Option type="bool" value="false" name="OnConvertFormatRegeneratePrimaryKey"/>
-      <Option type="int" value="0" name="embeddedWidgets/count"/>
+      <Option name="OnConvertFormatRegeneratePrimaryKey" type="bool" value="false"/>
+      <Option name="embeddedWidgets/count" type="int" value="0"/>
       <Option name="variableNames"/>
       <Option name="variableValues"/>
     </Option>
   </customproperties>
   <blendMode>0</blendMode>
   <featureBlendMode>0</featureBlendMode>
-  <layerOpacity>1</layerOpacity>
+  <layerOpacity>0.6</layerOpacity>
   <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
     <activeChecks/>
     <checkConfiguration type="Map">
-      <Option type="Map" name="QgsGeometryGapCheck">
-        <Option type="double" value="0" name="allowedGapsBuffer"/>
-        <Option type="bool" value="false" name="allowedGapsEnabled"/>
-        <Option type="QString" value="" name="allowedGapsLayer"/>
+      <Option name="QgsGeometryGapCheck" type="Map">
+        <Option name="allowedGapsBuffer" type="double" value="0"/>
+        <Option name="allowedGapsEnabled" type="bool" value="false"/>
+        <Option name="allowedGapsLayer" type="QString" value=""/>
       </Option>
     </checkConfiguration>
   </geometryOptions>
-  <legend type="default-vector" showLabelLegend="0"/>
+  <legend showLabelLegend="0" type="default-vector"/>
   <referencedLayers/>
   <fieldConfiguration>
-    <field configurationFlags="NoFlag" name="fid">
+    <field name="fid" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="ODF_ASSESS">
+    <field name="PARAREA_M" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="begin">
+    <field name="2023 - - DH" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="end">
+    <field name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="ODF_ID">
+    <field name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="ASSESSMENT_ROLL_NUMBER">
+    <field name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - - DH">
+    <field name="2023 - COMMERCIAL - SMALL BUSINESS - C8" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF">
+    <field name="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV">
+    <field name="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY">
+    <field name="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - COMMERCIAL - SMALL BUSINESS - C8">
+    <field name="2023 - COMMERCIAL - TAXABLE: FULL - CT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7">
+    <field name="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU">
+    <field name="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1">
+    <field name="2023 - EXEMPT - E" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - COMMERCIAL - TAXABLE: FULL - CT">
+    <field name="2023 - Education taxes" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH">
+    <field name="2023 - FARM - TAXABLE: FULL - FT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX">
+    <field name="2023 - INDUSTRIAL - SMALL BUSINESS - I8" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - EXEMPT - E">
+    <field name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - Education taxes">
+    <field name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - FARM - TAXABLE: FULL - FT">
+    <field name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - INDUSTRIAL - SMALL BUSINESS - I8">
+    <field name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7">
+    <field name="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0">
+    <field name="2023 - INDUSTRIAL - TAXABLE: FULL - IT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU">
+    <field name="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK">
+    <field name="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1">
+    <field name="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - INDUSTRIAL - TAXABLE: FULL - IT">
+    <field name="2023 - LANDFILL - TAXABLE: FULL - HT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH">
+    <field name="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX">
+    <field name="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF">
+    <field name="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - LANDFILL - TAXABLE: FULL - HT">
+    <field name="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU">
+    <field name="2023 - Municipal taxes" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT">
+    <field name="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - MANAGED FORESTS - TAXABLE: FULL - TT">
+    <field name="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT">
+    <field name="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - Municipal taxes">
+    <field name="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT">
+    <field name="2023 - Other taxes" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF">
+    <field name="2023 - PARKING LOT - TAXABLE: FULL - GT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU">
+    <field name="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - OFFICE BUILDING - TAXABLE: FULL - DT">
+    <field name="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - Other taxes">
+    <field name="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - PARKING LOT - TAXABLE: FULL - GT">
+    <field name="2023 - RESIDENTIAL - TAXABLE: FULL - RT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT">
+    <field name="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF">
+    <field name="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD">
+    <field name="2023 - Solid waste fees" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - RESIDENTIAL - TAXABLE: FULL - RT">
+    <field name="2023 - Stormwater fees" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU">
+    <field name="2023 - Total assessed value" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST">
+    <field name="2023 - Total taxes levied" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - Solid waste fees">
+    <field name="2024 - - C0" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - Stormwater fees">
+    <field name="2024 - - DH" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - Total assessed value">
+    <field name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2023 - Total taxes levied">
+    <field name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - - C0">
+    <field name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - - DH">
+    <field name="2024 - COMMERCIAL - SMALL BUSINESS - C8" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF">
+    <field name="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV">
+    <field name="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY">
+    <field name="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - COMMERCIAL - SMALL BUSINESS - C8">
+    <field name="2024 - COMMERCIAL - TAXABLE: FULL - CT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7">
+    <field name="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU">
+    <field name="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1">
+    <field name="2024 - EXEMPT - E" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - COMMERCIAL - TAXABLE: FULL - CT">
+    <field name="2024 - Education taxes" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH">
+    <field name="2024 - FARM - TAXABLE: FULL - FT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX">
+    <field name="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - EXEMPT - E">
+    <field name="2024 - INDUSTRIAL - SMALL BUSINESS - I8" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - Education taxes">
+    <field name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - FARM - TAXABLE: FULL - FT">
+    <field name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV">
+    <field name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - INDUSTRIAL - SMALL BUSINESS - I8">
+    <field name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7">
+    <field name="2024 - INDUSTRIAL - TAXABLE: FULL - IT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0">
+    <field name="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU">
+    <field name="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK">
+    <field name="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - INDUSTRIAL - TAXABLE: FULL - IT">
+    <field name="2024 - LANDFILL - TAXABLE: FULL - HT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH">
+    <field name="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX">
+    <field name="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF">
+    <field name="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - LANDFILL - TAXABLE: FULL - HT">
+    <field name="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU">
+    <field name="2024 - Municipal taxes" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT">
+    <field name="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - MANAGED FORESTS - TAXABLE: FULL - TT">
+    <field name="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT">
+    <field name="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - Municipal taxes">
+    <field name="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT">
+    <field name="2024 - Other taxes" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF">
+    <field name="2024 - PARKING LOT - TAXABLE: FULL - GT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU">
+    <field name="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - OFFICE BUILDING - TAXABLE: FULL - DT">
+    <field name="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - Other taxes">
+    <field name="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - PARKING LOT - TAXABLE: FULL - GT">
+    <field name="2024 - RESIDENTIAL - TAXABLE: FULL - RT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT">
+    <field name="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF">
+    <field name="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD">
+    <field name="2024 - Solid waste fees" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - RESIDENTIAL - TAXABLE: FULL - RT">
+    <field name="2024 - Stormwater fees" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU">
+    <field name="2024 - Total assessed value" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST">
+    <field name="2024 - Total taxes levied" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - Solid waste fees">
+    <field name="EXTRACTED_ADDRESS_SUMMARY" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - Stormwater fees">
+    <field name="EXTRACTED_ASSESSMENT_ROLL_NUMBER" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - Total assessed value">
+    <field name="None - Education taxes" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024 - Total taxes levied">
+    <field name="None - Municipal taxes" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="EXTRACTED_ADDRESS_SUMMARY">
+    <field name="None - Other taxes" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="EXTRACTED_ASSESSMENT_ROLL_NUMBER">
+    <field name="None - RESIDENTIAL - TAXABLE: FULL - RT" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="None - Education taxes">
+    <field name="None - Solid waste fees" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="None - Municipal taxes">
+    <field name="None - Stormwater fees" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="None - Other taxes">
+    <field name="None - Total assessed value" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="None - RESIDENTIAL - TAXABLE: FULL - RT">
+    <field name="None - Total taxes levied" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="None - Solid waste fees">
+    <field name="Number of addresses" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="None - Stormwater fees">
+    <field name="ZONE_MAIN" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="None - Total assessed value">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="None - Total taxes levied">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="PARCEL_ASSESSMENT_ROLL_NUMBER">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="error message">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="Number of addresses">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="Zoning code">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="Zero Assessment Roll Number">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="fid_2">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="qualifier">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="street_name">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="street_number">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="unit">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="area">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="layer">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="path">
-      <editWidget type="TextEdit">
-        <config>
-          <Option/>
-        </config>
-      </editWidget>
-    </field>
-    <field configurationFlags="NoFlag" name="2023 Revenue by Hectare">
-      <editWidget type="TextEdit">
+    <field name="WARD" configurationFlags="NoFlag">
+      <editWidget type="Range">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="2024  Revenue by Hectare">
+    <field name="2023 Municipal Tax by Hectare" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
         </config>
       </editWidget>
     </field>
-    <field configurationFlags="NoFlag" name="dist_pole">
+    <field name="2024 Municipal Tax by Hectare" configurationFlags="NoFlag">
       <editWidget type="TextEdit">
         <config>
           <Option/>
@@ -1308,393 +1203,344 @@
     </field>
   </fieldConfiguration>
   <aliases>
-    <alias field="fid" index="0" name=""/>
-    <alias field="ODF_ASSESS" index="1" name=""/>
-    <alias field="begin" index="2" name=""/>
-    <alias field="end" index="3" name=""/>
-    <alias field="ODF_ID" index="4" name=""/>
-    <alias field="ASSESSMENT_ROLL_NUMBER" index="5" name=""/>
-    <alias field="2023 - - DH" index="6" name=""/>
-    <alias field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" index="7" name=""/>
-    <alias field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" index="8" name=""/>
-    <alias field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" index="9" name=""/>
-    <alias field="2023 - COMMERCIAL - SMALL BUSINESS - C8" index="10" name=""/>
-    <alias field="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" index="11" name=""/>
-    <alias field="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" index="12" name=""/>
-    <alias field="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" index="13" name=""/>
-    <alias field="2023 - COMMERCIAL - TAXABLE: FULL - CT" index="14" name=""/>
-    <alias field="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" index="15" name=""/>
-    <alias field="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" index="16" name=""/>
-    <alias field="2023 - EXEMPT - E" index="17" name=""/>
-    <alias field="2023 - Education taxes" index="18" name=""/>
-    <alias field="2023 - FARM - TAXABLE: FULL - FT" index="19" name=""/>
-    <alias field="2023 - INDUSTRIAL - SMALL BUSINESS - I8" index="20" name=""/>
-    <alias field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" index="21" name=""/>
-    <alias field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" index="22" name=""/>
-    <alias field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" index="23" name=""/>
-    <alias field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" index="24" name=""/>
-    <alias field="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" index="25" name=""/>
-    <alias field="2023 - INDUSTRIAL - TAXABLE: FULL - IT" index="26" name=""/>
-    <alias field="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" index="27" name=""/>
-    <alias field="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" index="28" name=""/>
-    <alias field="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" index="29" name=""/>
-    <alias field="2023 - LANDFILL - TAXABLE: FULL - HT" index="30" name=""/>
-    <alias field="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" index="31" name=""/>
-    <alias field="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" index="32" name=""/>
-    <alias field="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" index="33" name=""/>
-    <alias field="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" index="34" name=""/>
-    <alias field="2023 - Municipal taxes" index="35" name=""/>
-    <alias field="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" index="36" name=""/>
-    <alias field="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" index="37" name=""/>
-    <alias field="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" index="38" name=""/>
-    <alias field="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" index="39" name=""/>
-    <alias field="2023 - Other taxes" index="40" name=""/>
-    <alias field="2023 - PARKING LOT - TAXABLE: FULL - GT" index="41" name=""/>
-    <alias field="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" index="42" name=""/>
-    <alias field="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" index="43" name=""/>
-    <alias field="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" index="44" name=""/>
-    <alias field="2023 - RESIDENTIAL - TAXABLE: FULL - RT" index="45" name=""/>
-    <alias field="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" index="46" name=""/>
-    <alias field="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" index="47" name=""/>
-    <alias field="2023 - Solid waste fees" index="48" name=""/>
-    <alias field="2023 - Stormwater fees" index="49" name=""/>
-    <alias field="2023 - Total assessed value" index="50" name=""/>
-    <alias field="2023 - Total taxes levied" index="51" name=""/>
-    <alias field="2024 - - C0" index="52" name=""/>
-    <alias field="2024 - - DH" index="53" name=""/>
-    <alias field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" index="54" name=""/>
-    <alias field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" index="55" name=""/>
-    <alias field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" index="56" name=""/>
-    <alias field="2024 - COMMERCIAL - SMALL BUSINESS - C8" index="57" name=""/>
-    <alias field="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" index="58" name=""/>
-    <alias field="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" index="59" name=""/>
-    <alias field="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" index="60" name=""/>
-    <alias field="2024 - COMMERCIAL - TAXABLE: FULL - CT" index="61" name=""/>
-    <alias field="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" index="62" name=""/>
-    <alias field="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" index="63" name=""/>
-    <alias field="2024 - EXEMPT - E" index="64" name=""/>
-    <alias field="2024 - Education taxes" index="65" name=""/>
-    <alias field="2024 - FARM - TAXABLE: FULL - FT" index="66" name=""/>
-    <alias field="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" index="67" name=""/>
-    <alias field="2024 - INDUSTRIAL - SMALL BUSINESS - I8" index="68" name=""/>
-    <alias field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" index="69" name=""/>
-    <alias field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" index="70" name=""/>
-    <alias field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" index="71" name=""/>
-    <alias field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" index="72" name=""/>
-    <alias field="2024 - INDUSTRIAL - TAXABLE: FULL - IT" index="73" name=""/>
-    <alias field="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" index="74" name=""/>
-    <alias field="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" index="75" name=""/>
-    <alias field="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" index="76" name=""/>
-    <alias field="2024 - LANDFILL - TAXABLE: FULL - HT" index="77" name=""/>
-    <alias field="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" index="78" name=""/>
-    <alias field="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" index="79" name=""/>
-    <alias field="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" index="80" name=""/>
-    <alias field="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" index="81" name=""/>
-    <alias field="2024 - Municipal taxes" index="82" name=""/>
-    <alias field="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" index="83" name=""/>
-    <alias field="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" index="84" name=""/>
-    <alias field="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" index="85" name=""/>
-    <alias field="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" index="86" name=""/>
-    <alias field="2024 - Other taxes" index="87" name=""/>
-    <alias field="2024 - PARKING LOT - TAXABLE: FULL - GT" index="88" name=""/>
-    <alias field="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" index="89" name=""/>
-    <alias field="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" index="90" name=""/>
-    <alias field="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" index="91" name=""/>
-    <alias field="2024 - RESIDENTIAL - TAXABLE: FULL - RT" index="92" name=""/>
-    <alias field="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" index="93" name=""/>
-    <alias field="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" index="94" name=""/>
-    <alias field="2024 - Solid waste fees" index="95" name=""/>
-    <alias field="2024 - Stormwater fees" index="96" name=""/>
-    <alias field="2024 - Total assessed value" index="97" name=""/>
-    <alias field="2024 - Total taxes levied" index="98" name=""/>
-    <alias field="EXTRACTED_ADDRESS_SUMMARY" index="99" name=""/>
-    <alias field="EXTRACTED_ASSESSMENT_ROLL_NUMBER" index="100" name=""/>
-    <alias field="None - Education taxes" index="101" name=""/>
-    <alias field="None - Municipal taxes" index="102" name=""/>
-    <alias field="None - Other taxes" index="103" name=""/>
-    <alias field="None - RESIDENTIAL - TAXABLE: FULL - RT" index="104" name=""/>
-    <alias field="None - Solid waste fees" index="105" name=""/>
-    <alias field="None - Stormwater fees" index="106" name=""/>
-    <alias field="None - Total assessed value" index="107" name=""/>
-    <alias field="None - Total taxes levied" index="108" name=""/>
-    <alias field="PARCEL_ASSESSMENT_ROLL_NUMBER" index="109" name=""/>
-    <alias field="error message" index="110" name=""/>
-    <alias field="Number of addresses" index="111" name=""/>
-    <alias field="Zoning code" index="112" name=""/>
-    <alias field="Zero Assessment Roll Number" index="113" name=""/>
-    <alias field="fid_2" index="114" name=""/>
-    <alias field="qualifier" index="115" name=""/>
-    <alias field="street_name" index="116" name=""/>
-    <alias field="street_number" index="117" name=""/>
-    <alias field="unit" index="118" name=""/>
-    <alias field="area" index="119" name=""/>
-    <alias field="layer" index="120" name=""/>
-    <alias field="path" index="121" name=""/>
-    <alias field="2023 Revenue by Hectare" index="122" name=""/>
-    <alias field="2024  Revenue by Hectare" index="123" name=""/>
-    <alias field="dist_pole" index="124" name=""/>
+    <alias name="" field="fid" index="0"/>
+    <alias name="" field="PARAREA_M" index="1"/>
+    <alias name="" field="2023 - - DH" index="2"/>
+    <alias name="" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" index="3"/>
+    <alias name="" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" index="4"/>
+    <alias name="" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" index="5"/>
+    <alias name="" field="2023 - COMMERCIAL - SMALL BUSINESS - C8" index="6"/>
+    <alias name="" field="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" index="7"/>
+    <alias name="" field="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" index="8"/>
+    <alias name="" field="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" index="9"/>
+    <alias name="" field="2023 - COMMERCIAL - TAXABLE: FULL - CT" index="10"/>
+    <alias name="" field="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" index="11"/>
+    <alias name="" field="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" index="12"/>
+    <alias name="" field="2023 - EXEMPT - E" index="13"/>
+    <alias name="" field="2023 - Education taxes" index="14"/>
+    <alias name="" field="2023 - FARM - TAXABLE: FULL - FT" index="15"/>
+    <alias name="" field="2023 - INDUSTRIAL - SMALL BUSINESS - I8" index="16"/>
+    <alias name="" field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" index="17"/>
+    <alias name="" field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" index="18"/>
+    <alias name="" field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" index="19"/>
+    <alias name="" field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" index="20"/>
+    <alias name="" field="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" index="21"/>
+    <alias name="" field="2023 - INDUSTRIAL - TAXABLE: FULL - IT" index="22"/>
+    <alias name="" field="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" index="23"/>
+    <alias name="" field="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" index="24"/>
+    <alias name="" field="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" index="25"/>
+    <alias name="" field="2023 - LANDFILL - TAXABLE: FULL - HT" index="26"/>
+    <alias name="" field="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" index="27"/>
+    <alias name="" field="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" index="28"/>
+    <alias name="" field="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" index="29"/>
+    <alias name="" field="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" index="30"/>
+    <alias name="" field="2023 - Municipal taxes" index="31"/>
+    <alias name="" field="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" index="32"/>
+    <alias name="" field="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" index="33"/>
+    <alias name="" field="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" index="34"/>
+    <alias name="" field="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" index="35"/>
+    <alias name="" field="2023 - Other taxes" index="36"/>
+    <alias name="" field="2023 - PARKING LOT - TAXABLE: FULL - GT" index="37"/>
+    <alias name="" field="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" index="38"/>
+    <alias name="" field="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" index="39"/>
+    <alias name="" field="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" index="40"/>
+    <alias name="" field="2023 - RESIDENTIAL - TAXABLE: FULL - RT" index="41"/>
+    <alias name="" field="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" index="42"/>
+    <alias name="" field="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" index="43"/>
+    <alias name="" field="2023 - Solid waste fees" index="44"/>
+    <alias name="" field="2023 - Stormwater fees" index="45"/>
+    <alias name="" field="2023 - Total assessed value" index="46"/>
+    <alias name="" field="2023 - Total taxes levied" index="47"/>
+    <alias name="" field="2024 - - C0" index="48"/>
+    <alias name="" field="2024 - - DH" index="49"/>
+    <alias name="" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" index="50"/>
+    <alias name="" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" index="51"/>
+    <alias name="" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" index="52"/>
+    <alias name="" field="2024 - COMMERCIAL - SMALL BUSINESS - C8" index="53"/>
+    <alias name="" field="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" index="54"/>
+    <alias name="" field="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" index="55"/>
+    <alias name="" field="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" index="56"/>
+    <alias name="" field="2024 - COMMERCIAL - TAXABLE: FULL - CT" index="57"/>
+    <alias name="" field="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" index="58"/>
+    <alias name="" field="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" index="59"/>
+    <alias name="" field="2024 - EXEMPT - E" index="60"/>
+    <alias name="" field="2024 - Education taxes" index="61"/>
+    <alias name="" field="2024 - FARM - TAXABLE: FULL - FT" index="62"/>
+    <alias name="" field="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" index="63"/>
+    <alias name="" field="2024 - INDUSTRIAL - SMALL BUSINESS - I8" index="64"/>
+    <alias name="" field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" index="65"/>
+    <alias name="" field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" index="66"/>
+    <alias name="" field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" index="67"/>
+    <alias name="" field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" index="68"/>
+    <alias name="" field="2024 - INDUSTRIAL - TAXABLE: FULL - IT" index="69"/>
+    <alias name="" field="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" index="70"/>
+    <alias name="" field="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" index="71"/>
+    <alias name="" field="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" index="72"/>
+    <alias name="" field="2024 - LANDFILL - TAXABLE: FULL - HT" index="73"/>
+    <alias name="" field="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" index="74"/>
+    <alias name="" field="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" index="75"/>
+    <alias name="" field="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" index="76"/>
+    <alias name="" field="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" index="77"/>
+    <alias name="" field="2024 - Municipal taxes" index="78"/>
+    <alias name="" field="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" index="79"/>
+    <alias name="" field="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" index="80"/>
+    <alias name="" field="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" index="81"/>
+    <alias name="" field="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" index="82"/>
+    <alias name="" field="2024 - Other taxes" index="83"/>
+    <alias name="" field="2024 - PARKING LOT - TAXABLE: FULL - GT" index="84"/>
+    <alias name="" field="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" index="85"/>
+    <alias name="" field="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" index="86"/>
+    <alias name="" field="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" index="87"/>
+    <alias name="" field="2024 - RESIDENTIAL - TAXABLE: FULL - RT" index="88"/>
+    <alias name="" field="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" index="89"/>
+    <alias name="" field="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" index="90"/>
+    <alias name="" field="2024 - Solid waste fees" index="91"/>
+    <alias name="" field="2024 - Stormwater fees" index="92"/>
+    <alias name="" field="2024 - Total assessed value" index="93"/>
+    <alias name="" field="2024 - Total taxes levied" index="94"/>
+    <alias name="" field="EXTRACTED_ADDRESS_SUMMARY" index="95"/>
+    <alias name="" field="EXTRACTED_ASSESSMENT_ROLL_NUMBER" index="96"/>
+    <alias name="" field="None - Education taxes" index="97"/>
+    <alias name="" field="None - Municipal taxes" index="98"/>
+    <alias name="" field="None - Other taxes" index="99"/>
+    <alias name="" field="None - RESIDENTIAL - TAXABLE: FULL - RT" index="100"/>
+    <alias name="" field="None - Solid waste fees" index="101"/>
+    <alias name="" field="None - Stormwater fees" index="102"/>
+    <alias name="" field="None - Total assessed value" index="103"/>
+    <alias name="" field="None - Total taxes levied" index="104"/>
+    <alias name="" field="Number of addresses" index="105"/>
+    <alias name="" field="ZONE_MAIN" index="106"/>
+    <alias name="" field="WARD" index="107"/>
+    <alias name="" field="2023 Municipal Tax by Hectare" index="108"/>
+    <alias name="" field="2024 Municipal Tax by Hectare" index="109"/>
   </aliases>
   <splitPolicies>
-    <policy field="fid" policy="Duplicate"/>
-    <policy field="ODF_ASSESS" policy="Duplicate"/>
-    <policy field="begin" policy="Duplicate"/>
-    <policy field="end" policy="Duplicate"/>
-    <policy field="ODF_ID" policy="Duplicate"/>
-    <policy field="ASSESSMENT_ROLL_NUMBER" policy="Duplicate"/>
-    <policy field="2023 - - DH" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - SMALL BUSINESS - C8" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - TAXABLE: FULL - CT" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" policy="Duplicate"/>
-    <policy field="2023 - EXEMPT - E" policy="Duplicate"/>
-    <policy field="2023 - Education taxes" policy="Duplicate"/>
-    <policy field="2023 - FARM - TAXABLE: FULL - FT" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - SMALL BUSINESS - I8" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - TAXABLE: FULL - IT" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" policy="Duplicate"/>
-    <policy field="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" policy="Duplicate"/>
-    <policy field="2023 - LANDFILL - TAXABLE: FULL - HT" policy="Duplicate"/>
-    <policy field="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" policy="Duplicate"/>
-    <policy field="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" policy="Duplicate"/>
-    <policy field="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" policy="Duplicate"/>
-    <policy field="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" policy="Duplicate"/>
-    <policy field="2023 - Municipal taxes" policy="Duplicate"/>
-    <policy field="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" policy="Duplicate"/>
-    <policy field="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" policy="Duplicate"/>
-    <policy field="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" policy="Duplicate"/>
-    <policy field="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" policy="Duplicate"/>
-    <policy field="2023 - Other taxes" policy="Duplicate"/>
-    <policy field="2023 - PARKING LOT - TAXABLE: FULL - GT" policy="Duplicate"/>
-    <policy field="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" policy="Duplicate"/>
-    <policy field="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" policy="Duplicate"/>
-    <policy field="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" policy="Duplicate"/>
-    <policy field="2023 - RESIDENTIAL - TAXABLE: FULL - RT" policy="Duplicate"/>
-    <policy field="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" policy="Duplicate"/>
-    <policy field="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" policy="Duplicate"/>
-    <policy field="2023 - Solid waste fees" policy="Duplicate"/>
-    <policy field="2023 - Stormwater fees" policy="Duplicate"/>
-    <policy field="2023 - Total assessed value" policy="Duplicate"/>
-    <policy field="2023 - Total taxes levied" policy="Duplicate"/>
-    <policy field="2024 - - C0" policy="Duplicate"/>
-    <policy field="2024 - - DH" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - SMALL BUSINESS - C8" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - TAXABLE: FULL - CT" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" policy="Duplicate"/>
-    <policy field="2024 - EXEMPT - E" policy="Duplicate"/>
-    <policy field="2024 - Education taxes" policy="Duplicate"/>
-    <policy field="2024 - FARM - TAXABLE: FULL - FT" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - SMALL BUSINESS - I8" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - TAXABLE: FULL - IT" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" policy="Duplicate"/>
-    <policy field="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" policy="Duplicate"/>
-    <policy field="2024 - LANDFILL - TAXABLE: FULL - HT" policy="Duplicate"/>
-    <policy field="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" policy="Duplicate"/>
-    <policy field="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" policy="Duplicate"/>
-    <policy field="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" policy="Duplicate"/>
-    <policy field="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" policy="Duplicate"/>
-    <policy field="2024 - Municipal taxes" policy="Duplicate"/>
-    <policy field="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" policy="Duplicate"/>
-    <policy field="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" policy="Duplicate"/>
-    <policy field="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" policy="Duplicate"/>
-    <policy field="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" policy="Duplicate"/>
-    <policy field="2024 - Other taxes" policy="Duplicate"/>
-    <policy field="2024 - PARKING LOT - TAXABLE: FULL - GT" policy="Duplicate"/>
-    <policy field="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" policy="Duplicate"/>
-    <policy field="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" policy="Duplicate"/>
-    <policy field="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" policy="Duplicate"/>
-    <policy field="2024 - RESIDENTIAL - TAXABLE: FULL - RT" policy="Duplicate"/>
-    <policy field="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" policy="Duplicate"/>
-    <policy field="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" policy="Duplicate"/>
-    <policy field="2024 - Solid waste fees" policy="Duplicate"/>
-    <policy field="2024 - Stormwater fees" policy="Duplicate"/>
-    <policy field="2024 - Total assessed value" policy="Duplicate"/>
-    <policy field="2024 - Total taxes levied" policy="Duplicate"/>
-    <policy field="EXTRACTED_ADDRESS_SUMMARY" policy="Duplicate"/>
-    <policy field="EXTRACTED_ASSESSMENT_ROLL_NUMBER" policy="Duplicate"/>
-    <policy field="None - Education taxes" policy="Duplicate"/>
-    <policy field="None - Municipal taxes" policy="Duplicate"/>
-    <policy field="None - Other taxes" policy="Duplicate"/>
-    <policy field="None - RESIDENTIAL - TAXABLE: FULL - RT" policy="Duplicate"/>
-    <policy field="None - Solid waste fees" policy="Duplicate"/>
-    <policy field="None - Stormwater fees" policy="Duplicate"/>
-    <policy field="None - Total assessed value" policy="Duplicate"/>
-    <policy field="None - Total taxes levied" policy="Duplicate"/>
-    <policy field="PARCEL_ASSESSMENT_ROLL_NUMBER" policy="Duplicate"/>
-    <policy field="error message" policy="Duplicate"/>
-    <policy field="Number of addresses" policy="Duplicate"/>
-    <policy field="Zoning code" policy="Duplicate"/>
-    <policy field="Zero Assessment Roll Number" policy="Duplicate"/>
-    <policy field="fid_2" policy="Duplicate"/>
-    <policy field="qualifier" policy="Duplicate"/>
-    <policy field="street_name" policy="Duplicate"/>
-    <policy field="street_number" policy="Duplicate"/>
-    <policy field="unit" policy="Duplicate"/>
-    <policy field="area" policy="Duplicate"/>
-    <policy field="layer" policy="Duplicate"/>
-    <policy field="path" policy="Duplicate"/>
-    <policy field="2023 Revenue by Hectare" policy="Duplicate"/>
-    <policy field="2024  Revenue by Hectare" policy="Duplicate"/>
-    <policy field="dist_pole" policy="Duplicate"/>
+    <policy policy="Duplicate" field="fid"/>
+    <policy policy="Duplicate" field="PARAREA_M"/>
+    <policy policy="Duplicate" field="2023 - - DH"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - SMALL BUSINESS - C8"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - TAXABLE: FULL - CT"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX"/>
+    <policy policy="Duplicate" field="2023 - EXEMPT - E"/>
+    <policy policy="Duplicate" field="2023 - Education taxes"/>
+    <policy policy="Duplicate" field="2023 - FARM - TAXABLE: FULL - FT"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - SMALL BUSINESS - I8"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - TAXABLE: FULL - IT"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX"/>
+    <policy policy="Duplicate" field="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF"/>
+    <policy policy="Duplicate" field="2023 - LANDFILL - TAXABLE: FULL - HT"/>
+    <policy policy="Duplicate" field="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU"/>
+    <policy policy="Duplicate" field="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT"/>
+    <policy policy="Duplicate" field="2023 - MANAGED FORESTS - TAXABLE: FULL - TT"/>
+    <policy policy="Duplicate" field="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT"/>
+    <policy policy="Duplicate" field="2023 - Municipal taxes"/>
+    <policy policy="Duplicate" field="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT"/>
+    <policy policy="Duplicate" field="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF"/>
+    <policy policy="Duplicate" field="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU"/>
+    <policy policy="Duplicate" field="2023 - OFFICE BUILDING - TAXABLE: FULL - DT"/>
+    <policy policy="Duplicate" field="2023 - Other taxes"/>
+    <policy policy="Duplicate" field="2023 - PARKING LOT - TAXABLE: FULL - GT"/>
+    <policy policy="Duplicate" field="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT"/>
+    <policy policy="Duplicate" field="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF"/>
+    <policy policy="Duplicate" field="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD"/>
+    <policy policy="Duplicate" field="2023 - RESIDENTIAL - TAXABLE: FULL - RT"/>
+    <policy policy="Duplicate" field="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU"/>
+    <policy policy="Duplicate" field="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST"/>
+    <policy policy="Duplicate" field="2023 - Solid waste fees"/>
+    <policy policy="Duplicate" field="2023 - Stormwater fees"/>
+    <policy policy="Duplicate" field="2023 - Total assessed value"/>
+    <policy policy="Duplicate" field="2023 - Total taxes levied"/>
+    <policy policy="Duplicate" field="2024 - - C0"/>
+    <policy policy="Duplicate" field="2024 - - DH"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - SMALL BUSINESS - C8"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - TAXABLE: FULL - CT"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX"/>
+    <policy policy="Duplicate" field="2024 - EXEMPT - E"/>
+    <policy policy="Duplicate" field="2024 - Education taxes"/>
+    <policy policy="Duplicate" field="2024 - FARM - TAXABLE: FULL - FT"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - SMALL BUSINESS - I8"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - TAXABLE: FULL - IT"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX"/>
+    <policy policy="Duplicate" field="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF"/>
+    <policy policy="Duplicate" field="2024 - LANDFILL - TAXABLE: FULL - HT"/>
+    <policy policy="Duplicate" field="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU"/>
+    <policy policy="Duplicate" field="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT"/>
+    <policy policy="Duplicate" field="2024 - MANAGED FORESTS - TAXABLE: FULL - TT"/>
+    <policy policy="Duplicate" field="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT"/>
+    <policy policy="Duplicate" field="2024 - Municipal taxes"/>
+    <policy policy="Duplicate" field="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT"/>
+    <policy policy="Duplicate" field="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF"/>
+    <policy policy="Duplicate" field="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU"/>
+    <policy policy="Duplicate" field="2024 - OFFICE BUILDING - TAXABLE: FULL - DT"/>
+    <policy policy="Duplicate" field="2024 - Other taxes"/>
+    <policy policy="Duplicate" field="2024 - PARKING LOT - TAXABLE: FULL - GT"/>
+    <policy policy="Duplicate" field="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT"/>
+    <policy policy="Duplicate" field="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF"/>
+    <policy policy="Duplicate" field="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD"/>
+    <policy policy="Duplicate" field="2024 - RESIDENTIAL - TAXABLE: FULL - RT"/>
+    <policy policy="Duplicate" field="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU"/>
+    <policy policy="Duplicate" field="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST"/>
+    <policy policy="Duplicate" field="2024 - Solid waste fees"/>
+    <policy policy="Duplicate" field="2024 - Stormwater fees"/>
+    <policy policy="Duplicate" field="2024 - Total assessed value"/>
+    <policy policy="Duplicate" field="2024 - Total taxes levied"/>
+    <policy policy="Duplicate" field="EXTRACTED_ADDRESS_SUMMARY"/>
+    <policy policy="Duplicate" field="EXTRACTED_ASSESSMENT_ROLL_NUMBER"/>
+    <policy policy="Duplicate" field="None - Education taxes"/>
+    <policy policy="Duplicate" field="None - Municipal taxes"/>
+    <policy policy="Duplicate" field="None - Other taxes"/>
+    <policy policy="Duplicate" field="None - RESIDENTIAL - TAXABLE: FULL - RT"/>
+    <policy policy="Duplicate" field="None - Solid waste fees"/>
+    <policy policy="Duplicate" field="None - Stormwater fees"/>
+    <policy policy="Duplicate" field="None - Total assessed value"/>
+    <policy policy="Duplicate" field="None - Total taxes levied"/>
+    <policy policy="Duplicate" field="Number of addresses"/>
+    <policy policy="Duplicate" field="ZONE_MAIN"/>
+    <policy policy="Duplicate" field="WARD"/>
+    <policy policy="Duplicate" field="2023 Municipal Tax by Hectare"/>
+    <policy policy="Duplicate" field="2024 Municipal Tax by Hectare"/>
   </splitPolicies>
   <duplicatePolicies>
-    <policy field="fid" policy="Duplicate"/>
-    <policy field="ODF_ASSESS" policy="Duplicate"/>
-    <policy field="begin" policy="Duplicate"/>
-    <policy field="end" policy="Duplicate"/>
-    <policy field="ODF_ID" policy="Duplicate"/>
-    <policy field="ASSESSMENT_ROLL_NUMBER" policy="Duplicate"/>
-    <policy field="2023 - - DH" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - SMALL BUSINESS - C8" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - TAXABLE: FULL - CT" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" policy="Duplicate"/>
-    <policy field="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" policy="Duplicate"/>
-    <policy field="2023 - EXEMPT - E" policy="Duplicate"/>
-    <policy field="2023 - Education taxes" policy="Duplicate"/>
-    <policy field="2023 - FARM - TAXABLE: FULL - FT" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - SMALL BUSINESS - I8" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - TAXABLE: FULL - IT" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" policy="Duplicate"/>
-    <policy field="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" policy="Duplicate"/>
-    <policy field="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" policy="Duplicate"/>
-    <policy field="2023 - LANDFILL - TAXABLE: FULL - HT" policy="Duplicate"/>
-    <policy field="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" policy="Duplicate"/>
-    <policy field="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" policy="Duplicate"/>
-    <policy field="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" policy="Duplicate"/>
-    <policy field="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" policy="Duplicate"/>
-    <policy field="2023 - Municipal taxes" policy="Duplicate"/>
-    <policy field="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" policy="Duplicate"/>
-    <policy field="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" policy="Duplicate"/>
-    <policy field="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" policy="Duplicate"/>
-    <policy field="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" policy="Duplicate"/>
-    <policy field="2023 - Other taxes" policy="Duplicate"/>
-    <policy field="2023 - PARKING LOT - TAXABLE: FULL - GT" policy="Duplicate"/>
-    <policy field="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" policy="Duplicate"/>
-    <policy field="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" policy="Duplicate"/>
-    <policy field="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" policy="Duplicate"/>
-    <policy field="2023 - RESIDENTIAL - TAXABLE: FULL - RT" policy="Duplicate"/>
-    <policy field="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" policy="Duplicate"/>
-    <policy field="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" policy="Duplicate"/>
-    <policy field="2023 - Solid waste fees" policy="Duplicate"/>
-    <policy field="2023 - Stormwater fees" policy="Duplicate"/>
-    <policy field="2023 - Total assessed value" policy="Duplicate"/>
-    <policy field="2023 - Total taxes levied" policy="Duplicate"/>
-    <policy field="2024 - - C0" policy="Duplicate"/>
-    <policy field="2024 - - DH" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - SMALL BUSINESS - C8" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - TAXABLE: FULL - CT" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" policy="Duplicate"/>
-    <policy field="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" policy="Duplicate"/>
-    <policy field="2024 - EXEMPT - E" policy="Duplicate"/>
-    <policy field="2024 - Education taxes" policy="Duplicate"/>
-    <policy field="2024 - FARM - TAXABLE: FULL - FT" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - SMALL BUSINESS - I8" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - TAXABLE: FULL - IT" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" policy="Duplicate"/>
-    <policy field="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" policy="Duplicate"/>
-    <policy field="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" policy="Duplicate"/>
-    <policy field="2024 - LANDFILL - TAXABLE: FULL - HT" policy="Duplicate"/>
-    <policy field="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" policy="Duplicate"/>
-    <policy field="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" policy="Duplicate"/>
-    <policy field="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" policy="Duplicate"/>
-    <policy field="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" policy="Duplicate"/>
-    <policy field="2024 - Municipal taxes" policy="Duplicate"/>
-    <policy field="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" policy="Duplicate"/>
-    <policy field="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" policy="Duplicate"/>
-    <policy field="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" policy="Duplicate"/>
-    <policy field="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" policy="Duplicate"/>
-    <policy field="2024 - Other taxes" policy="Duplicate"/>
-    <policy field="2024 - PARKING LOT - TAXABLE: FULL - GT" policy="Duplicate"/>
-    <policy field="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" policy="Duplicate"/>
-    <policy field="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" policy="Duplicate"/>
-    <policy field="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" policy="Duplicate"/>
-    <policy field="2024 - RESIDENTIAL - TAXABLE: FULL - RT" policy="Duplicate"/>
-    <policy field="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" policy="Duplicate"/>
-    <policy field="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" policy="Duplicate"/>
-    <policy field="2024 - Solid waste fees" policy="Duplicate"/>
-    <policy field="2024 - Stormwater fees" policy="Duplicate"/>
-    <policy field="2024 - Total assessed value" policy="Duplicate"/>
-    <policy field="2024 - Total taxes levied" policy="Duplicate"/>
-    <policy field="EXTRACTED_ADDRESS_SUMMARY" policy="Duplicate"/>
-    <policy field="EXTRACTED_ASSESSMENT_ROLL_NUMBER" policy="Duplicate"/>
-    <policy field="None - Education taxes" policy="Duplicate"/>
-    <policy field="None - Municipal taxes" policy="Duplicate"/>
-    <policy field="None - Other taxes" policy="Duplicate"/>
-    <policy field="None - RESIDENTIAL - TAXABLE: FULL - RT" policy="Duplicate"/>
-    <policy field="None - Solid waste fees" policy="Duplicate"/>
-    <policy field="None - Stormwater fees" policy="Duplicate"/>
-    <policy field="None - Total assessed value" policy="Duplicate"/>
-    <policy field="None - Total taxes levied" policy="Duplicate"/>
-    <policy field="PARCEL_ASSESSMENT_ROLL_NUMBER" policy="Duplicate"/>
-    <policy field="error message" policy="Duplicate"/>
-    <policy field="Number of addresses" policy="Duplicate"/>
-    <policy field="Zoning code" policy="Duplicate"/>
-    <policy field="Zero Assessment Roll Number" policy="Duplicate"/>
-    <policy field="fid_2" policy="Duplicate"/>
-    <policy field="qualifier" policy="Duplicate"/>
-    <policy field="street_name" policy="Duplicate"/>
-    <policy field="street_number" policy="Duplicate"/>
-    <policy field="unit" policy="Duplicate"/>
-    <policy field="area" policy="Duplicate"/>
-    <policy field="layer" policy="Duplicate"/>
-    <policy field="path" policy="Duplicate"/>
-    <policy field="2023 Revenue by Hectare" policy="Duplicate"/>
-    <policy field="2024  Revenue by Hectare" policy="Duplicate"/>
-    <policy field="dist_pole" policy="Duplicate"/>
+    <policy policy="Duplicate" field="fid"/>
+    <policy policy="Duplicate" field="PARAREA_M"/>
+    <policy policy="Duplicate" field="2023 - - DH"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - SMALL BUSINESS - C8"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - TAXABLE: FULL - CT"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH"/>
+    <policy policy="Duplicate" field="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX"/>
+    <policy policy="Duplicate" field="2023 - EXEMPT - E"/>
+    <policy policy="Duplicate" field="2023 - Education taxes"/>
+    <policy policy="Duplicate" field="2023 - FARM - TAXABLE: FULL - FT"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - SMALL BUSINESS - I8"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - TAXABLE: FULL - IT"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH"/>
+    <policy policy="Duplicate" field="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX"/>
+    <policy policy="Duplicate" field="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF"/>
+    <policy policy="Duplicate" field="2023 - LANDFILL - TAXABLE: FULL - HT"/>
+    <policy policy="Duplicate" field="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU"/>
+    <policy policy="Duplicate" field="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT"/>
+    <policy policy="Duplicate" field="2023 - MANAGED FORESTS - TAXABLE: FULL - TT"/>
+    <policy policy="Duplicate" field="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT"/>
+    <policy policy="Duplicate" field="2023 - Municipal taxes"/>
+    <policy policy="Duplicate" field="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT"/>
+    <policy policy="Duplicate" field="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF"/>
+    <policy policy="Duplicate" field="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU"/>
+    <policy policy="Duplicate" field="2023 - OFFICE BUILDING - TAXABLE: FULL - DT"/>
+    <policy policy="Duplicate" field="2023 - Other taxes"/>
+    <policy policy="Duplicate" field="2023 - PARKING LOT - TAXABLE: FULL - GT"/>
+    <policy policy="Duplicate" field="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT"/>
+    <policy policy="Duplicate" field="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF"/>
+    <policy policy="Duplicate" field="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD"/>
+    <policy policy="Duplicate" field="2023 - RESIDENTIAL - TAXABLE: FULL - RT"/>
+    <policy policy="Duplicate" field="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU"/>
+    <policy policy="Duplicate" field="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST"/>
+    <policy policy="Duplicate" field="2023 - Solid waste fees"/>
+    <policy policy="Duplicate" field="2023 - Stormwater fees"/>
+    <policy policy="Duplicate" field="2023 - Total assessed value"/>
+    <policy policy="Duplicate" field="2023 - Total taxes levied"/>
+    <policy policy="Duplicate" field="2024 - - C0"/>
+    <policy policy="Duplicate" field="2024 - - DH"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - SMALL BUSINESS - C8"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - TAXABLE: FULL - CT"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH"/>
+    <policy policy="Duplicate" field="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX"/>
+    <policy policy="Duplicate" field="2024 - EXEMPT - E"/>
+    <policy policy="Duplicate" field="2024 - Education taxes"/>
+    <policy policy="Duplicate" field="2024 - FARM - TAXABLE: FULL - FT"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - SMALL BUSINESS - I8"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - TAXABLE: FULL - IT"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH"/>
+    <policy policy="Duplicate" field="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX"/>
+    <policy policy="Duplicate" field="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF"/>
+    <policy policy="Duplicate" field="2024 - LANDFILL - TAXABLE: FULL - HT"/>
+    <policy policy="Duplicate" field="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU"/>
+    <policy policy="Duplicate" field="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT"/>
+    <policy policy="Duplicate" field="2024 - MANAGED FORESTS - TAXABLE: FULL - TT"/>
+    <policy policy="Duplicate" field="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT"/>
+    <policy policy="Duplicate" field="2024 - Municipal taxes"/>
+    <policy policy="Duplicate" field="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT"/>
+    <policy policy="Duplicate" field="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF"/>
+    <policy policy="Duplicate" field="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU"/>
+    <policy policy="Duplicate" field="2024 - OFFICE BUILDING - TAXABLE: FULL - DT"/>
+    <policy policy="Duplicate" field="2024 - Other taxes"/>
+    <policy policy="Duplicate" field="2024 - PARKING LOT - TAXABLE: FULL - GT"/>
+    <policy policy="Duplicate" field="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT"/>
+    <policy policy="Duplicate" field="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF"/>
+    <policy policy="Duplicate" field="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD"/>
+    <policy policy="Duplicate" field="2024 - RESIDENTIAL - TAXABLE: FULL - RT"/>
+    <policy policy="Duplicate" field="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU"/>
+    <policy policy="Duplicate" field="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST"/>
+    <policy policy="Duplicate" field="2024 - Solid waste fees"/>
+    <policy policy="Duplicate" field="2024 - Stormwater fees"/>
+    <policy policy="Duplicate" field="2024 - Total assessed value"/>
+    <policy policy="Duplicate" field="2024 - Total taxes levied"/>
+    <policy policy="Duplicate" field="EXTRACTED_ADDRESS_SUMMARY"/>
+    <policy policy="Duplicate" field="EXTRACTED_ASSESSMENT_ROLL_NUMBER"/>
+    <policy policy="Duplicate" field="None - Education taxes"/>
+    <policy policy="Duplicate" field="None - Municipal taxes"/>
+    <policy policy="Duplicate" field="None - Other taxes"/>
+    <policy policy="Duplicate" field="None - RESIDENTIAL - TAXABLE: FULL - RT"/>
+    <policy policy="Duplicate" field="None - Solid waste fees"/>
+    <policy policy="Duplicate" field="None - Stormwater fees"/>
+    <policy policy="Duplicate" field="None - Total assessed value"/>
+    <policy policy="Duplicate" field="None - Total taxes levied"/>
+    <policy policy="Duplicate" field="Number of addresses"/>
+    <policy policy="Duplicate" field="ZONE_MAIN"/>
+    <policy policy="Duplicate" field="WARD"/>
+    <policy policy="Duplicate" field="2023 Municipal Tax by Hectare"/>
+    <policy policy="Duplicate" field="2024 Municipal Tax by Hectare"/>
   </duplicatePolicies>
   <defaults>
     <default field="fid" expression="" applyOnUpdate="0"/>
-    <default field="ODF_ASSESS" expression="" applyOnUpdate="0"/>
-    <default field="begin" expression="" applyOnUpdate="0"/>
-    <default field="end" expression="" applyOnUpdate="0"/>
-    <default field="ODF_ID" expression="" applyOnUpdate="0"/>
-    <default field="ASSESSMENT_ROLL_NUMBER" expression="" applyOnUpdate="0"/>
+    <default field="PARAREA_M" expression="" applyOnUpdate="0"/>
     <default field="2023 - - DH" expression="" applyOnUpdate="0"/>
     <default field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" expression="" applyOnUpdate="0"/>
     <default field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" expression="" applyOnUpdate="0"/>
@@ -1798,408 +1644,352 @@
     <default field="None - Stormwater fees" expression="" applyOnUpdate="0"/>
     <default field="None - Total assessed value" expression="" applyOnUpdate="0"/>
     <default field="None - Total taxes levied" expression="" applyOnUpdate="0"/>
-    <default field="PARCEL_ASSESSMENT_ROLL_NUMBER" expression="" applyOnUpdate="0"/>
-    <default field="error message" expression="" applyOnUpdate="0"/>
     <default field="Number of addresses" expression="" applyOnUpdate="0"/>
-    <default field="Zoning code" expression="" applyOnUpdate="0"/>
-    <default field="Zero Assessment Roll Number" expression="" applyOnUpdate="0"/>
-    <default field="fid_2" expression="" applyOnUpdate="0"/>
-    <default field="qualifier" expression="" applyOnUpdate="0"/>
-    <default field="street_name" expression="" applyOnUpdate="0"/>
-    <default field="street_number" expression="" applyOnUpdate="0"/>
-    <default field="unit" expression="" applyOnUpdate="0"/>
-    <default field="area" expression="" applyOnUpdate="0"/>
-    <default field="layer" expression="" applyOnUpdate="0"/>
-    <default field="path" expression="" applyOnUpdate="0"/>
-    <default field="2023 Revenue by Hectare" expression="" applyOnUpdate="0"/>
-    <default field="2024  Revenue by Hectare" expression="" applyOnUpdate="0"/>
-    <default field="dist_pole" expression="" applyOnUpdate="0"/>
+    <default field="ZONE_MAIN" expression="" applyOnUpdate="0"/>
+    <default field="WARD" expression="" applyOnUpdate="0"/>
+    <default field="2023 Municipal Tax by Hectare" expression="" applyOnUpdate="0"/>
+    <default field="2024 Municipal Tax by Hectare" expression="" applyOnUpdate="0"/>
   </defaults>
   <constraints>
-    <constraint field="fid" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="ODF_ASSESS" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="begin" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="end" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="ODF_ID" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="ASSESSMENT_ROLL_NUMBER" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - - DH" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - COMMERCIAL - SMALL BUSINESS - C8" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - COMMERCIAL - TAXABLE: FULL - CT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - EXEMPT - E" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - Education taxes" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - FARM - TAXABLE: FULL - FT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - INDUSTRIAL - SMALL BUSINESS - I8" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - INDUSTRIAL - TAXABLE: FULL - IT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - LANDFILL - TAXABLE: FULL - HT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - Municipal taxes" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - Other taxes" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - PARKING LOT - TAXABLE: FULL - GT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - RESIDENTIAL - TAXABLE: FULL - RT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - Solid waste fees" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - Stormwater fees" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - Total assessed value" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 - Total taxes levied" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - - C0" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - - DH" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - COMMERCIAL - SMALL BUSINESS - C8" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - COMMERCIAL - TAXABLE: FULL - CT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - EXEMPT - E" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - Education taxes" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - FARM - TAXABLE: FULL - FT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - INDUSTRIAL - SMALL BUSINESS - I8" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - INDUSTRIAL - TAXABLE: FULL - IT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - LANDFILL - TAXABLE: FULL - HT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - Municipal taxes" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - Other taxes" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - PARKING LOT - TAXABLE: FULL - GT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - RESIDENTIAL - TAXABLE: FULL - RT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - Solid waste fees" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - Stormwater fees" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - Total assessed value" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024 - Total taxes levied" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="EXTRACTED_ADDRESS_SUMMARY" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="EXTRACTED_ASSESSMENT_ROLL_NUMBER" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="None - Education taxes" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="None - Municipal taxes" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="None - Other taxes" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="None - RESIDENTIAL - TAXABLE: FULL - RT" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="None - Solid waste fees" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="None - Stormwater fees" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="None - Total assessed value" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="None - Total taxes levied" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="PARCEL_ASSESSMENT_ROLL_NUMBER" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="error message" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="Number of addresses" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="Zoning code" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="Zero Assessment Roll Number" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="fid_2" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="qualifier" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="street_name" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="street_number" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="unit" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="area" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="layer" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="path" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2023 Revenue by Hectare" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="2024  Revenue by Hectare" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
-    <constraint field="dist_pole" constraints="0" notnull_strength="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="1" field="fid" constraints="3" unique_strength="1" exp_strength="0"/>
+    <constraint notnull_strength="0" field="PARAREA_M" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - - DH" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - COMMERCIAL - SMALL BUSINESS - C8" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - COMMERCIAL - TAXABLE: FULL - CT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - EXEMPT - E" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - Education taxes" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - FARM - TAXABLE: FULL - FT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - INDUSTRIAL - SMALL BUSINESS - I8" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - INDUSTRIAL - TAXABLE: FULL - IT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - LANDFILL - TAXABLE: FULL - HT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - Municipal taxes" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - Other taxes" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - PARKING LOT - TAXABLE: FULL - GT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - RESIDENTIAL - TAXABLE: FULL - RT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - Solid waste fees" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - Stormwater fees" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - Total assessed value" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 - Total taxes levied" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - - C0" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - - DH" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - COMMERCIAL - SMALL BUSINESS - C8" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - COMMERCIAL - TAXABLE: FULL - CT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - EXEMPT - E" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - Education taxes" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - FARM - TAXABLE: FULL - FT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - INDUSTRIAL - SMALL BUSINESS - I8" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - INDUSTRIAL - TAXABLE: FULL - IT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - LANDFILL - TAXABLE: FULL - HT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - Municipal taxes" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - Other taxes" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - PARKING LOT - TAXABLE: FULL - GT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - RESIDENTIAL - TAXABLE: FULL - RT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - Solid waste fees" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - Stormwater fees" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - Total assessed value" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 - Total taxes levied" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="EXTRACTED_ADDRESS_SUMMARY" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="EXTRACTED_ASSESSMENT_ROLL_NUMBER" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="None - Education taxes" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="None - Municipal taxes" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="None - Other taxes" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="None - RESIDENTIAL - TAXABLE: FULL - RT" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="None - Solid waste fees" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="None - Stormwater fees" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="None - Total assessed value" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="None - Total taxes levied" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="Number of addresses" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="ZONE_MAIN" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="WARD" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2023 Municipal Tax by Hectare" constraints="0" unique_strength="0" exp_strength="0"/>
+    <constraint notnull_strength="0" field="2024 Municipal Tax by Hectare" constraints="0" unique_strength="0" exp_strength="0"/>
   </constraints>
   <constraintExpressions>
-    <constraint field="fid" exp="" desc=""/>
-    <constraint field="ODF_ASSESS" exp="" desc=""/>
-    <constraint field="begin" exp="" desc=""/>
-    <constraint field="end" exp="" desc=""/>
-    <constraint field="ODF_ID" exp="" desc=""/>
-    <constraint field="ASSESSMENT_ROLL_NUMBER" exp="" desc=""/>
-    <constraint field="2023 - - DH" exp="" desc=""/>
-    <constraint field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" exp="" desc=""/>
-    <constraint field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" exp="" desc=""/>
-    <constraint field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" exp="" desc=""/>
-    <constraint field="2023 - COMMERCIAL - SMALL BUSINESS - C8" exp="" desc=""/>
-    <constraint field="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" exp="" desc=""/>
-    <constraint field="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" exp="" desc=""/>
-    <constraint field="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" exp="" desc=""/>
-    <constraint field="2023 - COMMERCIAL - TAXABLE: FULL - CT" exp="" desc=""/>
-    <constraint field="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" exp="" desc=""/>
-    <constraint field="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" exp="" desc=""/>
-    <constraint field="2023 - EXEMPT - E" exp="" desc=""/>
-    <constraint field="2023 - Education taxes" exp="" desc=""/>
-    <constraint field="2023 - FARM - TAXABLE: FULL - FT" exp="" desc=""/>
-    <constraint field="2023 - INDUSTRIAL - SMALL BUSINESS - I8" exp="" desc=""/>
-    <constraint field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" exp="" desc=""/>
-    <constraint field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" exp="" desc=""/>
-    <constraint field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" exp="" desc=""/>
-    <constraint field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" exp="" desc=""/>
-    <constraint field="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" exp="" desc=""/>
-    <constraint field="2023 - INDUSTRIAL - TAXABLE: FULL - IT" exp="" desc=""/>
-    <constraint field="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" exp="" desc=""/>
-    <constraint field="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" exp="" desc=""/>
-    <constraint field="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" exp="" desc=""/>
-    <constraint field="2023 - LANDFILL - TAXABLE: FULL - HT" exp="" desc=""/>
-    <constraint field="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" exp="" desc=""/>
-    <constraint field="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" exp="" desc=""/>
-    <constraint field="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" exp="" desc=""/>
-    <constraint field="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" exp="" desc=""/>
-    <constraint field="2023 - Municipal taxes" exp="" desc=""/>
-    <constraint field="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" exp="" desc=""/>
-    <constraint field="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" exp="" desc=""/>
-    <constraint field="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" exp="" desc=""/>
-    <constraint field="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" exp="" desc=""/>
-    <constraint field="2023 - Other taxes" exp="" desc=""/>
-    <constraint field="2023 - PARKING LOT - TAXABLE: FULL - GT" exp="" desc=""/>
-    <constraint field="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" exp="" desc=""/>
-    <constraint field="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" exp="" desc=""/>
-    <constraint field="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" exp="" desc=""/>
-    <constraint field="2023 - RESIDENTIAL - TAXABLE: FULL - RT" exp="" desc=""/>
-    <constraint field="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" exp="" desc=""/>
-    <constraint field="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" exp="" desc=""/>
-    <constraint field="2023 - Solid waste fees" exp="" desc=""/>
-    <constraint field="2023 - Stormwater fees" exp="" desc=""/>
-    <constraint field="2023 - Total assessed value" exp="" desc=""/>
-    <constraint field="2023 - Total taxes levied" exp="" desc=""/>
-    <constraint field="2024 - - C0" exp="" desc=""/>
-    <constraint field="2024 - - DH" exp="" desc=""/>
-    <constraint field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" exp="" desc=""/>
-    <constraint field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" exp="" desc=""/>
-    <constraint field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" exp="" desc=""/>
-    <constraint field="2024 - COMMERCIAL - SMALL BUSINESS - C8" exp="" desc=""/>
-    <constraint field="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" exp="" desc=""/>
-    <constraint field="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" exp="" desc=""/>
-    <constraint field="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" exp="" desc=""/>
-    <constraint field="2024 - COMMERCIAL - TAXABLE: FULL - CT" exp="" desc=""/>
-    <constraint field="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" exp="" desc=""/>
-    <constraint field="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" exp="" desc=""/>
-    <constraint field="2024 - EXEMPT - E" exp="" desc=""/>
-    <constraint field="2024 - Education taxes" exp="" desc=""/>
-    <constraint field="2024 - FARM - TAXABLE: FULL - FT" exp="" desc=""/>
-    <constraint field="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" exp="" desc=""/>
-    <constraint field="2024 - INDUSTRIAL - SMALL BUSINESS - I8" exp="" desc=""/>
-    <constraint field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" exp="" desc=""/>
-    <constraint field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" exp="" desc=""/>
-    <constraint field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" exp="" desc=""/>
-    <constraint field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" exp="" desc=""/>
-    <constraint field="2024 - INDUSTRIAL - TAXABLE: FULL - IT" exp="" desc=""/>
-    <constraint field="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" exp="" desc=""/>
-    <constraint field="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" exp="" desc=""/>
-    <constraint field="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" exp="" desc=""/>
-    <constraint field="2024 - LANDFILL - TAXABLE: FULL - HT" exp="" desc=""/>
-    <constraint field="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" exp="" desc=""/>
-    <constraint field="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" exp="" desc=""/>
-    <constraint field="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" exp="" desc=""/>
-    <constraint field="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" exp="" desc=""/>
-    <constraint field="2024 - Municipal taxes" exp="" desc=""/>
-    <constraint field="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" exp="" desc=""/>
-    <constraint field="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" exp="" desc=""/>
-    <constraint field="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" exp="" desc=""/>
-    <constraint field="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" exp="" desc=""/>
-    <constraint field="2024 - Other taxes" exp="" desc=""/>
-    <constraint field="2024 - PARKING LOT - TAXABLE: FULL - GT" exp="" desc=""/>
-    <constraint field="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" exp="" desc=""/>
-    <constraint field="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" exp="" desc=""/>
-    <constraint field="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" exp="" desc=""/>
-    <constraint field="2024 - RESIDENTIAL - TAXABLE: FULL - RT" exp="" desc=""/>
-    <constraint field="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" exp="" desc=""/>
-    <constraint field="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" exp="" desc=""/>
-    <constraint field="2024 - Solid waste fees" exp="" desc=""/>
-    <constraint field="2024 - Stormwater fees" exp="" desc=""/>
-    <constraint field="2024 - Total assessed value" exp="" desc=""/>
-    <constraint field="2024 - Total taxes levied" exp="" desc=""/>
-    <constraint field="EXTRACTED_ADDRESS_SUMMARY" exp="" desc=""/>
-    <constraint field="EXTRACTED_ASSESSMENT_ROLL_NUMBER" exp="" desc=""/>
-    <constraint field="None - Education taxes" exp="" desc=""/>
-    <constraint field="None - Municipal taxes" exp="" desc=""/>
-    <constraint field="None - Other taxes" exp="" desc=""/>
-    <constraint field="None - RESIDENTIAL - TAXABLE: FULL - RT" exp="" desc=""/>
-    <constraint field="None - Solid waste fees" exp="" desc=""/>
-    <constraint field="None - Stormwater fees" exp="" desc=""/>
-    <constraint field="None - Total assessed value" exp="" desc=""/>
-    <constraint field="None - Total taxes levied" exp="" desc=""/>
-    <constraint field="PARCEL_ASSESSMENT_ROLL_NUMBER" exp="" desc=""/>
-    <constraint field="error message" exp="" desc=""/>
-    <constraint field="Number of addresses" exp="" desc=""/>
-    <constraint field="Zoning code" exp="" desc=""/>
-    <constraint field="Zero Assessment Roll Number" exp="" desc=""/>
-    <constraint field="fid_2" exp="" desc=""/>
-    <constraint field="qualifier" exp="" desc=""/>
-    <constraint field="street_name" exp="" desc=""/>
-    <constraint field="street_number" exp="" desc=""/>
-    <constraint field="unit" exp="" desc=""/>
-    <constraint field="area" exp="" desc=""/>
-    <constraint field="layer" exp="" desc=""/>
-    <constraint field="path" exp="" desc=""/>
-    <constraint field="2023 Revenue by Hectare" exp="" desc=""/>
-    <constraint field="2024  Revenue by Hectare" exp="" desc=""/>
-    <constraint field="dist_pole" exp="" desc=""/>
+    <constraint exp="" field="fid" desc=""/>
+    <constraint exp="" field="PARAREA_M" desc=""/>
+    <constraint exp="" field="2023 - - DH" desc=""/>
+    <constraint exp="" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" desc=""/>
+    <constraint exp="" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" desc=""/>
+    <constraint exp="" field="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" desc=""/>
+    <constraint exp="" field="2023 - COMMERCIAL - SMALL BUSINESS - C8" desc=""/>
+    <constraint exp="" field="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" desc=""/>
+    <constraint exp="" field="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" desc=""/>
+    <constraint exp="" field="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" desc=""/>
+    <constraint exp="" field="2023 - COMMERCIAL - TAXABLE: FULL - CT" desc=""/>
+    <constraint exp="" field="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" desc=""/>
+    <constraint exp="" field="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" desc=""/>
+    <constraint exp="" field="2023 - EXEMPT - E" desc=""/>
+    <constraint exp="" field="2023 - Education taxes" desc=""/>
+    <constraint exp="" field="2023 - FARM - TAXABLE: FULL - FT" desc=""/>
+    <constraint exp="" field="2023 - INDUSTRIAL - SMALL BUSINESS - I8" desc=""/>
+    <constraint exp="" field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" desc=""/>
+    <constraint exp="" field="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" desc=""/>
+    <constraint exp="" field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" desc=""/>
+    <constraint exp="" field="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" desc=""/>
+    <constraint exp="" field="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" desc=""/>
+    <constraint exp="" field="2023 - INDUSTRIAL - TAXABLE: FULL - IT" desc=""/>
+    <constraint exp="" field="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" desc=""/>
+    <constraint exp="" field="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" desc=""/>
+    <constraint exp="" field="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" desc=""/>
+    <constraint exp="" field="2023 - LANDFILL - TAXABLE: FULL - HT" desc=""/>
+    <constraint exp="" field="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" desc=""/>
+    <constraint exp="" field="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" desc=""/>
+    <constraint exp="" field="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" desc=""/>
+    <constraint exp="" field="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" desc=""/>
+    <constraint exp="" field="2023 - Municipal taxes" desc=""/>
+    <constraint exp="" field="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" desc=""/>
+    <constraint exp="" field="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" desc=""/>
+    <constraint exp="" field="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" desc=""/>
+    <constraint exp="" field="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" desc=""/>
+    <constraint exp="" field="2023 - Other taxes" desc=""/>
+    <constraint exp="" field="2023 - PARKING LOT - TAXABLE: FULL - GT" desc=""/>
+    <constraint exp="" field="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" desc=""/>
+    <constraint exp="" field="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" desc=""/>
+    <constraint exp="" field="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" desc=""/>
+    <constraint exp="" field="2023 - RESIDENTIAL - TAXABLE: FULL - RT" desc=""/>
+    <constraint exp="" field="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" desc=""/>
+    <constraint exp="" field="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" desc=""/>
+    <constraint exp="" field="2023 - Solid waste fees" desc=""/>
+    <constraint exp="" field="2023 - Stormwater fees" desc=""/>
+    <constraint exp="" field="2023 - Total assessed value" desc=""/>
+    <constraint exp="" field="2023 - Total taxes levied" desc=""/>
+    <constraint exp="" field="2024 - - C0" desc=""/>
+    <constraint exp="" field="2024 - - DH" desc=""/>
+    <constraint exp="" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" desc=""/>
+    <constraint exp="" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" desc=""/>
+    <constraint exp="" field="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" desc=""/>
+    <constraint exp="" field="2024 - COMMERCIAL - SMALL BUSINESS - C8" desc=""/>
+    <constraint exp="" field="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" desc=""/>
+    <constraint exp="" field="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" desc=""/>
+    <constraint exp="" field="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" desc=""/>
+    <constraint exp="" field="2024 - COMMERCIAL - TAXABLE: FULL - CT" desc=""/>
+    <constraint exp="" field="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" desc=""/>
+    <constraint exp="" field="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" desc=""/>
+    <constraint exp="" field="2024 - EXEMPT - E" desc=""/>
+    <constraint exp="" field="2024 - Education taxes" desc=""/>
+    <constraint exp="" field="2024 - FARM - TAXABLE: FULL - FT" desc=""/>
+    <constraint exp="" field="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" desc=""/>
+    <constraint exp="" field="2024 - INDUSTRIAL - SMALL BUSINESS - I8" desc=""/>
+    <constraint exp="" field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" desc=""/>
+    <constraint exp="" field="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" desc=""/>
+    <constraint exp="" field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" desc=""/>
+    <constraint exp="" field="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" desc=""/>
+    <constraint exp="" field="2024 - INDUSTRIAL - TAXABLE: FULL - IT" desc=""/>
+    <constraint exp="" field="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" desc=""/>
+    <constraint exp="" field="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" desc=""/>
+    <constraint exp="" field="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" desc=""/>
+    <constraint exp="" field="2024 - LANDFILL - TAXABLE: FULL - HT" desc=""/>
+    <constraint exp="" field="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" desc=""/>
+    <constraint exp="" field="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" desc=""/>
+    <constraint exp="" field="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" desc=""/>
+    <constraint exp="" field="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" desc=""/>
+    <constraint exp="" field="2024 - Municipal taxes" desc=""/>
+    <constraint exp="" field="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" desc=""/>
+    <constraint exp="" field="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" desc=""/>
+    <constraint exp="" field="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" desc=""/>
+    <constraint exp="" field="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" desc=""/>
+    <constraint exp="" field="2024 - Other taxes" desc=""/>
+    <constraint exp="" field="2024 - PARKING LOT - TAXABLE: FULL - GT" desc=""/>
+    <constraint exp="" field="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" desc=""/>
+    <constraint exp="" field="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" desc=""/>
+    <constraint exp="" field="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" desc=""/>
+    <constraint exp="" field="2024 - RESIDENTIAL - TAXABLE: FULL - RT" desc=""/>
+    <constraint exp="" field="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" desc=""/>
+    <constraint exp="" field="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" desc=""/>
+    <constraint exp="" field="2024 - Solid waste fees" desc=""/>
+    <constraint exp="" field="2024 - Stormwater fees" desc=""/>
+    <constraint exp="" field="2024 - Total assessed value" desc=""/>
+    <constraint exp="" field="2024 - Total taxes levied" desc=""/>
+    <constraint exp="" field="EXTRACTED_ADDRESS_SUMMARY" desc=""/>
+    <constraint exp="" field="EXTRACTED_ASSESSMENT_ROLL_NUMBER" desc=""/>
+    <constraint exp="" field="None - Education taxes" desc=""/>
+    <constraint exp="" field="None - Municipal taxes" desc=""/>
+    <constraint exp="" field="None - Other taxes" desc=""/>
+    <constraint exp="" field="None - RESIDENTIAL - TAXABLE: FULL - RT" desc=""/>
+    <constraint exp="" field="None - Solid waste fees" desc=""/>
+    <constraint exp="" field="None - Stormwater fees" desc=""/>
+    <constraint exp="" field="None - Total assessed value" desc=""/>
+    <constraint exp="" field="None - Total taxes levied" desc=""/>
+    <constraint exp="" field="Number of addresses" desc=""/>
+    <constraint exp="" field="ZONE_MAIN" desc=""/>
+    <constraint exp="" field="WARD" desc=""/>
+    <constraint exp="" field="2023 Municipal Tax by Hectare" desc=""/>
+    <constraint exp="" field="2024 Municipal Tax by Hectare" desc=""/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
-    <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+    <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
   </attributeactions>
-  <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
+  <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
     <columns>
-      <column type="field" hidden="0" name="fid" width="-1"/>
-      <column type="field" hidden="0" name="ODF_ASSESS" width="-1"/>
-      <column type="field" hidden="0" name="begin" width="-1"/>
-      <column type="field" hidden="0" name="end" width="-1"/>
-      <column type="field" hidden="0" name="ODF_ID" width="-1"/>
-      <column type="field" hidden="0" name="ASSESSMENT_ROLL_NUMBER" width="-1"/>
-      <column type="field" hidden="0" name="2023 - - DH" width="-1"/>
-      <column type="field" hidden="0" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" width="-1"/>
-      <column type="field" hidden="0" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" width="-1"/>
-      <column type="field" hidden="0" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" width="-1"/>
-      <column type="field" hidden="0" name="2023 - COMMERCIAL - SMALL BUSINESS - C8" width="-1"/>
-      <column type="field" hidden="0" name="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" width="-1"/>
-      <column type="field" hidden="0" name="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" width="-1"/>
-      <column type="field" hidden="0" name="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" width="-1"/>
-      <column type="field" hidden="0" name="2023 - COMMERCIAL - TAXABLE: FULL - CT" width="-1"/>
-      <column type="field" hidden="0" name="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" width="-1"/>
-      <column type="field" hidden="0" name="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" width="-1"/>
-      <column type="field" hidden="0" name="2023 - EXEMPT - E" width="-1"/>
-      <column type="field" hidden="0" name="2023 - Education taxes" width="-1"/>
-      <column type="field" hidden="0" name="2023 - FARM - TAXABLE: FULL - FT" width="-1"/>
-      <column type="field" hidden="0" name="2023 - INDUSTRIAL - SMALL BUSINESS - I8" width="-1"/>
-      <column type="field" hidden="0" name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" width="-1"/>
-      <column type="field" hidden="0" name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" width="-1"/>
-      <column type="field" hidden="0" name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" width="-1"/>
-      <column type="field" hidden="0" name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" width="-1"/>
-      <column type="field" hidden="0" name="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" width="-1"/>
-      <column type="field" hidden="0" name="2023 - INDUSTRIAL - TAXABLE: FULL - IT" width="-1"/>
-      <column type="field" hidden="0" name="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" width="-1"/>
-      <column type="field" hidden="0" name="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" width="-1"/>
-      <column type="field" hidden="0" name="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" width="-1"/>
-      <column type="field" hidden="0" name="2023 - LANDFILL - TAXABLE: FULL - HT" width="-1"/>
-      <column type="field" hidden="0" name="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" width="-1"/>
-      <column type="field" hidden="0" name="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" width="-1"/>
-      <column type="field" hidden="0" name="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" width="-1"/>
-      <column type="field" hidden="0" name="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" width="-1"/>
-      <column type="field" hidden="0" name="2023 - Municipal taxes" width="-1"/>
-      <column type="field" hidden="0" name="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" width="-1"/>
-      <column type="field" hidden="0" name="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" width="-1"/>
-      <column type="field" hidden="0" name="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" width="-1"/>
-      <column type="field" hidden="0" name="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" width="-1"/>
-      <column type="field" hidden="0" name="2023 - Other taxes" width="-1"/>
-      <column type="field" hidden="0" name="2023 - PARKING LOT - TAXABLE: FULL - GT" width="-1"/>
-      <column type="field" hidden="0" name="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" width="-1"/>
-      <column type="field" hidden="0" name="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" width="-1"/>
-      <column type="field" hidden="0" name="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" width="-1"/>
-      <column type="field" hidden="0" name="2023 - RESIDENTIAL - TAXABLE: FULL - RT" width="-1"/>
-      <column type="field" hidden="0" name="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" width="-1"/>
-      <column type="field" hidden="0" name="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" width="-1"/>
-      <column type="field" hidden="0" name="2023 - Solid waste fees" width="-1"/>
-      <column type="field" hidden="0" name="2023 - Stormwater fees" width="-1"/>
-      <column type="field" hidden="0" name="2023 - Total assessed value" width="-1"/>
-      <column type="field" hidden="0" name="2023 - Total taxes levied" width="-1"/>
-      <column type="field" hidden="0" name="2024 - - C0" width="-1"/>
-      <column type="field" hidden="0" name="2024 - - DH" width="-1"/>
-      <column type="field" hidden="0" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" width="-1"/>
-      <column type="field" hidden="0" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" width="-1"/>
-      <column type="field" hidden="0" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" width="-1"/>
-      <column type="field" hidden="0" name="2024 - COMMERCIAL - SMALL BUSINESS - C8" width="-1"/>
-      <column type="field" hidden="0" name="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" width="-1"/>
-      <column type="field" hidden="0" name="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" width="-1"/>
-      <column type="field" hidden="0" name="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" width="-1"/>
-      <column type="field" hidden="0" name="2024 - COMMERCIAL - TAXABLE: FULL - CT" width="-1"/>
-      <column type="field" hidden="0" name="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" width="-1"/>
-      <column type="field" hidden="0" name="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" width="-1"/>
-      <column type="field" hidden="0" name="2024 - EXEMPT - E" width="-1"/>
-      <column type="field" hidden="0" name="2024 - Education taxes" width="-1"/>
-      <column type="field" hidden="0" name="2024 - FARM - TAXABLE: FULL - FT" width="-1"/>
-      <column type="field" hidden="0" name="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" width="-1"/>
-      <column type="field" hidden="0" name="2024 - INDUSTRIAL - SMALL BUSINESS - I8" width="-1"/>
-      <column type="field" hidden="0" name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" width="-1"/>
-      <column type="field" hidden="0" name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" width="-1"/>
-      <column type="field" hidden="0" name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" width="-1"/>
-      <column type="field" hidden="0" name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" width="-1"/>
-      <column type="field" hidden="0" name="2024 - INDUSTRIAL - TAXABLE: FULL - IT" width="-1"/>
-      <column type="field" hidden="0" name="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" width="-1"/>
-      <column type="field" hidden="0" name="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" width="-1"/>
-      <column type="field" hidden="0" name="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" width="-1"/>
-      <column type="field" hidden="0" name="2024 - LANDFILL - TAXABLE: FULL - HT" width="-1"/>
-      <column type="field" hidden="0" name="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" width="-1"/>
-      <column type="field" hidden="0" name="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" width="-1"/>
-      <column type="field" hidden="0" name="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" width="-1"/>
-      <column type="field" hidden="0" name="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" width="-1"/>
-      <column type="field" hidden="0" name="2024 - Municipal taxes" width="-1"/>
-      <column type="field" hidden="0" name="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" width="-1"/>
-      <column type="field" hidden="0" name="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" width="-1"/>
-      <column type="field" hidden="0" name="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" width="-1"/>
-      <column type="field" hidden="0" name="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" width="-1"/>
-      <column type="field" hidden="0" name="2024 - Other taxes" width="-1"/>
-      <column type="field" hidden="0" name="2024 - PARKING LOT - TAXABLE: FULL - GT" width="-1"/>
-      <column type="field" hidden="0" name="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" width="-1"/>
-      <column type="field" hidden="0" name="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" width="-1"/>
-      <column type="field" hidden="0" name="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" width="-1"/>
-      <column type="field" hidden="0" name="2024 - RESIDENTIAL - TAXABLE: FULL - RT" width="-1"/>
-      <column type="field" hidden="0" name="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" width="-1"/>
-      <column type="field" hidden="0" name="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" width="-1"/>
-      <column type="field" hidden="0" name="2024 - Solid waste fees" width="-1"/>
-      <column type="field" hidden="0" name="2024 - Stormwater fees" width="-1"/>
-      <column type="field" hidden="0" name="2024 - Total assessed value" width="-1"/>
-      <column type="field" hidden="0" name="2024 - Total taxes levied" width="-1"/>
-      <column type="field" hidden="0" name="EXTRACTED_ADDRESS_SUMMARY" width="-1"/>
-      <column type="field" hidden="0" name="EXTRACTED_ASSESSMENT_ROLL_NUMBER" width="-1"/>
-      <column type="field" hidden="0" name="None - Education taxes" width="-1"/>
-      <column type="field" hidden="0" name="None - Municipal taxes" width="-1"/>
-      <column type="field" hidden="0" name="None - Other taxes" width="-1"/>
-      <column type="field" hidden="0" name="None - RESIDENTIAL - TAXABLE: FULL - RT" width="-1"/>
-      <column type="field" hidden="0" name="None - Solid waste fees" width="-1"/>
-      <column type="field" hidden="0" name="None - Stormwater fees" width="-1"/>
-      <column type="field" hidden="0" name="None - Total assessed value" width="-1"/>
-      <column type="field" hidden="0" name="None - Total taxes levied" width="-1"/>
-      <column type="field" hidden="0" name="PARCEL_ASSESSMENT_ROLL_NUMBER" width="-1"/>
-      <column type="field" hidden="0" name="error message" width="-1"/>
-      <column type="field" hidden="0" name="Number of addresses" width="-1"/>
-      <column type="field" hidden="0" name="Zoning code" width="-1"/>
-      <column type="field" hidden="0" name="Zero Assessment Roll Number" width="-1"/>
-      <column type="field" hidden="0" name="fid_2" width="-1"/>
-      <column type="field" hidden="0" name="qualifier" width="-1"/>
-      <column type="field" hidden="0" name="street_name" width="-1"/>
-      <column type="field" hidden="0" name="street_number" width="-1"/>
-      <column type="field" hidden="0" name="unit" width="-1"/>
-      <column type="field" hidden="0" name="area" width="-1"/>
-      <column type="field" hidden="0" name="layer" width="-1"/>
-      <column type="field" hidden="0" name="path" width="-1"/>
-      <column type="field" hidden="0" name="2023 Revenue by Hectare" width="-1"/>
-      <column type="field" hidden="0" name="2024  Revenue by Hectare" width="-1"/>
-      <column type="field" hidden="0" name="dist_pole" width="-1"/>
+      <column name="fid" type="field" hidden="0" width="-1"/>
+      <column name="2023 - - DH" type="field" hidden="0" width="-1"/>
+      <column name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" type="field" hidden="0" width="-1"/>
+      <column name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" type="field" hidden="0" width="-1"/>
+      <column name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" type="field" hidden="0" width="-1"/>
+      <column name="2023 - COMMERCIAL - SMALL BUSINESS - C8" type="field" hidden="0" width="-1"/>
+      <column name="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" type="field" hidden="0" width="-1"/>
+      <column name="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" type="field" hidden="0" width="-1"/>
+      <column name="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" type="field" hidden="0" width="-1"/>
+      <column name="2023 - COMMERCIAL - TAXABLE: FULL - CT" type="field" hidden="0" width="-1"/>
+      <column name="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" type="field" hidden="0" width="-1"/>
+      <column name="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" type="field" hidden="0" width="-1"/>
+      <column name="2023 - EXEMPT - E" type="field" hidden="0" width="-1"/>
+      <column name="2023 - Education taxes" type="field" hidden="0" width="-1"/>
+      <column name="2023 - FARM - TAXABLE: FULL - FT" type="field" hidden="0" width="-1"/>
+      <column name="2023 - INDUSTRIAL - SMALL BUSINESS - I8" type="field" hidden="0" width="-1"/>
+      <column name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" type="field" hidden="0" width="-1"/>
+      <column name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" type="field" hidden="0" width="-1"/>
+      <column name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" type="field" hidden="0" width="-1"/>
+      <column name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" type="field" hidden="0" width="-1"/>
+      <column name="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" type="field" hidden="0" width="-1"/>
+      <column name="2023 - INDUSTRIAL - TAXABLE: FULL - IT" type="field" hidden="0" width="-1"/>
+      <column name="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" type="field" hidden="0" width="-1"/>
+      <column name="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" type="field" hidden="0" width="-1"/>
+      <column name="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" type="field" hidden="0" width="-1"/>
+      <column name="2023 - LANDFILL - TAXABLE: FULL - HT" type="field" hidden="0" width="-1"/>
+      <column name="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" type="field" hidden="0" width="-1"/>
+      <column name="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" type="field" hidden="0" width="-1"/>
+      <column name="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" type="field" hidden="0" width="-1"/>
+      <column name="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" type="field" hidden="0" width="-1"/>
+      <column name="2023 - Municipal taxes" type="field" hidden="0" width="-1"/>
+      <column name="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" type="field" hidden="0" width="-1"/>
+      <column name="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" type="field" hidden="0" width="-1"/>
+      <column name="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" type="field" hidden="0" width="-1"/>
+      <column name="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" type="field" hidden="0" width="-1"/>
+      <column name="2023 - Other taxes" type="field" hidden="0" width="-1"/>
+      <column name="2023 - PARKING LOT - TAXABLE: FULL - GT" type="field" hidden="0" width="-1"/>
+      <column name="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" type="field" hidden="0" width="-1"/>
+      <column name="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" type="field" hidden="0" width="-1"/>
+      <column name="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" type="field" hidden="0" width="-1"/>
+      <column name="2023 - RESIDENTIAL - TAXABLE: FULL - RT" type="field" hidden="0" width="-1"/>
+      <column name="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" type="field" hidden="0" width="-1"/>
+      <column name="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" type="field" hidden="0" width="-1"/>
+      <column name="2023 - Solid waste fees" type="field" hidden="0" width="-1"/>
+      <column name="2023 - Stormwater fees" type="field" hidden="0" width="-1"/>
+      <column name="2023 - Total assessed value" type="field" hidden="0" width="-1"/>
+      <column name="2023 - Total taxes levied" type="field" hidden="0" width="-1"/>
+      <column name="2024 - - C0" type="field" hidden="0" width="-1"/>
+      <column name="2024 - - DH" type="field" hidden="0" width="-1"/>
+      <column name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" type="field" hidden="0" width="-1"/>
+      <column name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" type="field" hidden="0" width="-1"/>
+      <column name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" type="field" hidden="0" width="-1"/>
+      <column name="2024 - COMMERCIAL - SMALL BUSINESS - C8" type="field" hidden="0" width="-1"/>
+      <column name="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" type="field" hidden="0" width="-1"/>
+      <column name="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" type="field" hidden="0" width="-1"/>
+      <column name="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" type="field" hidden="0" width="-1"/>
+      <column name="2024 - COMMERCIAL - TAXABLE: FULL - CT" type="field" hidden="0" width="-1"/>
+      <column name="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" type="field" hidden="0" width="-1"/>
+      <column name="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" type="field" hidden="0" width="-1"/>
+      <column name="2024 - EXEMPT - E" type="field" hidden="0" width="-1"/>
+      <column name="2024 - Education taxes" type="field" hidden="0" width="-1"/>
+      <column name="2024 - FARM - TAXABLE: FULL - FT" type="field" hidden="0" width="-1"/>
+      <column name="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" type="field" hidden="0" width="-1"/>
+      <column name="2024 - INDUSTRIAL - SMALL BUSINESS - I8" type="field" hidden="0" width="-1"/>
+      <column name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" type="field" hidden="0" width="-1"/>
+      <column name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" type="field" hidden="0" width="-1"/>
+      <column name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" type="field" hidden="0" width="-1"/>
+      <column name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" type="field" hidden="0" width="-1"/>
+      <column name="2024 - INDUSTRIAL - TAXABLE: FULL - IT" type="field" hidden="0" width="-1"/>
+      <column name="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" type="field" hidden="0" width="-1"/>
+      <column name="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" type="field" hidden="0" width="-1"/>
+      <column name="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" type="field" hidden="0" width="-1"/>
+      <column name="2024 - LANDFILL - TAXABLE: FULL - HT" type="field" hidden="0" width="-1"/>
+      <column name="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" type="field" hidden="0" width="-1"/>
+      <column name="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" type="field" hidden="0" width="-1"/>
+      <column name="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" type="field" hidden="0" width="-1"/>
+      <column name="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" type="field" hidden="0" width="-1"/>
+      <column name="2024 - Municipal taxes" type="field" hidden="0" width="-1"/>
+      <column name="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" type="field" hidden="0" width="-1"/>
+      <column name="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" type="field" hidden="0" width="-1"/>
+      <column name="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" type="field" hidden="0" width="-1"/>
+      <column name="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" type="field" hidden="0" width="-1"/>
+      <column name="2024 - Other taxes" type="field" hidden="0" width="-1"/>
+      <column name="2024 - PARKING LOT - TAXABLE: FULL - GT" type="field" hidden="0" width="-1"/>
+      <column name="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" type="field" hidden="0" width="-1"/>
+      <column name="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" type="field" hidden="0" width="-1"/>
+      <column name="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" type="field" hidden="0" width="-1"/>
+      <column name="2024 - RESIDENTIAL - TAXABLE: FULL - RT" type="field" hidden="0" width="-1"/>
+      <column name="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" type="field" hidden="0" width="-1"/>
+      <column name="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" type="field" hidden="0" width="-1"/>
+      <column name="2024 - Solid waste fees" type="field" hidden="0" width="-1"/>
+      <column name="2024 - Stormwater fees" type="field" hidden="0" width="-1"/>
+      <column name="2024 - Total assessed value" type="field" hidden="0" width="-1"/>
+      <column name="2024 - Total taxes levied" type="field" hidden="0" width="-1"/>
+      <column name="EXTRACTED_ADDRESS_SUMMARY" type="field" hidden="0" width="-1"/>
+      <column name="EXTRACTED_ASSESSMENT_ROLL_NUMBER" type="field" hidden="0" width="-1"/>
+      <column name="None - Education taxes" type="field" hidden="0" width="-1"/>
+      <column name="None - Municipal taxes" type="field" hidden="0" width="-1"/>
+      <column name="None - Other taxes" type="field" hidden="0" width="-1"/>
+      <column name="None - RESIDENTIAL - TAXABLE: FULL - RT" type="field" hidden="0" width="-1"/>
+      <column name="None - Solid waste fees" type="field" hidden="0" width="-1"/>
+      <column name="None - Stormwater fees" type="field" hidden="0" width="-1"/>
+      <column name="None - Total assessed value" type="field" hidden="0" width="-1"/>
+      <column name="None - Total taxes levied" type="field" hidden="0" width="-1"/>
+      <column name="Number of addresses" type="field" hidden="0" width="-1"/>
+      <column name="WARD" type="field" hidden="0" width="-1"/>
+      <column name="ZONE_MAIN" type="field" hidden="0" width="-1"/>
+      <column name="PARAREA_M" type="field" hidden="0" width="-1"/>
+      <column name="2023 Municipal Tax by Hectare" type="field" hidden="0" width="-1"/>
+      <column name="2024 Municipal Tax by Hectare" type="field" hidden="0" width="-1"/>
       <column type="actions" hidden="1" width="-1"/>
     </columns>
   </attributetableconfig>
@@ -2232,385 +2022,736 @@ def my_form_open(dialog, layer, feature):
   <featformsuppress>0</featformsuppress>
   <editorlayout>generatedlayout</editorlayout>
   <editable>
-    <field editable="1" name="2023 - - DH"/>
-    <field editable="1" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF"/>
-    <field editable="1" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV"/>
-    <field editable="1" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY"/>
-    <field editable="1" name="2023 - COMMERCIAL - SMALL BUSINESS - C8"/>
-    <field editable="1" name="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7"/>
-    <field editable="1" name="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU"/>
-    <field editable="1" name="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1"/>
-    <field editable="1" name="2023 - COMMERCIAL - TAXABLE: FULL - CT"/>
-    <field editable="1" name="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH"/>
-    <field editable="1" name="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX"/>
-    <field editable="1" name="2023 - EXEMPT - E"/>
-    <field editable="1" name="2023 - Education taxes"/>
-    <field editable="1" name="2023 - FARM - TAXABLE: FULL - FT"/>
-    <field editable="1" name="2023 - INDUSTRIAL - SMALL BUSINESS - I8"/>
-    <field editable="1" name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7"/>
-    <field editable="1" name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0"/>
-    <field editable="1" name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU"/>
-    <field editable="1" name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK"/>
-    <field editable="1" name="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1"/>
-    <field editable="1" name="2023 - INDUSTRIAL - TAXABLE: FULL - IT"/>
-    <field editable="1" name="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH"/>
-    <field editable="1" name="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX"/>
-    <field editable="1" name="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF"/>
-    <field editable="1" name="2023 - LANDFILL - TAXABLE: FULL - HT"/>
-    <field editable="1" name="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU"/>
-    <field editable="1" name="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT"/>
-    <field editable="1" name="2023 - MANAGED FORESTS - TAXABLE: FULL - TT"/>
-    <field editable="1" name="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT"/>
-    <field editable="1" name="2023 - Municipal taxes"/>
-    <field editable="1" name="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT"/>
-    <field editable="1" name="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF"/>
-    <field editable="1" name="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU"/>
-    <field editable="1" name="2023 - OFFICE BUILDING - TAXABLE: FULL - DT"/>
-    <field editable="1" name="2023 - Other taxes"/>
-    <field editable="1" name="2023 - PARKING LOT - TAXABLE: FULL - GT"/>
-    <field editable="1" name="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT"/>
-    <field editable="1" name="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF"/>
-    <field editable="1" name="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD"/>
-    <field editable="1" name="2023 - RESIDENTIAL - TAXABLE: FULL - RT"/>
-    <field editable="1" name="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU"/>
-    <field editable="1" name="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST"/>
-    <field editable="1" name="2023 - Solid waste fees"/>
-    <field editable="1" name="2023 - Stormwater fees"/>
-    <field editable="1" name="2023 - Total assessed value"/>
-    <field editable="1" name="2023 - Total taxes levied"/>
-    <field editable="1" name="2023 Revenue by Hectare"/>
-    <field editable="1" name="2024  Revenue by Hectare"/>
-    <field editable="1" name="2024 - - C0"/>
-    <field editable="1" name="2024 - - DH"/>
-    <field editable="1" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF"/>
-    <field editable="1" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV"/>
-    <field editable="1" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY"/>
-    <field editable="1" name="2024 - COMMERCIAL - SMALL BUSINESS - C8"/>
-    <field editable="1" name="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7"/>
-    <field editable="1" name="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU"/>
-    <field editable="1" name="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1"/>
-    <field editable="1" name="2024 - COMMERCIAL - TAXABLE: FULL - CT"/>
-    <field editable="1" name="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH"/>
-    <field editable="1" name="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX"/>
-    <field editable="1" name="2024 - EXEMPT - E"/>
-    <field editable="1" name="2024 - Education taxes"/>
-    <field editable="1" name="2024 - FARM - TAXABLE: FULL - FT"/>
-    <field editable="1" name="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV"/>
-    <field editable="1" name="2024 - INDUSTRIAL - SMALL BUSINESS - I8"/>
-    <field editable="1" name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7"/>
-    <field editable="1" name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0"/>
-    <field editable="1" name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU"/>
-    <field editable="1" name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK"/>
-    <field editable="1" name="2024 - INDUSTRIAL - TAXABLE: FULL - IT"/>
-    <field editable="1" name="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH"/>
-    <field editable="1" name="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX"/>
-    <field editable="1" name="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF"/>
-    <field editable="1" name="2024 - LANDFILL - TAXABLE: FULL - HT"/>
-    <field editable="1" name="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU"/>
-    <field editable="1" name="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT"/>
-    <field editable="1" name="2024 - MANAGED FORESTS - TAXABLE: FULL - TT"/>
-    <field editable="1" name="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT"/>
-    <field editable="1" name="2024 - Municipal taxes"/>
-    <field editable="1" name="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT"/>
-    <field editable="1" name="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF"/>
-    <field editable="1" name="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU"/>
-    <field editable="1" name="2024 - OFFICE BUILDING - TAXABLE: FULL - DT"/>
-    <field editable="1" name="2024 - Other taxes"/>
-    <field editable="1" name="2024 - PARKING LOT - TAXABLE: FULL - GT"/>
-    <field editable="1" name="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT"/>
-    <field editable="1" name="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF"/>
-    <field editable="1" name="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD"/>
-    <field editable="1" name="2024 - RESIDENTIAL - TAXABLE: FULL - RT"/>
-    <field editable="1" name="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU"/>
-    <field editable="1" name="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST"/>
-    <field editable="1" name="2024 - Solid waste fees"/>
-    <field editable="1" name="2024 - Stormwater fees"/>
-    <field editable="1" name="2024 - Total assessed value"/>
-    <field editable="1" name="2024 - Total taxes levied"/>
-    <field editable="1" name="ASSESSMENT_ROLL_NUMBER"/>
-    <field editable="1" name="EXTRACTED_ADDRESS_SUMMARY"/>
-    <field editable="1" name="EXTRACTED_ASSESSMENT_ROLL_NUMBER"/>
-    <field editable="1" name="None - Education taxes"/>
-    <field editable="1" name="None - Municipal taxes"/>
-    <field editable="1" name="None - Other taxes"/>
-    <field editable="1" name="None - RESIDENTIAL - TAXABLE: FULL - RT"/>
-    <field editable="1" name="None - Solid waste fees"/>
-    <field editable="1" name="None - Stormwater fees"/>
-    <field editable="1" name="None - Total assessed value"/>
-    <field editable="1" name="None - Total taxes levied"/>
-    <field editable="1" name="Number of addresses"/>
-    <field editable="1" name="ODF_ASSESS"/>
-    <field editable="1" name="ODF_ID"/>
-    <field editable="1" name="PARCEL_ASSESSMENT_ROLL_NUMBER"/>
-    <field editable="1" name="Zero Assessment Roll Number"/>
-    <field editable="1" name="Zoning code"/>
-    <field editable="1" name="area"/>
-    <field editable="1" name="begin"/>
-    <field editable="1" name="dist_pole"/>
-    <field editable="1" name="end"/>
-    <field editable="1" name="error message"/>
-    <field editable="1" name="fid"/>
-    <field editable="1" name="fid_2"/>
-    <field editable="1" name="layer"/>
-    <field editable="1" name="path"/>
-    <field editable="1" name="qualifier"/>
-    <field editable="1" name="street_name"/>
-    <field editable="1" name="street_number"/>
-    <field editable="1" name="unit"/>
+    <field name="2023 - - DH" editable="1"/>
+    <field name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" editable="1"/>
+    <field name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" editable="1"/>
+    <field name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" editable="1"/>
+    <field name="2023 - COMMERCIAL - SMALL BUSINESS - C8" editable="1"/>
+    <field name="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" editable="1"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" editable="1"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" editable="1"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: FULL - CT" editable="1"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" editable="1"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" editable="1"/>
+    <field name="2023 - EXEMPT - E" editable="1"/>
+    <field name="2023 - Education taxes" editable="1"/>
+    <field name="2023 - FARM - TAXABLE: FULL - FT" editable="1"/>
+    <field name="2023 - INDUSTRIAL - SMALL BUSINESS - I8" editable="1"/>
+    <field name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" editable="1"/>
+    <field name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" editable="1"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" editable="1"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" editable="1"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" editable="1"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: FULL - IT" editable="1"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" editable="1"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" editable="1"/>
+    <field name="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" editable="1"/>
+    <field name="2023 - LANDFILL - TAXABLE: FULL - HT" editable="1"/>
+    <field name="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" editable="1"/>
+    <field name="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" editable="1"/>
+    <field name="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" editable="1"/>
+    <field name="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" editable="1"/>
+    <field name="2023 - Municipal taxes" editable="1"/>
+    <field name="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" editable="1"/>
+    <field name="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" editable="1"/>
+    <field name="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" editable="1"/>
+    <field name="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" editable="1"/>
+    <field name="2023 - Other taxes" editable="1"/>
+    <field name="2023 - PARKING LOT - TAXABLE: FULL - GT" editable="1"/>
+    <field name="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" editable="1"/>
+    <field name="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" editable="1"/>
+    <field name="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" editable="1"/>
+    <field name="2023 - RESIDENTIAL - TAXABLE: FULL - RT" editable="1"/>
+    <field name="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" editable="1"/>
+    <field name="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" editable="1"/>
+    <field name="2023 - Solid waste fees" editable="1"/>
+    <field name="2023 - Stormwater fees" editable="1"/>
+    <field name="2023 - Total assessed value" editable="1"/>
+    <field name="2023 - Total taxes levied" editable="1"/>
+    <field name="2023 Municipal Tax by Hectare" editable="1"/>
+    <field name="2023 Revenue by Hectare" editable="1"/>
+    <field name="2024  Revenue by Hectare" editable="1"/>
+    <field name="2024 - - C0" editable="1"/>
+    <field name="2024 - - DH" editable="1"/>
+    <field name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" editable="1"/>
+    <field name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" editable="1"/>
+    <field name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" editable="1"/>
+    <field name="2024 - COMMERCIAL - SMALL BUSINESS - C8" editable="1"/>
+    <field name="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" editable="1"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" editable="1"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" editable="1"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: FULL - CT" editable="1"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" editable="1"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" editable="1"/>
+    <field name="2024 - EXEMPT - E" editable="1"/>
+    <field name="2024 - Education taxes" editable="1"/>
+    <field name="2024 - FARM - TAXABLE: FULL - FT" editable="1"/>
+    <field name="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" editable="1"/>
+    <field name="2024 - INDUSTRIAL - SMALL BUSINESS - I8" editable="1"/>
+    <field name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" editable="1"/>
+    <field name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" editable="1"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" editable="1"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" editable="1"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: FULL - IT" editable="1"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" editable="1"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" editable="1"/>
+    <field name="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" editable="1"/>
+    <field name="2024 - LANDFILL - TAXABLE: FULL - HT" editable="1"/>
+    <field name="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" editable="1"/>
+    <field name="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" editable="1"/>
+    <field name="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" editable="1"/>
+    <field name="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" editable="1"/>
+    <field name="2024 - Municipal taxes" editable="1"/>
+    <field name="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" editable="1"/>
+    <field name="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" editable="1"/>
+    <field name="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" editable="1"/>
+    <field name="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" editable="1"/>
+    <field name="2024 - Other taxes" editable="1"/>
+    <field name="2024 - PARKING LOT - TAXABLE: FULL - GT" editable="1"/>
+    <field name="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" editable="1"/>
+    <field name="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" editable="1"/>
+    <field name="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" editable="1"/>
+    <field name="2024 - RESIDENTIAL - TAXABLE: FULL - RT" editable="1"/>
+    <field name="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" editable="1"/>
+    <field name="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" editable="1"/>
+    <field name="2024 - Solid waste fees" editable="1"/>
+    <field name="2024 - Stormwater fees" editable="1"/>
+    <field name="2024 - Total assessed value" editable="1"/>
+    <field name="2024 - Total taxes levied" editable="1"/>
+    <field name="2024 Municipal Tax by Hectare" editable="1"/>
+    <field name="2024GT" editable="1"/>
+    <field name="23C1" editable="1"/>
+    <field name="23C7" editable="1"/>
+    <field name="23C8" editable="1"/>
+    <field name="23CF" editable="1"/>
+    <field name="23CH" editable="1"/>
+    <field name="23CT" editable="1"/>
+    <field name="23CU" editable="1"/>
+    <field name="23CV" editable="1"/>
+    <field name="23CX" editable="1"/>
+    <field name="23CY" editable="1"/>
+    <field name="23DF" editable="1"/>
+    <field name="23DH" editable="1"/>
+    <field name="23DT" editable="1"/>
+    <field name="23DU" editable="1"/>
+    <field name="23E" editable="1"/>
+    <field name="23EDU" editable="1"/>
+    <field name="23FT" editable="1"/>
+    <field name="23GT" editable="1"/>
+    <field name="23HF" editable="1"/>
+    <field name="23HT" editable="1"/>
+    <field name="23I0" editable="1"/>
+    <field name="23I1" editable="1"/>
+    <field name="23I7" editable="1"/>
+    <field name="23I8" editable="1"/>
+    <field name="23IH" editable="1"/>
+    <field name="23IK" editable="1"/>
+    <field name="23IT" editable="1"/>
+    <field name="23IU" editable="1"/>
+    <field name="23IX" editable="1"/>
+    <field name="23LT" editable="1"/>
+    <field name="23LU" editable="1"/>
+    <field name="23MT" editable="1"/>
+    <field name="23MUN" editable="1"/>
+    <field name="23NT" editable="1"/>
+    <field name="23OTH" editable="1"/>
+    <field name="23QT" editable="1"/>
+    <field name="23RD" editable="1"/>
+    <field name="23REVHA" editable="1"/>
+    <field name="23RF" editable="1"/>
+    <field name="23RT" editable="1"/>
+    <field name="23SOLWF" editable="1"/>
+    <field name="23ST" editable="1"/>
+    <field name="23STOWF" editable="1"/>
+    <field name="23SU" editable="1"/>
+    <field name="23TAV" editable="1"/>
+    <field name="23TT" editable="1"/>
+    <field name="23TTL" editable="1"/>
+    <field name="24C0" editable="1"/>
+    <field name="24C1" editable="1"/>
+    <field name="24C7" editable="1"/>
+    <field name="24C8" editable="1"/>
+    <field name="24CF" editable="1"/>
+    <field name="24CH" editable="1"/>
+    <field name="24CT" editable="1"/>
+    <field name="24CU" editable="1"/>
+    <field name="24CV" editable="1"/>
+    <field name="24CX" editable="1"/>
+    <field name="24CY" editable="1"/>
+    <field name="24DF" editable="1"/>
+    <field name="24DH" editable="1"/>
+    <field name="24DT" editable="1"/>
+    <field name="24DU" editable="1"/>
+    <field name="24E" editable="1"/>
+    <field name="24EDU" editable="1"/>
+    <field name="24FT" editable="1"/>
+    <field name="24HF" editable="1"/>
+    <field name="24HT" editable="1"/>
+    <field name="24I0" editable="1"/>
+    <field name="24I7" editable="1"/>
+    <field name="24I8" editable="1"/>
+    <field name="24IH" editable="1"/>
+    <field name="24IK" editable="1"/>
+    <field name="24IT" editable="1"/>
+    <field name="24IU" editable="1"/>
+    <field name="24IV" editable="1"/>
+    <field name="24IX" editable="1"/>
+    <field name="24LT" editable="1"/>
+    <field name="24LU" editable="1"/>
+    <field name="24MT" editable="1"/>
+    <field name="24MUN" editable="1"/>
+    <field name="24NT" editable="1"/>
+    <field name="24OTH" editable="1"/>
+    <field name="24QT" editable="1"/>
+    <field name="24RD" editable="1"/>
+    <field name="24REVHA" editable="1"/>
+    <field name="24RF" editable="1"/>
+    <field name="24RT" editable="1"/>
+    <field name="24SOLWF" editable="1"/>
+    <field name="24ST" editable="1"/>
+    <field name="24STOWF" editable="1"/>
+    <field name="24SU" editable="1"/>
+    <field name="24TAV" editable="1"/>
+    <field name="24TT" editable="1"/>
+    <field name="24TTL" editable="1"/>
+    <field name="ASSESSMENT_ROLL_NUMBER" editable="1"/>
+    <field name="CLEAN_FULL_ADDRE" editable="1"/>
+    <field name="CNTROLLNUM" editable="1"/>
+    <field name="ERROR" editable="1"/>
+    <field name="EXTADDRESS" editable="1"/>
+    <field name="EXTRACTED_ADDRESS_SUMMARY" editable="1"/>
+    <field name="EXTRACTED_ASSESSMENT_ROLL_NUMBER" editable="1"/>
+    <field name="EXTROLLNUM" editable="1"/>
+    <field name="FULL_ADDRE" editable="1"/>
+    <field name="NONE_EDU" editable="1"/>
+    <field name="NONE_MUN" editable="1"/>
+    <field name="NONE_OTH" editable="1"/>
+    <field name="NONE_RT" editable="1"/>
+    <field name="NONE_SOLWF" editable="1"/>
+    <field name="NONE_STOWF" editable="1"/>
+    <field name="NONE_TAV" editable="1"/>
+    <field name="NONE_TTV" editable="1"/>
+    <field name="None - Education taxes" editable="1"/>
+    <field name="None - Municipal taxes" editable="1"/>
+    <field name="None - Other taxes" editable="1"/>
+    <field name="None - RESIDENTIAL - TAXABLE: FULL - RT" editable="1"/>
+    <field name="None - Solid waste fees" editable="1"/>
+    <field name="None - Stormwater fees" editable="1"/>
+    <field name="None - Total assessed value" editable="1"/>
+    <field name="None - Total taxes levied" editable="1"/>
+    <field name="Number of addresses" editable="1"/>
+    <field name="ODF_ASSESS" editable="1"/>
+    <field name="ODF_ID" editable="1"/>
+    <field name="PARAREA_M" editable="1"/>
+    <field name="PARCEL_ASSESSMENT_ROLL_NUMBER" editable="1"/>
+    <field name="PARCEL_ASSESSMENT_ROLL_NUMBER_2" editable="1"/>
+    <field name="PARN" editable="1"/>
+    <field name="WARD" editable="1"/>
+    <field name="ZONEMAIN" editable="1"/>
+    <field name="ZONE_MAIN" editable="1"/>
+    <field name="Zero Assessment Roll Number" editable="1"/>
+    <field name="Zoning code" editable="1"/>
+    <field name="area" editable="1"/>
+    <field name="begin" editable="1"/>
+    <field name="dist_pole" editable="1"/>
+    <field name="end" editable="1"/>
+    <field name="error message" editable="1"/>
+    <field name="fid" editable="1"/>
+    <field name="fid_2" editable="1"/>
+    <field name="layer" editable="1"/>
+    <field name="path" editable="1"/>
+    <field name="qualifier" editable="1"/>
+    <field name="street_name" editable="1"/>
+    <field name="street_number" editable="1"/>
+    <field name="unit" editable="1"/>
   </editable>
   <labelOnTop>
-    <field labelOnTop="0" name="2023 - - DH"/>
-    <field labelOnTop="0" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF"/>
-    <field labelOnTop="0" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV"/>
-    <field labelOnTop="0" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY"/>
-    <field labelOnTop="0" name="2023 - COMMERCIAL - SMALL BUSINESS - C8"/>
-    <field labelOnTop="0" name="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7"/>
-    <field labelOnTop="0" name="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU"/>
-    <field labelOnTop="0" name="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1"/>
-    <field labelOnTop="0" name="2023 - COMMERCIAL - TAXABLE: FULL - CT"/>
-    <field labelOnTop="0" name="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH"/>
-    <field labelOnTop="0" name="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX"/>
-    <field labelOnTop="0" name="2023 - EXEMPT - E"/>
-    <field labelOnTop="0" name="2023 - Education taxes"/>
-    <field labelOnTop="0" name="2023 - FARM - TAXABLE: FULL - FT"/>
-    <field labelOnTop="0" name="2023 - INDUSTRIAL - SMALL BUSINESS - I8"/>
-    <field labelOnTop="0" name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7"/>
-    <field labelOnTop="0" name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0"/>
-    <field labelOnTop="0" name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU"/>
-    <field labelOnTop="0" name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK"/>
-    <field labelOnTop="0" name="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1"/>
-    <field labelOnTop="0" name="2023 - INDUSTRIAL - TAXABLE: FULL - IT"/>
-    <field labelOnTop="0" name="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH"/>
-    <field labelOnTop="0" name="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX"/>
-    <field labelOnTop="0" name="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF"/>
-    <field labelOnTop="0" name="2023 - LANDFILL - TAXABLE: FULL - HT"/>
-    <field labelOnTop="0" name="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU"/>
-    <field labelOnTop="0" name="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT"/>
-    <field labelOnTop="0" name="2023 - MANAGED FORESTS - TAXABLE: FULL - TT"/>
-    <field labelOnTop="0" name="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT"/>
-    <field labelOnTop="0" name="2023 - Municipal taxes"/>
-    <field labelOnTop="0" name="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT"/>
-    <field labelOnTop="0" name="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF"/>
-    <field labelOnTop="0" name="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU"/>
-    <field labelOnTop="0" name="2023 - OFFICE BUILDING - TAXABLE: FULL - DT"/>
-    <field labelOnTop="0" name="2023 - Other taxes"/>
-    <field labelOnTop="0" name="2023 - PARKING LOT - TAXABLE: FULL - GT"/>
-    <field labelOnTop="0" name="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT"/>
-    <field labelOnTop="0" name="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF"/>
-    <field labelOnTop="0" name="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD"/>
-    <field labelOnTop="0" name="2023 - RESIDENTIAL - TAXABLE: FULL - RT"/>
-    <field labelOnTop="0" name="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU"/>
-    <field labelOnTop="0" name="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST"/>
-    <field labelOnTop="0" name="2023 - Solid waste fees"/>
-    <field labelOnTop="0" name="2023 - Stormwater fees"/>
-    <field labelOnTop="0" name="2023 - Total assessed value"/>
-    <field labelOnTop="0" name="2023 - Total taxes levied"/>
-    <field labelOnTop="0" name="2023 Revenue by Hectare"/>
-    <field labelOnTop="0" name="2024  Revenue by Hectare"/>
-    <field labelOnTop="0" name="2024 - - C0"/>
-    <field labelOnTop="0" name="2024 - - DH"/>
-    <field labelOnTop="0" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF"/>
-    <field labelOnTop="0" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV"/>
-    <field labelOnTop="0" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY"/>
-    <field labelOnTop="0" name="2024 - COMMERCIAL - SMALL BUSINESS - C8"/>
-    <field labelOnTop="0" name="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7"/>
-    <field labelOnTop="0" name="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU"/>
-    <field labelOnTop="0" name="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1"/>
-    <field labelOnTop="0" name="2024 - COMMERCIAL - TAXABLE: FULL - CT"/>
-    <field labelOnTop="0" name="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH"/>
-    <field labelOnTop="0" name="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX"/>
-    <field labelOnTop="0" name="2024 - EXEMPT - E"/>
-    <field labelOnTop="0" name="2024 - Education taxes"/>
-    <field labelOnTop="0" name="2024 - FARM - TAXABLE: FULL - FT"/>
-    <field labelOnTop="0" name="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV"/>
-    <field labelOnTop="0" name="2024 - INDUSTRIAL - SMALL BUSINESS - I8"/>
-    <field labelOnTop="0" name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7"/>
-    <field labelOnTop="0" name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0"/>
-    <field labelOnTop="0" name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU"/>
-    <field labelOnTop="0" name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK"/>
-    <field labelOnTop="0" name="2024 - INDUSTRIAL - TAXABLE: FULL - IT"/>
-    <field labelOnTop="0" name="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH"/>
-    <field labelOnTop="0" name="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX"/>
-    <field labelOnTop="0" name="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF"/>
-    <field labelOnTop="0" name="2024 - LANDFILL - TAXABLE: FULL - HT"/>
-    <field labelOnTop="0" name="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU"/>
-    <field labelOnTop="0" name="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT"/>
-    <field labelOnTop="0" name="2024 - MANAGED FORESTS - TAXABLE: FULL - TT"/>
-    <field labelOnTop="0" name="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT"/>
-    <field labelOnTop="0" name="2024 - Municipal taxes"/>
-    <field labelOnTop="0" name="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT"/>
-    <field labelOnTop="0" name="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF"/>
-    <field labelOnTop="0" name="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU"/>
-    <field labelOnTop="0" name="2024 - OFFICE BUILDING - TAXABLE: FULL - DT"/>
-    <field labelOnTop="0" name="2024 - Other taxes"/>
-    <field labelOnTop="0" name="2024 - PARKING LOT - TAXABLE: FULL - GT"/>
-    <field labelOnTop="0" name="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT"/>
-    <field labelOnTop="0" name="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF"/>
-    <field labelOnTop="0" name="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD"/>
-    <field labelOnTop="0" name="2024 - RESIDENTIAL - TAXABLE: FULL - RT"/>
-    <field labelOnTop="0" name="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU"/>
-    <field labelOnTop="0" name="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST"/>
-    <field labelOnTop="0" name="2024 - Solid waste fees"/>
-    <field labelOnTop="0" name="2024 - Stormwater fees"/>
-    <field labelOnTop="0" name="2024 - Total assessed value"/>
-    <field labelOnTop="0" name="2024 - Total taxes levied"/>
-    <field labelOnTop="0" name="ASSESSMENT_ROLL_NUMBER"/>
-    <field labelOnTop="0" name="EXTRACTED_ADDRESS_SUMMARY"/>
-    <field labelOnTop="0" name="EXTRACTED_ASSESSMENT_ROLL_NUMBER"/>
-    <field labelOnTop="0" name="None - Education taxes"/>
-    <field labelOnTop="0" name="None - Municipal taxes"/>
-    <field labelOnTop="0" name="None - Other taxes"/>
-    <field labelOnTop="0" name="None - RESIDENTIAL - TAXABLE: FULL - RT"/>
-    <field labelOnTop="0" name="None - Solid waste fees"/>
-    <field labelOnTop="0" name="None - Stormwater fees"/>
-    <field labelOnTop="0" name="None - Total assessed value"/>
-    <field labelOnTop="0" name="None - Total taxes levied"/>
-    <field labelOnTop="0" name="Number of addresses"/>
-    <field labelOnTop="0" name="ODF_ASSESS"/>
-    <field labelOnTop="0" name="ODF_ID"/>
-    <field labelOnTop="0" name="PARCEL_ASSESSMENT_ROLL_NUMBER"/>
-    <field labelOnTop="0" name="Zero Assessment Roll Number"/>
-    <field labelOnTop="0" name="Zoning code"/>
-    <field labelOnTop="0" name="area"/>
-    <field labelOnTop="0" name="begin"/>
-    <field labelOnTop="0" name="dist_pole"/>
-    <field labelOnTop="0" name="end"/>
-    <field labelOnTop="0" name="error message"/>
-    <field labelOnTop="0" name="fid"/>
-    <field labelOnTop="0" name="fid_2"/>
-    <field labelOnTop="0" name="layer"/>
-    <field labelOnTop="0" name="path"/>
-    <field labelOnTop="0" name="qualifier"/>
-    <field labelOnTop="0" name="street_name"/>
-    <field labelOnTop="0" name="street_number"/>
-    <field labelOnTop="0" name="unit"/>
+    <field name="2023 - - DH" labelOnTop="0"/>
+    <field name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" labelOnTop="0"/>
+    <field name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" labelOnTop="0"/>
+    <field name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" labelOnTop="0"/>
+    <field name="2023 - COMMERCIAL - SMALL BUSINESS - C8" labelOnTop="0"/>
+    <field name="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" labelOnTop="0"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" labelOnTop="0"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" labelOnTop="0"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: FULL - CT" labelOnTop="0"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" labelOnTop="0"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" labelOnTop="0"/>
+    <field name="2023 - EXEMPT - E" labelOnTop="0"/>
+    <field name="2023 - Education taxes" labelOnTop="0"/>
+    <field name="2023 - FARM - TAXABLE: FULL - FT" labelOnTop="0"/>
+    <field name="2023 - INDUSTRIAL - SMALL BUSINESS - I8" labelOnTop="0"/>
+    <field name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" labelOnTop="0"/>
+    <field name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" labelOnTop="0"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" labelOnTop="0"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" labelOnTop="0"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" labelOnTop="0"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: FULL - IT" labelOnTop="0"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" labelOnTop="0"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" labelOnTop="0"/>
+    <field name="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" labelOnTop="0"/>
+    <field name="2023 - LANDFILL - TAXABLE: FULL - HT" labelOnTop="0"/>
+    <field name="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" labelOnTop="0"/>
+    <field name="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" labelOnTop="0"/>
+    <field name="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" labelOnTop="0"/>
+    <field name="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" labelOnTop="0"/>
+    <field name="2023 - Municipal taxes" labelOnTop="0"/>
+    <field name="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" labelOnTop="0"/>
+    <field name="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" labelOnTop="0"/>
+    <field name="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" labelOnTop="0"/>
+    <field name="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" labelOnTop="0"/>
+    <field name="2023 - Other taxes" labelOnTop="0"/>
+    <field name="2023 - PARKING LOT - TAXABLE: FULL - GT" labelOnTop="0"/>
+    <field name="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" labelOnTop="0"/>
+    <field name="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" labelOnTop="0"/>
+    <field name="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" labelOnTop="0"/>
+    <field name="2023 - RESIDENTIAL - TAXABLE: FULL - RT" labelOnTop="0"/>
+    <field name="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" labelOnTop="0"/>
+    <field name="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" labelOnTop="0"/>
+    <field name="2023 - Solid waste fees" labelOnTop="0"/>
+    <field name="2023 - Stormwater fees" labelOnTop="0"/>
+    <field name="2023 - Total assessed value" labelOnTop="0"/>
+    <field name="2023 - Total taxes levied" labelOnTop="0"/>
+    <field name="2023 Municipal Tax by Hectare" labelOnTop="0"/>
+    <field name="2023 Revenue by Hectare" labelOnTop="0"/>
+    <field name="2024  Revenue by Hectare" labelOnTop="0"/>
+    <field name="2024 - - C0" labelOnTop="0"/>
+    <field name="2024 - - DH" labelOnTop="0"/>
+    <field name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" labelOnTop="0"/>
+    <field name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" labelOnTop="0"/>
+    <field name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" labelOnTop="0"/>
+    <field name="2024 - COMMERCIAL - SMALL BUSINESS - C8" labelOnTop="0"/>
+    <field name="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" labelOnTop="0"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" labelOnTop="0"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" labelOnTop="0"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: FULL - CT" labelOnTop="0"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" labelOnTop="0"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" labelOnTop="0"/>
+    <field name="2024 - EXEMPT - E" labelOnTop="0"/>
+    <field name="2024 - Education taxes" labelOnTop="0"/>
+    <field name="2024 - FARM - TAXABLE: FULL - FT" labelOnTop="0"/>
+    <field name="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" labelOnTop="0"/>
+    <field name="2024 - INDUSTRIAL - SMALL BUSINESS - I8" labelOnTop="0"/>
+    <field name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" labelOnTop="0"/>
+    <field name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" labelOnTop="0"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" labelOnTop="0"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" labelOnTop="0"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: FULL - IT" labelOnTop="0"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" labelOnTop="0"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" labelOnTop="0"/>
+    <field name="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" labelOnTop="0"/>
+    <field name="2024 - LANDFILL - TAXABLE: FULL - HT" labelOnTop="0"/>
+    <field name="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" labelOnTop="0"/>
+    <field name="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" labelOnTop="0"/>
+    <field name="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" labelOnTop="0"/>
+    <field name="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" labelOnTop="0"/>
+    <field name="2024 - Municipal taxes" labelOnTop="0"/>
+    <field name="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" labelOnTop="0"/>
+    <field name="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" labelOnTop="0"/>
+    <field name="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" labelOnTop="0"/>
+    <field name="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" labelOnTop="0"/>
+    <field name="2024 - Other taxes" labelOnTop="0"/>
+    <field name="2024 - PARKING LOT - TAXABLE: FULL - GT" labelOnTop="0"/>
+    <field name="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" labelOnTop="0"/>
+    <field name="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" labelOnTop="0"/>
+    <field name="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" labelOnTop="0"/>
+    <field name="2024 - RESIDENTIAL - TAXABLE: FULL - RT" labelOnTop="0"/>
+    <field name="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" labelOnTop="0"/>
+    <field name="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" labelOnTop="0"/>
+    <field name="2024 - Solid waste fees" labelOnTop="0"/>
+    <field name="2024 - Stormwater fees" labelOnTop="0"/>
+    <field name="2024 - Total assessed value" labelOnTop="0"/>
+    <field name="2024 - Total taxes levied" labelOnTop="0"/>
+    <field name="2024 Municipal Tax by Hectare" labelOnTop="0"/>
+    <field name="2024GT" labelOnTop="0"/>
+    <field name="23C1" labelOnTop="0"/>
+    <field name="23C7" labelOnTop="0"/>
+    <field name="23C8" labelOnTop="0"/>
+    <field name="23CF" labelOnTop="0"/>
+    <field name="23CH" labelOnTop="0"/>
+    <field name="23CT" labelOnTop="0"/>
+    <field name="23CU" labelOnTop="0"/>
+    <field name="23CV" labelOnTop="0"/>
+    <field name="23CX" labelOnTop="0"/>
+    <field name="23CY" labelOnTop="0"/>
+    <field name="23DF" labelOnTop="0"/>
+    <field name="23DH" labelOnTop="0"/>
+    <field name="23DT" labelOnTop="0"/>
+    <field name="23DU" labelOnTop="0"/>
+    <field name="23E" labelOnTop="0"/>
+    <field name="23EDU" labelOnTop="0"/>
+    <field name="23FT" labelOnTop="0"/>
+    <field name="23GT" labelOnTop="0"/>
+    <field name="23HF" labelOnTop="0"/>
+    <field name="23HT" labelOnTop="0"/>
+    <field name="23I0" labelOnTop="0"/>
+    <field name="23I1" labelOnTop="0"/>
+    <field name="23I7" labelOnTop="0"/>
+    <field name="23I8" labelOnTop="0"/>
+    <field name="23IH" labelOnTop="0"/>
+    <field name="23IK" labelOnTop="0"/>
+    <field name="23IT" labelOnTop="0"/>
+    <field name="23IU" labelOnTop="0"/>
+    <field name="23IX" labelOnTop="0"/>
+    <field name="23LT" labelOnTop="0"/>
+    <field name="23LU" labelOnTop="0"/>
+    <field name="23MT" labelOnTop="0"/>
+    <field name="23MUN" labelOnTop="0"/>
+    <field name="23NT" labelOnTop="0"/>
+    <field name="23OTH" labelOnTop="0"/>
+    <field name="23QT" labelOnTop="0"/>
+    <field name="23RD" labelOnTop="0"/>
+    <field name="23REVHA" labelOnTop="0"/>
+    <field name="23RF" labelOnTop="0"/>
+    <field name="23RT" labelOnTop="0"/>
+    <field name="23SOLWF" labelOnTop="0"/>
+    <field name="23ST" labelOnTop="0"/>
+    <field name="23STOWF" labelOnTop="0"/>
+    <field name="23SU" labelOnTop="0"/>
+    <field name="23TAV" labelOnTop="0"/>
+    <field name="23TT" labelOnTop="0"/>
+    <field name="23TTL" labelOnTop="0"/>
+    <field name="24C0" labelOnTop="0"/>
+    <field name="24C1" labelOnTop="0"/>
+    <field name="24C7" labelOnTop="0"/>
+    <field name="24C8" labelOnTop="0"/>
+    <field name="24CF" labelOnTop="0"/>
+    <field name="24CH" labelOnTop="0"/>
+    <field name="24CT" labelOnTop="0"/>
+    <field name="24CU" labelOnTop="0"/>
+    <field name="24CV" labelOnTop="0"/>
+    <field name="24CX" labelOnTop="0"/>
+    <field name="24CY" labelOnTop="0"/>
+    <field name="24DF" labelOnTop="0"/>
+    <field name="24DH" labelOnTop="0"/>
+    <field name="24DT" labelOnTop="0"/>
+    <field name="24DU" labelOnTop="0"/>
+    <field name="24E" labelOnTop="0"/>
+    <field name="24EDU" labelOnTop="0"/>
+    <field name="24FT" labelOnTop="0"/>
+    <field name="24HF" labelOnTop="0"/>
+    <field name="24HT" labelOnTop="0"/>
+    <field name="24I0" labelOnTop="0"/>
+    <field name="24I7" labelOnTop="0"/>
+    <field name="24I8" labelOnTop="0"/>
+    <field name="24IH" labelOnTop="0"/>
+    <field name="24IK" labelOnTop="0"/>
+    <field name="24IT" labelOnTop="0"/>
+    <field name="24IU" labelOnTop="0"/>
+    <field name="24IV" labelOnTop="0"/>
+    <field name="24IX" labelOnTop="0"/>
+    <field name="24LT" labelOnTop="0"/>
+    <field name="24LU" labelOnTop="0"/>
+    <field name="24MT" labelOnTop="0"/>
+    <field name="24MUN" labelOnTop="0"/>
+    <field name="24NT" labelOnTop="0"/>
+    <field name="24OTH" labelOnTop="0"/>
+    <field name="24QT" labelOnTop="0"/>
+    <field name="24RD" labelOnTop="0"/>
+    <field name="24REVHA" labelOnTop="0"/>
+    <field name="24RF" labelOnTop="0"/>
+    <field name="24RT" labelOnTop="0"/>
+    <field name="24SOLWF" labelOnTop="0"/>
+    <field name="24ST" labelOnTop="0"/>
+    <field name="24STOWF" labelOnTop="0"/>
+    <field name="24SU" labelOnTop="0"/>
+    <field name="24TAV" labelOnTop="0"/>
+    <field name="24TT" labelOnTop="0"/>
+    <field name="24TTL" labelOnTop="0"/>
+    <field name="ASSESSMENT_ROLL_NUMBER" labelOnTop="0"/>
+    <field name="CLEAN_FULL_ADDRE" labelOnTop="0"/>
+    <field name="CNTROLLNUM" labelOnTop="0"/>
+    <field name="ERROR" labelOnTop="0"/>
+    <field name="EXTADDRESS" labelOnTop="0"/>
+    <field name="EXTRACTED_ADDRESS_SUMMARY" labelOnTop="0"/>
+    <field name="EXTRACTED_ASSESSMENT_ROLL_NUMBER" labelOnTop="0"/>
+    <field name="EXTROLLNUM" labelOnTop="0"/>
+    <field name="FULL_ADDRE" labelOnTop="0"/>
+    <field name="NONE_EDU" labelOnTop="0"/>
+    <field name="NONE_MUN" labelOnTop="0"/>
+    <field name="NONE_OTH" labelOnTop="0"/>
+    <field name="NONE_RT" labelOnTop="0"/>
+    <field name="NONE_SOLWF" labelOnTop="0"/>
+    <field name="NONE_STOWF" labelOnTop="0"/>
+    <field name="NONE_TAV" labelOnTop="0"/>
+    <field name="NONE_TTV" labelOnTop="0"/>
+    <field name="None - Education taxes" labelOnTop="0"/>
+    <field name="None - Municipal taxes" labelOnTop="0"/>
+    <field name="None - Other taxes" labelOnTop="0"/>
+    <field name="None - RESIDENTIAL - TAXABLE: FULL - RT" labelOnTop="0"/>
+    <field name="None - Solid waste fees" labelOnTop="0"/>
+    <field name="None - Stormwater fees" labelOnTop="0"/>
+    <field name="None - Total assessed value" labelOnTop="0"/>
+    <field name="None - Total taxes levied" labelOnTop="0"/>
+    <field name="Number of addresses" labelOnTop="0"/>
+    <field name="ODF_ASSESS" labelOnTop="0"/>
+    <field name="ODF_ID" labelOnTop="0"/>
+    <field name="PARAREA_M" labelOnTop="0"/>
+    <field name="PARCEL_ASSESSMENT_ROLL_NUMBER" labelOnTop="0"/>
+    <field name="PARCEL_ASSESSMENT_ROLL_NUMBER_2" labelOnTop="0"/>
+    <field name="PARN" labelOnTop="0"/>
+    <field name="WARD" labelOnTop="0"/>
+    <field name="ZONEMAIN" labelOnTop="0"/>
+    <field name="ZONE_MAIN" labelOnTop="0"/>
+    <field name="Zero Assessment Roll Number" labelOnTop="0"/>
+    <field name="Zoning code" labelOnTop="0"/>
+    <field name="area" labelOnTop="0"/>
+    <field name="begin" labelOnTop="0"/>
+    <field name="dist_pole" labelOnTop="0"/>
+    <field name="end" labelOnTop="0"/>
+    <field name="error message" labelOnTop="0"/>
+    <field name="fid" labelOnTop="0"/>
+    <field name="fid_2" labelOnTop="0"/>
+    <field name="layer" labelOnTop="0"/>
+    <field name="path" labelOnTop="0"/>
+    <field name="qualifier" labelOnTop="0"/>
+    <field name="street_name" labelOnTop="0"/>
+    <field name="street_number" labelOnTop="0"/>
+    <field name="unit" labelOnTop="0"/>
   </labelOnTop>
   <reuseLastValue>
-    <field reuseLastValue="0" name="2023 - - DH"/>
-    <field reuseLastValue="0" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF"/>
-    <field reuseLastValue="0" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV"/>
-    <field reuseLastValue="0" name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY"/>
-    <field reuseLastValue="0" name="2023 - COMMERCIAL - SMALL BUSINESS - C8"/>
-    <field reuseLastValue="0" name="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7"/>
-    <field reuseLastValue="0" name="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU"/>
-    <field reuseLastValue="0" name="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1"/>
-    <field reuseLastValue="0" name="2023 - COMMERCIAL - TAXABLE: FULL - CT"/>
-    <field reuseLastValue="0" name="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH"/>
-    <field reuseLastValue="0" name="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX"/>
-    <field reuseLastValue="0" name="2023 - EXEMPT - E"/>
-    <field reuseLastValue="0" name="2023 - Education taxes"/>
-    <field reuseLastValue="0" name="2023 - FARM - TAXABLE: FULL - FT"/>
-    <field reuseLastValue="0" name="2023 - INDUSTRIAL - SMALL BUSINESS - I8"/>
-    <field reuseLastValue="0" name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7"/>
-    <field reuseLastValue="0" name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0"/>
-    <field reuseLastValue="0" name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU"/>
-    <field reuseLastValue="0" name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK"/>
-    <field reuseLastValue="0" name="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1"/>
-    <field reuseLastValue="0" name="2023 - INDUSTRIAL - TAXABLE: FULL - IT"/>
-    <field reuseLastValue="0" name="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH"/>
-    <field reuseLastValue="0" name="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX"/>
-    <field reuseLastValue="0" name="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF"/>
-    <field reuseLastValue="0" name="2023 - LANDFILL - TAXABLE: FULL - HT"/>
-    <field reuseLastValue="0" name="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU"/>
-    <field reuseLastValue="0" name="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT"/>
-    <field reuseLastValue="0" name="2023 - MANAGED FORESTS - TAXABLE: FULL - TT"/>
-    <field reuseLastValue="0" name="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT"/>
-    <field reuseLastValue="0" name="2023 - Municipal taxes"/>
-    <field reuseLastValue="0" name="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT"/>
-    <field reuseLastValue="0" name="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF"/>
-    <field reuseLastValue="0" name="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU"/>
-    <field reuseLastValue="0" name="2023 - OFFICE BUILDING - TAXABLE: FULL - DT"/>
-    <field reuseLastValue="0" name="2023 - Other taxes"/>
-    <field reuseLastValue="0" name="2023 - PARKING LOT - TAXABLE: FULL - GT"/>
-    <field reuseLastValue="0" name="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT"/>
-    <field reuseLastValue="0" name="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF"/>
-    <field reuseLastValue="0" name="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD"/>
-    <field reuseLastValue="0" name="2023 - RESIDENTIAL - TAXABLE: FULL - RT"/>
-    <field reuseLastValue="0" name="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU"/>
-    <field reuseLastValue="0" name="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST"/>
-    <field reuseLastValue="0" name="2023 - Solid waste fees"/>
-    <field reuseLastValue="0" name="2023 - Stormwater fees"/>
-    <field reuseLastValue="0" name="2023 - Total assessed value"/>
-    <field reuseLastValue="0" name="2023 - Total taxes levied"/>
-    <field reuseLastValue="0" name="2023 Revenue by Hectare"/>
-    <field reuseLastValue="0" name="2024  Revenue by Hectare"/>
-    <field reuseLastValue="0" name="2024 - - C0"/>
-    <field reuseLastValue="0" name="2024 - - DH"/>
-    <field reuseLastValue="0" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF"/>
-    <field reuseLastValue="0" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV"/>
-    <field reuseLastValue="0" name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY"/>
-    <field reuseLastValue="0" name="2024 - COMMERCIAL - SMALL BUSINESS - C8"/>
-    <field reuseLastValue="0" name="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7"/>
-    <field reuseLastValue="0" name="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU"/>
-    <field reuseLastValue="0" name="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1"/>
-    <field reuseLastValue="0" name="2024 - COMMERCIAL - TAXABLE: FULL - CT"/>
-    <field reuseLastValue="0" name="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH"/>
-    <field reuseLastValue="0" name="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX"/>
-    <field reuseLastValue="0" name="2024 - EXEMPT - E"/>
-    <field reuseLastValue="0" name="2024 - Education taxes"/>
-    <field reuseLastValue="0" name="2024 - FARM - TAXABLE: FULL - FT"/>
-    <field reuseLastValue="0" name="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV"/>
-    <field reuseLastValue="0" name="2024 - INDUSTRIAL - SMALL BUSINESS - I8"/>
-    <field reuseLastValue="0" name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7"/>
-    <field reuseLastValue="0" name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0"/>
-    <field reuseLastValue="0" name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU"/>
-    <field reuseLastValue="0" name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK"/>
-    <field reuseLastValue="0" name="2024 - INDUSTRIAL - TAXABLE: FULL - IT"/>
-    <field reuseLastValue="0" name="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH"/>
-    <field reuseLastValue="0" name="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX"/>
-    <field reuseLastValue="0" name="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF"/>
-    <field reuseLastValue="0" name="2024 - LANDFILL - TAXABLE: FULL - HT"/>
-    <field reuseLastValue="0" name="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU"/>
-    <field reuseLastValue="0" name="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT"/>
-    <field reuseLastValue="0" name="2024 - MANAGED FORESTS - TAXABLE: FULL - TT"/>
-    <field reuseLastValue="0" name="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT"/>
-    <field reuseLastValue="0" name="2024 - Municipal taxes"/>
-    <field reuseLastValue="0" name="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT"/>
-    <field reuseLastValue="0" name="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF"/>
-    <field reuseLastValue="0" name="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU"/>
-    <field reuseLastValue="0" name="2024 - OFFICE BUILDING - TAXABLE: FULL - DT"/>
-    <field reuseLastValue="0" name="2024 - Other taxes"/>
-    <field reuseLastValue="0" name="2024 - PARKING LOT - TAXABLE: FULL - GT"/>
-    <field reuseLastValue="0" name="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT"/>
-    <field reuseLastValue="0" name="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF"/>
-    <field reuseLastValue="0" name="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD"/>
-    <field reuseLastValue="0" name="2024 - RESIDENTIAL - TAXABLE: FULL - RT"/>
-    <field reuseLastValue="0" name="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU"/>
-    <field reuseLastValue="0" name="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST"/>
-    <field reuseLastValue="0" name="2024 - Solid waste fees"/>
-    <field reuseLastValue="0" name="2024 - Stormwater fees"/>
-    <field reuseLastValue="0" name="2024 - Total assessed value"/>
-    <field reuseLastValue="0" name="2024 - Total taxes levied"/>
-    <field reuseLastValue="0" name="ASSESSMENT_ROLL_NUMBER"/>
-    <field reuseLastValue="0" name="EXTRACTED_ADDRESS_SUMMARY"/>
-    <field reuseLastValue="0" name="EXTRACTED_ASSESSMENT_ROLL_NUMBER"/>
-    <field reuseLastValue="0" name="None - Education taxes"/>
-    <field reuseLastValue="0" name="None - Municipal taxes"/>
-    <field reuseLastValue="0" name="None - Other taxes"/>
-    <field reuseLastValue="0" name="None - RESIDENTIAL - TAXABLE: FULL - RT"/>
-    <field reuseLastValue="0" name="None - Solid waste fees"/>
-    <field reuseLastValue="0" name="None - Stormwater fees"/>
-    <field reuseLastValue="0" name="None - Total assessed value"/>
-    <field reuseLastValue="0" name="None - Total taxes levied"/>
-    <field reuseLastValue="0" name="Number of addresses"/>
-    <field reuseLastValue="0" name="ODF_ASSESS"/>
-    <field reuseLastValue="0" name="ODF_ID"/>
-    <field reuseLastValue="0" name="PARCEL_ASSESSMENT_ROLL_NUMBER"/>
-    <field reuseLastValue="0" name="Zero Assessment Roll Number"/>
-    <field reuseLastValue="0" name="Zoning code"/>
-    <field reuseLastValue="0" name="area"/>
-    <field reuseLastValue="0" name="begin"/>
-    <field reuseLastValue="0" name="dist_pole"/>
-    <field reuseLastValue="0" name="end"/>
-    <field reuseLastValue="0" name="error message"/>
-    <field reuseLastValue="0" name="fid"/>
-    <field reuseLastValue="0" name="fid_2"/>
-    <field reuseLastValue="0" name="layer"/>
-    <field reuseLastValue="0" name="path"/>
-    <field reuseLastValue="0" name="qualifier"/>
-    <field reuseLastValue="0" name="street_name"/>
-    <field reuseLastValue="0" name="street_number"/>
-    <field reuseLastValue="0" name="unit"/>
+    <field name="2023 - - DH" reuseLastValue="0"/>
+    <field name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" reuseLastValue="0"/>
+    <field name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" reuseLastValue="0"/>
+    <field name="2023 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" reuseLastValue="0"/>
+    <field name="2023 - COMMERCIAL - SMALL BUSINESS - C8" reuseLastValue="0"/>
+    <field name="2023 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" reuseLastValue="0"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" reuseLastValue="0"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" reuseLastValue="0"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: FULL - CT" reuseLastValue="0"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" reuseLastValue="0"/>
+    <field name="2023 - COMMERCIAL - TAXABLE: VACANT LAND - CX" reuseLastValue="0"/>
+    <field name="2023 - EXEMPT - E" reuseLastValue="0"/>
+    <field name="2023 - Education taxes" reuseLastValue="0"/>
+    <field name="2023 - FARM - TAXABLE: FULL - FT" reuseLastValue="0"/>
+    <field name="2023 - INDUSTRIAL - SMALL BUSINESS - I8" reuseLastValue="0"/>
+    <field name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" reuseLastValue="0"/>
+    <field name="2023 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" reuseLastValue="0"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" reuseLastValue="0"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" reuseLastValue="0"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - I1" reuseLastValue="0"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: FULL - IT" reuseLastValue="0"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" reuseLastValue="0"/>
+    <field name="2023 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" reuseLastValue="0"/>
+    <field name="2023 - LANDFILL - PAYMENT IN LIEU: FULL - HF" reuseLastValue="0"/>
+    <field name="2023 - LANDFILL - TAXABLE: FULL - HT" reuseLastValue="0"/>
+    <field name="2023 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" reuseLastValue="0"/>
+    <field name="2023 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" reuseLastValue="0"/>
+    <field name="2023 - MANAGED FORESTS - TAXABLE: FULL - TT" reuseLastValue="0"/>
+    <field name="2023 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" reuseLastValue="0"/>
+    <field name="2023 - Municipal taxes" reuseLastValue="0"/>
+    <field name="2023 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" reuseLastValue="0"/>
+    <field name="2023 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" reuseLastValue="0"/>
+    <field name="2023 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" reuseLastValue="0"/>
+    <field name="2023 - OFFICE BUILDING - TAXABLE: FULL - DT" reuseLastValue="0"/>
+    <field name="2023 - Other taxes" reuseLastValue="0"/>
+    <field name="2023 - PARKING LOT - TAXABLE: FULL - GT" reuseLastValue="0"/>
+    <field name="2023 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" reuseLastValue="0"/>
+    <field name="2023 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" reuseLastValue="0"/>
+    <field name="2023 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" reuseLastValue="0"/>
+    <field name="2023 - RESIDENTIAL - TAXABLE: FULL - RT" reuseLastValue="0"/>
+    <field name="2023 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" reuseLastValue="0"/>
+    <field name="2023 - SHOPPING CENTRE - TAXABLE: FULL - ST" reuseLastValue="0"/>
+    <field name="2023 - Solid waste fees" reuseLastValue="0"/>
+    <field name="2023 - Stormwater fees" reuseLastValue="0"/>
+    <field name="2023 - Total assessed value" reuseLastValue="0"/>
+    <field name="2023 - Total taxes levied" reuseLastValue="0"/>
+    <field name="2023 Municipal Tax by Hectare" reuseLastValue="0"/>
+    <field name="2023 Revenue by Hectare" reuseLastValue="0"/>
+    <field name="2024  Revenue by Hectare" reuseLastValue="0"/>
+    <field name="2024 - - C0" reuseLastValue="0"/>
+    <field name="2024 - - DH" reuseLastValue="0"/>
+    <field name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" reuseLastValue="0"/>
+    <field name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" reuseLastValue="0"/>
+    <field name="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" reuseLastValue="0"/>
+    <field name="2024 - COMMERCIAL - SMALL BUSINESS - C8" reuseLastValue="0"/>
+    <field name="2024 - COMMERCIAL - SMALL SCALE ON FARM BUSINESS - C7" reuseLastValue="0"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" reuseLastValue="0"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: FARMLAND AWAITING DEVELOPMENT PHASE I - C1" reuseLastValue="0"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: FULL - CT" reuseLastValue="0"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - CH" reuseLastValue="0"/>
+    <field name="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" reuseLastValue="0"/>
+    <field name="2024 - EXEMPT - E" reuseLastValue="0"/>
+    <field name="2024 - Education taxes" reuseLastValue="0"/>
+    <field name="2024 - FARM - TAXABLE: FULL - FT" reuseLastValue="0"/>
+    <field name="2024 - INDUSTRIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - IV" reuseLastValue="0"/>
+    <field name="2024 - INDUSTRIAL - SMALL BUSINESS - I8" reuseLastValue="0"/>
+    <field name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 1 - I7" reuseLastValue="0"/>
+    <field name="2024 - INDUSTRIAL - SMALL SCALE ON FARM BUSINESS 2 - I0" reuseLastValue="0"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND - IU" reuseLastValue="0"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" reuseLastValue="0"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: FULL - IT" reuseLastValue="0"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" reuseLastValue="0"/>
+    <field name="2024 - INDUSTRIAL - TAXABLE: VACANT LAND - IX" reuseLastValue="0"/>
+    <field name="2024 - LANDFILL - PAYMENT IN LIEU: FULL - HF" reuseLastValue="0"/>
+    <field name="2024 - LANDFILL - TAXABLE: FULL - HT" reuseLastValue="0"/>
+    <field name="2024 - LARGE INDUSTRIAL - TAXABLE: EXCESS LAND - LU" reuseLastValue="0"/>
+    <field name="2024 - LARGE INDUSTRIAL - TAXABLE: FULL - LT" reuseLastValue="0"/>
+    <field name="2024 - MANAGED FORESTS - TAXABLE: FULL - TT" reuseLastValue="0"/>
+    <field name="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" reuseLastValue="0"/>
+    <field name="2024 - Municipal taxes" reuseLastValue="0"/>
+    <field name="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" reuseLastValue="0"/>
+    <field name="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" reuseLastValue="0"/>
+    <field name="2024 - OFFICE BUILDING - TAXABLE: EXCESS LAND - DU" reuseLastValue="0"/>
+    <field name="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" reuseLastValue="0"/>
+    <field name="2024 - Other taxes" reuseLastValue="0"/>
+    <field name="2024 - PARKING LOT - TAXABLE: FULL - GT" reuseLastValue="0"/>
+    <field name="2024 - PROFESSIONAL SPORTS FACILITY - TAXABLE: FULL - QT" reuseLastValue="0"/>
+    <field name="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" reuseLastValue="0"/>
+    <field name="2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD" reuseLastValue="0"/>
+    <field name="2024 - RESIDENTIAL - TAXABLE: FULL - RT" reuseLastValue="0"/>
+    <field name="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" reuseLastValue="0"/>
+    <field name="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" reuseLastValue="0"/>
+    <field name="2024 - Solid waste fees" reuseLastValue="0"/>
+    <field name="2024 - Stormwater fees" reuseLastValue="0"/>
+    <field name="2024 - Total assessed value" reuseLastValue="0"/>
+    <field name="2024 - Total taxes levied" reuseLastValue="0"/>
+    <field name="2024 Municipal Tax by Hectare" reuseLastValue="0"/>
+    <field name="2024GT" reuseLastValue="0"/>
+    <field name="23C1" reuseLastValue="0"/>
+    <field name="23C7" reuseLastValue="0"/>
+    <field name="23C8" reuseLastValue="0"/>
+    <field name="23CF" reuseLastValue="0"/>
+    <field name="23CH" reuseLastValue="0"/>
+    <field name="23CT" reuseLastValue="0"/>
+    <field name="23CU" reuseLastValue="0"/>
+    <field name="23CV" reuseLastValue="0"/>
+    <field name="23CX" reuseLastValue="0"/>
+    <field name="23CY" reuseLastValue="0"/>
+    <field name="23DF" reuseLastValue="0"/>
+    <field name="23DH" reuseLastValue="0"/>
+    <field name="23DT" reuseLastValue="0"/>
+    <field name="23DU" reuseLastValue="0"/>
+    <field name="23E" reuseLastValue="0"/>
+    <field name="23EDU" reuseLastValue="0"/>
+    <field name="23FT" reuseLastValue="0"/>
+    <field name="23GT" reuseLastValue="0"/>
+    <field name="23HF" reuseLastValue="0"/>
+    <field name="23HT" reuseLastValue="0"/>
+    <field name="23I0" reuseLastValue="0"/>
+    <field name="23I1" reuseLastValue="0"/>
+    <field name="23I7" reuseLastValue="0"/>
+    <field name="23I8" reuseLastValue="0"/>
+    <field name="23IH" reuseLastValue="0"/>
+    <field name="23IK" reuseLastValue="0"/>
+    <field name="23IT" reuseLastValue="0"/>
+    <field name="23IU" reuseLastValue="0"/>
+    <field name="23IX" reuseLastValue="0"/>
+    <field name="23LT" reuseLastValue="0"/>
+    <field name="23LU" reuseLastValue="0"/>
+    <field name="23MT" reuseLastValue="0"/>
+    <field name="23MUN" reuseLastValue="0"/>
+    <field name="23NT" reuseLastValue="0"/>
+    <field name="23OTH" reuseLastValue="0"/>
+    <field name="23QT" reuseLastValue="0"/>
+    <field name="23RD" reuseLastValue="0"/>
+    <field name="23REVHA" reuseLastValue="0"/>
+    <field name="23RF" reuseLastValue="0"/>
+    <field name="23RT" reuseLastValue="0"/>
+    <field name="23SOLWF" reuseLastValue="0"/>
+    <field name="23ST" reuseLastValue="0"/>
+    <field name="23STOWF" reuseLastValue="0"/>
+    <field name="23SU" reuseLastValue="0"/>
+    <field name="23TAV" reuseLastValue="0"/>
+    <field name="23TT" reuseLastValue="0"/>
+    <field name="23TTL" reuseLastValue="0"/>
+    <field name="24C0" reuseLastValue="0"/>
+    <field name="24C1" reuseLastValue="0"/>
+    <field name="24C7" reuseLastValue="0"/>
+    <field name="24C8" reuseLastValue="0"/>
+    <field name="24CF" reuseLastValue="0"/>
+    <field name="24CH" reuseLastValue="0"/>
+    <field name="24CT" reuseLastValue="0"/>
+    <field name="24CU" reuseLastValue="0"/>
+    <field name="24CV" reuseLastValue="0"/>
+    <field name="24CX" reuseLastValue="0"/>
+    <field name="24CY" reuseLastValue="0"/>
+    <field name="24DF" reuseLastValue="0"/>
+    <field name="24DH" reuseLastValue="0"/>
+    <field name="24DT" reuseLastValue="0"/>
+    <field name="24DU" reuseLastValue="0"/>
+    <field name="24E" reuseLastValue="0"/>
+    <field name="24EDU" reuseLastValue="0"/>
+    <field name="24FT" reuseLastValue="0"/>
+    <field name="24HF" reuseLastValue="0"/>
+    <field name="24HT" reuseLastValue="0"/>
+    <field name="24I0" reuseLastValue="0"/>
+    <field name="24I7" reuseLastValue="0"/>
+    <field name="24I8" reuseLastValue="0"/>
+    <field name="24IH" reuseLastValue="0"/>
+    <field name="24IK" reuseLastValue="0"/>
+    <field name="24IT" reuseLastValue="0"/>
+    <field name="24IU" reuseLastValue="0"/>
+    <field name="24IV" reuseLastValue="0"/>
+    <field name="24IX" reuseLastValue="0"/>
+    <field name="24LT" reuseLastValue="0"/>
+    <field name="24LU" reuseLastValue="0"/>
+    <field name="24MT" reuseLastValue="0"/>
+    <field name="24MUN" reuseLastValue="0"/>
+    <field name="24NT" reuseLastValue="0"/>
+    <field name="24OTH" reuseLastValue="0"/>
+    <field name="24QT" reuseLastValue="0"/>
+    <field name="24RD" reuseLastValue="0"/>
+    <field name="24REVHA" reuseLastValue="0"/>
+    <field name="24RF" reuseLastValue="0"/>
+    <field name="24RT" reuseLastValue="0"/>
+    <field name="24SOLWF" reuseLastValue="0"/>
+    <field name="24ST" reuseLastValue="0"/>
+    <field name="24STOWF" reuseLastValue="0"/>
+    <field name="24SU" reuseLastValue="0"/>
+    <field name="24TAV" reuseLastValue="0"/>
+    <field name="24TT" reuseLastValue="0"/>
+    <field name="24TTL" reuseLastValue="0"/>
+    <field name="ASSESSMENT_ROLL_NUMBER" reuseLastValue="0"/>
+    <field name="CLEAN_FULL_ADDRE" reuseLastValue="0"/>
+    <field name="CNTROLLNUM" reuseLastValue="0"/>
+    <field name="ERROR" reuseLastValue="0"/>
+    <field name="EXTADDRESS" reuseLastValue="0"/>
+    <field name="EXTRACTED_ADDRESS_SUMMARY" reuseLastValue="0"/>
+    <field name="EXTRACTED_ASSESSMENT_ROLL_NUMBER" reuseLastValue="0"/>
+    <field name="EXTROLLNUM" reuseLastValue="0"/>
+    <field name="FULL_ADDRE" reuseLastValue="0"/>
+    <field name="NONE_EDU" reuseLastValue="0"/>
+    <field name="NONE_MUN" reuseLastValue="0"/>
+    <field name="NONE_OTH" reuseLastValue="0"/>
+    <field name="NONE_RT" reuseLastValue="0"/>
+    <field name="NONE_SOLWF" reuseLastValue="0"/>
+    <field name="NONE_STOWF" reuseLastValue="0"/>
+    <field name="NONE_TAV" reuseLastValue="0"/>
+    <field name="NONE_TTV" reuseLastValue="0"/>
+    <field name="None - Education taxes" reuseLastValue="0"/>
+    <field name="None - Municipal taxes" reuseLastValue="0"/>
+    <field name="None - Other taxes" reuseLastValue="0"/>
+    <field name="None - RESIDENTIAL - TAXABLE: FULL - RT" reuseLastValue="0"/>
+    <field name="None - Solid waste fees" reuseLastValue="0"/>
+    <field name="None - Stormwater fees" reuseLastValue="0"/>
+    <field name="None - Total assessed value" reuseLastValue="0"/>
+    <field name="None - Total taxes levied" reuseLastValue="0"/>
+    <field name="Number of addresses" reuseLastValue="0"/>
+    <field name="ODF_ASSESS" reuseLastValue="0"/>
+    <field name="ODF_ID" reuseLastValue="0"/>
+    <field name="PARAREA_M" reuseLastValue="0"/>
+    <field name="PARCEL_ASSESSMENT_ROLL_NUMBER" reuseLastValue="0"/>
+    <field name="PARCEL_ASSESSMENT_ROLL_NUMBER_2" reuseLastValue="0"/>
+    <field name="PARN" reuseLastValue="0"/>
+    <field name="WARD" reuseLastValue="0"/>
+    <field name="ZONEMAIN" reuseLastValue="0"/>
+    <field name="ZONE_MAIN" reuseLastValue="0"/>
+    <field name="Zero Assessment Roll Number" reuseLastValue="0"/>
+    <field name="Zoning code" reuseLastValue="0"/>
+    <field name="area" reuseLastValue="0"/>
+    <field name="begin" reuseLastValue="0"/>
+    <field name="dist_pole" reuseLastValue="0"/>
+    <field name="end" reuseLastValue="0"/>
+    <field name="error message" reuseLastValue="0"/>
+    <field name="fid" reuseLastValue="0"/>
+    <field name="fid_2" reuseLastValue="0"/>
+    <field name="layer" reuseLastValue="0"/>
+    <field name="path" reuseLastValue="0"/>
+    <field name="qualifier" reuseLastValue="0"/>
+    <field name="street_name" reuseLastValue="0"/>
+    <field name="street_number" reuseLastValue="0"/>
+    <field name="unit" reuseLastValue="0"/>
   </reuseLastValue>
   <dataDefinedFieldProperties/>
   <widgets/>

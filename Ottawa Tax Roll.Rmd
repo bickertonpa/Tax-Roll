@@ -1,0 +1,176 @@
+---
+title: "Ottawa Tax Roll"
+author: "Patrick Bickerton"
+date: "2025-03-30"
+output: distill::distill_article
+---
+
+
+## Libraries
+The following libraries are required in the analysis
+
+```{r}
+# import the libraries
+#sumlibrary(tidyr)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+library(readr)
+library(dplyr)
+library(scales) # for currency formatting
+#library(psych) #for principle component analysis with VARIMAX rotation
+#library(googlesheets4) #to import custom dataset
+```
+
+#Import the Data
+
+```{r}
+# Import Data
+OttawaTaxRoll <- read_csv("QGIS/Parcel/Revenue by Parcel.csv", 
+                          na = c("NULL", "N/A", "", "NA"),
+                          show_col_types = FALSE)
+
+Taxes_by_Ward_2022_2024 <- read_csv("City of Ottawa Open Data/Taxes_by_Ward_2022-2024.csv", 
+                          na = c("NULL", "N/A", "", "NA"),
+                          show_col_types = FALSE)
+
+Taxes_by_Ward_2022_2024 <- Taxes_by_Ward_2022_2024 %>%
+  mutate(across(
+    `F2024_Current_Value_Assessment_`:`F2022_Percent_of_Total`,
+    parse_number
+  ))
+```
+## Add Normalized Data
+
+```{r}
+OttawaTaxRoll <- OttawaTaxRoll %>%
+  mutate(`2024 Municipal Revenue by Hectare` = 
+           `2024 - Municipal taxes` / (AREA_EPSG26918/10000))
+```
+
+## Summarize the data
+M
+```{r}
+WardTaxSummary <- OttawaTaxRoll %>%
+  group_by(WARD) %>%
+  summarise_at(
+    c("2024 - Total assessed value", "2024 - Municipal taxes"),
+    sum,
+    na.rm = TRUE
+  ) 
+
+DataComparison <- WardTaxSummary %>%
+  left_join(
+    Taxes_by_Ward_2022_2024 %>%
+      select(WARD,WARD_NAME, `F2024_Current_Value_Assessment_`, `F2024_Municipal_Taxes`),
+    by = "WARD"
+  ) 
+
+DataComparison <- DataComparison[, c(1,4,2,3,5,6)] 
+kable(DataComparison, caption = "Full Ward Tax Comparison Table")
+
+OttawaTaxRoll %>%
+  filter(!is.na(`2024 Municipal Revenue by Hectare`)) %>%
+  ggplot(aes(x = `2024 Municipal Revenue by Hectare`)) +
+  geom_histogram(binwidth = 10000, fill = "steelblue", color = "white") +
+  labs(
+    title = "Histogram of 2024 Municipal Revenue by Hectare",
+    x = "Tax Amount per Hectare ($)",
+    y = "Count of Properties"
+  ) +
+  theme_minimal()
+
+OttawaTaxRollValid <- OttawaTaxRoll %>% filter(!is.na(`2024 Municipal Revenue by Hectare`))
+
+taxHistogram2024 <- OttawaTaxRollValid %>%
+  ggplot(aes(x = `2024 Municipal Revenue by Hectare`)) +
+  geom_histogram(binwidth = 1000, fill = "steelblue", color = "white") +
+  labs(
+    title = "Histogram of 2024 Municipal Revenue by Hectare",
+    x = "Tax Amount per Hectare ($)",
+    y = "Count of Properties"
+  ) +
+  theme_minimal()
+
+boxplot(OttawaTaxRollValid$`2024 Municipal Revenue by Hectare` ~ OttawaTaxRollValid$WARD)
+
+ggplot(OttawaTaxRollValid, aes(x = as.factor(OttawaTaxRollValid$WARD), y = `2024 Municipal Revenue by Hectare`)) +
+  geom_boxplot(fill = "steelblue", outlier.color = "red", outlier.shape = 1) +
+  labs(
+    title = "2024 Municipal Revenue by Hectare",
+    x = "Ward",
+    y = "Municipal Tax ($)"
+  ) +
+  theme_minimal()
+
+ggplot(OttawaTaxRollValid, aes(x = as.factor(WARD), y = `2024 Municipal Revenue by Hectare`)) +
+  geom_boxplot(fill = "steelblue", outlier.color = "red", outlier.shape = 1) +
+  labs(
+    title = "2024 Municipal Revenue by Hectare ($/ha)",
+    x = "Ward",
+    y = "Municipal Tax by Hectare ($/ha)"
+  ) +
+  coord_cartesian(ylim = c(0, 50000)) +  # Adjust this upper limit as needed
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggplot(OttawaTaxRollValid, aes(x = AREA_EPSG26918, y = `2024 - Municipal taxes`, color = as.factor(WARD))) +
+  geom_point(alpha = 0.2) +
+  coord_cartesian(xlim = c(0, 25000), ylim = c(0, 150000)) +
+  labs(
+    title = "Parcel Area vs. 2024 Municipal Taxes by Ward",
+    x = "Parcel Area (m²)",
+    y = "Municipal Tax ($)",
+    color = "Ward"
+  ) +
+  theme_minimal()
+
+```
+## Data Coverage
+* Table. Row = Ward 
+** Cols = 2024 revenue (city), revenue (Pat), dif
+```{r}
+
+```
+
+** number of parcels (raw) vs. number of parcels (Pat), dif
+** number of parcels per ZONE_MAIN (raw) vs. number of parcels (Pat), dif
+
+## Revenues Overall city
+* Table. Row = Ward
+** Cols = sum (assessed val, mun taxes, education taxes, other taxes, solid waste, total taxes), sum (par area), mun_rev/ha
+** staked bar on tax $ (y axis), group by category, by ward (x axis). Raw dollar amount, not normalized by parcel area.
+** box plot (x = zoning), y = mun rev by ha)
+
+top 10 (summarize with table, Address Summary, Parcel, [metric], ZONE_MAIN, PAR_AREA)
+** assessed value
+** mun revenue
+** mun revenue by ha
+
+Bottom 10 (summarize with table, Address Summary, Parcel, [metric], ZONE_MAIN, PAR_AREA)
+** assessed value (non-null)
+** mun revenue (non-null)
+** mun revenue by ha
+
+## Ward Analysis
+Table.columm ZONE_MAIN, count parcels, total_mun revenue, total_area, avg(mun_rev by area)
+
+top 10 (summarize with table, Address Summary, Parcel, [metric], ZONE_MAIN, PAR_AREA)
+** assessed value
+** mun revenue
+** mun revenue by ha
+
+Bottom 10 (summarize with table, Address Summary, Parcel, [metric], ZONE_MAIN, PAR_AREA)
+** assessed value (non-null)
+** mun revenue (non-null)
+** mun revenue by ha
+
+
+
+
+
+##Session Info
+This above code was run in the following environment
+```{r}
+sessionInfo()
+```
