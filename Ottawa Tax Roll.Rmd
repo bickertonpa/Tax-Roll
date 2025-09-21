@@ -2,7 +2,12 @@
 title: "Ottawa Tax Roll"
 author: "Patrick Bickerton"
 date: "2025-03-30"
-output: distill::distill_article
+output: 
+  prettydoc::html_pretty:
+    theme: hpstr
+    highlight: github
+    
+#output: distill::distill_article
 ---
 
 
@@ -11,13 +16,17 @@ The following libraries are required in the analysis
 
 ```{r}
 # import the libraries
-#sumlibrary(tidyr)
+library(tidyr)
 library(ggplot2)
 library(knitr)
 library(kableExtra)
 library(readr)
 library(dplyr)
 library(scales) # for currency formatting
+library(glue)
+library(forcats)
+library(ggnewscale)    # multiple fill scales
+library(moments)  #for skewness
 #library(psych) #for principle component analysis with VARIMAX rotation
 #library(googlesheets4) #to import custom dataset
 ```
@@ -25,11 +34,37 @@ library(scales) # for currency formatting
 #Import the Data
 
 ```{r}
-# Import Data
-OttawaTaxRoll <- read_csv("QGIS/Parcel/Revenue by Parcel.csv", 
+# Import Revenue by Parcel Data
+OttawaTaxRoll <- read_csv("QGIS/Parcel/City/Revenue by Parcel2.csv", 
                           na = c("NULL", "N/A", "", "NA"),
                           show_col_types = FALSE)
 
+# Add Zoning Parent Group
+OttawaTaxRoll <- OttawaTaxRoll %>% 
+  mutate(parent_zone = case_when(
+    ZONE_MAIN %in% c("R1", "R2", "R3", "R4", "R5","RM") ~ "Residential",
+    ZONE_MAIN %in% c("I1","I2") ~ "Institutional",
+    ZONE_MAIN %in% c("L1","L2","L3","O1") ~ "Open Space & Leisure",
+    ZONE_MAIN %in% c("EP") ~ "Environmental",
+    ZONE_MAIN %in% c("AM","GM","LC","MC","MD","TD","TM") ~ "Mixed Use & Commercial",
+    ZONE_MAIN %in% c("IG", "IH","IL","IP") ~ "Industrial",
+    ZONE_MAIN %in% c("T1","T2") ~ "Transportation",
+    ZONE_MAIN %in% c("AG","ME","MR","RC","RG","RH","RI","RR","RU","VM","V1","V2","V3") ~ "Rural",
+    TRUE ~ "Other"
+    )
+  )
+
+# Transform Skewed Data
+OttawaTaxRoll <- OttawaTaxRoll %>% 
+  mutate(
+    `2024 - Municipal taxes_sqrt` = sqrt(`2024 - Municipal taxes`),
+    `2024 - Municipal taxes_log` = log(`2024 - Municipal taxes`),
+    `2024 - Municipal taxes_log10` = log10(`2024 - Municipal taxes`),
+    `2024 - Municipal taxes_inv` = 1/`2024 - Municipal taxes`
+  )
+
+
+# Import Ward Tax Data from City
 Taxes_by_Ward_2022_2024 <- read_csv("City of Ottawa Open Data/Taxes_by_Ward_2022-2024.csv", 
                           na = c("NULL", "N/A", "", "NA"),
                           show_col_types = FALSE)
@@ -46,9 +81,14 @@ Taxes_by_Ward_2022_2024 <- Taxes_by_Ward_2022_2024 %>%
 OttawaTaxRoll <- OttawaTaxRoll %>%
   mutate(`2024 Municipal Revenue by Hectare` = 
            `2024 - Municipal taxes` / (AREA_EPSG26918/10000))
+
+
+
 ```
 
-## Summarize the data
+
+
+# Summarize the data
 M
 ```{r}
 WardTaxSummary <- OttawaTaxRoll %>%
@@ -57,17 +97,14 @@ WardTaxSummary <- OttawaTaxRoll %>%
     c("2024 - Total assessed value", "2024 - Municipal taxes"),
     sum,
     na.rm = TRUE
-  ) 
-
-DataComparison <- WardTaxSummary %>%
-  left_join(
+  ) %>%
+    left_join(
     Taxes_by_Ward_2022_2024 %>%
-      select(WARD,WARD_NAME, `F2024_Current_Value_Assessment_`, `F2024_Municipal_Taxes`),
+      select(WARD,WARD_NAME),
     by = "WARD"
-  ) 
+  )
+WardTaxSummary <- WardTaxSummary[, c(1,4,2,3)] 
 
-DataComparison <- DataComparison[, c(1,4,2,3,5,6)] 
-kable(DataComparison, caption = "Full Ward Tax Comparison Table")
 
 OttawaTaxRoll %>%
   filter(!is.na(`2024 Municipal Revenue by Hectare`)) %>%
@@ -84,7 +121,7 @@ OttawaTaxRollValid <- OttawaTaxRoll %>% filter(!is.na(`2024 Municipal Revenue by
 
 taxHistogram2024 <- OttawaTaxRollValid %>%
   ggplot(aes(x = `2024 Municipal Revenue by Hectare`)) +
-  geom_histogram(binwidth = 1000, fill = "steelblue", color = "white") +
+  geom_histogram(binwidth = 10000, fill = "steelblue", color = "white") +
   labs(
     title = "Histogram of 2024 Municipal Revenue by Hectare",
     x = "Tax Amount per Hectare ($)",
@@ -92,8 +129,9 @@ taxHistogram2024 <- OttawaTaxRollValid %>%
   ) +
   theme_minimal()
 
+# 
 boxplot(OttawaTaxRollValid$`2024 Municipal Revenue by Hectare` ~ OttawaTaxRollValid$WARD)
-
+# 
 ggplot(OttawaTaxRollValid, aes(x = as.factor(OttawaTaxRollValid$WARD), y = `2024 Municipal Revenue by Hectare`)) +
   geom_boxplot(fill = "steelblue", outlier.color = "red", outlier.shape = 1) +
   labs(
@@ -103,17 +141,17 @@ ggplot(OttawaTaxRollValid, aes(x = as.factor(OttawaTaxRollValid$WARD), y = `2024
   ) +
   theme_minimal()
 
-ggplot(OttawaTaxRollValid, aes(x = as.factor(WARD), y = `2024 Municipal Revenue by Hectare`)) +
+ggplot(OttawaTaxRoll_singlezone, aes(x = as.factor(ZONE_MAIN), y = `2024 Municipal Revenue by Hectare`)) +
   geom_boxplot(fill = "steelblue", outlier.color = "red", outlier.shape = 1) +
   labs(
     title = "2024 Municipal Revenue by Hectare ($/ha)",
-    x = "Ward",
+    x = "Zoning Code",
     y = "Municipal Tax by Hectare ($/ha)"
   ) +
-  coord_cartesian(ylim = c(0, 50000)) +  # Adjust this upper limit as needed
+  coord_cartesian(ylim = c(0, 15000000)) +  # Adjust this upper limit as needed
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
+# 
 ggplot(OttawaTaxRollValid, aes(x = AREA_EPSG26918, y = `2024 - Municipal taxes`, color = as.factor(WARD))) +
   geom_point(alpha = 0.2) +
   coord_cartesian(xlim = c(0, 25000), ylim = c(0, 150000)) +
@@ -125,48 +163,1487 @@ ggplot(OttawaTaxRollValid, aes(x = AREA_EPSG26918, y = `2024 - Municipal taxes`,
   ) +
   theme_minimal()
 
+zoning_means <- OttawaTaxRoll_singlezone %>%
+  group_by(ZONE_MAIN) %>%
+  summarise(
+    mean_municipal_tax_hectare = mean(`2024 Municipal Revenue by Hectare`, na.rm = TRUE),
+    n = n()
+  ) %>%
+  arrange(desc(mean_municipal_tax_hectare))
+
+
 ```
-## Data Coverage
+# Data Coverage
+## Tax by Ward
 * Table. Row = Ward 
 ** Cols = 2024 revenue (city), revenue (Pat), dif
 ```{r}
 
+DataComparison <- WardTaxSummary %>%
+  left_join(
+    Taxes_by_Ward_2022_2024 %>%
+      select(WARD, `F2024_Current_Value_Assessment_`, `F2024_Municipal_Taxes`),
+    by = "WARD"
+  ) 
+
+
+
+#Coverage of assessed value
+DataComparison <- DataComparison %>%
+  mutate(`coverage_AV_pct` = 
+           round(`2024 - Total assessed value` / `F2024_Current_Value_Assessment_`,5))
+
+#Coverage of municipal revenue
+DataComparison <- DataComparison %>%
+  mutate(`coverage_MT_pct` = 
+           round(`2024 - Municipal taxes` / `F2024_Municipal_Taxes`,5))
+
+DataComparison <- DataComparison[, c(1,4,2,3,5,6,7,8)] 
+
+kable(DataComparison, caption = "Comparison of Municipal Taxes by Ward (2024)")
+
+df_plot_MT_pct <- DataComparison %>%
+
+  mutate(missing_MT_pct = 1-coverage_MT_pct) %>%
+  
+  # 3) turn WARD_NAME into a factor ordered by descending coverage
+  mutate(
+    WARD_NAME = fct_reorder(as.factor(WARD_NAME), coverage_MT_pct, .desc = TRUE)
+  ) %>%
+  
+  # 4) now pivot to long form for stacking
+  pivot_longer(
+    cols      = c(coverage_MT_pct,missing_MT_pct),
+    names_to  = "type",
+    values_to = "percent"
+  ) %>%
+  
+  # 5) ensure coverage is drawn first (bottom) and missing on top
+  mutate(
+    type = factor(type, levels = c("coverage_MT_pct", "missing_MT_pct"))
+  )
+
+
+ggplot(df_plot_MT_pct, aes(x = WARD_NAME, y = percent, fill = type)) +
+  geom_col(position = position_stack(reverse = TRUE)) +
+  scale_fill_manual(
+    name = "Data Type",
+    values = c("coverage_MT_pct" = "steelblue","missing_MT_pct" = "grey80"),
+    labels = c("Scraped Data", "Official City Data")
+  ) +
+  scale_y_continuous(labels = scales::label_percent(scale = 100)) +
+  labs(
+    title = "Scraper Accuracy Rate",
+    subtitle = "Minicipal taxes scraped as a percent of official ward totals",
+    x = "Ward (Decreasing Accuracy)",
+    y = "Minicipal Taxes (%)"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid.major.x = element_blank()
+  )
+
+
+df_plot_MT_abs <- DataComparison %>%
+  mutate(
+    missing_MT_abs = F2024_Municipal_Taxes - `2024 - Municipal taxes`,
+    coverage_MT_pct = `2024 - Municipal taxes` / F2024_Municipal_Taxes,
+    WARD_NAME = fct_reorder(WARD_NAME, F2024_Municipal_Taxes, .desc = TRUE)
+  ) %>%
+  select(WARD_NAME, `2024 - Municipal taxes`, missing_MT_abs) %>%
+  pivot_longer(
+    cols = c(`2024 - Municipal taxes`, missing_MT_abs),
+    names_to = "type",
+    values_to = "amount"
+  ) %>%
+  mutate(
+    type = factor(type, levels = c("missing_MT_abs","2024 - Municipal taxes"))
+  )
+
+ggplot(df_plot_MT_abs, aes(x = WARD_NAME, y = amount, fill = type)) +
+  geom_col(position = position_stack(reverse = FALSE)) +
+  scale_fill_manual(
+    name = "Data Type",
+    values = c("2024 - Municipal taxes" = "steelblue", "missing_MT_abs" = "grey80"),
+    labels = c("Ward Totals (Official)","Scraped")
+  ) +
+  scale_y_continuous(labels = label_dollar()) +
+  labs(
+    title = "Scraper Coverage: 2024 Municipal Taxes",
+    x = "Ward (Descending Ward Total Revenue)",
+    y = "Municipal Tax Revenue ($)"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid.major.x = element_blank()
+  )
+
+
+
+ggsave("Scraper Accuracy by Ward.png", plot = last_plot(), width = 9.5, height = 5, dpi = 200,bg="white")
 ```
 
-** number of parcels (raw) vs. number of parcels (Pat), dif
-** number of parcels per ZONE_MAIN (raw) vs. number of parcels (Pat), dif
+
+## Parcel Coverage
+```{r}
+Ottawa_Parcel <- read_csv("QGIS/Parcel/City/Ottawa Parcel.csv", 
+                          na = c("NULL", "N/A", "", "NA"),
+                          show_col_types = FALSE)
+
+Ottawa_Parcel <- Ottawa_Parcel %>% 
+  mutate(parent_zone = case_when(
+    ZONE_MAIN_major %in% c("R1", "R2", "R3", "R4", "R5","RM") ~ "Residential",
+    ZONE_MAIN_major %in% c("I1","I2") ~ "Institutional",
+    ZONE_MAIN_major %in% c("L1","L2","L3","O1") ~ "Open Space & Leisure",
+    ZONE_MAIN_major %in% c("EP") ~ "Environmental",
+    ZONE_MAIN_major %in% c("AM","GM","LC","MC","MD","TD","TM") ~ "Mixed Use & Commercial",
+    ZONE_MAIN_major %in% c("IG", "IH","IL","IP") ~ "Industrial",
+    ZONE_MAIN_major %in% c("T1","T2") ~ "Transportation",
+    ZONE_MAIN_major %in% c("AG","ME","MR","RC","RG","RH","RI","RR","RU","VM","V1","V2","V3") ~ "Rural",
+    TRUE ~ "Other"
+    )
+  )
+
+OttawaParcelSummary <- Ottawa_Parcel %>%
+  group_by(WARD) %>%
+    summarise(
+      Parcels = sum(!is.na(`ASSESSMENT_ROLL_NUMBER`)
+    )
+  )%>%
+    left_join(
+    Taxes_by_Ward_2022_2024 %>%
+      select(WARD,WARD_NAME),
+    by = "WARD"
+  )
+
+OttawaZoneSummary <- Ottawa_Parcel %>%
+  group_by(parent_zone) %>%
+    summarise(
+      Parcels = sum(!is.na(`ASSESSMENT_ROLL_NUMBER`)
+    )
+  )
+
+ZoneSummary <- OttawaTaxRoll %>%
+  group_by(parent_zone) %>%
+  summarise(
+    Scraped_Parcels = sum(!is.na(`EXTRACTED_ADDRESS_SUMMARY`))
+  )  %>% 
+    left_join(
+    OttawaZoneSummary %>%
+      select(parent_zone,Parcels),
+    by = 'parent_zone'
+  ) %>% 
+   mutate(coverage = 
+           Scraped_Parcels/Parcels)
+
+ZoneSummary <- ZoneSummary %>%
+  arrange(-coverage)
+
+
+df_plot_zone_pct <- ZoneSummary %>%
+  mutate(
+    missing = 1 - coverage,
+    parent_zone = fct_reorder(as.factor(parent_zone), coverage, .desc = TRUE)   # ensure WARD is factor
+  ) %>%
+  pivot_longer(c(coverage, missing),
+               names_to  = "type",
+               values_to = "percent") %>%
+  mutate(type = factor(type, levels = c("missing","coverage")))
+
+
+
+ggplot(df_plot_zone_pct, aes(x = parent_zone, y = percent, fill = type)) +
+  geom_col(position = position_stack(reverse = FALSE)) +
+  scale_fill_manual(
+    name = "Data Type",
+    values = c("coverage" = "steelblue","missing" = "grey80"),
+    labels = c("Total Parcels","Scraped Parcels")
+  ) +
+  scale_y_continuous(labels = scales::label_percent(scale = 100)) +
+  labs(
+    title = "Scraper Coverage by Zoning Group",
+    x = "Zoning Group (Descending Coverage)",
+    y = "Count (%)"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid.major.x = element_blank()
+  )
+
+ggsave("Scraper Coverage by Zoning Group.png", plot = last_plot(), width = 9.5, height = 5, dpi = 200,bg="white")
+
+df_plot_zone <- ZoneSummary %>%
+  mutate(
+    missing_parcels = Parcels - Scraped_Parcels,
+    parent_zone = fct_reorder(parent_zone, Parcels, .desc = TRUE)
+  ) %>%
+  pivot_longer(
+    cols = c(Scraped_Parcels, missing_parcels),
+    names_to = "type",
+    values_to = "count"
+  ) %>%
+  mutate(
+    type = factor(type, levels = c("Scraped_Parcels", "missing_parcels"))
+  )
+
+
+
+ggplot(df_plot_zone, aes(x = parent_zone, y = count, fill = type)) +
+  geom_col(position = position_stack(reverse = TRUE)) +
+  scale_fill_manual(
+    name = "Parcel Status",
+    values = c("Scraped_Parcels" = "steelblue", "missing_parcels" = "grey80"),
+    labels = c("Scraped", "Uncovered")
+  ) +
+  scale_y_continuous(labels = comma) +
+  labs(
+    title = "Scraped vs. Uncovered Parcels by Zoning Code",
+    x = "Zoning Code (Descending Total Parcels)",
+    y = "Number of Parcels"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid.major.x = element_blank()
+  )
+
+ggsave("Scraper Coverage (absolute) by Zoning Group.png", plot = last_plot(), width = 9.5, height = 5, dpi = 200,bg="white")
+
+```
+
+## Revenu by Area
+
+```{r}
+ggplot(OttawaTaxRoll, aes(x = `2024 - Municipal taxes_log`)) +
+  geom_histogram(bins = 100, fill = "steelblue", color = "white") +
+  labs(title = "Histogram of Square Root Transformed Municipal Taxes (2024)",
+       x = "Log(Municipal Taxes)",
+       y = "Frequency") +
+  theme_minimal()
+
+OttawaTaxRoll <- OttawaTaxRoll %>%
+  mutate(
+    log_revenue_per_hectare = log(`2024 Mun Revenue by Hectare`)
+  )
+
+OttawaTaxRoll_R_MC <- OttawaTaxRoll %>%
+  filter(
+    parent_zone == c("Residential","Mixed Use & Commercial")
+  )
+
+ggplot(OttawaTaxRoll_R_MC, aes(x = AREA_EPSG26918, y = `2024 - Municipal taxes_log10`, color = as.factor(ZONE_MAIN))) +
+  geom_point(alpha = 0.2) +
+  #stat_ellipse(type = "norm", level = 0.95) +
+  coord_cartesian(xlim = c(0, 25000), ylim = c(0, 20)) +
+  labs(
+    title = "Parcel Area vs. 2024 Municipal Taxes by Ward",
+    x = "Parcel Area (m²)",
+    y = "Log(Municipal Tax)",
+    color = "Zone"
+  ) +
+  theme_minimal()
+
+
+
+OttawaTaxRoll_singlezone <- OttawaTaxRoll_R_MC %>%
+  filter(!grepl(",", ZONE_MAIN)) %>%
+  mutate(ZONE_MAIN = fct_reorder(ZONE_MAIN,log_revenue_per_hectare,.fun =mean, .desc= TRUE))
+
+ggplot(OttawaTaxRoll_singlezone, aes(x = log_revenue_per_hectare)) +
+  geom_histogram(bins = 50, fill = "steelblue", color = "white") +
+  labs(
+    title = "Distribution of Revenue per Hectare",
+    x = "Revenue per Hectare",
+    y = "Frequency"
+  ) +
+  theme_minimal()
+
+model <- lm(log_revenue_per_hectare ~ ZONE_MAIN, data = OttawaTaxRoll_singlezone)
+summary(model)
+
+ggplot(OttawaTaxRoll_singlezone, aes(x = ZONE_MAIN, y = log_revenue_per_hectare)) +
+  geom_boxplot(fill = "lightblue") +
+   coord_cartesian(ylim = c(5, 16))+
+    scale_x_discrete(labels = c(
+    "AM" = "Arterial Mainstreet",
+    "R1" = "Residential 1",
+    "R2" = "Residential 2",
+    "R3" = "Residential 3",
+    "R4" = "Residential 4",
+    "R5" = "Residential 5",
+    "RM" = "Mobile Homes",
+    "GM" = "General Mixed Use",
+    "LC" = "Local Commercial",
+    "MD" = "Mixed Use Downtown",
+    "MC" = "Mixed-Use Centre",
+    "TD" = "Transit Oriented Development",
+    "TM" = "Traditional Mainstreet"
+  )) +
+  labs(
+    title = "Municipal Tax Revenue by Hectare by Zoning Code",
+    x = "Zoning Code (Descending)",
+    y = "Log(Rev per Hectare)",
+    caption = "Displayed on log scale to improve readability. Larger values appear visually closer to smaller values than in reality."
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 11),
+    axis.text.y = element_text(size = 14),
+    title = element_text(size = 14),
+    plot.margin = margin(t = 10, r = 30, b = 10, l = 30)
+    )
+
+ggsave("Municipal Tax Revenue by Zoning Code.png", plot = last_plot(), width = 9, height = 6, dpi = 200,bg="white")
+
+
+ggplot(zoning_means, aes(x = reorder(ZONE_MAIN, mean_municipal_tax_hectare), y = mean_municipal_tax_hectare)) +
+  geom_col(fill = "steelblue") +
+  coord_flip() +
+  scale_y_log10(labels = scales::label_comma()) +
+  geom_text(
+    aes(label = comma(round(mean_municipal_tax_hectare))),
+    hjust = 1.1,
+    vjust = .5,
+    size = 4,
+    color = 'white'
+  ) +
+  scale_x_discrete(labels = c(
+    "AM" = "Arterial Mainstreet",
+    "R1" = "Residential 1",
+    "R2" = "Residential 2",
+    "R3" = "Residential 3",
+    "R4" = "Residential 4",
+    "R5" = "Residential 5",
+    "RM" = "Mobile Homes",
+    "GM" = "General Mixed Use",
+    "LC" = "Local Commercial",
+    "MD" = "Mixed Use Downtown",
+    "MC" = "Mixed-Use Centre",
+    "TD" = "Transit Oriented Development",
+    "TM" = "Traditional Mainstreet"
+  ))+
+  labs(
+    title = "Mean Revenue Density by Zoning Code (Log Scale)",
+    x = "Zoning Code",
+    y = "Mean Revenue Density - Log Scale ($/ha)"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+ggsave("Municipal Tax Revenue (y.axis log) by Zoning Code.png", plot = last_plot(), width = 9.5, height = 5, dpi = 200,bg="white")
+
+ggplot(zoning_means, aes(x = reorder(ZONE_MAIN, mean_municipal_tax_hectare), y = mean_municipal_tax_hectare)) +
+  geom_col(fill = "steelblue") +
+  geom_text(
+    aes(label = comma(round(mean_municipal_tax_hectare),100)),
+    hjust = -0.1,
+    vjust = 0.5,
+    size = 4,
+    color = "steelblue"
+  ) +
+  coord_flip(ylim = c(0, 2000000)) +  # Increase upper Y limit (this is now the horizontal axis)
+  scale_x_discrete(labels = c(
+    "AM" = "Arterial Mainstreet",
+    "R1" = "Residential 1",
+    "R2" = "Residential 2",
+    "R3" = "Residential 3",
+    "R4" = "Residential 4",
+    "R5" = "Residential 5",
+    "RM" = "Mobile Homes",
+    "GM" = "General Mixed Use",
+    "LC" = "Local Commercial",
+    "MD" = "Mixed Use Downtown",
+    "MC" = "Mixed-Use Centre",
+    "TD" = "Transit Oriented Development",
+    "TM" = "Traditional Mainstreet"
+  )) +
+  labs(
+    title = "Mean Revenue Density by Zoning Code (city wide)",
+    x = "Zoning Code",
+    y = "Mean Revenue Density ($/ha)"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.margin = margin(r = 40),  # Extra space for labels
+    axis.text.x = element_text(size = 10)
+  )
+
+ggsave("Municipal Tax Revenue by Zoning Code.png", plot = last_plot(), width = 9.5, height = 5, dpi = 200,bg="white")
+```
+
+
+## Zoning Coverage
+```{r}
+OttawaZoneSummary <- Ottawa_Parcel %>%
+  group_by(ZONE_MAIN_major) %>%
+    summarise(
+      Count = sum(!is.na(`ASSESSMENT_ROLL_NUMBER`)
+    )
+  ) %>% 
+    mutate(
+      ZONE_MAIN = ZONE_MAIN_major
+  ) 
+
+ZoneSummary <- OttawaTaxRoll %>%
+  group_by(ZONE_MAIN) %>%
+  summarise(
+    Count_scraped = sum(!is.na(`EXTRACTED_ADDRESS_SUMMARY`))
+  )  %>% 
+    left_join(
+    OttawaZoneSummary %>%
+      select(ZONE_MAIN,Count),
+    by = "ZONE_MAIN"
+  ) 
+
+#Coverage of Parcel Zone Scrape
+ZoneSummary <- ZoneSummary %>%
+  mutate(`Coverage - Zone Scrape` = 
+           round(Count_scraped / Count,3)*100)%>%
+  filter(!is.na(`Coverage - Zone Scrape`))
+
+
+kable(ZoneSummary, caption = "Comparison of Zoning Coverage")
+
+```
+
 
 ## Revenues Overall city
 * Table. Row = Ward
 ** Cols = sum (assessed val, mun taxes, education taxes, other taxes, solid waste, total taxes), sum (par area), mun_rev/ha
+
+```{r}
+WardTaxSummary <- OttawaTaxRoll %>%
+  group_by(WARD) %>%
+  summarise_at(
+    c("2024 - Total assessed value", "2024 - Municipal taxes","2024 - Education taxes", "2024 - Other taxes" ,"2024 - Solid waste fees","2024 - Total taxes levied","AREA_EPSG26918"),
+    sum,
+    na.rm = TRUE
+  ) %>%
+    left_join(
+    Taxes_by_Ward_2022_2024 %>%
+      select(WARD,WARD_NAME),
+    by = "WARD"
+  )
+
+WardTaxSummary <- WardTaxSummary %>%
+  mutate(`2024 - Municipal Tax by Hectare` = `2024 - Municipal taxes` / (AREA_EPSG26918/10000))
+
+WardTaxSummary <- WardTaxSummary[, c(1,9,2,3,4,5,6,7,8,10)]
+
+kable(WardTaxSummary, caption = "Summary of Ward Taxes")
+
+```
+
+
 ** staked bar on tax $ (y axis), group by category, by ward (x axis). Raw dollar amount, not normalized by parcel area.
 ** box plot (x = zoning), y = mun rev by ha)
+```{r}
+MunicipalRevByZone <- ggplot(OttawaTaxRoll, aes(x = as.factor(OttawaTaxRoll$ZONE_MAIN), y = `2024 - Municipal taxes`)) +
+  geom_boxplot(fill = "steelblue", outlier.color = "red", outlier.shape = 1) +
+  labs(
+    title = "2024 Municipal Revenue by Hectare",
+    x = "ZONE_MAIN",
+    y = "Municipal Tax ($)"
+  ) +
+  theme_minimal()
 
+MunicipalRevByZone
+
+```
+
+# Top Ten
+## Assessed Value
 top 10 (summarize with table, Address Summary, Parcel, [metric], ZONE_MAIN, PAR_AREA)
 ** assessed value
-** mun revenue
-** mun revenue by ha
+```{r}
+Top10AssedVal <- OttawaTaxRoll %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, `2024 - Total assessed value`,`2024 - Municipal taxes`,`2024 Municipal Revenue by Hectare`)
 
-Bottom 10 (summarize with table, Address Summary, Parcel, [metric], ZONE_MAIN, PAR_AREA)
-** assessed value (non-null)
-** mun revenue (non-null)
-** mun revenue by ha
+kable(Top10AssedVal, caption = "Top 10 City Properties by Assessed Value")
 
-## Ward Analysis
-Table.columm ZONE_MAIN, count parcels, total_mun revenue, total_area, avg(mun_rev by area)
 
-top 10 (summarize with table, Address Summary, Parcel, [metric], ZONE_MAIN, PAR_AREA)
+```
+## Municipal Revenue
+```{r}
+Top10MunRev <- OttawaTaxRoll %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, `2024 - Total assessed value`,`2024 - Municipal taxes`,`2024 Municipal Revenue by Hectare`)
+
+
+kable(Top10MunRev, caption = "Top 10 City Properties by Municipal Revenue")
+
+```
+
+## Revenue by Hectare 
+```{r}
+Top10MunRevbyHa <- OttawaTaxRoll %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, `2024 - Total assessed value`,`2024 - Municipal taxes`,`2024 Municipal Revenue by Hectare`)
+
+
+kable(Top10MunRevbyHa, caption = "Top 10 City Properties by Municipal Revenue by Hectare")
+
+
+```
+
+# Bottom Ten
+## Assessed Value
+bottom 10 (summarize with table, Address Summary, Parcel, [metric], ZONE_MAIN, PAR_AREA)
 ** assessed value
-** mun revenue
-** mun revenue by ha
+```{r}
+Bottom10AssedVal <- OttawaTaxRoll %>%
+  arrange(`2024 - Total assessed value`) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, `2024 - Total assessed value`,`2024 - Municipal taxes`,`2024 Municipal Revenue by Hectare`)
 
-Bottom 10 (summarize with table, Address Summary, Parcel, [metric], ZONE_MAIN, PAR_AREA)
-** assessed value (non-null)
-** mun revenue (non-null)
-** mun revenue by ha
+kable(Bottom10AssedVal, caption = "Bottom 10 City Properties by Assessed Value")
 
 
+```
+## Municipal Revenue
+```{r}
+Bottom10MunRev <- OttawaTaxRoll %>%
+  arrange(`2024 - Municipal taxes`) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, `2024 - Total assessed value`,`2024 - Municipal taxes`,`2024 Municipal Revenue by Hectare`)
 
+
+kable(Bottom10MunRev, caption = "Bottom 10 City Properties by Municipal Revenue")
+
+```
+
+## Revenue by Hectare 
+```{r}
+Bottom10MunRevbyHa <- OttawaTaxRoll %>%
+  arrange(`2024 Municipal Revenue by Hectare`) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, `2024 - Total assessed value`,`2024 - Municipal taxes`,`2024 Municipal Revenue by Hectare`)
+
+
+kable(Bottom10MunRevbyHa, caption = "Bottom 10 City Properties by Municipal Revenue by Hectare")
+```
+
+# Ward Analysis
+## General - Assessed Value
+
+```{r}
+
+
+generate_top10_table <- function(ward_number) {
+  # Filter and prepare the data
+  top10 <- OttawaTaxRoll %>%
+    filter(WARD == ward_number) %>%
+    arrange(desc(`2024 - Total assessed value`)) %>%
+    slice_head(n = 10) %>%
+    select(
+      EXTRACTED_ADDRESS_SUMMARY,
+      ZONE_MAIN,
+      `2024 - Total assessed value`,
+      `2024 - Municipal taxes`,
+      `2024 Municipal Revenue by Hectare`
+    ) %>%
+    mutate(
+      `2024 - Total assessed value` = dollar(`2024 - Total assessed value`),
+      `2024 - Municipal taxes` = dollar(`2024 - Municipal taxes`),
+      `2024 Municipal Revenue by Hectare` = dollar(`2024 Municipal Revenue by Hectare`)
+    )
+  
+  # Create and return the styled table
+  kbl(
+    top10,
+    caption = glue("Top 10 Properties in Ward {ward_number} by Assessed Value"),
+    align = "l"
+  ) %>%
+    kable_styling(full_width = FALSE)
+  
+}
+for (ward in 1:24) {
+  print(generate_top10_table(ward))
+}
+```
+
+## General - Municipal Revenue
+
+```{r}
+
+
+generate_top10_table <- function(ward_number) {
+  # Filter and prepare the data
+  top10 <- OttawaTaxRoll %>%
+    filter(WARD == ward_number) %>%
+    arrange(desc(`2024 - Municipal taxes`)) %>%
+    slice_head(n = 10) %>%
+    select(
+      EXTRACTED_ADDRESS_SUMMARY,
+      ZONE_MAIN,
+      `2024 - Total assessed value`,
+      `2024 - Municipal taxes`,
+      `2024 Municipal Revenue by Hectare`
+    ) %>%
+    mutate(
+      `2024 - Total assessed value` = dollar(`2024 - Total assessed value`),
+      `2024 - Municipal taxes` = dollar(`2024 - Municipal taxes`),
+      `2024 Municipal Revenue by Hectare` = dollar(`2024 Municipal Revenue by Hectare`)
+    )
+  
+  # Create and return the styled table
+  kbl(
+    top10,
+    caption = glue("Top 10 Properties in Ward {ward_number} by Municipal Tax Levy"),
+    align = "l"
+  ) %>%
+    kable_styling(full_width = FALSE)
+  
+}
+for (ward in 1:24) {
+  print(generate_top10_table(ward))
+}
+```
+
+## General - Municipal Rev by Hectare Value
+
+```{r}
+
+
+generate_top10_table <- function(ward_number) {
+  # Filter and prepare the data
+  top10 <- OttawaTaxRoll %>%
+    filter(WARD == ward_number) %>%
+    arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+    slice_head(n = 10) %>%
+    select(
+      EXTRACTED_ADDRESS_SUMMARY,
+      ZONE_MAIN,
+      `2024 - Total assessed value`,
+      `2024 - Municipal taxes`,
+      `2024 Municipal Revenue by Hectare`
+    ) %>%
+    mutate(
+      `2024 - Total assessed value` = dollar(`2024 - Total assessed value`),
+      `2024 - Municipal taxes` = dollar(`2024 - Municipal taxes`),
+      `2024 Municipal Revenue by Hectare` = dollar(`2024 Municipal Revenue by Hectare`)
+    )
+  
+  # Create and return the styled table
+  kbl(
+    top10,
+    caption = glue("Top 10 Properties in Ward {ward_number} by Municipal Revenue by Hectare"),
+    align = "l"
+  ) %>%
+    kable_styling(full_width = FALSE)
+  
+}
+for (ward in 1:24) {
+  print(generate_top10_table(ward))
+}
+```
+
+## 1 - Orleans East
+```{r}
+Ward <- 1  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 2
+```{r}
+Ward <- 2  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 3 
+```{r}
+Ward <- 3  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 4
+```{r}
+Ward <- 4  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 5
+```{r}
+Ward <- 5  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 6
+```{r}
+Ward <- 6  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+
+## 7
+```{r}
+Ward <- 7  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 8
+```{r}
+Ward <- 8  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`,`AREA_EPSG26918`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`,`AREA_EPSG26918`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`,`AREA_EPSG26918`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 9
+```{r}
+Ward <- 9  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`,`AREA_EPSG26918`,
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`,`AREA_EPSG26918`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`,`AREA_EPSG26918`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+write.csv(Top10AssessedVal, file="Ward9TopAssedVal.csv",row.names = FALSE)
+write.csv(Top10MunVal, file="Ward9TopMunRev.csv",row.names = FALSE)
+write.csv(Top10RevbyHaVal, file="Ward9Top10RevbyHa.csv",row.names = FALSE)
+
+```
+## 10
+```{r}
+Ward <- 10  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 11
+```{r}
+Ward <- 101# (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 12
+```{r}
+Ward <- 12  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 13
+```{r}
+Ward <- 13  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 14
+```{r}
+Ward <- 14  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 15
+```{r}
+Ward <- 15  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 16
+```{r}
+Ward <- 16  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 17
+```{r}
+Ward <- 17  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 18
+```{r}
+Ward <- 18  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 19
+```{r}
+Ward <- 19  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 20
+```{r}
+Ward <- 20  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 21
+```{r}
+Ward <- 21  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 22
+```{r}
+Ward <- 22  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 23
+```{r}
+Ward <- 23  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
+## 24
+```{r}
+Ward <- 24  # (small tip: it's better style to use lowercase "ward" for variables)
+
+Top10AssessedVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Total assessed value`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+
+kable(Top10AssessedVal, caption = glue("Top 10 Properties in Ward {Ward} by Assessed Value"))
+
+Top10MunVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 - Municipal taxes`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10MunVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Tax Levy"))
+
+Top10RevbyHaVal <- OttawaTaxRoll %>%
+  filter(WARD == Ward) %>%
+  arrange(desc(`2024 Municipal Revenue by Hectare`)) %>%
+  slice_head(n = 10) %>%
+  select(EXTRACTED_ADDRESS_SUMMARY, ZONE_MAIN, 
+         `2024 - Total assessed value`, `2024 - Municipal taxes`, 
+         `2024 Municipal Revenue by Hectare`)
+kable(Top10RevbyHaVal, caption = glue("Top 10 Properties in Ward {Ward} by Municipal Rev by Hectare"))
+
+```
 
 
 ##Session Info

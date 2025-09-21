@@ -1,0 +1,245 @@
+---
+title: "DA Value Analysis"
+author: "Patrick Bickerton"
+date: "2025-08-19"
+output: html_document
+---
+
+```{r}
+# import the libraries
+library(tidyr)
+library(ggplot2)
+library(readr)
+library(dplyr)
+library(googlesheets4)
+library(stringr)
+
+```
+
+## Introduction
+
+This analysis aims to estimate and visualize the relationship between municipal service costs, infrastructure distribution, and revenue generation across dissemination areas (DAs) within the City of Ottawa. By integrating diverse spatial and tabular datasets, we assess service equity, financial sustainability, and urban form efficiency at a granular level.
+
+* The compiled dataset combines:
+
+* 2021 Census demographic data (population, dwelling counts, land area)
+
+* 2024 Municipal property tax revenue (parcel-level totals aggregated to DA)
+
+* Linear and point infrastructure (e.g., roads, watermains, sewers, fire stations, libraries)
+
+* Parcel tax classification
+
+* Service level indicators
+
+Each DA serves as the unit of analysis, allowing for cross-comparison of per-capita or per-hectare measures of both costs and revenues. Costs of municipal services are approximated using allocation methods adapted from the Hemson Consulting 2013 report on Development Charges Background, including classification by urban/rural typology and service-specific allocation codes.
+
+This dataset supports further evaluation of:
+
+Revenue density ($/ha)
+
+Service cost allocation estimates (e.g., cost of arterial roads per lane-km)
+
+Infrastructure intensity (e.g., road length per capita or per hectare)
+
+Population density and built form indicators (e.g., population vs. households)
+
+This approach facilitates data-driven exploration of which areas contribute more or less in revenue relative to the likely cost of servicing, and can inform planning, budgeting, or advocacy initiatives regarding urban development and financial sustainability.
+
+```{r}
+# Load the data
+regions <- read_csv("QGIS/Transcect Area/Transcect with DA and Tax.csv",show_col_types = FALSE)
+
+# Add new summary variables
+
+regions_shares <- regions %>% mutate(
+  Population_Share = `Population, 2021` / sum(`Population, 2021`, na.rm = TRUE),
+  Population_Households_50_50 = `Population, 2021` / `Total private dwellings`,
+  Residential_Assessment_Total = select(., c(
+    `2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT`,
+    `2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT`,
+    `2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF`,
+    `2024 - RESIDENTIAL - TAXABLE: EDUCATION ONLY - RD`,
+    `2024 - RESIDENTIAL - TAXABLE: FULL - RT`
+    )) %>% rowSums(na.rm = TRUE),
+  Residential_Assessment_Share = Residential_Assessment_Total / `2024 - Total assessed value`,
+  Population_Res_Assessment_Ratio_50_50 = `Population, 2021` / Residential_Assessment_Share,
+  Transit_Commute = `Public transit` / `Total - Main mode of commuting for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data`,
+  Bicycle_Commute = Bicycle / `Total - Main mode of commuting for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data`,
+  Walk_Commute = Walked / `Total - Main mode of commuting for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data`,
+  Vehicle_Commute = `Car, truck or van` / `Total - Main mode of commuting for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data`,
+  Households_Share = `Total private dwellings`/ sum(`Total private dwellings`, na.rm = TRUE),
+  Households_Assessment_50_50 = `Total private dwellings` / Residential_Assessment_Total,
+  Households_Total = select(., c(
+    `Single-detached house`,                                                                                                                                                          
+    `Semi-detached house`,                                                                                                                                                            
+    `Row house`,                                                                                                                                                                      
+    `Apartment or flat in a duplex`,                                                                                                                                                  
+    `Apartment in a building that has fewer than five storeys`,                                                                                                                       
+    `Apartment in a building that has five or more storeys`,                                                                                                                          
+    `Other single-attached house`,                                                                                                                                                    
+    `Movable dwelling`)) %>% rowSums(na.rm = TRUE),
+  Low_Density_Share = `Single-detached house` / Households_Total,
+  High_Density_Share = 1- Low_Density_Share,
+  Water_pipe_share = Water_main_km / sum(Water_main_km, na.rm = TRUE),
+  Combined_pipe_share = Combined_pipes_km / sum(Combined_pipes_km, na.rm = TRUE),
+  Sanitary_pipe_share = Sanitary_pipes_km / sum(Sanitary_pipes_km, na.rm = TRUE),
+  Storm_pipe_share = Storm_pipes_km / sum(Storm_pipes_km, na.rm = TRUE),
+  Sidewalk_share = Sidewalk_OSM_km / sum(Sidewalk_OSM_km, na.rm = TRUE),
+  Local_share = Local_lane_km / sum(Local_lane_km, na.rm = TRUE) ,
+  Collector_share = Collector_lane_km / sum(Collector_lane_km, na.rm = TRUE) ,
+  Arterial_share = Arterial_lane_km / sum(Arterial_lane_km, na.rm = TRUE),
+  Transit_share = service_stops / sum(service_stops,na.rm = TRUE)
+)
+```
+
+# Road Lane-km
+
+```{r}
+# Load Asset Price Data
+transportation_ops <- read_sheet("https://docs.google.com/spreadsheets/d/1VgEoEcdALNvSIVTajDjIIGhcrEmauNGBxWBTBQOmOQc/edit?gid=0#gid=0")%>% as.data.frame() 
+
+transportation_life <- read_sheet("https://docs.google.com/spreadsheets/d/154LoLC6_7MSrTACyBncB7Ww_23TII5SfAvlZ--iHQMo/edit?gid=1090682283#gid=1090682283")%>% as.data.frame() 
+
+# cost lane-km
+
+regions_long <- regions_shares %>% 
+  pivot_longer(
+    cols = c(Local_lane_km,Collector_lane_km,Arterial_lane_km),
+    names_to = "road_type",
+    values_to = "lane_km"
+  )
+
+regions_with_costs <- regions_long %>%
+  left_join(transportation_ops, by = "road_type") %>%
+  mutate(ops_cost_yr = lane_km * ops_cost_per_lane_km/1000) %>% 
+  left_join(transportation_life, by = "road_type") %>% 
+  mutate(life_cost_yr = lane_km * life_ammortized_45/1000)
+
+regions_wide <- regions_with_costs %>%
+  select(fid,road_type,ops_cost_yr,life_cost_yr) %>%
+  pivot_wider(
+    names_from = road_type,
+    values_from = c(ops_cost_yr,life_cost_yr)
+  )
+
+regions_roads <- regions_shares %>% 
+  left_join(regions_wide, by = "fid") %>% 
+  mutate(
+    roads_total_cost = select(., c(224:229)) %>% rowSums(na.rm = TRUE),
+    Road_Cost_Share = roads_total_cost / `2024 - Municipal taxes` 
+  )
+
+write_csv(regions_shares, "output/region_shares.csv")
+
+```
+
+```{r}
+#Load Budget data
+
+budget_2024 <- read_sheet("https://docs.google.com/spreadsheets/d/1kholk4UOx6uNOkGUwzoNekLoCdbwhJ0Bg0q0EqN6ZmQ/edit?gid=0#gid=0") %>% as.data.frame() %>%
+  mutate(
+    Group_4 = str_replace_all(Group_4, " ", "_")
+  )
+
+#Allocate costs
+
+regions_budget <- regions_roads %>%
+  mutate(
+    Development_Review_Process_Rural = budget_2024$Net[budget_2024$Group_4 == "Development_Review_Process_Rural"] * Population_Share,
+    Rural_Affairs = budget_2024$Net[budget_2024$Group_4 == "Rural_Affairs"] * Population_Share,
+    Office_of_the_Auditor_General = budget_2024$Net[budget_2024$Group_4 == "Office_of_the_Auditor_General"] * Population_Share,
+    External_and_Special_Audits = budget_2024$Net[budget_2024$Group_4 == "External_and_Special_Audits"] * Population_Share,
+    `GM's_Office_and_Business_&_Technical_Support_Services_-_Emergency_&_Protective_Services` = budget_2024$Net[budget_2024$Group_4 == "GM's_Office_and_Business_&_Technical_Support_Services_-_Emergency_&_Protective_Services"] * Population_Share,
+    Public_Safety_Service = budget_2024$Net[budget_2024$Group_4 == "Public_Safety_Service"] * Population_Share,
+    Ottawa_Fire_Services = budget_2024$Net[budget_2024$Group_4 == "Ottawa_Fire_Services"] * Households_Share,
+    Ottawa_Paramedic_Services = budget_2024$Net[budget_2024$Group_4 == "Ottawa_Paramedic_Services"] * Population_Share,
+    `By-law_and_Regulator_Services` = budget_2024$Net[budget_2024$Group_4 == "By-law_and_Regulator_Services"] * Population_Share,
+    Public_Policy_Development = budget_2024$Net[budget_2024$Group_4 == "Public_Policy_Development"] * Population_Share,
+    `GM's_Office_&_Business_Support_Services_-_Community_&_Social_Services` = budget_2024$Net[budget_2024$Group_4 == "GM's_Office_&_Business_Support_Services_-_Community_&_Social_Services"] * Population_Share,
+    `Community_Safety,_Well-Being,_Policy_&_Analytics` = budget_2024$Net[budget_2024$Group_4 == "Community_Safety,_Well-Being,_Policy_&_Analytics"] * Population_Share,
+    Employment_and_Social_Services = budget_2024$Net[budget_2024$Group_4 == "Employment_and_Social_Services"] * Population_Share,
+    `Children's_Services` = budget_2024$Net[budget_2024$Group_4 == "Children's_Services"] * Population_Share,
+    Housing_Services = budget_2024$Net[budget_2024$Group_4 == "Housing_Services"] * Population_Share,
+    Long_Term_Care = budget_2024$Net[budget_2024$Group_4 == "Long_Term_Care"] * Population_Share,
+    `Gender_&_Race_Equity,_Inclusion,_Indigenous_Relations_and_Social_Development` = budget_2024$Net[budget_2024$Group_4 == "Gender_&_Race_Equity,_Inclusion,_Indigenous_Relations_and_Social_Development"] * Population_Share,
+    `GM's_Office_&_Business_Support_Services_-_Recreation,_Cultural_and_Facility_Services` = budget_2024$Net[budget_2024$Group_4 == "GM's_Office_&_Business_Support_Services_-_Recreation,_Cultural_and_Facility_Services"] * Population_Share,
+    Community_Recreation_and_Cultural_Programs = budget_2024$Net[budget_2024$Group_4 == "Community_Recreation_and_Cultural_Programs"] * Population_Share,
+    `City_Wide_Programs,_Aquatics_and_Specialized_Services` = budget_2024$Net[budget_2024$Group_4 == "City_Wide_Programs,_Aquatics_and_Specialized_Services"] * Population_Share,
+    `Parks_&_Facilities_Planning` = budget_2024$Net[budget_2024$Group_4 == "Parks_&_Facilities_Planning"] * Population_Share,
+    Facility_Operations_Services = budget_2024$Net[budget_2024$Group_4 == "Facility_Operations_Services"] * Population_Share,
+    Parks = budget_2024$Net[budget_2024$Group_4 == "Parks"] * Population_Share,
+    `GM's_Office_&_Business_Technicla_Support_Services` = budget_2024$Net[budget_2024$Group_4 == "GM's_Office_&_Business_Technicla_Support_Services"] * Population_Share,
+    Infrastructure_Service = budget_2024$Net[budget_2024$Group_4 == "Infrastructure_Service"] * Population_Share,
+    Asset_Management_Services = budget_2024$Net[budget_2024$Group_4 == "Asset_Management_Services"] * Population_Share,
+    Resiliency_and_Natural_Systems_Policy = budget_2024$Net[budget_2024$Group_4 == "Resiliency_and_Natural_Systems_Policy"] * Population_Share,
+    Solid_Waste_Services = budget_2024$Net[budget_2024$Group_4 == "Solid_Waste_Services"] * Households_Share,
+    Forestry_Services = budget_2024$Net[budget_2024$Group_4 == "Forestry_Services"] * Population_Share,
+    Elected_Officials = budget_2024$Net[budget_2024$Group_4 == "Elected_Officials"] * Population_Share,
+    City_Clerk = budget_2024$Net[budget_2024$Group_4 == "City_Clerk"] * Population_Share,
+    Legal_Service = budget_2024$Net[budget_2024$Group_4 == "Legal_Service"] * Population_Share,
+    `City_Manager's_Office` = budget_2024$Net[budget_2024$Group_4 == "City_Manager's_Office"] * Population_Share,
+    Rail_Contrusction_Program_Service = budget_2024$Net[budget_2024$Group_4 == "Rail_Contrusction_Program_Service"] * Population_Share,
+    `GM's_Office_and_Business_Support_and_Technical_Services_-_Planning,_Real_Estate_&_Economic_Development` = budget_2024$Net[budget_2024$Group_4 == "GM's_Office_and_Business_Support_and_Technical_Services_-_Planning,_Real_Estate_&_Economic_Development"] * Population_Share,
+    Economic_Development_and_Long_Range_Planning = budget_2024$Net[budget_2024$Group_4 == "Economic_Development_and_Long_Range_Planning"] * Population_Share,
+    Public_Information_and_Media_Relations = budget_2024$Net[budget_2024$Group_4 == "Public_Information_and_Media_Relations"] * Population_Share,
+    Human_Resources = budget_2024$Net[budget_2024$Group_4 == "Human_Resources"] * Population_Share,
+    ServiceOttawa = budget_2024$Net[budget_2024$Group_4 == "ServiceOttawa"] * Population_Share,
+    Information_Technologiy_Services = budget_2024$Net[budget_2024$Group_4 == "Information_Technologiy_Services"] * Population_Share,
+    `Chief_Financial_Officer/Treasurer_&_Busness_Support_Services_-_Finance_Services` = budget_2024$Net[budget_2024$Group_4 == "Chief_Financial_Officer/Treasurer_&_Busness_Support_Services_-_Finance_Services"] * Population_Share,
+    `Financial_Strategies,_Planning_&_Client_Service` = budget_2024$Net[budget_2024$Group_4 == "Financial_Strategies,_Planning_&_Client_Service"] * Population_Share,
+    Revenue_Services = budget_2024$Net[budget_2024$Group_4 == "Revenue_Services"] * Population_Share,
+    Corporate_Finance = budget_2024$Net[budget_2024$Group_4 == "Corporate_Finance"] * Population_Share,
+    `Payroll,_Pensions_&_Benefit_Service` = budget_2024$Net[budget_2024$Group_4 == "Payroll,_Pensions_&_Benefit_Service"] * Population_Share,
+    Supply_Service = budget_2024$Net[budget_2024$Group_4 == "Supply_Service"] * Population_Share,
+    Corporate_Real_Estate_Office = budget_2024$Net[budget_2024$Group_4 == "Corporate_Real_Estate_Office"] * Population_Share,
+    #Non_Departmental = budget_2024$Net[budget_2024$Group_4 == "Non_Departmental"] * Population_Share, # removes property tax revenue
+    `Right_of_Way,_Heritage_and_Urban_Design` = budget_2024$Net[budget_2024$Group_4 == "Right_of_Way,_Heritage_and_Urban_Design"] * Population_Share,
+    Planning_Services = budget_2024$Net[budget_2024$Group_4 == "Planning_Services"] * Population_Share,
+    `Building_Code_Services_-_OBC` = budget_2024$Net[budget_2024$Group_4 == "Building_Code_Services_-_OBC"] * Population_Share,
+    Long_Range_Planning = budget_2024$Net[budget_2024$Group_4 == "Long_Range_Planning"] * Population_Share,
+    Affordable_Housing = budget_2024$Net[budget_2024$Group_4 == "Affordable_Housing"] * Population_Share,
+    `GM's_Office_&_Business_Support_Services_-Public_Works_&_Environmental_Services` = budget_2024$Net[budget_2024$Group_4 == "GM's_Office_&_Business_Support_Services_-Public_Works_&_Environmental_Services"] * Population_Share,
+    # Roads_Services = budget_2024$Net[budget_2024$Group_4 == "Roads_Services"] * Population_Share, #replace it with roads_total_cost
+    Parking_Services = budget_2024$Net[budget_2024$Group_4 == "Parking_Services"] * Population_Share,
+    Traffic_Services = budget_2024$Net[budget_2024$Group_4 == "Traffic_Services"] * Population_Share,
+    Transportation_Planning = budget_2024$Net[budget_2024$Group_4 == "Transportation_Planning"] * Population_Share,
+    Fleet_Services = budget_2024$Net[budget_2024$Group_4 == "Fleet_Services"] * Population_Share,
+    Committee_of_Adjustment = budget_2024$Net[budget_2024$Group_4 == "Committee_of_Adjustment"] * Population_Share,
+    Ottawa_Public_Health = budget_2024$Net[budget_2024$Group_4 == "Ottawa_Public_Health"] * Population_Share,
+    Ottawa_Public_Library = budget_2024$Net[budget_2024$Group_4 == "Ottawa_Public_Library"] * Population_Share,
+    Ottawa_Police_Service = budget_2024$Net[budget_2024$Group_4 == "Ottawa_Police_Service"] * Population_Share,
+    Transit_Commission = budget_2024$Net[budget_2024$Group_4 == "Transit_Commission"] * Transit_share,
+    Drinking_Water_Service = budget_2024$Net[budget_2024$Group_4 == "Drinking_Water_Service"] * Population_Share,
+    Wastewater_Services = budget_2024$Net[budget_2024$Group_4 == "Wastewater_Services"] * Population_Share,
+    Stormwater_Services = budget_2024$Net[budget_2024$Group_4 == "Stormwater_Services"] * Population_Share
+  ) %>% mutate(
+    Service_cost_total = select(., c(236,238:302)) %>% rowSums(na.rm = TRUE),
+    Net_Revenue_Cost = `2024 - Municipal taxes`- Service_cost_total*1000
+  )
+
+write_csv(regions_budget, "output/regions_budget.csv")
+
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+# Budget Direction
+
+
+
+```{r}
+parcel <- read_csv("QGIS/Parcel/City/Revenue by Parcel.csv",show_col_types = FALSE)
+  
+)
+```
+

@@ -1,0 +1,193 @@
+---
+title: "Census Extractor"
+author: "Patrick Bickerton"
+date: "2025-06-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(sf)
+library(dplyr)
+library(data.table)
+library(readr)
+library(dplyr)
+library(tidyr)
+library(janitor)
+
+```
+# load DAs
+```{r}
+# Read shapefile (no need for layer=)
+ottawa_da <- st_read("QGIS/Dissemination Area/Ottawa_Dissemination_Areas-shp/092620ba-60da-41b4-b48b-16d293cffc45202046-1-5ln5ri.1w9vt.shp")
+
+# Extract DAUIDs as a vector
+ottawa_dauids <- ottawa_da %>%
+  st_drop_geometry() %>%
+  distinct(DAUID) %>%
+  pull(DAUID)
+```
+
+#Load Census csv
+
+```{r}
+geo_starts <- read_csv("QGIS/Dissemination Area/Stats Can/98-401-X2021006_Ontario_eng_CSV/98-401-X2021006_Geo_starting_row_Ontario.csv")
+head(geo_starts)
+
+ottawa_rows <- geo_starts %>%
+  rename(DAUID = `Geo Code`, start_row = `Line Number`) %>%
+  filter(DAUID %in% ottawa_dauids) %>%
+  arrange(start_row)
+
+
+
+lines_preview <- readLines("QGIS/Dissemination Area/Stats Can/98-401-X2021006_Ontario_eng_CSV/98-401-X2021006_English_CSV_data_Ontario.csv", n = 20)
+
+
+```
+
+```{r}
+# code from old laptop
+
+# Load full census DA data
+DA_Ontario <- fread("QGIS/Dissemination Area/Stats Can/98-401-X2021006_Ontario_eng_CSV/98-401-X2021006_English_CSV_data_Ontario.csv")
+# Clean column names to make them usable in pivot
+DA_Ontario <- janitor::clean_names(DA_Ontario)
+
+
+ottawa_da <- st_read("QGIS/Dissemination Area/Ottawa_Dissemination_Areas-shp/092620ba-60da-41b4-b48b-16d293cffc45202046-1-5ln5ri.1w9vt.shp")
+# Optional: filter only for Ottawa DAs
+ottawa_dauids <- unique(ottawa_da$DAUID)
+
+# Filter and pivot
+wide_data <- DA_Ontario %>%
+  filter(characteristic_id == 1)
+
+#select the fields of interest (see file: 98-401-X2021006_English_meta)
+characteristic_ids <- c(1:2,4:7,8:9,13,24,29, 39:49, 56:57,111:125,1465:1468,2593:2616)
+
+# 1	Population, 2021 (1)
+#2	Population, 2016 (1)
+# 4	Total private dwellings (2)
+# 5	Private dwellings occupied by usual residents (3)
+# 6	Population density per square kilometre
+# 7	Land area in square kilometres
+# 8	Total - Age groups of the population - 100% data
+# 9	  0 to 14 years
+# 13	  15 to 64 years
+# 24	  65 years and over
+# 29	    85 years and over
+# 39	Average age of the population
+# 40	Median age of the population
+# 41	Total - Occupied private dwellings by structural type of dwelling - 100% data
+# 42	  Single-detached house
+# 43	  Semi-detached house
+# 44	  Row house
+# 45	  Apartment or flat in a duplex
+# 46	  Apartment in a building that has fewer than five storeys
+# 47	  Apartment in a building that has five or more storeys
+# 48	  Other single-attached house
+# 49	  Movable dwelling (4)
+# 56	Number of persons in private households
+# 57	Average household size
+# 111	Total - Income statistics in 2020 for the population aged 15 years and over in private households - 100% data (10)
+# 112	  Number of total income recipients aged 15 years and over in private households in 2020 - 100% data
+# 113	    Median total income in 2020 among recipients ($)
+# 114	  Number of after-tax income recipients aged 15 years and over in private households in 2020 - 100% data
+# 115	    Median after-tax income in 2020 among recipients ($)
+# 116	  Number of market income recipients aged 15 years and over in private households in 2020 - 100% data
+# 117	    Median market income in 2020 among recipients ($)
+# 118	  Number of employment income recipients aged 15 years and over in private households in 2020 - 100% data
+# 119	    Median employment income in 2020 among recipients ($)
+# 120	  Number of government transfers recipients aged 15 years and over in private households in 2020 - 100% data
+# 121	    Median government transfers in 2020 among recipients ($)
+# 122	  Number of employment insurance benefits recipients aged 15 years and over in private households in 2020 - 100% data
+# 123	    Median employment insurance benefits in 2020 among recipients ($)
+# 124	  Number of COVID-19 emergency and recovery benefits recipients aged 15 years and over in private households in 2020 - 100% data
+# 125	    Median COVID-19 emergency and recovery benefits in 2020 among recipients ($)
+# 1465	Total - Owner and tenant households with household total income greater than zero, in non-farm, non-reserve private dwellings by shelter-cost-to-income ratio - 25% sample data (61)
+# 1466	  Spending less than 30% of income on shelter costs
+# 1467	  Spending 30% or more of income on shelter costs
+# 1468	    30% to less than 100%
+# 2593	Total - Place of work status for the employed labour force aged 15 years and over - 25% sample data (198)
+# 2594	  Worked at home
+# 2595	  Worked outside Canada
+# 2596	  No fixed workplace address
+# 2597	  Usual place of work
+# 2598	Total - Commuting destination for the employed labour force aged 15 years and over with a usual place of work - 25% sample data (199)
+# 2599	  Commute within census subdivision (CSD) of residence
+# 2600	  Commute to a different census subdivision (CSD) within census division (CD) of residence
+# 2601	  Commute to a different census subdivision (CSD) and census division (CD) within province or territory of residence
+# 2602	  Commute to a different province or territory
+# 2603	Total - Main mode of commuting for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data (200)
+# 2604	  Car, truck or van
+# 2605	    Car, truck or van - as a driver
+# 2606	    Car, truck or van - as a passenger
+# 2607	  Public transit
+# 2608	  Walked
+# 2609	  Bicycle
+# 2610	  Other method
+# 2611	Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data (201)
+# 2612	  Less than 15 minutes
+# 2613	  15 to 29 minutes
+# 2614	  30 to 44 minutes
+# 2615	  45 to 59 minutes
+# 2616	  60 minutes and over
+
+
+# Step 3: Filter for population (characteristic_id == 1) and only Ottawa DAUIDs
+DA_Ottawa <- DA_Ontario %>%
+  filter(characteristic_id %in% characteristic_ids, alt_geo_code %in% ottawa_dauids) %>%
+  select(alt_geo_code, characteristic_name, c1_count_total) %>%
+  pivot_wider(names_from = characteristic_name, values_from = c1_count_total) %>%
+  rename(DAUID = alt_geo_code)
+
+readr::write_csv(DA_Ottawa, "QGIS/Dissemination Area/DA_Ottawa_2021.csv")
+
+ 
+```
+
+# interesting ID's
+
+1	Population, 2021 (1)
+2	Population, 2016 (1)
+3	Population percentage change, 2016 to 2021
+4	Total private dwellings (2)
+5	Private dwellings occupied by usual residents (3)
+6	Population density per square kilometre
+7	Land area in square kilometres
+41	Total - Occupied private dwellings by structural type of dwelling - 100% data
+42	  Single-detached house
+43	  Semi-detached house
+44	  Row house
+45	  Apartment or flat in a duplex
+46	  Apartment in a building that has fewer than five storeys
+47	  Apartment in a building that has five or more storeys
+48	  Other single-attached house
+49	  Movable dwelling (4)
+56	Number of persons in private households
+57	Average household size
+2603	Total - Main mode of commuting for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data (200)
+2604	  Car, truck or van
+2605	    Car, truck or van - as a driver
+2606	    Car, truck or van - as a passenger
+2607	  Public transit
+2608	  Walked
+2609	  Bicycle
+2610	  Other method
+2611	Total - Commuting duration for the employed labour force aged 15 years and over with a usual place of work or no fixed workplace address - 25% sample data (201)
+2612	  Less than 15 minutes
+2613	  15 to 29 minutes
+2614	  30 to 44 minutes
+2615	  45 to 59 minutes
+2616	  60 minutes and over
+
+
+##Session Info
+This above code was run in the following environment
+```{r}
+sessionInfo()
+```

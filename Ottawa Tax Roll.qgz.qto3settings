@@ -1,0 +1,541 @@
+{
+  "CAMERA": "ORTHO",
+  "KEYFRAMES": {
+    "camera": {
+      "groups": []
+    },
+    "layers": {
+      "City_Boundary___Limites_de_la_Ville_5e21a97a_9ff0_4041_ae7a_bc900ddc072f": {
+        "enabled": true,
+        "groups": []
+      },
+      "DA_Ottawa_2021_infra_8705441e_780b_4fc5_b402_34defc9bc314": {
+        "enabled": true,
+        "groups": []
+      },
+      "Joined_layer_1866e41c_cd62_46af_8945_b291b325009c": {
+        "enabled": true,
+        "groups": []
+      },
+      "Joined_layer_3d4f0ea2_25a1_4a5e_b99c_dedf478e454f": {
+        "enabled": true,
+        "groups": []
+      },
+      "Knoxdale_Merivale_4c3ad21c_1b8d_46de_a07e_c1f26792aa84": {
+        "enabled": true,
+        "groups": []
+      },
+      "Merged_2f4e68f4_1e08_4203_948f_5f4d5d0d3778": {
+        "enabled": true,
+        "groups": []
+      },
+      "Merged_67888528_1f1e_4c2b_972a_cefc5deff5b8": {
+        "enabled": true,
+        "groups": []
+      },
+      "Merged_7f4f1a91_560f_4de7_ba89_5f5444d8d6f2": {
+        "enabled": true,
+        "groups": []
+      },
+      "No_Data_ec76c787_b785_4cd3_8dfa_89120fe94079": {
+        "enabled": true,
+        "groups": []
+      },
+      "Ottawa_Addresses_96b3b60a_4d11_4ca8_acc3_aaf6b29b9194": {
+        "enabled": true,
+        "groups": []
+      },
+      "Ottawa_Parcel_fcd14bc9_46a8_49db_9e20_c6f9a69e0b5d": {
+        "enabled": true,
+        "groups": []
+      },
+      "Refactored_8e0b0a56_942e_4ebe_9de0_54250b9b66db": {
+        "enabled": true,
+        "groups": []
+      },
+      "Revenue_by_Parcel_f585799f_ecd7_4098_bd2f_08330d690ee5": {
+        "enabled": true,
+        "groups": []
+      },
+      "fp:05339bf7": {
+        "enabled": true,
+        "groups": []
+      },
+      "fp:8b2e1f23": {
+        "enabled": true,
+        "groups": []
+      }
+    },
+    "repeat": false
+  },
+  "LAYERS": [
+    {
+      "geomType": 3,
+      "layerId": "No_Data_ec76c787_b785_4cd3_8dfa_89120fe94079",
+      "name": "No Data",
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Clip": true,
+        "checkBox_ExportAttrs": false,
+        "checkBox_Label": false,
+        "checkBox_Outline": true,
+        "checkBox_Underline": false,
+        "checkBox_Visible": true,
+        "colorButton_BgColor": [
+          255,
+          255,
+          255,
+          176
+        ],
+        "colorButton_ConnColor": [
+          192,
+          192,
+          208,
+          255
+        ],
+        "colorButton_Label": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_OtlColor": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "comboBox_FontFamily": "sans-serif",
+        "comboBox_ObjectType": "Polygon",
+        "comboBox_altitudeMode": null,
+        "comboEdit_Color": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 2
+        },
+        "comboEdit_Color2": {
+          "comboData": null,
+          "comboText": "None",
+          "editText": "",
+          "type": 7
+        },
+        "comboEdit_FilePath": {},
+        "comboEdit_Opacity": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 5
+        },
+        "comboEdit_altitude2": {},
+        "expression_Label": "\"fid\"",
+        "fieldExpressionWidget_altitude": "0",
+        "geomWidget0": {},
+        "geomWidget1": {},
+        "geomWidget2": {},
+        "geomWidget3": {},
+        "geomWidget4": {},
+        "groupBox_Background": true,
+        "groupBox_Conn": true,
+        "labelHeightWidget": {
+          "comboData": 1,
+          "comboText": "Relative",
+          "editText": "50",
+          "type": 6
+        },
+        "lineEdit_Name": "",
+        "mtlWidget0": {},
+        "mtlWidget1": {},
+        "radioButton_Expression": true,
+        "radioButton_IntersectingFeatures": true,
+        "slider_FontSize": 3
+      },
+      "visible": false
+    },
+    {
+      "geomType": 1,
+      "layerId": "Merged_67888528_1f1e_4c2b_972a_cefc5deff5b8",
+      "name": "tax_address",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 1,
+      "layerId": "Ottawa_Addresses_96b3b60a_4d11_4ca8_acc3_aaf6b29b9194",
+      "name": "Ottawa Addresses",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "Knoxdale_Merivale_4c3ad21c_1b8d_46de_a07e_c1f26792aa84",
+      "name": "Knoxdale-Merivale",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "Ottawa_Parcel_fcd14bc9_46a8_49db_9e20_c6f9a69e0b5d",
+      "name": "Ottawa Parcel",
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Clip": true,
+        "checkBox_ExportAttrs": false,
+        "checkBox_Label": false,
+        "checkBox_Outline": true,
+        "checkBox_Underline": false,
+        "checkBox_Visible": true,
+        "colorButton_BgColor": [
+          255,
+          255,
+          255,
+          176
+        ],
+        "colorButton_ConnColor": [
+          192,
+          192,
+          208,
+          255
+        ],
+        "colorButton_Label": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_OtlColor": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "comboBox_FontFamily": "sans-serif",
+        "comboBox_ObjectType": "Polygon",
+        "comboBox_altitudeMode": null,
+        "comboEdit_Color": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 2
+        },
+        "comboEdit_Color2": {
+          "comboData": null,
+          "comboText": "None",
+          "editText": "",
+          "type": 7
+        },
+        "comboEdit_FilePath": {},
+        "comboEdit_Opacity": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 5
+        },
+        "comboEdit_altitude2": {},
+        "expression_Label": "\"fid\"",
+        "fieldExpressionWidget_altitude": "0",
+        "geomWidget0": {},
+        "geomWidget1": {},
+        "geomWidget2": {},
+        "geomWidget3": {},
+        "geomWidget4": {},
+        "groupBox_Background": true,
+        "groupBox_Conn": true,
+        "labelHeightWidget": {
+          "comboData": 1,
+          "comboText": "Relative",
+          "editText": "50",
+          "type": 6
+        },
+        "lineEdit_Name": "",
+        "mtlWidget0": {},
+        "mtlWidget1": {},
+        "radioButton_Expression": true,
+        "radioButton_IntersectingFeatures": true,
+        "slider_FontSize": 3
+      },
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "Refactored_8e0b0a56_942e_4ebe_9de0_54250b9b66db",
+      "name": "Refactored",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "Joined_layer_3d4f0ea2_25a1_4a5e_b99c_dedf478e454f",
+      "name": "Joined layer",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "Joined_layer_1866e41c_cd62_46af_8945_b291b325009c",
+      "name": "Joined layer",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "Merged_2f4e68f4_1e08_4203_948f_5f4d5d0d3778",
+      "name": "Merged",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "Revenue_by_Parcel_f585799f_ecd7_4098_bd2f_08330d690ee5",
+      "name": "Revenue by Parcel",
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Clip": true,
+        "checkBox_ExportAttrs": false,
+        "checkBox_Label": false,
+        "checkBox_Outline": true,
+        "checkBox_Underline": false,
+        "checkBox_Visible": true,
+        "colorButton_BgColor": [
+          255,
+          255,
+          255,
+          176
+        ],
+        "colorButton_ConnColor": [
+          192,
+          192,
+          208,
+          255
+        ],
+        "colorButton_Label": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_OtlColor": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "comboBox_FontFamily": "sans-serif",
+        "comboBox_ObjectType": "Extruded",
+        "comboBox_altitudeMode": null,
+        "comboEdit_Color": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 2
+        },
+        "comboEdit_Color2": {
+          "comboData": null,
+          "comboText": "No edge",
+          "editText": "None",
+          "type": 7
+        },
+        "comboEdit_FilePath": {},
+        "comboEdit_Opacity": {
+          "comboData": 1,
+          "comboText": "Feature style",
+          "editText": "",
+          "type": 5
+        },
+        "comboEdit_altitude2": {},
+        "expression_Label": "\"fid\"",
+        "fieldExpressionWidget_altitude": "0",
+        "geomWidget0": {
+          "comboData": null,
+          "comboText": "Expression",
+          "editText": " \"2024 Mun Revenue by Hectare\" /1000",
+          "type": 1
+        },
+        "geomWidget1": {},
+        "geomWidget2": {},
+        "geomWidget3": {},
+        "geomWidget4": {},
+        "groupBox_Background": true,
+        "groupBox_Conn": true,
+        "labelHeightWidget": {
+          "comboData": 1,
+          "comboText": "Relative",
+          "editText": "50",
+          "type": 6
+        },
+        "lineEdit_Name": "",
+        "mtlWidget0": {},
+        "mtlWidget1": {},
+        "radioButton_Expression": true,
+        "radioButton_IntersectingFeatures": true,
+        "slider_FontSize": 3
+      },
+      "visible": true
+    },
+    {
+      "geomType": 3,
+      "layerId": "Merged_7f4f1a91_560f_4de7_ba89_5f5444d8d6f2",
+      "name": "tax_parcel",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "DA_Ottawa_2021_infra_8705441e_780b_4fc5_b402_34defc9bc314",
+      "name": "DA_Ottawa_2021_infra",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 3,
+      "layerId": "City_Boundary___Limites_de_la_Ville_5e21a97a_9ff0_4041_ae7a_bc900ddc072f",
+      "name": "City Boundary / Limites de la Ville",
+      "properties": {},
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "fp:05339bf7",
+      "name": "Flat Plane (-1)",
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Frame": false,
+        "checkBox_Sides": false,
+        "checkBox_Tiles": true,
+        "checkBox_Visible": true,
+        "checkBox_Wireframe": false,
+        "colorButton_Edge": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_Side": [
+          204,
+          187,
+          170,
+          255
+        ],
+        "colorButton_Wireframe": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "lineEdit_Altitude": "-1",
+        "lineEdit_Bottom": "0",
+        "lineEdit_Name": "",
+        "materials": [
+          {
+            "id": "d62c02ac",
+            "name": "Positron",
+            "properties": {
+              "checkBox_Shading": true,
+              "checkBox_TransparentBackground": false,
+              "comboBox_TextureSize": "1024",
+              "layerIds": [
+                "Positron_d5e9718d_0065_4d89_b1ea_17ebfb7d6b2c"
+              ],
+              "radioButton_PNG": true,
+              "spinBox_Opacity": 100
+            },
+            "type": 1
+          }
+        ],
+        "mtlId": "d62c02ac",
+        "spinBox_Size": 13
+      },
+      "visible": false
+    },
+    {
+      "geomType": 0,
+      "layerId": "fp:8b2e1f23",
+      "name": "Flat Plane (-1)",
+      "properties": {
+        "checkBox_Clickable": true,
+        "checkBox_Frame": false,
+        "checkBox_Sides": false,
+        "checkBox_Tiles": true,
+        "checkBox_Visible": true,
+        "checkBox_Wireframe": false,
+        "colorButton_Edge": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "colorButton_Side": [
+          204,
+          187,
+          170,
+          255
+        ],
+        "colorButton_Wireframe": [
+          0,
+          0,
+          0,
+          255
+        ],
+        "lineEdit_Altitude": "-1",
+        "lineEdit_Bottom": "0",
+        "lineEdit_Name": "",
+        "materials": [
+          {
+            "id": "9f74ef31",
+            "name": "Positron",
+            "properties": {
+              "checkBox_Shading": true,
+              "checkBox_TransparentBackground": false,
+              "comboBox_TextureSize": "1024",
+              "layerIds": [
+                "Positron_d5e9718d_0065_4d89_b1ea_17ebfb7d6b2c"
+              ],
+              "radioButton_PNG": true,
+              "spinBox_Opacity": 100
+            },
+            "type": 1
+          }
+        ],
+        "mtlId": "9f74ef31",
+        "spinBox_Size": 9
+      },
+      "visible": true
+    }
+  ],
+  "SCENE": {
+    "checkBox_FixAspectRatio": false,
+    "checkBox_Outline": false,
+    "colorButton_Color": [
+      0,
+      0,
+      0,
+      255
+    ],
+    "colorButton_Fog": [
+      255,
+      255,
+      255,
+      255
+    ],
+    "comboBox_MaterialType": 0,
+    "comboBox_xyShift": true,
+    "groupBox_Fog": false,
+    "lineEdit_CenterX": "-8401428.632938927",
+    "lineEdit_CenterY": "5666577.648001816",
+    "lineEdit_Height": "48319.938404664405",
+    "lineEdit_Rotation": "30.0",
+    "lineEdit_Width": "78052.28760043773",
+    "lineEdit_zFactor": "1.0",
+    "slider_Fog": 41
+  },
+  "Version": 20800,
+  "WIDGETS": {
+    "Navi": {
+      "enabled": false
+    },
+    "NorthArrow": {
+      "color": "0x000000",
+      "visible": false
+    }
+  }
+}
