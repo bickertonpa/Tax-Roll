@@ -223,7 +223,7 @@ def convert_scientific_to_full_form_with_leading_zero(sci_str):
     full_form = full_form.rstrip('0').rstrip('.') if '.' in full_form else full_form
     return full_form
 
-def process_group(driver, group, to_be_checked, batch_data, batch_size):
+def process_group(driver, group, roll_number, to_be_checked, batch_data, batch_size):
     """
     Processes a group of addresses associated with a common `PARCEL_ASSESSMENT_ROLL_NUMBER`.
     If successful using the roll number, all related addresses are removed from `to_be_checked`.
@@ -239,8 +239,7 @@ def process_group(driver, group, to_be_checked, batch_data, batch_size):
     # Use the first address in the group for roll number search
     group_data = pd.DataFrame()
     primary_address = group[0]
-    #parcel_roll_number = '0' + str(primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER'))
-    parcel_roll_number = primary_address.get('PARCEL_ASSESSMENT_ROLL_NUMBER')
+    parcel_roll_number = roll_number
     
         
     if parcel_roll_number and not pd.isna(parcel_roll_number):
@@ -249,23 +248,19 @@ def process_group(driver, group, to_be_checked, batch_data, batch_size):
             # Setup driver
             url = 'https://propertytaxes-taxesfoncieres.ottawa.ca/en?t=taxassessmentlookup'
             driver.get(url)
-            # Wait for the page to load
-            WebDriverWait(driver, 15).until(
-                EC.presence_of_element_located((By.XPATH, '//*[@id="main-content"]/ott-radio/div/fieldset/div/div[2]/label'))
-            )
+
             # Interact with the page
-            driver.find_element(By.XPATH,'//*[@id="main-content"]/ott-radio/div/fieldset/div/div[2]/label').click() # "Look up existing tax and assessment information"
-            driver.find_element(By.XPATH,'//*[@id="property-tax-assessment-widget"]/div/form/ott-radio/div/fieldset/div/div[2]/label').click() # "Roll Number"
+            #wait_and_click(driver, '//*[@id="taxWidgetOption-taxassessmentlookup"]')
+            wait_and_click(driver, '//*[@id="taxWidgetOption-taxassessmentlookup"]')
+            wait_and_click(driver, '//*[@id="taxAssessmentSearchOption-rollnumber"]')
+            
 
             # Fill out the form
-            driver.find_element(By.XPATH,'//*[@id="propertyRollNumber"]').clear()
-            driver.find_element(By.XPATH,'//*[@id="propertyRollNumber"]').send_keys(parcel_roll_number) 
+            wait_and_send_keys(driver, '//*[@id="propertyRollNumber"]', parcel_roll_number)
 
             # Submit the form
-            WebDriverWait(driver,timeout = 15).until(
-                lambda d: d.find_element(By.XPATH,'//*[@id="assessmentTermOfService"]'))
-            driver.find_element(By.XPATH,'//*[@id="assessmentTermOfService"]').click()
-            driver.find_element(By.XPATH, '//*[@id="submit-button"]').click()
+            wait_and_click(driver, '//*[@id="assessmentTermOfService"]')
+            wait_and_click(driver, '//*[@id="submit-button"]')
 
             # Wait for results
             if wait_for_results(driver):
@@ -361,6 +356,22 @@ def normalize_road_name(road_name):
             road_name = road_name[:-1]  # Remove the trailing period
     return road_name
 
+def wait_and_click(driver, xpath, timeout=15):
+    element = WebDriverWait(driver, timeout).until(
+        EC.presence_of_element_located((By.XPATH, xpath))
+    )
+    #element.click()
+    driver.execute_script("arguments[0].click();", element)
+    return element
+
+def wait_and_send_keys(driver, xpath, value, timeout=15):
+    element = WebDriverWait(driver, timeout).until(
+        EC.presence_of_element_located((By.XPATH, xpath))
+    )
+    element.clear()
+    #time.sleep(random.uniform(0.5, 1.5))  # Random delay to mimic human behavior
+    element.send_keys(value)
+    return element
 
 def process_address(driver, address, parcel_roll_number):
     """
@@ -374,44 +385,39 @@ def process_address(driver, address, parcel_roll_number):
     Returns:
         dict: A result dictionary containing the status and data or an error message.
     """
-    address_data = {}
+    street_number = str(address.get("ADDRNUM"))
+    street_name = normalize_road_name(address.get("FULL_ROADN"))
+    #unit = str(address.get("UNIT"))
+    #qualifier = str(address.get("QUALIFIER"))
+    unit = str(int(address['UNIT'])) if pd.notna(address['UNIT']) else ""
+    qualifier = str(address['QUALIFIER']) if pd.notna(address['QUALIFIER']) else ""
+
 
     try:
         url = 'https://propertytaxes-taxesfoncieres.ottawa.ca/en?t=taxassessmentlookup'
         driver.get(url)
 
-        # Wait for the page to load
-        WebDriverWait(driver, 15).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="main-content"]/ott-radio/div/fieldset/div/div[2]/label'))
-        )
 
-        # Click the "Address" radio button
-        driver.find_element(By.XPATH,'//*[@id="main-content"]/ott-radio/div/fieldset/div/div[2]/label').click() # "Look up existing tax and assessment information"
-        driver.find_element(By.XPATH,'//*[@id="property-tax-assessment-widget"]/div/form/ott-radio/div/fieldset/div/div[1]/label').click()
+#        # Wait for the page to load
+#        WebDriverWait(driver, 15).until(
+#            EC.presence_of_element_located((By.XPATH, '//*[@id="main-content"]/ott-radio/div/fieldset/div/div[2]/label'))
+#        )
 
-        # Address
-        street_number = str(address['ADDRNUM'])
-        street_name = normalize_road_name(address['FULL_ROADN']) #includes DIRECTION
-        unit = str(int(address['UNIT'])) if pd.notna(address['UNIT']) else ""
-        qualifier = str(address['QUALIFIER']) if pd.notna(address['QUALIFIER']) else ""
+        address_data = {}
 
-        # Enter address details
-            #input values into the form
-        driver.find_element(By.XPATH,'//*[@id="propertyStreetNumber"]').clear()
-        driver.find_element(By.XPATH,'//*[@id="propertyStreetNumber"]').send_keys(street_number)
-        
-        driver.find_element(By.XPATH,'//*[@id="propertyStreetName"]').clear()
-        driver.find_element(By.XPATH,'//*[@id="propertyStreetName"]').send_keys(street_name)
+        # Click radio buttons
+        wait_and_click(driver, '//*[@id="taxWidgetOption-taxassessmentlookup"]')
+        wait_and_click(driver, '//*[@id="taxAssessmentSearchOption-address"]')
 
-        driver.find_element(By.XPATH,'//*[@id="propertyUnit"]').clear()
-        driver.find_element(By.XPATH,'//*[@id="propertyUnit"]').send_keys(unit)
+        # Enter address
+        wait_and_send_keys(driver, '//*[@id="propertyStreetNumber"]', street_number)
+        wait_and_send_keys(driver, '//*[@id="propertyStreetName"]', street_name)
+        wait_and_send_keys(driver, '//*[@id="propertyUnit"]', unit)
+        wait_and_send_keys(driver, '//*[@id="propertyQualifier"]', qualifier)
 
-        driver.find_element(By.XPATH,'//*[@id="propertyQualifier"]').clear()
-        driver.find_element(By.XPATH,'//*[@id="propertyQualifier"]').send_keys(qualifier)
-
-        # Accept Terms of Service and submit
-        driver.find_element(By.XPATH, '//*[@id="assessmentTermOfService"]').click()
-        driver.find_element(By.XPATH, '//*[@id="submit-button"]').click()
+        # Accept terms and submit
+        wait_and_click(driver, '//*[@id="assessmentTermOfService"]')
+        wait_and_click(driver, '//*[@id="submit-button"]')
 
         # Wait for results
         if wait_for_results(driver):
@@ -466,7 +472,7 @@ def main_workflow(driver, to_be_checked, checkpoint_path, batch_size):
     for roll_number, group in grouped_addresses.items():
         if group and len(group) > 0:
             #sprint(f"Processing group with PARCEL_ASSESSMENT_ROLL_NUMBER: {roll_number}")
-            process_group(driver, group, to_be_checked, batch_data, batch_size) 
+            process_group(driver, group, roll_number,to_be_checked, batch_data, batch_size) 
             #output_data = pd.concat([output_data, group_result], ignore_index=True)
             #output_data.to_json(output_path, orient="records", force_ascii=False, indent=4)
         # Save remaining data in the batch
@@ -497,6 +503,9 @@ else:
     print("No checkpoint found. Starting with all addresses.")
 
 # Run the scraper
+
+print("Checkpoint exists?", os.path.exists(checkpoint_path))
+
 if __name__ == "__main__":
     # Initialization
     print("Number of addresses remaining: ", len(to_be_checked))
