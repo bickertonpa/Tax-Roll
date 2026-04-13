@@ -1,7 +1,6 @@
 /QGIS/Parcel
 /Checkpoint
 /Output/json/archive 2025-01-29
-/Addresses
 QGIS/Addressess/Municiple Address Points.gpkg
 QGIS/Addressess/revenue_by_address.gpkg
 Output/scientific notation cleanup.txt
@@ -42,10 +41,62 @@ Ward9Top10RevbyHa.csv
 .RDataTmp5
 .RDataTmp2
 .RDataTmp1
-/Addresses
 QGIS/Models/Extract Addresses by Ward.json
 QGIS/Models/Extract Addresses by Ward.json
 QGIS/Models/Points to Parcels.json
 QGIS/Models/Points to Parcels.json
 /QGIS/Wards
 /.venv
+Addresses/Processed/Addresses_01 Orléans East-Cumberland.csv
+Addresses/Processed/Addresses_02 Orléans West-Innes.csv
+Addresses/Processed/Addresses_03 Barrhaven West.csv
+Addresses/Processed/Addresses_04 Kanata North.csv
+Addresses/Processed/Addresses_05 West Carleton-March.csv
+Addresses/Processed/Addresses_06 Stittsville.csv
+Addresses/Processed/Addresses_07 Bay.csv
+Addresses/Processed/Addresses_08 College.csv
+Addresses/Processed/Addresses_09 Knoxdale-Merivale.csv
+Addresses/Processed/Addresses_10 Gloucester-Southgate.csv
+Addresses/Processed/Addresses_11 Beacon Hill-Cyrville.csv
+Addresses/Processed/Addresses_12 Rideau-Vanier.csv
+Addresses/Processed/Addresses_13 Rideau-Rockcliffe.csv
+Addresses/Processed/Addresses_14 Somerset.csv
+Addresses/Processed/Addresses_15 Kitchissippi.csv
+Addresses/Processed/Addresses_16 River.csv
+Addresses/Processed/Addresses_17 Capital.csv
+Addresses/Processed/Addresses_18 Alta Vista.csv
+Addresses/Processed/Addresses_19 Orléans South-Navan.csv
+Addresses/Processed/Addresses_20 Osgoode.csv
+Addresses/Processed/Addresses_21 Rideau-Jock.csv
+Addresses/Processed/Addresses_22 Riverside South-Findlay Creek.csv
+Addresses/Processed/Addresses_23 Kanata South.csv
+Addresses/Processed/Addresses_24 Barrhaven East.csv
+Addresses/Raw/Addresses_24 Barrhaven East.csv
+Addresses/Raw/Addresses_23 Kanata South.csv
+Addresses/Raw/Addresses_22 Riverside South-Findlay Creek.csv
+Addresses/Raw/Addresses_21 Rideau-Jock.csv
+Addresses/Raw/Addresses_20 Osgoode.csv
+Addresses/Raw/Addresses_19 Orléans South-Navan.csv
+Addresses/Raw/Addresses_18 Alta Vista.csv
+Addresses/Raw/Addresses_17 Capital.csv
+Addresses/Raw/Addresses_16 River.csv
+Addresses/Raw/Addresses_15 Kitchissippi.csv
+Addresses/Raw/Addresses_14 Somerset.csv
+Addresses/Raw/Addresses_13 Rideau-Rockcliffe.csv
+Addresses/Raw/Addresses_12 Rideau-Vanier.csv
+Addresses/Raw/Addresses_11 Beacon Hill-Cyrville.csv
+Addresses/Raw/Addresses_10 Gloucester-Southgate.csv
+Addresses/Raw/Addresses_09 Knoxdale-Merivale.csv
+Addresses/Raw/Addresses_08 College.csv
+Addresses/Raw/Addresses_07 Bay.csv
+Addresses/Raw/Addresses_06 Stittsville.csv
+Addresses/Raw/Addresses_05 West Carleton-March.csv
+Addresses/Raw/Addresses_04 Kanata North.csv
+Addresses/Raw/Addresses_03 Barrhaven West.csv
+Addresses/Raw/Addresses_02 Orléans West-Innes.csv
+Addresses/Raw/Addresses_01 Orléans East-Cumberland.csv
+/logs
+/processors/__pycache__
+/QGIS
+/utils/__pycache__
+/__pycache__
