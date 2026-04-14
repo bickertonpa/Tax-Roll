@@ -46,6 +46,12 @@ class AddressProcessor:
 
             if not wait_for_results(self.driver):
                 print(f"Timeout waiting for results: {address.get('FULL_ADDRE')}")
+                log_result(
+                    level="ERR",
+                    method="address",
+                    message=error_message,
+                    Addr=address.get('FULL_ADDRE')
+                    )
                 return None
 
             # -------------------------

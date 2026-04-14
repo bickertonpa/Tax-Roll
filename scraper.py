@@ -55,8 +55,6 @@ class TaxScraper:
         # -------------------------
         grouped_addresses = group_addresses_by_parcel(to_be_checked)
 
-        print(f"Number of parcels: {len(grouped_addresses)}")
-
         # -------------------------
         # Main loop (your original logic)
         # -------------------------
