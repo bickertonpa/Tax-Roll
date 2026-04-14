@@ -34,6 +34,7 @@ def select_run_mode():
     print("\nSelect run mode:")
     print("1. New")
     print("2. Resume")
+
     choice = input("Enter 1 or 2: ").strip()
 
     if choice == "1":
@@ -42,6 +43,30 @@ def select_run_mode():
         return "resume"
 
     raise ValueError("Invalid selection. Enter 1 or 2.")
+
+def get_ward_for_new_run():
+    ward_input = input("Please enter the ward number: ").strip()
+    ward = WARDS.get(ward_input)
+
+    if not ward:
+        raise ValueError("Invalid ward number.")
+
+    return ward
+
+def get_resume_checkpoint_and_ward():
+    checkpoint_source = Path(
+        input("Enter the full path to the to_be_checked.csv file to resume from: ").strip()
+    )
+
+    if not checkpoint_source.exists():
+        raise FileNotFoundError(f"Checkpoint file not found: {checkpoint_source}")
+
+    if checkpoint_source.suffix.lower() != ".csv":
+        raise ValueError("Selected checkpoint file must be a .csv file.")
+
+    ward = checkpoint_source.stem.replace("_to_be_checked", "").replace("_", " ")
+
+    return checkpoint_source, ward
 
 def prepare_input_checkpoint(config, mode):
     """
@@ -68,20 +93,23 @@ def prepare_input_checkpoint(config, mode):
 
 def main():
     # -------------------------
-    # 1. Select Ward
+    # 1. Select mode
     # -------------------------
-    ward_input = input("Please enter the ward number: ")
-    ward = WARDS.get(str(ward_input))
+    mode = select_run_mode()
 
-    if not ward:
-        raise ValueError("Invalid ward number.")
+
+    # -------------------------
+    # 2. Determine ward
+    # -------------------------
+    checkpoint_source = None
+
+    if mode == "new":
+        ward = get_ward_for_new_run()
+    else:
+        checkpoint_source, ward = get_resume_checkpoint_and_ward()
 
     print(f"Scraping data for ward: {ward}")
 
-    # -------------------------
-    # 2. Select mode
-    # -------------------------
-    mode = select_run_mode()
 
     # -------------------------
     # 3. Config
@@ -95,17 +123,19 @@ def main():
     set_log_file(config.log_path)
 
     # -------------------------
-    # 5. Prepare checkpoint input
+    # 5. Prepare checkpoint for resume
     # -------------------------
-    checkpoint_source = prepare_input_checkpoint(config, mode)
+    if mode == "resume":
+        shutil.copy2(checkpoint_source, config.checkpoint_path)
+        print(f"Copied resume checkpoint to: {config.checkpoint_path}")
 
     log_kwargs = {
         "Ward": ward,
         "Mode": mode,
-        "RunDir": config.output_path.parent
+        "RunDir": config.output_path.parent,
     }
 
-    if mode == "resume":
+    if checkpoint_source is not None:
         log_kwargs["ResumeFrom"] = checkpoint_source
 
     log_result(
