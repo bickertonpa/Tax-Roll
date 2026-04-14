@@ -28,7 +28,10 @@ def load_addresses(config) -> List[Dict[str, Any]]:
             dtype={"PARCEL_ASSESSMENT_ROLL_NUMBER": str}
         ).to_dict(orient="records")
 
-        print(f"Loaded checkpoint with {len(to_be_checked)} addresses to process.")
+        print(
+            f"Loaded checkpoint from {config.checkpoint_path} "
+            f"with {len(to_be_checked)} addresses to process."
+            )
         return to_be_checked
 
     # -------------------------

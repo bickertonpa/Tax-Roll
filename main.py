@@ -1,15 +1,18 @@
 # main.py
 
+from pathlib import Path
+from datetime import datetime
+import shutil
+
 from config import Config
 from data_loader import load_addresses
 from driver_manager import DriverManager
 from scraper import TaxScraper
 from wards import WARDS
-from utils.logger import set_log_file
+from utils.logger import log_result, set_log_file
 
 def setup_run_output_folder(config, ward):
-    from datetime import datetime
-
+    
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     safe_ward = ward.replace(" ", "_")
 
@@ -27,6 +30,42 @@ def setup_run_output_folder(config, ward):
 
     return run_dir
 
+def select_run_mode():
+    print("\nSelect run mode:")
+    print("1. New")
+    print("2. Resume")
+    choice = input("Enter 1 or 2: ").strip()
+
+    if choice == "1":
+        return "new"
+    if choice == "2":
+        return "resume"
+
+    raise ValueError("Invalid selection. Enter 1 or 2.")
+
+def prepare_input_checkpoint(config, mode):
+    """
+    For a new run: do nothing. load_addresses() will use raw input if no checkpoint exists.
+    For a resume run: ask user for a to_be_checked.csv path and copy it into the new run folder.
+    """
+    if mode == "new":
+        return None
+
+    checkpoint_source = input(
+        "Enter the full path to the to_be_checked.csv file to resume from: "
+    ).strip()
+
+    checkpoint_source = Path(checkpoint_source)
+
+    if not checkpoint_source.exists():
+        raise FileNotFoundError(f"Checkpoint file not found: {checkpoint_source}")
+
+    shutil.copy2(checkpoint_source, config.checkpoint_path)
+
+    print(f"Copied resume checkpoint to: {config.checkpoint_path}")
+
+    return checkpoint_source
+
 def main():
     # -------------------------
     # 1. Select Ward
@@ -40,16 +79,42 @@ def main():
     print(f"Scraping data for ward: {ward}")
 
     # -------------------------
-    # 2. Config
+    # 2. Select mode
+    # -------------------------
+    mode = select_run_mode()
+
+    # -------------------------
+    # 3. Config
     # -------------------------
     config = Config.from_ward(ward)
 
     # -------------------------
-    # 3. Create run folder and redirect outputs
+    # 4. Create a fresh run folder
     # -------------------------
     setup_run_output_folder(config, ward)
     set_log_file(config.log_path)
 
+    # -------------------------
+    # 5. Prepare checkpoint input
+    # -------------------------
+    checkpoint_source = prepare_input_checkpoint(config, mode)
+
+    log_kwargs = {
+        "Ward": ward,
+        "Mode": mode,
+        "RunDir": config.output_path.parent
+    }
+
+    if mode == "resume":
+        log_kwargs["ResumeFrom"] = checkpoint_source
+
+    log_result(
+        level="INFO",
+        method="main",
+        message="Run started",
+        **log_kwargs
+    )
+    
     # -------------------------
     # 3. Load Data
     # -------------------------
@@ -74,6 +139,13 @@ def main():
         # 6. Cleanup
         # -------------------------
         driver_manager.stop()
+        log_result(
+            level="INFO",
+            method="main",
+            message="Run ended",
+            Ward=ward,
+            Mode=mode
+        )
         print("Completed all addresses.")
 
 if __name__ == "__main__":
