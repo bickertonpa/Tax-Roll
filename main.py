@@ -8,7 +8,6 @@ from config import Config
 from data_loader import load_addresses
 from driver_manager import DriverManager
 from scraper import TaxScraper
-from wards import WARDS
 from utils.logger import log_result, set_log_file
 
 def setup_run_output_folder(config, ward):
@@ -30,6 +29,35 @@ def setup_run_output_folder(config, ward):
 
     return run_dir
 
+def select_ward_from_files(base_dir):
+    raw_dir = base_dir / "Addresses" / "Raw"
+
+    if not raw_dir.exists():
+        raise FileNotFoundError(f"Raw address directory not found: {raw_dir}")
+
+    csv_files = sorted(raw_dir.glob("Addresses_*.csv"))
+
+    if not csv_files:
+        raise FileNotFoundError(f"No address CSV files found in {raw_dir}")
+
+    print("\nAvailable wards:")
+
+    for i, file in enumerate(csv_files, start=1):
+        ward_name = file.stem.replace("Addresses_", "").replace("_", " ")
+        print(f"{i}. {ward_name}")
+
+    selection = input("Select a ward by number: ").strip()
+
+    try:
+        index = int(selection) - 1
+        selected_file = csv_files[index]
+    except (ValueError, IndexError):
+        raise ValueError("Invalid selection.")
+
+    ward = selected_file.stem.replace("Addresses_", "").replace("_", " ")
+
+    return ward, selected_file
+
 def select_run_mode():
     print("\nSelect run mode:")
     print("1. New")
@@ -43,15 +71,6 @@ def select_run_mode():
         return "resume"
 
     raise ValueError("Invalid selection. Enter 1 or 2.")
-
-def get_ward_for_new_run():
-    ward_input = input("Please enter the ward number: ").strip()
-    ward = WARDS.get(ward_input)
-
-    if not ward:
-        raise ValueError("Invalid ward number.")
-
-    return ward
 
 def get_resume_checkpoint_and_ward():
     checkpoint_source = Path(
@@ -104,7 +123,8 @@ def main():
     checkpoint_source = None
 
     if mode == "new":
-        ward = get_ward_for_new_run()
+        ward, addresses_file = select_ward_from_files(Path("."))
+        
     else:
         checkpoint_source, ward = get_resume_checkpoint_and_ward()
 
@@ -115,6 +135,8 @@ def main():
     # 3. Config
     # -------------------------
     config = Config.from_ward(ward)
+    if mode == "new":
+        config.addresses_path = addresses_file
 
     # -------------------------
     # 4. Create a fresh run folder
