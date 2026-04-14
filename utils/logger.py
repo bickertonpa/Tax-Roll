@@ -6,9 +6,14 @@ LOG_DIR.mkdir(exist_ok=True)
 
 LOG_FILE = LOG_DIR / f"scraper_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 
+def set_log_file(log_file_path):
+    global LOG_FILE
+    LOG_FILE = Path(log_file_path)
+    LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+    
 def log_result(level, method, message="", **kwargs):
+    global LOG_FILE
     timestamp = datetime.now().strftime("%H:%M:%S")
-
 
     # Clean message
     message = _clean_message(message)
@@ -30,9 +35,10 @@ def log_result(level, method, message="", **kwargs):
 
     print(log_line)
 
-    with open(LOG_FILE, "a", encoding="utf-8") as f:
-        f.write(log_line + "\n")
-        f.flush()
+    if LOG_FILE is not None:
+            with open(LOG_FILE, "a", encoding="utf-8") as f:
+                f.write(log_line + "\n")
+                f.flush()
 
 def _clean_message(msg):
     if msg is None:

@@ -15,12 +15,16 @@ def load_addresses(config) -> List[Dict[str, Any]]:
         List[dict]: to_be_checked
     """
 
+    checkpoint_path = config.checkpoint_path
+    addresses_path = config.addresses_path
+    processed_addresses_path = config.processed_addresses_path
+
     # -------------------------
     # 1. Load from checkpoint
     # -------------------------
-    if os.path.exists(config.checkpoint_path):
+    if checkpoint_path and os.path.exists(checkpoint_path):
         to_be_checked = pd.read_csv(
-            config.checkpoint_path,
+            checkpoint_path,
             dtype={"PARCEL_ASSESSMENT_ROLL_NUMBER": str}
         ).to_dict(orient="records")
 
@@ -30,28 +34,28 @@ def load_addresses(config) -> List[Dict[str, Any]]:
     # -------------------------
     # 2. Load from raw file
     # -------------------------
-    if os.path.exists(config.addresses_path):
+    if addresses_path and os.path.exists(addresses_path):
 
         print("No checkpoint found. Preprocessing raw address file...")
 
         preprocess_address_file(
-            config.addresses_path,
-            config.processed_addresses_path
+            addresses_path,
+            processed_addresses_path
         )
 
         addresses_df = pd.read_csv(
-            config.processed_addresses_path,
+            processed_addresses_path,
             dtype={"PARCEL_ASSESSMENT_ROLL_NUMBER": str}
         )
 
         print(f"Loaded {len(addresses_df)} addresses from processed file.")
         print("Starting fresh run.")
 
-        return addresses_df.to_dict(orient='records')
+        return addresses_df.to_dict(orient="records")
 
     # -------------------------
     # 3. Fail early if missing
     # -------------------------
     raise FileNotFoundError(
-        f"No addresses file found at {config.addresses_path}"
+        f"No addresses file found at {addresses_path}"
     )
