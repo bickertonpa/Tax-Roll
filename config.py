@@ -12,7 +12,7 @@ class Config:
     checkpoint_path: Path | None = None
     log_path: Path | None = None
 
-    batch_size: int = 5
+    batch_size: int = 50
 
     @classmethod
     def from_ward(cls, ward: str):
