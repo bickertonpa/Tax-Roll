@@ -1,0 +1,1953 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option name="children" type="Map">
+    <Option name="native:aggregate_3" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:aggregate" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="1299.0130846875004" type="double"/>
+        <Option name="component_pos_y" value="520.2337421875001" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Aggregate Address and Condo by Parcel" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="1450.78791616968" type="double"/>
+      <Option name="component_pos_y" value="664.1780785591418" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:aggregate_3" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="AGGREGATES" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="List">
+              <Option type="Map">
+                <Option name="aggregate" value="first_value" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;PARCEL_ASSESSMENT_ROLL_NUMBER&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="PARCEL_ASSESSMENT_ROLL_NUMBER" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="10" type="int"/>
+                <Option name="type_name" value="text" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="first_value" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2008_ZONE_MAIN&quot;" type="QString"/>
+                <Option name="length" value="2" type="int"/>
+                <Option name="name" value="2008_ZONE_MAIN" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="10" type="int"/>
+                <Option name="type_name" value="text" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="first_value" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2026_Z_SUBZONES2&quot;" type="QString"/>
+                <Option name="length" value="150" type="int"/>
+                <Option name="name" value="2026_Z_SUBZONES2" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="10" type="int"/>
+                <Option name="type_name" value="text" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL - CF" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - CV" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - CY" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - COMMERCIAL - PAYMENT IN LIEU: GENERAL - CG&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - COMMERCIAL - PAYMENT IN LIEU: GENERAL - CG" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - COMMERCIAL - SMALL BUSINESS - C8&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - COMMERCIAL - SMALL BUSINESS - C8" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - COMMERCIAL - TAXABLE: EXCESS LAND - CU" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - COMMERCIAL - TAXABLE: FULL - CT&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - COMMERCIAL - TAXABLE: FULL - CT" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - COMMERCIAL - TAXABLE: VACANT LAND - CX" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - EXEMPT - E&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - EXEMPT - E" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - Education taxes&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - Education taxes" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - INDUSTRIAL - SMALL BUSINESS - I8&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - INDUSTRIAL - SMALL BUSINESS - I8" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - IK" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - INDUSTRIAL - TAXABLE: FULL - IT&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - INDUSTRIAL - TAXABLE: FULL - IT" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - IH" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - LARGE INDUSTRIAL - PAYMENT IN LIEU: FULL - LF&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - LARGE INDUSTRIAL - PAYMENT IN LIEU: FULL - LF" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - MULTI-RESIDENTIAL - PAYMENT IN LIEU: FULL - MF&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - MULTI-RESIDENTIAL - PAYMENT IN LIEU: FULL - MF" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - MULTI-RESIDENTIAL - TAXABLE: FULL - MT" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - Municipal taxes&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - Municipal taxes" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - NT" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - DF" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL, EXCESS LAND - DV&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - OFFICE BUILDING - PAYMENT IN LIEU: FULL, EXCESS LAND - DV" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - OFFICE BUILDING - TAXABLE: FULL - DT&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - OFFICE BUILDING - TAXABLE: FULL - DT" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - Other taxes&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - Other taxes" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - PARKING LOT - PAYMENT IN LIEU: FULL - GF&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - PARKING LOT - PAYMENT IN LIEU: FULL - GF" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - PARKING LOT - TAXABLE: FULL - GT&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - PARKING LOT - TAXABLE: FULL - GT" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - RESIDENTIAL - PAYMENT IN LIEU: FULL - RF" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - RESIDENTIAL - TAXABLE: FULL - RT&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - RESIDENTIAL - TAXABLE: FULL - RT" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - SU" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - SHOPPING CENTRE - TAXABLE: FULL - ST&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - SHOPPING CENTRE - TAXABLE: FULL - ST" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - Solid waste fees&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - Solid waste fees" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - Stormwater fees&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - Stormwater fees" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - Total assessed value&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - Total assessed value" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2024 - Total taxes levied&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2024 - Total taxes levied" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - COMMERCIAL - PAYMENT IN LIEU: FULL - C F&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - COMMERCIAL - PAYMENT IN LIEU: FULL - C F" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - C V&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - COMMERCIAL - PAYMENT IN LIEU: FULL, EXCESS LAND - C V" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - C Y&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - COMMERCIAL - PAYMENT IN LIEU: FULL, VACANT LAND - C Y" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - COMMERCIAL - PAYMENT IN LIEU: GENERAL - C G&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - COMMERCIAL - PAYMENT IN LIEU: GENERAL - C G" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - COMMERCIAL - SMALL BUSINESS - C 8&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - COMMERCIAL - SMALL BUSINESS - C 8" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - COMMERCIAL - TAXABLE: EXCESS LAND - C U&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - COMMERCIAL - TAXABLE: EXCESS LAND - C U" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - COMMERCIAL - TAXABLE: FULL - C T&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - COMMERCIAL - TAXABLE: FULL - C T" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - COMMERCIAL - TAXABLE: VACANT LAND - C X&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - COMMERCIAL - TAXABLE: VACANT LAND - C X" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - EXEMPT - E&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - EXEMPT - E" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - Education taxes&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - Education taxes" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - INDUSTRIAL - SMALL BUSINESS - I 8&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - INDUSTRIAL - SMALL BUSINESS - I 8" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - I K&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - INDUSTRIAL - TAXABLE: EXCESS LAND, SHARED PAYMENT IN LIEU - I K" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - INDUSTRIAL - TAXABLE: FULL - I T&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - INDUSTRIAL - TAXABLE: FULL - I T" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - I H&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - INDUSTRIAL - TAXABLE: FULL, SHARED PAYMENT IN LIEU - I H" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - LARGE INDUSTRIAL - PAYMENT IN LIEU: FULL - L F&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - LARGE INDUSTRIAL - PAYMENT IN LIEU: FULL - L F" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - MULTI-RESIDENTIAL - PAYMENT IN LIEU: FULL - M F&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - MULTI-RESIDENTIAL - PAYMENT IN LIEU: FULL - M F" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - MULTI-RESIDENTIAL - TAXABLE: FULL - M T&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - MULTI-RESIDENTIAL - TAXABLE: FULL - M T" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - Municipal taxes&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - Municipal taxes" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - N T&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - NEW MULTI-RESIDENTIAL - TAXABLE: FULL - N T" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - D F&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - OFFICE BUILDING - PAYMENT IN LIEU: FULL - D F" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - OFFICE BUILDING - PAYMENT IN LIEU: FULL, EXCESS LAND - D V&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - OFFICE BUILDING - PAYMENT IN LIEU: FULL, EXCESS LAND - D V" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - OFFICE BUILDING - TAXABLE: FULL - D T&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - OFFICE BUILDING - TAXABLE: FULL - D T" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - Other taxes&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - Other taxes" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - PARKING LOT - PAYMENT IN LIEU: FULL - G F&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - PARKING LOT - PAYMENT IN LIEU: FULL - G F" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - PARKING LOT - TAXABLE: FULL - G T&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - PARKING LOT - TAXABLE: FULL - G T" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - RESIDENTIAL - PAYMENT IN LIEU: FULL - R F&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - RESIDENTIAL - PAYMENT IN LIEU: FULL - R F" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - RESIDENTIAL - TAXABLE: FULL - R T&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - RESIDENTIAL - TAXABLE: FULL - R T" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - S U&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - SHOPPING CENTRE - TAXABLE: EXCESS LAND - S U" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - SHOPPING CENTRE - TAXABLE: FULL - S T&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - SHOPPING CENTRE - TAXABLE: FULL - S T" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - Solid waste fees&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - Solid waste fees" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - Stormwater fees&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - Stormwater fees" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - Total assessed value&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - Total assessed value" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="sum" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;2025 - Total taxes levied&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="2025 - Total taxes levied" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="6" type="int"/>
+                <Option name="type_name" value="double precision" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="count" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;EXTRACTED_ADDRESS_SUMMARY&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="ADDRESSES_IN_PARCEL" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="2" type="int"/>
+                <Option name="type_name" value="integer" type="QString"/>
+              </Option>
+              <Option type="Map">
+                <Option name="aggregate" value="concatenate_unique" type="QString"/>
+                <Option name="delimiter" value="," type="QString"/>
+                <Option name="input" value="&quot;LOOKUP_METHOD&quot;" type="QString"/>
+                <Option name="length" value="0" type="int"/>
+                <Option name="name" value="LOOKUP_METHOD" type="QString"/>
+                <Option name="precision" value="0" type="int"/>
+                <Option name="sub_type" value="0" type="int"/>
+                <Option name="type" value="10" type="int"/>
+                <Option name="type_name" value="text" type="QString"/>
+              </Option>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="GROUP_BY" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="PARCEL_ASSESSMENT_ROLL_NUMBER" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:removeduplicatesbyattribute_1" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbyattribute_1" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:extractbyattribute" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="842.9566032793564" type="double"/>
+        <Option name="component_pos_y" value="399.4644866793959" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="LOOKUP_METHOD = ADDRESS" type="QString"/>
+      <Option name="component_height" value="42.896831431813666" type="double"/>
+      <Option name="component_pos_x" value="606.9228136759916" type="double"/>
+      <Option name="component_pos_y" value="498.58747780895965" type="double"/>
+      <Option name="component_width" value="232.2420785795343" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:extractbyattribute_1" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="LOOKUP_METHOD" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:fieldcalculator_2" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="OPERATOR" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="VALUE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="ADDRESS" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbyattribute_2" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:extractbyattribute" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="783.6311786930135" type="double"/>
+        <Option name="component_pos_y" value="389.147021533945" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="LOOKUP_METHOD = PARCEL" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="691.4644866793959" type="double"/>
+      <Option name="component_pos_y" value="130.4087705931518" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:extractbyattribute_2" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="LOOKUP_METHOD" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:fieldcalculator_2" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="OPERATOR" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="VALUE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="PARCEL" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbyattribute_3" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:extractbyattribute" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="920.1548288931319" type="double"/>
+        <Option name="component_pos_y" value="441.325424586343" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="LOOKUP_METHOD = CONDO" type="QString"/>
+      <Option name="component_height" value="42.896831431813666" type="double"/>
+      <Option name="component_pos_x" value="620.1210392897672" type="double"/>
+      <Option name="component_pos_y" value="736.4484157159068" type="double"/>
+      <Option name="component_width" value="232.2420785795343" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:extractbyattribute_3" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="LOOKUP_METHOD" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:fieldcalculator_2" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="OPERATOR" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="VALUE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="CONDO" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:extractbyattribute_4" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:extractbyattribute" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="1674.5874778089599" type="double"/>
+        <Option name="component_pos_y" value="1025" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Non-Zero PARL" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="382.09046030895956" type="double"/>
+      <Option name="component_pos_y" value="45.145905312499735" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:extractbyattribute_4" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="PARCEL_ASSESSMENT_ROLL_NUMBER" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="parcel_layer" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="OPERATOR" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="9" type="int"/>
+          </Option>
+        </Option>
+        <Option name="VALUE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:fieldcalculator_1" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:fieldcalculator" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="320" type="double"/>
+        <Option name="component_pos_y" value="115" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Remove Zero - PARL" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="261.9047908727057" type="double"/>
+      <Option name="component_pos_y" value="326.829404306789" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:fieldcalculator_1" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD_LENGTH" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="FIELD_NAME" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="PARCEL_ASSESSMENT_ROLL_NUMBER" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="FIELD_PRECISION" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="FIELD_TYPE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="2" type="int"/>
+          </Option>
+        </Option>
+        <Option name="FORMULA" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="if(left(&quot;PARCEL_ASSESSMENT_ROLL_NUMBER&quot;, 1) = '0',&#xd;&#xa;   substr(&quot;PARCEL_ASSESSMENT_ROLL_NUMBER&quot;, 2),&#xd;&#xa;   &quot;PARCEL_ASSESSMENT_ROLL_NUMBER&quot;&#xd;&#xa;)" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:fieldcalculator_3" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:fieldcalculator_2" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:fieldcalculator" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="404.46433459769094" type="double"/>
+        <Option name="component_pos_y" value="129.92070975448976" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Remove Zero - EPARL" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="316.837363747681" type="double"/>
+      <Option name="component_pos_y" value="396.2064892180776" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:fieldcalculator_2" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD_LENGTH" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="FIELD_NAME" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="EXTRACTED_ASSESSMENT_ROLL_NUMBER" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="FIELD_PRECISION" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="FIELD_TYPE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="2" type="int"/>
+          </Option>
+        </Option>
+        <Option name="FORMULA" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="if(left(&quot;EXTRACTED_ASSESSMENT_ROLL_NUMBER&quot;, 1) = '0',&#xd;&#xa;   substr(&quot;EXTRACTED_ASSESSMENT_ROLL_NUMBER&quot;, 2),&#xd;&#xa;   &quot;EXTRACTED_ASSESSMENT_ROLL_NUMBER&quot;&#xd;&#xa;)" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:fieldcalculator_1" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:fieldcalculator_3" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:fieldcalculator" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="1674.5874778089599" type="double"/>
+        <Option name="component_pos_y" value="889.5874778089598" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="SIMPLE_ADDRE" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="187.58747780895987" type="double"/>
+      <Option name="component_pos_y" value="252.58747780895976" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:fieldcalculator_3" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELD_LENGTH" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="FIELD_NAME" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="SIMPLE_ADDRE" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="FIELD_PRECISION" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="FIELD_TYPE" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="2" type="int"/>
+          </Option>
+        </Option>
+        <Option name="FORMULA" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="UPPER(&#xd;&#xa;&quot;street_number&quot; || ' ' || &quot;street_name&quot;&#xd;&#xa;)" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="tax_roll" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinattributestable_1" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:joinattributestable" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="975.2581495430234" type="double"/>
+        <Option name="component_pos_y" value="369.2064892180776" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Join Parcel" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="863.5874778089599" type="double"/>
+      <Option name="component_pos_y" value="215.0794423272152" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:joinattributestable_1" type="QString"/>
+      <Option name="outputs" type="Map">
+        <Option name="Parcel Join" type="Map">
+          <Option name="child_id" value="native:joinattributestable_1" type="QString"/>
+          <Option name="color" value="" type="QString"/>
+          <Option name="comment" type="Map">
+            <Option name="color" value="" type="QString"/>
+            <Option name="component_description" value="" type="QString"/>
+            <Option name="component_height" value="60" type="double"/>
+            <Option name="component_pos_x" value="0" type="double"/>
+            <Option name="component_pos_y" value="0" type="double"/>
+            <Option name="component_width" value="100" type="double"/>
+            <Option name="outputs_collapsed" value="true" type="bool"/>
+            <Option name="parameters_collapsed" value="true" type="bool"/>
+          </Option>
+          <Option name="component_description" value="Parcel Join" type="QString"/>
+          <Option name="component_height" value="30" type="double"/>
+          <Option name="component_pos_x" value="1119.5874778089599" type="double"/>
+          <Option name="component_pos_y" value="250.0794423272152" type="double"/>
+          <Option name="component_width" value="200" type="double"/>
+          <Option name="default_value" type="invalid"/>
+          <Option name="mandatory" value="false" type="bool"/>
+          <Option name="name" value="Parcel Join" type="QString"/>
+          <Option name="output_name" value="OUTPUT" type="QString"/>
+          <Option name="outputs_collapsed" value="true" type="bool"/>
+          <Option name="parameters_collapsed" value="true" type="bool"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="true" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="PARCEL_ASSESSMENT_ROLL_NUMBER" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="FIELD_2" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="PARCEL_ASSESSMENT_ROLL_NUMBER" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:extractbyattribute_4" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:extractbyattribute_2" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="METHOD" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinattributestable_2" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:joinattributestable" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="1116.5874778089599" type="double"/>
+        <Option name="component_pos_y" value="446.58747780895976" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Join ADDRESS to points" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="903.5874778089599" type="double"/>
+      <Option name="component_pos_y" value="473.58747780895976" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:joinattributestable_2" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="true" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="CLEAN_FULL_ADDRE" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="FIELD_2" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="EXTRACTED_ADDRESS_SUMMARY" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="address_points" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:extractbyattribute_1" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="METHOD" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinattributestable_4" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:joinattributestable" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="1674.5874778089599" type="double"/>
+        <Option name="component_pos_y" value="777.5874778089598" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Join CONDO to points" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="905.4064924313769" type="double"/>
+      <Option name="component_pos_y" value="541.1629804807053" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:joinattributestable_4" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="true" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="CLEAN_FULL_ADDRE" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="FIELD_2" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="SIMPLE_ADDRE" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="parameter_name" value="address_points" type="QString"/>
+            <Option name="source" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:extractbyattribute_3" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="METHOD" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="0" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:joinattributestable_6" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:joinattributestable" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="1520.1251737500002" type="double"/>
+        <Option name="component_pos_y" value="674.5074225000002" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Join attributes by field value" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="1758.634807395017" type="double"/>
+      <Option name="component_pos_y" value="717.0268337194245" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:joinattributestable_6" type="QString"/>
+      <Option name="outputs" type="Map">
+        <Option name="Address and Condo to Parcel" type="Map">
+          <Option name="child_id" value="native:joinattributestable_6" type="QString"/>
+          <Option name="color" value="" type="QString"/>
+          <Option name="comment" type="Map">
+            <Option name="color" value="" type="QString"/>
+            <Option name="component_description" value="" type="QString"/>
+            <Option name="component_height" value="60" type="double"/>
+            <Option name="component_pos_x" value="0" type="double"/>
+            <Option name="component_pos_y" value="0" type="double"/>
+            <Option name="component_width" value="100" type="double"/>
+            <Option name="outputs_collapsed" value="true" type="bool"/>
+            <Option name="parameters_collapsed" value="true" type="bool"/>
+          </Option>
+          <Option name="component_description" value="Address and Condo to Parcel" type="QString"/>
+          <Option name="component_height" value="30" type="double"/>
+          <Option name="component_pos_x" value="1917.3370894730128" type="double"/>
+          <Option name="component_pos_y" value="834.0878637630713" type="double"/>
+          <Option name="component_width" value="200" type="double"/>
+          <Option name="default_value" type="invalid"/>
+          <Option name="mandatory" value="false" type="bool"/>
+          <Option name="name" value="Address and Condo to Parcel" type="QString"/>
+          <Option name="output_name" value="OUTPUT" type="QString"/>
+          <Option name="outputs_collapsed" value="true" type="bool"/>
+          <Option name="parameters_collapsed" value="true" type="bool"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="DISCARD_NONMATCHING" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="true" type="bool"/>
+          </Option>
+        </Option>
+        <Option name="FIELD" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="PARCEL_ASSESSMENT_ROLL_NUMBER" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="FIELDS_TO_COPY" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="FIELD_2" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="PARCEL_ASSESSMENT_ROLL_NUMBER" type="QString"/>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:joinattributestable_1" type="QString"/>
+            <Option name="output_name" value="NON_MATCHING" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="INPUT_2" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:aggregate_3" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="METHOD" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" value="1" type="int"/>
+          </Option>
+        </Option>
+        <Option name="PREFIX" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:mergevectorlayers_1" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:mergevectorlayers" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="1770.30859499646" type="double"/>
+        <Option name="component_pos_y" value="1025" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Merge vector layers" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="1139.5120034507472" type="double"/>
+      <Option name="component_pos_y" value="515.5008381807843" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:mergevectorlayers_1" type="QString"/>
+      <Option name="outputs"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="CRS" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="invalid"/>
+          </Option>
+        </Option>
+        <Option name="LAYERS" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:joinattributestable_2" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+          <Option type="Map">
+            <Option name="child_id" value="native:joinattributestable_4" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="native:removeduplicatesbyattribute_1" type="Map">
+      <Option name="active" value="true" type="bool"/>
+      <Option name="alg_config"/>
+      <Option name="alg_id" value="native:removeduplicatesbyattribute" type="QString"/>
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="1770.30859499646" type="double"/>
+        <Option name="component_pos_y" value="1242.41790375" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="Delete duplicates by attribute" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="1270.530684284941" type="double"/>
+      <Option name="component_pos_y" value="587.2888656967964" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="dependencies"/>
+      <Option name="id" value="native:removeduplicatesbyattribute_1" type="QString"/>
+      <Option name="outputs" type="Map">
+        <Option name="Address and Condo Points" type="Map">
+          <Option name="child_id" value="native:removeduplicatesbyattribute_1" type="QString"/>
+          <Option name="color" value="" type="QString"/>
+          <Option name="comment" type="Map">
+            <Option name="color" value="" type="QString"/>
+            <Option name="component_description" value="" type="QString"/>
+            <Option name="component_height" value="60" type="double"/>
+            <Option name="component_pos_x" value="0" type="double"/>
+            <Option name="component_pos_y" value="0" type="double"/>
+            <Option name="component_width" value="100" type="double"/>
+            <Option name="outputs_collapsed" value="true" type="bool"/>
+            <Option name="parameters_collapsed" value="true" type="bool"/>
+          </Option>
+          <Option name="component_description" value="Address and Condo Points" type="QString"/>
+          <Option name="component_height" value="30" type="double"/>
+          <Option name="component_pos_x" value="1734.7213813425342" type="double"/>
+          <Option name="component_pos_y" value="573.731639116476" type="double"/>
+          <Option name="component_width" value="200" type="double"/>
+          <Option name="default_value" type="Map">
+            <Option name="class" value="QgsProcessingOutputLayerDefinition" type="QString"/>
+            <Option name="create_options" type="Map">
+              <Option name="fileEncoding" value="windows-1252" type="QString"/>
+            </Option>
+            <Option name="sink" type="Map">
+              <Option name="active" value="true" type="bool"/>
+              <Option name="type" value="1" type="int"/>
+              <Option name="val" value="TEMPORARY_OUTPUT" type="QString"/>
+            </Option>
+          </Option>
+          <Option name="mandatory" value="true" type="bool"/>
+          <Option name="name" value="Address and Condo Points" type="QString"/>
+          <Option name="output_name" value="OUTPUT" type="QString"/>
+          <Option name="outputs_collapsed" value="true" type="bool"/>
+          <Option name="parameters_collapsed" value="true" type="bool"/>
+        </Option>
+      </Option>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+      <Option name="params" type="Map">
+        <Option name="FIELDS" type="List">
+          <Option type="Map">
+            <Option name="source" value="2" type="int"/>
+            <Option name="static_value" type="StringList">
+              <Option value="EXTRACTED_ADDRESS_SUMMARY" type="QString"/>
+            </Option>
+          </Option>
+        </Option>
+        <Option name="INPUT" type="List">
+          <Option type="Map">
+            <Option name="child_id" value="native:mergevectorlayers_1" type="QString"/>
+            <Option name="output_name" value="OUTPUT" type="QString"/>
+            <Option name="source" value="1" type="int"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="designerParameterValues" type="Map">
+    <Option name="address_and_condo_to_parcel" type="QgsProcessingOutputLayerDefinition">
+      <Option type="Map">
+        <Option name="create_options" type="Map">
+          <Option name="fileEncoding" value="windows-1252" type="QString"/>
+        </Option>
+        <Option name="sink" type="Map">
+          <Option name="active" value="true" type="bool"/>
+          <Option name="type" value="1" type="int"/>
+          <Option name="val" value="TEMPORARY_OUTPUT" type="QString"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="address_points" value="Municipal_Address_Points_5b0c97d9_7a79_436b_9419_7edfdb03267b" type="QString"/>
+    <Option name="addresses_and_condos" type="QgsProcessingOutputLayerDefinition">
+      <Option type="Map">
+        <Option name="create_options" type="Map">
+          <Option name="fileEncoding" value="windows-1252" type="QString"/>
+        </Option>
+        <Option name="sink" type="Map">
+          <Option name="active" value="true" type="bool"/>
+          <Option name="type" value="1" type="int"/>
+          <Option name="val" value="TEMPORARY_OUTPUT" type="QString"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="parcel_join" type="QgsProcessingOutputLayerDefinition">
+      <Option type="Map">
+        <Option name="create_options" type="Map">
+          <Option name="fileEncoding" value="windows-1252" type="QString"/>
+        </Option>
+        <Option name="sink" type="Map">
+          <Option name="active" value="true" type="bool"/>
+          <Option name="type" value="1" type="int"/>
+          <Option name="val" value="TEMPORARY_OUTPUT" type="QString"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option name="parcel_layer" value="Polygons_Attributed_d388b14a_fca2_448f_bd90_f83009b5c69b" type="QString"/>
+    <Option name="tax_roll" value="RIDEAU_VANIER_bda131ab_02e3_4b21_9bc6_78af47e836d5" type="QString"/>
+  </Option>
+  <Option name="groupBoxes"/>
+  <Option name="help"/>
+  <Option name="internal_version" value="Version2" type="QString"/>
+  <Option name="modelVariables"/>
+  <Option name="model_group" value="" type="QString"/>
+  <Option name="model_name" value="TaxRoll to Parcel 2025" type="QString"/>
+  <Option name="outputGroup" value="" type="QString"/>
+  <Option name="outputOrder"/>
+  <Option name="parameterDefinitions" type="Map">
+    <Option name="address_and_condo_points" type="Map">
+      <Option name="create_by_default" value="true" type="bool"/>
+      <Option name="data_type" value="-1" type="int"/>
+      <Option name="default" type="QgsProcessingOutputLayerDefinition">
+        <Option type="Map">
+          <Option name="create_options" type="Map">
+            <Option name="fileEncoding" value="windows-1252" type="QString"/>
+          </Option>
+          <Option name="sink" type="Map">
+            <Option name="active" value="true" type="bool"/>
+            <Option name="type" value="1" type="int"/>
+            <Option name="val" value="TEMPORARY_OUTPUT" type="QString"/>
+          </Option>
+        </Option>
+      </Option>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Address and Condo Points" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata" type="Map">
+        <Option name="_modelChildId" value="native:removeduplicatesbyattribute_1" type="QString"/>
+        <Option name="_modelChildOutputName" value="Address and Condo Points" type="QString"/>
+        <Option name="_modelChildProvider" value="native" type="QString"/>
+      </Option>
+      <Option name="name" value="address_and_condo_points" type="QString"/>
+      <Option name="parameter_type" value="sink" type="QString"/>
+      <Option name="supports_append" value="false" type="bool"/>
+      <Option name="supports_non_file_outputs" value="true" type="bool"/>
+    </Option>
+    <Option name="address_and_condo_to_parcel" type="Map">
+      <Option name="create_by_default" value="true" type="bool"/>
+      <Option name="data_type" value="-1" type="int"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Address and Condo to Parcel" type="QString"/>
+      <Option name="flags" value="8" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata" type="Map">
+        <Option name="_modelChildId" value="native:joinattributestable_6" type="QString"/>
+        <Option name="_modelChildOutputName" value="Address and Condo to Parcel" type="QString"/>
+        <Option name="_modelChildProvider" value="native" type="QString"/>
+      </Option>
+      <Option name="name" value="address_and_condo_to_parcel" type="QString"/>
+      <Option name="parameter_type" value="sink" type="QString"/>
+      <Option name="supports_append" value="false" type="bool"/>
+      <Option name="supports_non_file_outputs" value="true" type="bool"/>
+    </Option>
+    <Option name="address_points" type="Map">
+      <Option name="data_types" type="List">
+        <Option value="0" type="int"/>
+      </Option>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Address Points" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata"/>
+      <Option name="name" value="address_points" type="QString"/>
+      <Option name="parameter_type" value="layer" type="QString"/>
+    </Option>
+    <Option name="parcel_join" type="Map">
+      <Option name="create_by_default" value="true" type="bool"/>
+      <Option name="data_type" value="-1" type="int"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Parcel Join" type="QString"/>
+      <Option name="flags" value="8" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata" type="Map">
+        <Option name="_modelChildId" value="native:joinattributestable_1" type="QString"/>
+        <Option name="_modelChildOutputName" value="Parcel Join" type="QString"/>
+        <Option name="_modelChildProvider" value="native" type="QString"/>
+      </Option>
+      <Option name="name" value="parcel_join" type="QString"/>
+      <Option name="parameter_type" value="sink" type="QString"/>
+      <Option name="supports_append" value="false" type="bool"/>
+      <Option name="supports_non_file_outputs" value="true" type="bool"/>
+    </Option>
+    <Option name="parcel_layer" type="Map">
+      <Option name="data_types" type="List">
+        <Option value="2" type="int"/>
+      </Option>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Parcel Layer" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata"/>
+      <Option name="name" value="parcel_layer" type="QString"/>
+      <Option name="parameter_type" value="layer" type="QString"/>
+    </Option>
+    <Option name="tax_roll" type="Map">
+      <Option name="data_types"/>
+      <Option name="default" type="invalid"/>
+      <Option name="defaultGui" type="invalid"/>
+      <Option name="description" value="Tax Roll" type="QString"/>
+      <Option name="flags" value="0" type="int"/>
+      <Option name="help" value="" type="QString"/>
+      <Option name="metadata"/>
+      <Option name="name" value="tax_roll" type="QString"/>
+      <Option name="parameter_type" value="layer" type="QString"/>
+    </Option>
+  </Option>
+  <Option name="parameterOrder"/>
+  <Option name="parameters" type="Map">
+    <Option name="address_points" type="Map">
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="342" type="double"/>
+        <Option name="component_pos_y" value="134" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="address_points" type="QString"/>
+      <Option name="component_height" value="34" type="double"/>
+      <Option name="component_pos_x" value="152.16669201361748" type="double"/>
+      <Option name="component_pos_y" value="129.4404562750148" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="name" value="address_points" type="QString"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+    </Option>
+    <Option name="parcel_layer" type="Map">
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="325" type="double"/>
+        <Option name="component_pos_y" value="233" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="parcel_layer" type="QString"/>
+      <Option name="component_height" value="40" type="double"/>
+      <Option name="component_pos_x" value="152.38098859088217" type="double"/>
+      <Option name="component_pos_y" value="65.9720659160254" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="name" value="parcel_layer" type="QString"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+    </Option>
+    <Option name="tax_roll" type="Map">
+      <Option name="color" value="" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option name="color" value="" type="QString"/>
+        <Option name="component_description" value="" type="QString"/>
+        <Option name="component_height" value="60" type="double"/>
+        <Option name="component_pos_x" value="575" type="double"/>
+        <Option name="component_pos_y" value="15" type="double"/>
+        <Option name="component_width" value="100" type="double"/>
+        <Option name="outputs_collapsed" value="true" type="bool"/>
+        <Option name="parameters_collapsed" value="true" type="bool"/>
+      </Option>
+      <Option name="component_description" value="tax_roll" type="QString"/>
+      <Option name="component_height" value="30" type="double"/>
+      <Option name="component_pos_x" value="145.00795944089205" type="double"/>
+      <Option name="component_pos_y" value="191.35711026820607" type="double"/>
+      <Option name="component_width" value="200" type="double"/>
+      <Option name="name" value="tax_roll" type="QString"/>
+      <Option name="outputs_collapsed" value="true" type="bool"/>
+      <Option name="parameters_collapsed" value="true" type="bool"/>
+    </Option>
+  </Option>
+</Option>

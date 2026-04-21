@@ -1,0 +1,81 @@
+[07:38:13][INFO][MAIN] Ward=Test Mode=new RunDir=Output\Test_20260421_073813 | Message: Run started
+[07:38:22][ERR][PARCEL] Roll=0614000000000000000 Count=1 | Message: Your roll number is not found, please enter a valid roll number to continue.
+[07:38:27][OK][ADDRESS] Addr=1609 A Lunenberg Cres
+[07:38:30][OK][PARCEL] Roll=06140417012160100000 Count=2
+[07:38:32][ERR][PARCEL] Roll=06140417012370123729 Count=1 | Message: Your roll number is not found, please enter a valid roll number to continue.
+[07:38:33][ERR][ADDRESS] Addr=99 Bank St | Message: Your search has returned multiple properties, please refine your search. Please enter in the unit and/or qualifier if applicable; or Search by roll number. If you do not have this information, please visit the Client Service Centre at 110 Laurier Avenue West to view the assessment roll book.
+[07:38:34][ERR][CONDO] Unit=100 Addr=99 Bank St | Message: No matching property found.
+[07:38:36][ERR][CONDO] Unit=101 Addr=99 Bank St | Message: No matching property found.
+[07:38:37][ERR][CONDO] Unit=102 Addr=99 Bank St | Message: No matching property found.
+[07:38:39][ERR][CONDO] Unit=103 Addr=99 Bank St | Message: No matching property found.
+[07:38:40][ERR][CONDO] Unit=104 Addr=99 Bank St | Message: No matching property found.
+[07:38:42][ERR][CONDO] Unit=200 Addr=99 Bank St | Message: No matching property found.
+[07:38:43][ERR][CONDO] Unit=201 Addr=99 Bank St | Message: No matching property found.
+[07:38:45][ERR][CONDO] Unit=202 Addr=99 Bank St | Message: No matching property found.
+[07:38:46][ERR][CONDO] Unit=203 Addr=99 Bank St | Message: No matching property found.
+[07:38:48][ERR][CONDO] Unit=204 Addr=99 Bank St | Message: No matching property found.
+[07:38:49][ERR][PARCEL] Roll=06140420011450114523 Count=3 | Message: Your roll number is not found, please enter a valid roll number to continue.
+[07:38:51][ERR][ADDRESS] Addr=342 MacLaren St | Message: Your search has returned multiple properties, please refine your search. Please enter in the unit and/or qualifier if applicable; or Search by roll number. If you do not have this information, please visit the Client Service Centre at 110 Laurier Avenue West to view the assessment roll book.
+[07:38:52][ERR][CONDO] Unit=100 Addr=342 MacLaren St | Message: No matching property found.
+[07:38:54][ERR][CONDO] Unit=101 Addr=342 MacLaren St | Message: No matching property found.
+[07:38:55][ERR][CONDO] Unit=102 Addr=342 MacLaren St | Message: No matching property found.
+[07:38:57][ERR][CONDO] Unit=103 Addr=342 MacLaren St | Message: No matching property found.
+[07:38:59][ERR][CONDO] Unit=104 Addr=342 MacLaren St | Message: No matching property found.
+[07:39:00][ERR][CONDO] Unit=200 Addr=342 MacLaren St | Message: No matching property found.
+[07:39:02][ERR][CONDO] Unit=201 Addr=342 MacLaren St | Message: No matching property found.
+[07:39:04][ERR][CONDO] Unit=202 Addr=342 MacLaren St | Message: No matching property found.
+[07:39:05][ERR][CONDO] Unit=203 Addr=342 MacLaren St | Message: No matching property found.
+[07:39:07][ERR][CONDO] Unit=204 Addr=342 MacLaren St | Message: No matching property found.
+[07:39:08][ERR][ADDRESS] Addr=340 MacLaren St | Message: No matching property found.
+[07:39:10][ERR][ADDRESS] Addr=338 MacLaren St | Message: No matching property found.
+[07:39:12][ERR][PARCEL] Roll=06140421010360003708 Count=10 | Message: Your roll number is not found, please enter a valid roll number to continue.
+[07:39:15][OK][ADDRESS] Addr=446 401 Gilmour St
+[07:39:19][OK][ADDRESS] Addr=446 302 Gilmour St
+[07:39:22][OK][ADDRESS] Addr=446 601 Gilmour St
+[07:39:26][OK][ADDRESS] Addr=442 Gilmour St
+[07:39:30][OK][ADDRESS] Addr=446 301 Gilmour St
+[07:39:33][OK][ADDRESS] Addr=446 202 Gilmour St
+[07:39:36][OK][ADDRESS] Addr=446 201 Gilmour St
+[07:39:40][OK][ADDRESS] Addr=446 402 Gilmour St
+[07:39:43][OK][ADDRESS] Addr=446 501 Gilmour St
+[07:39:47][OK][ADDRESS] Addr=446 502 Gilmour St
+[07:39:49][ERR][PARCEL] Roll=06140635017082170899 Count=35 | Message: Your roll number is not found, please enter a valid roll number to continue.
+[07:39:52][OK][ADDRESS] Addr=95 304 Beech St
+[07:39:53][ERR][ADDRESS] Addr=85 Beech St | Message: No matching property found.
+[07:39:55][ERR][ADDRESS] Addr=87 Beech St | Message: No matching property found.
+[07:39:58][OK][ADDRESS] Addr=95 310 Beech St
+[07:40:01][OK][ADDRESS] Addr=95 209 Beech St
+[07:40:05][OK][ADDRESS] Addr=95 308 Beech St
+[07:40:08][OK][ADDRESS] Addr=95 208 Beech St
+[07:40:12][OK][ADDRESS] Addr=95 210 Beech St
+[07:40:15][OK][ADDRESS] Addr=95 203 Beech St
+[07:40:18][OK][ADDRESS] Addr=95 110 Beech St
+[07:40:21][OK][ADDRESS] Addr=95 108 Beech St
+[07:40:25][OK][ADDRESS] Addr=95 205 Beech St
+[07:40:28][OK][ADDRESS] Addr=95 302 Beech St
+[07:40:31][OK][ADDRESS] Addr=95 309 Beech St
+[07:40:34][OK][ADDRESS] Addr=95 301 Beech St
+[07:40:36][ERR][ADDRESS] Addr=89 Beech St | Message: No matching property found.
+[07:40:39][OK][ADDRESS] Addr=95 305 Beech St
+[07:40:42][OK][ADDRESS] Addr=95 104 Beech St
+[07:40:46][OK][ADDRESS] Addr=95 201 Beech St
+[07:40:49][OK][ADDRESS] Addr=95 207 Beech St
+[07:40:52][OK][ADDRESS] Addr=95 105 Beech St
+[07:40:56][OK][ADDRESS] Addr=95 306 Beech St
+[07:40:58][ERR][ADDRESS] Addr=91 Beech St | Message: No matching property found.
+[07:41:01][OK][ADDRESS] Addr=95 206 Beech St
+[07:41:04][OK][ADDRESS] Addr=95 107 Beech St
+[07:41:08][OK][ADDRESS] Addr=95 303 Beech St
+[07:41:11][OK][ADDRESS] Addr=95 307 Beech St
+[07:41:14][OK][ADDRESS] Addr=95 109 Beech St
+[07:41:17][OK][ADDRESS] Addr=95 102 Beech St
+[07:41:21][OK][ADDRESS] Addr=95 101 Beech St
+[07:41:22][ERR][ADDRESS] Addr=95 Beech St | Message: No matching property found.
+[07:41:26][OK][ADDRESS] Addr=95 103 Beech St
+[07:41:29][OK][ADDRESS] Addr=95 202 Beech St
+[07:41:33][OK][ADDRESS] Addr=95 204 Beech St
+[07:41:36][OK][ADDRESS] Addr=95 106 Beech St
+[07:41:40][OK][PARCEL] Roll=06141208303330000000 Count=104
+[07:41:44][OK][PARCEL] Roll=06142718300980000000 Count=2
+[07:41:47][OK][PARCEL] Roll=06146001852060000000 Count=1
+[07:41:50][INFO][MAIN] Ward=Test Mode=new | Message: Run ended
