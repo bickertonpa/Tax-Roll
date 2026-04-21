@@ -35,7 +35,7 @@ def select_ward_from_files(base_dir):
     if not raw_dir.exists():
         raise FileNotFoundError(f"Raw address directory not found: {raw_dir}")
 
-    csv_files = sorted(raw_dir.glob("Addresses_*.csv"))
+    csv_files = sorted(raw_dir.glob("*.csv"))
 
     if not csv_files:
         raise FileNotFoundError(f"No address CSV files found in {raw_dir}")

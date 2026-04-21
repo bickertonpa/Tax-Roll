@@ -57,7 +57,7 @@ class CondoProcessor:
             # -------------------------
             # Unit loop
             # -------------------------
-            while consecutive_failures < 2:
+            while consecutive_failures < 5:
 
                 unit_number = base_unit + unit_offset
                 unit_str = str(unit_number)

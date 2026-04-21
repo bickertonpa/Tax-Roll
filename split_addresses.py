@@ -14,14 +14,14 @@ from qgis.core import (
 # --------------------------------------------------
 
 # Relative to QGIS project home folder
-POINTS_PATH = os.path.join("Data", "Municipal_Address_Points.gpkg")
-POINTS_LAYER_NAME = "Municipal_Address_Points"
+POINTS_PATH = os.path.join("Addresses", "Municipal_Address_Point_joined_20260419.gpkg")
+POINTS_LAYER_NAME = "Joined layer"
 
-POLYGONS_PATH = os.path.join("Data", "Wards.gpkg")
-POLYGONS_LAYER_NAME = "Wards"
+POLYGONS_PATH = os.path.join("Wards", "Wards.gpkg")
+POLYGONS_LAYER_NAME = "wards__quartiers_municipaux"
 
 # Field in polygon layer used to name each output file
-WARD_NAME_FIELD = "WARD"
+WARD_NAME_FIELD = "WARD_EN"
 
 # Output folder relative to project home
 OUTPUT_FOLDER = os.path.join("Addresses", "Raw")
@@ -29,8 +29,8 @@ OUTPUT_FOLDER = os.path.join("Addresses", "Raw")
 # Spatial predicate: use "intersects"
 PREDICATE = [0]
 
-# Output format extension: ".gpkg" or ".shp"
-OUTPUT_EXTENSION = ".gpkg"
+# Set True if you want to delete the intermediate gpkg after csv export
+DELETE_TEMP_GPKG = True
 
 
 # --------------------------------------------------
@@ -68,21 +68,21 @@ def extract_by_location(points_layer, polygon_layer, output_path):
         }
     )
 
-def save_selected_features(points_layer, output_path):
+def export_layer_to_csv(layer, output_csv_path):
     options = QgsVectorFileWriter.SaveVectorOptions()
-    options.driverName = "GPKG" if output_path.lower().endswith(".gpkg") else "ESRI Shapefile"
-    options.onlySelectedFeatures = True
+    options.driverName = "CSV"
     options.fileEncoding = "UTF-8"
+    options.layerOptions = ["GEOMETRY=AS_XY"]
 
     result = QgsVectorFileWriter.writeAsVectorFormatV3(
-        points_layer,
-        output_path,
-        QgsCoordinateTransformContext(),
+        layer,
+        output_csv_path,
+        QgsProject.instance().transformContext(),
         options
     )
 
     if result[0] != QgsVectorFileWriter.NoError:
-        raise RuntimeError(f"Failed to write output: {output_path}")
+        raise RuntimeError(f"Failed to write CSV: {output_csv_path}")
 
 
 # --------------------------------------------------
@@ -114,7 +114,12 @@ for poly_feat in polygons.getFeatures():
         continue
 
     ward_name = sanitize_filename(ward_value)
-    output_path = os.path.join(output_dir, f"{ward_name}{OUTPUT_EXTENSION}")
+
+    # temporary working geopackage
+    temp_gpkg_path = os.path.join(output_dir, f"{ward_name}.gpkg")
+
+    # final csv output
+    csv_output_path = os.path.join(output_dir, f"{ward_name}.csv")
 
     # Create a temporary single-feature layer using extract by expression
     polygon_layer_result = processing.run(
@@ -127,13 +132,26 @@ for poly_feat in polygons.getFeatures():
     )
     single_polygon = polygon_layer_result["OUTPUT"]
 
-    # Extract intersecting points
-    result = extract_by_location(points, single_polygon, output_path)
+    # Extract intersecting points to temporary gpkg
+    result = extract_by_location(points, single_polygon, temp_gpkg_path)
 
-    # Count exported features
+    # Load the temp gpkg output
     out_layer = QgsVectorLayer(result["OUTPUT"], ward_name, "ogr")
-    count = out_layer.featureCount() if out_layer.isValid() else "unknown"
+    if not out_layer.isValid():
+        raise ValueError(f"Could not load extracted output: {result['OUTPUT']}")
 
-    print(f"Wrote {output_path} ({count} features)")
+    count = out_layer.featureCount()
+
+    # Export that working output to CSV
+    export_layer_to_csv(out_layer, csv_output_path)
+
+    print(f"Wrote {csv_output_path} ({count} features)")
+
+    # Optionally remove the temporary gpkg
+    if DELETE_TEMP_GPKG and os.path.exists(temp_gpkg_path):
+        try:
+            os.remove(temp_gpkg_path)
+        except Exception as e:
+            print(f"Could not delete temp file {temp_gpkg_path}: {e}")
 
 print("Done.")
